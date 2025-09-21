@@ -1,0 +1,52 @@
+import React from "react";
+
+type Props = { className?: string };
+
+// Ornamental divider with tapered lines and a centered diamond.
+// Inherits color from context via currentColor, works on dark or light backgrounds.
+export default function Divider({ className }: Props) {
+  return (
+<<<<<<< ours
+    <div className={["w-full", className || ""].join(" ")} aria-hidden>
+      <svg
+        className="block w-full h-5"
+        viewBox="0 0 400 20"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g fill="none" stroke="currentColor" strokeLinecap="round">
+          {/* Faint long hairlines to the edges */}
+          <line x1="0" y1="10" x2="185" y2="10" strokeOpacity="0.20" strokeWidth="1" />
+          <line x1="215" y1="10" x2="400" y2="10" strokeOpacity="0.20" strokeWidth="1" />
+
+          {/* Tapered build-up near center (layered strokes) - left */}
+          <line x1="120" y1="10" x2="185" y2="10" strokeOpacity="0.35" strokeWidth="2" />
+          <line x1="145" y1="10" x2="185" y2="10" strokeOpacity="0.55" strokeWidth="3.5" />
+          <line x1="165" y1="10" x2="185" y2="10" strokeOpacity="0.85" strokeWidth="5" />
+
+          {/* Tapered build-up near center (layered strokes) - right */}
+          <line x1="215" y1="10" x2="235" y2="10" strokeOpacity="0.85" strokeWidth="5" />
+          <line x1="215" y1="10" x2="255" y2="10" strokeOpacity="0.55" strokeWidth="3.5" />
+          <line x1="215" y1="10" x2="280" y2="10" strokeOpacity="0.35" strokeWidth="2" />
+        </g>
+
+        {/* Center diamond */}
+        <rect x="194" y="6" width="12" height="12" fill="currentColor" opacity="0.9" transform="rotate(45 200 12)" />
+      </svg>
+    </div>
+=======
+    <div
+      className={[
+        "w-full h-[2px]",
+        // Centered 1px line using background image to avoid fractional pixel rounding
+        "bg-[length:100%_2px]",
+        "bg-no-repeat",
+        "bg-[linear-gradient(to_bottom,transparent_0,rgba(255,255,255,0.18)_1px,transparent_1px)]",
+        className || "",
+      ].join(" ")}
+    />
+>>>>>>> theirs
+  );
+}
+
+

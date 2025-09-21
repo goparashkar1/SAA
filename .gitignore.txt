@@ -1,0 +1,32 @@
+# Node.js dependencies - don't upload these
+node_modules/
+
+# Build outputs - these are generated automatically
+dist/
+build/
+.next/
+out/
+
+# Environment files - keep secrets private!
+.env
+.env.local
+.env.production
+
+# Log files - not needed for code
+*.log
+logs/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# IDE/Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Runtime data
+pids
+*.pid
+*.seed

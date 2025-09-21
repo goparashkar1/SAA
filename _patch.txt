@@ -1,0 +1,65 @@
+*** Begin Patch
+*** Update File: src/components/Sidebar.tsx
+@@
+-          {it.key === "report" && reportOpen && (
+-            <div className="w-full flex flex-col items-center gap-2">
++          {it.key === "report" && reportOpen && (
++            <div className="w-full flex flex-col items-center gap-2">
+               <SidebarSubPill
+                 label="????? ????? ????"
+                 icon={<Star className="h-4 w-4" />}
+                 onClick={() => onChange("report")}
+               />
+@@
+-          )}
++          )}
+@@
+-function SidebarSubPill({
+-  label,
+-  icon,
+-  onClick,
+-}: {
+-  label: string;
+-  icon: React.ReactNode;
+-  onClick: () => void;
+-}) {
+-  return (
+-    <button
+-      type="button"
+-      onClick={onClick}
+-      className="w-[160px] h-8 rounded-full pr-6 px-3 inline-flex items-center justify-between transition focus:outline-none focus:ring-2 focus:ring-white/20 border border-white/10 bg-white/5 hover:bg-white/10 shadow-pill text-white"
+-    >
+-      {/* No trailing chevron for subitems */}
+-      <span className="grid place-items-center h-6 w-6" />
+-      <span className="text-xs">{label}</span>
+-      <span className="grid place-items-center h-5 w-5">{icon}</span>
+-    </button>
+-  );
+-}
++function SidebarSubPill({
++  label,
++  icon,
++  onClick,
++}: {
++  label: string;
++  icon: React.ReactNode;
++  onClick: () => void;
++}) {
++  return (
++    <div
++      role="button"
++      tabIndex={0}
++      onClick={onClick}
++      onKeyDown={(e) => {
++        if (e.key === "Enter" || e.key === " ") onClick();
++      }}
++      className="w-[160px] h-8 rounded-md px-3 bg-white/5 hover:bg-white/10 border border-white/10 text-white grid grid-cols-3 items-center select-none cursor-pointer"
++    >
++      {/* Balance layout to keep label centered */}
++      <span className="grid place-items-center h-5 w-5">{icon}</span>
++      <span className="text-xs text-center whitespace-nowrap overflow-hidden text-ellipsis px-1">{label}</span>
++      <span className="h-5 w-5" />
++    </div>
++  );
++}
+*** End Patch

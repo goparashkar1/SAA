@@ -1,0 +1,58 @@
+/* Tailwind CSS directives to include base styles, component classes, and utility classes */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ensure the HTML, body, and root element take up full viewport height */
+html, body, #root { 
+  height: 100%; 
+}
+
+/* Apply font smoothing for better text rendering across different browsers */
+body { 
+  -webkit-font-smoothing: antialiased; /* Smooth fonts on WebKit browsers (Chrome, Safari) */
+  -moz-osx-font-smoothing: grayscale;  /* Smooth fonts on Firefox */
+}
+
+/* Custom scrollbar styling specifically for sidebar elements */
+/* Firefox scrollbar customization */
+.sidebar-scroll {
+  /* Set scrollbar width to 'thin' (native Firefox styling) */
+  scrollbar-width: thin;
+  /* Custom scrollbar colors: thumb color | track color */
+  scrollbar-color: rgba(255, 255, 255, 0.28) rgba(6, 27, 44, 0.45);
+}
+
+/* WebKit-based browser scrollbar customization (Chrome, Safari, Edge) */
+.sidebar-scroll::-webkit-scrollbar {
+  width: 10px; /* Set width of the scrollbar */
+}
+
+/* Scrollbar track styling (the background of the scrollbar) */
+.sidebar-scroll::-webkit-scrollbar-track {
+  background: rgba(6, 27, 44, 0.35); /* Dark blue-gray background with transparency */
+  border-radius: 8px; /* Rounded corners for the track */
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06); /* Subtle inner border effect */
+}
+
+/* Scrollbar thumb styling (the draggable handle) */
+.sidebar-scroll::-webkit-scrollbar-thumb {
+  /* Vertical gradient for the thumb from more opaque to less opaque white */
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.18));
+  border-radius: 8px; /* Rounded corners matching the track */
+  border: 1px solid rgba(255, 255, 255, 0.14); /* Subtle border around the thumb */
+  /* Complex shadow effect: inner top highlight and inner bottom shadow */
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), inset 0 -2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover state styling for the scrollbar thumb */
+.sidebar-scroll::-webkit-scrollbar-thumb:hover {
+  /* Brighter gradient on hover for better visibility */
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.36), rgba(255, 255, 255, 0.24));
+  border-color: rgba(255, 255, 255, 0.2); /* Slightly more visible border on hover */
+}
+
+/* Scrollbar corner styling (where horizontal and vertical scrollbars meet) */
+.sidebar-scroll::-webkit-scrollbar-corner {
+  background: transparent; /* Make the corner transparent for a cleaner look */
+}
