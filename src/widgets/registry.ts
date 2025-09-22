@@ -1,67 +1,631 @@
-// Importing ComponentType from React for type annotations
-import type { ComponentType } from "react";
+import React from "react";
+import PlaceholderWidget from "../components/PlaceholderWidget";
+import {
+  Globe,
+  Newspaper,
+  BarChart3,
+  HeartPulse,
+  Languages,
+  Flame,
+  Layers,
+  Activity,
+  Plane,
+  Anchor,
+  Bus,
+  Car,
+  CloudRain,
+  Cloud,
+  ActivitySquare,
+  AirVent,
+  MapPin,
+  Building,
+  WifiOff,
+  Shield,
+  Megaphone,
+  Route,
+  Share2,
+  Eye,
+  Tag,
+  TrendingUp,
+  Bell,
+  ChartLine,
+  AlertTriangle,
+  LineChart,
+  Grid3X3,
+  ListOrdered,
+  Zap,
+  Layers as LayersIcon,
+  IdCard,
+  GitBranch,
+  Network,
+  Shapes,
+  Brackets,
+  Scan,
+  FileText,
+  Table,
+  Camera,
+  Info,
+  Link2,
+  GitMerge,
+  ShieldCheck,
+  CandlestickChart,
+  ClipboardList,
+  Download,
+  Activity as ActivityIcon,
+  CloudDownload,
+  Database,
+  Calendar,
+  Users,
+  BadgeDollarSign,
+} from "lucide-react";
 
-// Type definition for all valid widget identifiers in the application
-// This union type ensures type safety when referencing widgets throughout the codebase
-export type WidgetId = "globe" | "news" | "stats" | "sentiment" | "translation" | "heatmap";
+export type WidgetGroup =
+  | "Geo"
+  | "Streams"
+  | "Analytics"
+  | "Graph"
+  | "Docs"
+  | "Crypto"
+  | "Reports";
 
-// Interface defining the structure of a widget configuration object
-// This ensures consistency across all widget definitions in the registry
-interface WidgetConfig {
-  name: string; // Human-readable display name for the widget
-  icon: string; // Name of the Lucide React icon to use for this widget (must match available icons)
-  import: () => Promise<{ default: ComponentType<any> }>; // Dynamic import function for code splitting
-  defaultSize: { w: number; h: number }; // Default dimensions for the widget in grid units
-}
+export type WidgetMeta = {
+  id: string;
+  title: string;
+  group: WidgetGroup;
+  icon?: React.ComponentType<{ className?: string }>;
+  supportsGlobeLayer?: boolean;
+  component: React.ComponentType<any> | React.LazyExoticComponent<React.ComponentType<any>>;
+  disabled?: boolean;
+  description?: string;
+  defaultSize: { w: number; h: number };
+};
 
-// Main widget registry object that maps WidgetIds to their configuration
-// This serves as the single source of truth for all available widgets in the application
-export const widgetRegistry: Record<WidgetId, WidgetConfig> = {
-  // Globe widget configuration - displays a 3D globe visualization
+const GlobeWidget = React.lazy(() => import("../components/dashboard/GlobeMap"));
+const NewsWidget = React.lazy(() => import("../components/dashboard/NewsWidget"));
+const StatsWidget = React.lazy(() => import("../components/dashboard/StatsWidget"));
+const SentimentWidget = React.lazy(() => import("../components/dashboard/SentimentWidget"));
+const TranslationWidget = React.lazy(() => import("../components/dashboard/TranslationWidget"));
+const HeatmapWidget = React.lazy(() => import("../components/dashboard/HeatmapWidget"));
+
+const P = (title: string, description?: string) =>
+  function Placeholder() {
+    return React.createElement(PlaceholderWidget, { title, description });
+  };
+
+export const widgetRegistry: Record<string, WidgetMeta> = {
   globe: {
-    name: "Globe", // Display name shown in UI
-    icon: "Globe2", // Lucide React icon name (Globe2 component)
-    import: () => import("../components/dashboard/GlobeMap"), // Lazy-loaded component import
-    defaultSize: { w: 6, h: 6 }, // Default size: 6 grid units wide, 6 grid units high
+    id: "globe",
+    title: "Globe",
+    group: "Geo",
+    icon: Globe,
+    supportsGlobeLayer: true,
+    component: GlobeWidget,
+    defaultSize: { w: 6, h: 6 },
   },
-  
-  // News widget configuration - displays news feeds or articles
   news: {
-    name: "News", // Display name shown in UI
-    icon: "Newspaper", // Lucide React icon name (Newspaper component)
-    import: () => import("../components/dashboard/NewsWidget"), // Lazy-loaded component import
-    defaultSize: { w: 6, h: 6 }, // Default size: 6 grid units wide, 6 grid units high
+    id: "news",
+    title: "News",
+    group: "Streams",
+    icon: Newspaper,
+    component: NewsWidget,
+    defaultSize: { w: 6, h: 6 },
   },
-  
-  // Statistics widget configuration - displays data visualizations and charts
   stats: {
-    name: "Statistics", // Display name shown in UI
-    icon: "BarChart3", // Lucide React icon name (BarChart3 component)
-    import: () => import("../components/dashboard/StatsWidget"), // Lazy-loaded component import
-    defaultSize: { w: 6, h: 6 }, // Default size: 6 grid units wide, 6 grid units high
+    id: "stats",
+    title: "Statistics",
+    group: "Analytics",
+    icon: BarChart3,
+    component: StatsWidget,
+    defaultSize: { w: 6, h: 6 },
   },
-  
-  // Sentiment analysis widget configuration - displays sentiment metrics
   sentiment: {
-    name: "Sentiment", // Display name shown in UI
-    icon: "HeartPulse", // Lucide React icon name (HeartPulse component)
-    import: () => import("../components/dashboard/SentimentWidget"), // Lazy-loaded component import
-    defaultSize: { w: 6, h: 6 }, // Default size: 6 grid units wide, 6 grid units high
+    id: "sentiment",
+    title: "Sentiment",
+    group: "Analytics",
+    icon: HeartPulse,
+    component: SentimentWidget,
+    defaultSize: { w: 6, h: 6 },
   },
-  
-  // Translation widget configuration - provides translation functionality
   translation: {
-    name: "Translation", // Display name shown in UI
-    icon: "Languages", // Lucide React icon name (Languages component)
-    import: () => import("../components/dashboard/TranslationWidget"), // Lazy-loaded component import
-    defaultSize: { w: 6, h: 6 }, // Default size: 6 grid units wide, 6 grid units high
+    id: "translation",
+    title: "Translation",
+    group: "Docs",
+    icon: Languages,
+    component: TranslationWidget,
+    defaultSize: { w: 6, h: 6 },
   },
-  
-  // Heatmap widget configuration - displays data density visualization
   heatmap: {
-    name: "Heatmap", // Display name shown in UI
-    icon: "Flame", // Lucide React icon name (Flame component)
-    import: () => import("../components/dashboard/HeatmapWidget"), // Lazy-loaded component import
-    defaultSize: { w: 12, h: 8 }, // Larger default size: 12 grid units wide, 8 grid units high
+    id: "heatmap",
+    title: "Heatmap",
+    group: "Analytics",
+    icon: Flame,
+    component: HeatmapWidget,
+    defaultSize: { w: 12, h: 8 },
+  },
+
+  "layer-control": {
+    id: "layer-control",
+    title: "Layer Control",
+    group: "Geo",
+    icon: Layers,
+    supportsGlobeLayer: false,
+    component: P("Layer Control", "Toggle, order and opacity for layers."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  "live-events": {
+    id: "live-events",
+    title: "Live Event Feed",
+    group: "Geo",
+    icon: Activity,
+    supportsGlobeLayer: true,
+    component: P("Live Event Feed", "Real-time incidents plotted on map."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  "event-timeline": {
+    id: "event-timeline",
+    title: "Event Timeline",
+    group: "Geo",
+    icon: LineChart,
+    supportsGlobeLayer: false,
+    component: P("Event Timeline", "Scrub to replay activity over time."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  "flight-tracker": {
+    id: "flight-tracker",
+    title: "Flight Tracker",
+    group: "Geo",
+    icon: Plane,
+    supportsGlobeLayer: true,
+    component: P("Flight Tracker", "ADS-B aircraft tracks and filters."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  "vessel-tracker": {
+    id: "vessel-tracker",
+    title: "Vessel Tracker",
+    group: "Geo",
+    icon: Anchor,
+    supportsGlobeLayer: true,
+    component: P("Vessel Tracker", "AIS tracks and port calls."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  "transit-tracker": {
+    id: "transit-tracker",
+    title: "Transit Tracker",
+    group: "Geo",
+    icon: Bus,
+    supportsGlobeLayer: true,
+    component: P("Transit Tracker", "GTFS-RT vehicles and delays."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  traffic: {
+    id: "traffic",
+    title: "Road Traffic",
+    group: "Geo",
+    icon: Car,
+    supportsGlobeLayer: true,
+    component: P("Road Traffic", "Congestion tiles and incidents."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  "weather-radar": {
+    id: "weather-radar",
+    title: "Weather Radar",
+    group: "Geo",
+    icon: CloudRain,
+    supportsGlobeLayer: true,
+    component: P("Weather Radar", "Precipitation radar overlay."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  "satellite-clouds": {
+    id: "satellite-clouds",
+    title: "Satellite Clouds",
+    group: "Geo",
+    icon: Cloud,
+    supportsGlobeLayer: true,
+    component: P("Satellite Clouds", "Geostationary cloud cover / IR."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  "viirs-fires": {
+    id: "viirs-fires",
+    title: "Fire / Heat",
+    group: "Geo",
+    icon: Flame,
+    supportsGlobeLayer: true,
+    component: P("Fire / Heat", "VIIRS/MODIS hotspots."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  earthquakes: {
+    id: "earthquakes",
+    title: "Earthquakes",
+    group: "Geo",
+    icon: ActivitySquare,
+    supportsGlobeLayer: true,
+    component: P("Earthquakes", "Global quakes with filters."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  "airspace-notams": {
+    id: "airspace-notams",
+    title: "Airspace / NOTAMs",
+    group: "Geo",
+    icon: AirVent,
+    supportsGlobeLayer: true,
+    component: P("Airspace / NOTAMs", "TFRs and restricted zones."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  "alert-zones": {
+    id: "alert-zones",
+    title: "Alert Zones",
+    group: "Geo",
+    icon: MapPin,
+    supportsGlobeLayer: true,
+    component: P("Alert Zones", "Custom geofences with alerts."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  "infra-layers": {
+    id: "infra-layers",
+    title: "Critical Infra",
+    group: "Geo",
+    icon: Building,
+    supportsGlobeLayer: true,
+    component: P("Critical Infra", "Airports, ports, power, cables."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  "internet-outages": {
+    id: "internet-outages",
+    title: "Internet Outages",
+    group: "Geo",
+    icon: WifiOff,
+    supportsGlobeLayer: true,
+    component: P("Internet Outages", "Connectivity anomalies by region."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  "border-incidents": {
+    id: "border-incidents",
+    title: "Border Incidents",
+    group: "Geo",
+    icon: Shield,
+    supportsGlobeLayer: true,
+    component: P("Border Incidents", "Crossings and clashes."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  "protest-hotspots": {
+    id: "protest-hotspots",
+    title: "Protest Hotspots",
+    group: "Geo",
+    icon: Megaphone,
+    supportsGlobeLayer: true,
+    component: P("Protest Hotspots", "Modeled risk + confirmed events."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  "route-analyzer": {
+    id: "route-analyzer",
+    title: "Route Analyzer",
+    group: "Geo",
+    icon: Route,
+    supportsGlobeLayer: false,
+    component: P("Route Analyzer", "Distance, buffers, proximity joins."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+
+  "social-stream": {
+    id: "social-stream",
+    title: "Social Stream",
+    group: "Streams",
+    icon: Share2,
+    component: P("Social Stream", "Public posts with filters."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  "darkweb-stream": {
+    id: "darkweb-stream",
+    title: "Dark Web Stream",
+    group: "Streams",
+    icon: Eye,
+    component: P("Dark Web Stream", "Policy-gated hidden services."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  "keyword-watch": {
+    id: "keyword-watch",
+    title: "Keyword Watchlist",
+    group: "Streams",
+    icon: Tag,
+    component: P("Keyword Watchlist", "Cross-source hit counter."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  "topic-trends": {
+    id: "topic-trends",
+    title: "Topic Trends",
+    group: "Streams",
+    icon: TrendingUp,
+    component: P("Topic Trends", "Emerging topics and velocity."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  "alerts-inbox": {
+    id: "alerts-inbox",
+    title: "Alerts Inbox",
+    group: "Streams",
+    icon: Bell,
+    component: P("Alerts Inbox", "Unified rule-based alerts."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  "source-health": {
+    id: "source-health",
+    title: "Source Health",
+    group: "Streams",
+    icon: ActivityIcon,
+    component: P("Source Health", "Ingestion uptime and lag."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+
+  "time-series": {
+    id: "time-series",
+    title: "Time Series",
+    group: "Analytics",
+    icon: ChartLine,
+    component: P("Time Series", "Zoomable lines and areas."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  anomaly: {
+    id: "anomaly",
+    title: "Anomaly Detector",
+    group: "Analytics",
+    icon: AlertTriangle,
+    component: P("Anomaly Detector", "Change-points and outliers."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  forecast: {
+    id: "forecast",
+    title: "Forecast",
+    group: "Analytics",
+    icon: LineChart,
+    component: P("Forecast", "Short-term forecasts."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  correlation: {
+    id: "correlation",
+    title: "Correlation Matrix",
+    group: "Analytics",
+    icon: Grid3X3,
+    component: P("Correlation Matrix", "Variable correlations heatmap."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  histogram: {
+    id: "histogram",
+    title: "Histogram",
+    group: "Analytics",
+    icon: BarChart3,
+    component: P("Histogram", "Distribution buckets."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  "top-entities": {
+    id: "top-entities",
+    title: "Top Entities",
+    group: "Analytics",
+    icon: ListOrdered,
+    component: P("Top Entities", "Ranked people/orgs/places."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  "emotion-toxicity": {
+    id: "emotion-toxicity",
+    title: "Emotion / Toxicity",
+    group: "Analytics",
+    icon: Zap,
+    component: P("Emotion / Toxicity", "Emotion classes and toxicity index."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  "topic-model": {
+    id: "topic-model",
+    title: "Topic Model",
+    group: "Analytics",
+    icon: LayersIcon,
+    component: P("Topic Model", "LDA/NMF topics and keywords."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+
+  "entity-card": {
+    id: "entity-card",
+    title: "Entity Card",
+    group: "Graph",
+    icon: IdCard,
+    component: P("Entity Card", "Profile pane with links."),
+    disabled: true,
+    defaultSize: { w: 5, h: 4 },
+  },
+  "mini-graph": {
+    id: "mini-graph",
+    title: "Mini Graph",
+    group: "Graph",
+    icon: GitBranch,
+    component: P("Mini Graph", "Neighborhood around a node."),
+    disabled: true,
+    defaultSize: { w: 6, h: 5 },
+  },
+  "co-mention": {
+    id: "co-mention",
+    title: "Co-mention Network",
+    group: "Graph",
+    icon: Network,
+    component: P("Co-mention Network", "Edges from co-occurrence."),
+    disabled: true,
+    defaultSize: { w: 6, h: 5 },
+  },
+  communities: {
+    id: "communities",
+    title: "Community Viewer",
+    group: "Graph",
+    icon: Shapes,
+    component: P("Community Viewer", "Clusters and labels."),
+    disabled: true,
+    defaultSize: { w: 6, h: 5 },
+  },
+  "relation-triples": {
+    id: "relation-triples",
+    title: "Relation Triples",
+    group: "Graph",
+    icon: Brackets,
+    component: P("Relation Triples", "S-P-O relations table."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+
+  ocr: {
+    id: "ocr",
+    title: "OCR",
+    group: "Docs",
+    icon: Scan,
+    component: P("OCR", "Extract text from images/PDFs."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  "doc-viewer": {
+    id: "doc-viewer",
+    title: "Document Viewer",
+    group: "Docs",
+    icon: FileText,
+    component: P("Document Viewer", "Preview and search documents."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  "table-extractor": {
+    id: "table-extractor",
+    title: "Table Extractor",
+    group: "Docs",
+    icon: Table,
+    component: P("Table Extractor", "Detect tables and export CSV."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  "media-forensics": {
+    id: "media-forensics",
+    title: "Media Forensics",
+    group: "Docs",
+    icon: Camera,
+    component: P("Media Forensics", "ELA/PRNU and deepfake score."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  "exif-metadata": {
+    id: "exif-metadata",
+    title: "EXIF / Metadata",
+    group: "Docs",
+    icon: Info,
+    component: P("EXIF / Metadata", "Headers and anomalies."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  "image-geolocate": {
+    id: "image-geolocate",
+    title: "Image Geolocator",
+    group: "Docs",
+    icon: MapPin,
+    component: P("Image Geolocator", "Place/time hints from cues."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+
+  "address-tracer": {
+    id: "address-tracer",
+    title: "Address Tracer",
+    group: "Crypto",
+    icon: Link2,
+    component: P("Address Tracer", "Trace wallet flows."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  "flow-sankey": {
+    id: "flow-sankey",
+    title: "Flow Sankey",
+    group: "Crypto",
+    icon: GitMerge,
+    component: P("Flow Sankey", "Money/asset flow diagram."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  "sanctions-exposure": {
+    id: "sanctions-exposure",
+    title: "Sanctions Exposure",
+    group: "Crypto",
+    icon: ShieldCheck,
+    component: P("Sanctions Exposure", "Screen vs lists."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+  "market-overlay": {
+    id: "market-overlay",
+    title: "Market Overlay",
+    group: "Crypto",
+    icon: CandlestickChart,
+    component: P("Market Overlay", "Price/vol overlays with events."),
+    disabled: true,
+    defaultSize: { w: 6, h: 4 },
+  },
+
+  notes: {
+    id: "notes",
+    title: "Notes",
+    group: "Reports",
+    icon: FileText,
+    component: P("Notes", "Pinned analyst notes for this board."),
+    disabled: true,
+    defaultSize: { w: 5, h: 3 },
+  },
+  tasks: {
+    id: "tasks",
+    title: "Tasks",
+    group: "Reports",
+    icon: ClipboardList,
+    component: P("Tasks", "Assignments and due dates."),
+    disabled: true,
+    defaultSize: { w: 5, h: 3 },
+  },
+  "snapshot-export": {
+    id: "snapshot-export",
+    title: "Snapshot Export",
+    group: "Reports",
+    icon: Download,
+    component: P("Snapshot Export", "Export board/widget to PNG/PDF."),
+    disabled: true,
+    defaultSize: { w: 5, h: 3 },
+  },
+  "share-link": {
+    id: "share-link",
+    title: "Share Link",
+    group: "Reports",
+    icon: Share2,
+    component: P("Share Link", "Scoped link generator with expiry."),
+    disabled: true,
+    defaultSize: { w: 5, h: 3 },
   },
 };
+
+export type WidgetId = keyof typeof widgetRegistry;

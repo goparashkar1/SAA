@@ -41,10 +41,8 @@ export default function WidgetSlot({ item }: WidgetSlotProps) {
 
   // Memoized lazy loading of the widget component using React.lazy()
   // This ensures the component import only happens once and is cached for performance
-  const LazyComponent = useMemo(() => React.lazy(config.import), [config]);
+  const Component = useMemo(() => config.component, [config]);
 
-  // Memoized merging of static props (from widget configuration) and runtime props
-  // This ensures props are only recalculated when either prop source changes
   const mergedProps = useMemo(
     () => ({
       ...(item.props ?? {}),        // Spread static props from widget configuration
@@ -61,17 +59,17 @@ export default function WidgetSlot({ item }: WidgetSlotProps) {
         type="button"
         onClick={() => closeWidget(item.i)} // Calls closeWidget with the widget's unique identifier
         className="absolute -top-2 -right-2 rounded-tr rounded-bl bg-red-500/80 px-2 py-1 text-white transition-colors hover:bg-red-500"
-        aria-label={"Close " + config.name + " widget"} // Accessibility label describing the button action
+        aria-label={"Close " + config.title + " widget"} // Accessibility label describing the button action
       >
         <X className="h-3 w-3" /> {/* Close icon */}
       </button>
-      
+
       {/* React Suspense boundary for handling lazy loading */}
       <Suspense fallback={spinner}> {/* Shows spinner while widget component is loading */}
         {/* Container to ensure the widget fills available space */}
         <div className="flex h-full flex-col">
-          {/* Render the lazily-loaded widget component with merged props */}
-          <LazyComponent {...mergedProps} />
+          {/* Render the widget component (may be lazy) with merged props */}
+          <Component {...mergedProps} />
         </div>
       </Suspense>
     </div>

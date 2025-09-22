@@ -40,6 +40,9 @@ import {
   ShieldCheck,
   History,
   BadgeDollarSign,
+  MessageSquare,
+  Plane,
+  Anchor,
 } from "lucide-react";
 import Divider from "./ui/Divider";
 
@@ -56,7 +59,9 @@ function MonitorIcon() {
 }
 
 type SidebarItem = { key: PanelKey; label: string; icon: React.ReactNode };
-type SidebarSubItem = { id: string; label: string; icon: React.ReactNode };
+type SidebarSubItem = { type?: "item"; id: string; label: string; icon: React.ReactNode };
+type SidebarGroup = { type: "group"; id: string; label: string; icon?: React.ReactNode; items: SidebarSubItem[] };
+type SidebarEntry = SidebarSubItem | SidebarGroup;
 
 // Primary navigation sections exposed in the sidebar
 const ITEMS: SidebarItem[] = [
@@ -68,52 +73,364 @@ const ITEMS: SidebarItem[] = [
   { key: "System", label: "System", icon: <Database className="h-5 w-5" /> },
 ];
 
-const LABEL_MAX_WIDTH = 200;
+const LABEL_MAX_WIDTH = 260;
+const GROUP_CONNECTOR_LEFT = "20px";
+const SUBGROUP_CONNECTOR_LEFT = "13px";
 
-const SUB_ITEMS: Partial<Record<PanelKey, SidebarSubItem[]>> = {
+const SUB_ITEMS: Partial<Record<PanelKey, SidebarEntry[]>> = {
   "Data Collection": [
-    { id: "web-crawler", label: "Web Crawler", icon: <Search className="h-4 w-4" /> },
-    { id: "news-feeds", label: "News Feeds", icon: <Rss className="h-4 w-4" /> },
-    { id: "social-media-monitor", label: "Social Media Monitor", icon: <Share2 className="h-4 w-4" /> },
-    { id: "dark-web-monitor", label: "Dak Web Monitor", icon: <Eye className="h-4 w-4" /> },
-    { id: "file-document-ingestion", label: "File & Document Ingestion", icon: <FileText className="h-4 w-4" /> },
-    { id: "geo-spatial-feeds", label: "Geo-Spatial Feeds", icon: <Map className="h-4 w-4" /> },
+    {
+      type: "group",
+      id: "web-news",
+      label: "Web & News Sources",
+      items: [
+        { id: "web-crawler", label: "Web Crawler", icon: <Search className="h-4 w-4" /> },
+        { id: "news-feeds", label: "News Feeds", icon: <Rss className="h-4 w-4" /> },
+        { id: "dark-web-monitor", label: "Dark Web Monitor", icon: <Eye className="h-4 w-4" /> },
+      ],
+    },
+    {
+      type: "group",
+      id: "social-open-web",
+      label: "Social & Open Web",
+      items: [
+        { id: "social-media-monitor", label: "Social Media Monitor", icon: <Share2 className="h-4 w-4" /> },
+        { id: "forums-blogs", label: "Forums & Blogs (future)", icon: <FileText className="h-4 w-4" /> },
+        { id: "messaging-platforms", label: "Messaging Platforms (future)", icon: <MessageSquare className="h-4 w-4" /> },
+      ],
+    },
+    {
+      type: "group",
+      id: "docs-files",
+      label: "Documents & Files",
+      items: [
+        { id: "file-document-ingestion", label: "File & Document Ingestion", icon: <FileText className="h-4 w-4" /> },
+        { id: "archive-repository-monitor", label: "Archive & Repository Monitor", icon: <History className="h-4 w-4" /> },
+      ],
+    },
+    {
+      type: "group",
+      id: "geo-tracking",
+      label: "Geo & Tracking",
+      items: [
+        { id: "geo-spatial-feeds", label: "Geo-Spatial Feeds", icon: <Map className="h-4 w-4" /> },
+        { id: "live-event-monitoring", label: "Live Event Monitoring", icon: <Activity className="h-4 w-4" /> },
+        { id: "flight-tracker", label: "Flight Tracker", icon: <Plane className="h-4 w-4" /> },
+        { id: "transit-monitoring", label: "Transit Monitoring", icon: <MapPin className="h-4 w-4" /> },
+        { id: "vessel-maritime-tracker", label: "Vessel / Maritime Tracker (future)", icon: <Anchor className="h-4 w-4" /> },
+      ],
+    },
   ],
   "Process & Enrichment": [
-    { id: "translation", label: "Translation", icon: <Languages className="h-4 w-4" /> },
-    { id: "transcription", label: "Transcription", icon: <AudioLines className="h-4 w-4" /> },
-    { id: "ocr", label: "OCR", icon: <Scan className="h-4 w-4" /> },
-    { id: "cleaning-deduplication", label: "Cleaning & Deduplication", icon: <Sparkles className="h-4 w-4" /> },
-    { id: "entity-extraction", label: "Entity Extraction", icon: <Tag className="h-4 w-4" /> },
-    { id: "sentiment-analysis", label: "Sentiment Analysis", icon: <Smile className="h-4 w-4" /> },
-    { id: "geolocation-mapping", label: "Geolocation & Mapping", icon: <MapPin className="h-4 w-4" /> },
+    {
+      type: "group",
+      id: "text-language",
+      label: "Text & Language Processing",
+      items: [
+        { id: "translation", label: "Translation", icon: <Languages className="h-4 w-4" /> },
+        { id: "transliteration", label: "Transliteration & Romanization", icon: <Languages className="h-4 w-4" /> },
+        { id: "lang-id", label: "Language Identification", icon: <Languages className="h-4 w-4" /> },
+        { id: "summarization", label: "Summarization", icon: <FileText className="h-4 w-4" /> },
+        { id: "style-transfer", label: "Paraphrase / Style Transfer", icon: <Sparkles className="h-4 w-4" /> },
+        { id: "keyword-extraction", label: "Keyword & Topic Extraction", icon: <Tag className="h-4 w-4" /> },
+      ],
+    },
+    {
+      type: "group",
+      id: "speech-av",
+      label: "Speech & A/V Processing",
+      items: [
+        { id: "transcription", label: "Transcription", icon: <AudioLines className="h-4 w-4" /> },
+        { id: "speaker-diarization", label: "Speaker Diarization", icon: <Users className="h-4 w-4" /> },
+        { id: "audio-lang-id", label: "Audio Language ID", icon: <AudioLines className="h-4 w-4" /> },
+        { id: "subtitle-alignment", label: "Subtitle Alignment & Captioning", icon: <ClipboardList className="h-4 w-4" /> },
+      ],
+    },
+    {
+      type: "group",
+      id: "document-visual",
+      label: "Document & Visual Text",
+      items: [
+        { id: "ocr", label: "OCR", icon: <Scan className="h-4 w-4" /> },
+        { id: "table-form-extraction", label: "Table & Form Extraction", icon: <ClipboardList className="h-4 w-4" /> },
+        { id: "layout-parsing", label: "Layout / Structure Parsing", icon: <LayoutDashboard className="h-4 w-4" /> },
+        { id: "doc-conversion", label: "Document Conversion (PDF/HTML/Text)", icon: <FileCode className="h-4 w-4" /> },
+      ],
+    },
+    {
+      type: "group",
+      id: "data-quality",
+      label: "Data Quality & Normalization",
+      items: [
+        { id: "clean-dedup", label: "Cleaning & Deduplication", icon: <Sparkles className="h-4 w-4" /> },
+        { id: "pii-redaction", label: "PII Detection & Redaction", icon: <Shield className="h-4 w-4" /> },
+        { id: "canonicalization", label: "Canonicalization (names, dates, units)", icon: <SlidersHorizontal className="h-4 w-4" /> },
+        { id: "fuzzy-dedup", label: "Fuzzy Dedup / Clustering", icon: <GitBranch className="h-4 w-4" /> },
+      ],
+    },
+    {
+      type: "group",
+      id: "entities-events",
+      label: "Entities, Events & Relations",
+      items: [
+        { id: "entity-extraction", label: "Entity Extraction", icon: <Tag className="h-4 w-4" /> },
+        { id: "entity-linking", label: "Entity Linking & Disambiguation", icon: <GitBranch className="h-4 w-4" /> },
+        { id: "event-extraction", label: "Event Extraction", icon: <Activity className="h-4 w-4" /> },
+        { id: "relation-extraction", label: "Relationship Extraction", icon: <GitBranch className="h-4 w-4" /> },
+        { id: "coref-resolution", label: "Coreference Resolution", icon: <Users className="h-4 w-4" /> },
+      ],
+    },
+    {
+      type: "group",
+      id: "sentiment-intent",
+      label: "Sentiment, Intent & Narrative",
+      items: [
+        { id: "sentiment-analysis", label: "Sentiment Analysis", icon: <Smile className="h-4 w-4" /> },
+        { id: "emotion-toxicity", label: "Emotion / Toxicity", icon: <AlertTriangle className="h-4 w-4" /> },
+        { id: "stance-propaganda", label: "Stance / Propaganda Indicators", icon: <Shield className="h-4 w-4" /> },
+        { id: "topic-modeling", label: "Topic Modeling", icon: <TrendingUp className="h-4 w-4" /> },
+      ],
+    },
+    {
+      type: "group",
+      id: "geospatial",
+      label: "Geospatial Enrichment",
+      items: [
+        { id: "geolocation-mapping", label: "Geolocation & Mapping", icon: <MapPin className="h-4 w-4" /> },
+        { id: "geocoding", label: "Geocoding / Reverse Geocoding", icon: <MapPin className="h-4 w-4" /> },
+        { id: "placename-disambig", label: "Place-name Disambiguation / Gazetteer Match", icon: <MapPin className="h-4 w-4" /> },
+        { id: "route-proximity", label: "Route / Proximity Analysis", icon: <Map className="h-4 w-4" /> },
+      ],
+    },
+    {
+      type: "group",
+      id: "indexing-embeddings",
+      label: "Indexing & Embeddings",
+      items: [
+        { id: "embeddings", label: "Vectorization / Embeddings", icon: <Sparkles className="h-4 w-4" /> },
+        { id: "chunking", label: "Chunking & Segmentation", icon: <ClipboardList className="h-4 w-4" /> },
+        { id: "search-index", label: "Search Index Build", icon: <Search className="h-4 w-4" /> },
+        { id: "taxonomy-tagging", label: "Taxonomy Tagging", icon: <Tag className="h-4 w-4" /> },
+      ],
+    },
+    {
+      type: "group",
+      id: "metadata-provenance",
+      label: "Metadata & Provenance",
+      items: [
+        { id: "metadata-extraction", label: "Metadata Extraction (EXIF/headers)", icon: <FileText className="h-4 w-4" /> },
+        { id: "source-fingerprint", label: "Source Fingerprint / Hash", icon: <History className="h-4 w-4" /> },
+        { id: "provenance-lineage", label: "Provenance & Lineage", icon: <ShieldCheck className="h-4 w-4" /> },
+      ],
+    },
   ],
   "Analysis & Detection": [
-    { id: "entity-graphs", label: "Entity Graphs", icon: <GitBranch className="h-4 w-4" /> },
-    { id: "threat-profiling", label: "Threat Profiling", icon: <Shield className="h-4 w-4" /> },
-    { id: "trend-forecasting", label: "Trend Forecasting", icon: <TrendingUp className="h-4 w-4" /> },
-    { id: "bot-detection", label: "Bot Detection", icon: <Bot className="h-4 w-4" /> },
-    { id: "image-video-forensics", label: "Image-Video Forensice", icon: <Camera className="h-4 w-4" /> },
-    { id: "anomaly-detection", label: "Anomaly Detection", icon: <AlertTriangle className="h-4 w-4" /> },
-    { id: "crypto-financial-analysis", label: "Crypto-Financial Analysis", icon: <Coins className="h-4 w-4" /> },
+    {
+      type: "group",
+      id: "graphs-networks",
+      label: "Graphs & Networks",
+      items: [
+        { id: "entity-graphs", label: "Entity Graphs", icon: <GitBranch className="h-4 w-4" /> },
+        { id: "community-detection", label: "Community Detection", icon: <GitBranch className="h-4 w-4" /> },
+        { id: "centrality-influence", label: "Centrality & Influence", icon: <GitBranch className="h-4 w-4" /> },
+        { id: "link-prediction", label: "Link Prediction", icon: <GitBranch className="h-4 w-4" /> },
+        { id: "kg-reasoning", label: "Knowledge-Graph Reasoning", icon: <GitBranch className="h-4 w-4" /> },
+      ],
+    },
+    {
+      type: "group",
+      id: "threat-intel-risk",
+      label: "Threat Intelligence & Risk",
+      items: [
+        { id: "threat-profiling", label: "Threat Profiling", icon: <Shield className="h-4 w-4" /> },
+        { id: "ttp-mapping", label: "TTP Mapping (ATT&CK)", icon: <Shield className="h-4 w-4" /> },
+        { id: "ioc-correlation", label: "IOC Correlation", icon: <AlertTriangle className="h-4 w-4" /> },
+        { id: "risk-scoring", label: "Risk Scoring", icon: <ShieldCheck className="h-4 w-4" /> },
+        { id: "watchlist-matching", label: "Watchlist Matching", icon: <Shield className="h-4 w-4" /> },
+      ],
+    },
+    {
+      type: "group",
+      id: "time-series-forecasting",
+      label: "Time Series & Forecasting",
+      items: [
+        { id: "trend-forecasting", label: "Trend Forecasting", icon: <TrendingUp className="h-4 w-4" /> },
+        { id: "nowcasting-spikes", label: "Nowcasting & Spikes", icon: <Activity className="h-4 w-4" /> },
+        { id: "seasonality-decomp", label: "Seasonality / Decomposition", icon: <LineChart className="h-4 w-4" /> },
+        { id: "change-point", label: "Change Point Detection", icon: <LineChart className="h-4 w-4" /> },
+      ],
+    },
+    {
+      type: "group",
+      id: "behavioral-bot",
+      label: "Behavioral & Bot Analytics",
+      items: [
+        { id: "bot-detection", label: "Bot Detection", icon: <Bot className="h-4 w-4" /> },
+        { id: "cib-detection", label: "Coordinated Inauthentic Behavior", icon: <Users className="h-4 w-4" /> },
+        { id: "sockpuppet-clusters", label: "Sockpuppet Clusters", icon: <Users className="h-4 w-4" /> },
+        { id: "automation-fingerprints", label: "Automation Fingerprints", icon: <Bot className="h-4 w-4" /> },
+      ],
+    },
+    {
+      type: "group",
+      id: "media-forensics",
+      label: "Media Forensics",
+      items: [
+        { id: "image-video-forensics", label: "Image-Video Forensics", icon: <Camera className="h-4 w-4" /> },
+        { id: "deepfake-detection", label: "Deepfake Detection", icon: <Camera className="h-4 w-4" /> },
+        { id: "metadata-forensics", label: "Metadata Forensics", icon: <FileText className="h-4 w-4" /> },
+        { id: "geo-chrono-locate", label: "Geo/Chrono-Location", icon: <Map className="h-4 w-4" /> },
+      ],
+    },
+    {
+      type: "group",
+      id: "anomaly-outliers",
+      label: "Anomaly & Outliers",
+      items: [
+        { id: "anomaly-detection", label: "Anomaly Detection", icon: <AlertTriangle className="h-4 w-4" /> },
+        { id: "fraud-abuse", label: "Fraud & Abuse Signals", icon: <AlertTriangle className="h-4 w-4" /> },
+        { id: "rare-event-mining", label: "Rare-Event Mining", icon: <Search className="h-4 w-4" /> },
+        { id: "outlier-explainer", label: "Outlier Explainer", icon: <Search className="h-4 w-4" /> },
+      ],
+    },
+    {
+      type: "group",
+      id: "crypto-finint",
+      label: "Crypto / Financial Intelligence",
+      items: [
+        { id: "crypto-financial-analysis", label: "Crypto-Financial Analysis", icon: <Coins className="h-4 w-4" /> },
+        { id: "address-clustering", label: "Address Clustering", icon: <GitBranch className="h-4 w-4" /> },
+        { id: "flow-tracing", label: "Flow Tracing", icon: <Activity className="h-4 w-4" /> },
+        { id: "sanctions-exposure", label: "Sanctions Exposure", icon: <ShieldCheck className="h-4 w-4" /> },
+      ],
+    },
   ],
   "Report & Share": [
-    { id: "daily-briefs", label: "Daily Briefs", icon: <Calendar className="h-4 w-4" /> },
-    { id: "custom-reports", label: "Custom Reports", icon: <ClipboardList className="h-4 w-4" /> },
-    { id: "dashboards", label: "Dashboards", icon: <LayoutDashboard className="h-4 w-4" /> },
-    { id: "alerts-notifications", label: "Alerts & Notifications", icon: <Megaphone className="h-4 w-4" /> },
-    { id: "collaboration-tools", label: "Collaboration Tools", icon: <Users className="h-4 w-4" /> },
-    { id: "export-api", label: "Export & API", icon: <CloudDownload className="h-4 w-4" /> },
+    {
+      type: "group",
+      id: "briefings-reports",
+      label: "Briefings & Reports",
+      items: [
+        { id: "daily-briefs", label: "Daily Briefs", icon: <Calendar className="h-4 w-4" /> },
+        { id: "custom-reports", label: "Custom Reports", icon: <ClipboardList className="h-4 w-4" /> },
+        { id: "scheduled-reports", label: "Scheduled Reports", icon: <Calendar className="h-4 w-4" /> },
+        { id: "templates-branding", label: "Templates & Branding", icon: <FileText className="h-4 w-4" /> },
+        { id: "publishing-approvals", label: "Publishing Queue & Approvals", icon: <ShieldCheck className="h-4 w-4" /> },
+      ],
+    },
+    {
+      type: "group",
+      id: "dashboards-storyboards",
+      label: "Dashboards & Storyboards",
+      items: [
+        { id: "dashboards", label: "Dashboards", icon: <LayoutDashboard className="h-4 w-4" /> },
+        { id: "storyboards", label: "Storyboards / Narratives", icon: <Newspaper className="h-4 w-4" /> },
+        { id: "snapshot-versioning", label: "Snapshot & Versioning", icon: <History className="h-4 w-4" /> },
+        { id: "embeds-share", label: "Embeds & Share Links", icon: <Share2 className="h-4 w-4" /> },
+        { id: "widget-library", label: "KPI & Widget Library", icon: <Sparkles className="h-4 w-4" /> },
+      ],
+    },
+    {
+      type: "group",
+      id: "alerts-notifications",
+      label: "Alerts & Notifications",
+      items: [
+        { id: "alerts-notifications", label: "Alerts & Notifications", icon: <Megaphone className="h-4 w-4" /> },
+        { id: "rule-triggers", label: "Threshold & Rule Triggers", icon: <AlertTriangle className="h-4 w-4" /> },
+        { id: "digests-summaries", label: "Digests & Summaries", icon: <FileText className="h-4 w-4" /> },
+        { id: "channel-delivery", label: "Channel Delivery (Email/Slack/Teams)", icon: <Share2 className="h-4 w-4" /> },
+        { id: "geofence-topic-watchers", label: "Geofence & Topic Watchers", icon: <MapPin className="h-4 w-4" /> },
+      ],
+    },
+    {
+      type: "group",
+      id: "collaboration-workflow",
+      label: "Collaboration & Workflow",
+      items: [
+        { id: "collaboration-tools", label: "Collaboration Tools", icon: <Users className="h-4 w-4" /> },
+        { id: "comments-annotations", label: "Comments & Annotations", icon: <FileText className="h-4 w-4" /> },
+        { id: "tasks-assignments", label: "Tasks & Assignments", icon: <ClipboardList className="h-4 w-4" /> },
+        { id: "review-approval", label: "Review & Approval", icon: <ShieldCheck className="h-4 w-4" /> },
+        { id: "version-history", label: "Version History", icon: <History className="h-4 w-4" /> },
+        { id: "share-permissions", label: "Share Links & Permissions", icon: <Shield className="h-4 w-4" /> },
+      ],
+    },
+    {
+      type: "group",
+      id: "export-api",
+      label: "Export & API",
+      items: [
+        { id: "export-api", label: "Export & API", icon: <CloudDownload className="h-4 w-4" /> },
+        { id: "export-formats", label: "Export Formats (PDF/DOCX/CSV/JSON)", icon: <CloudDownload className="h-4 w-4" /> },
+        { id: "rest-api", label: "Programmatic Access (REST)", icon: <FileCode className="h-4 w-4" /> },
+        { id: "webhooks-callbacks", label: "Webhooks & Callbacks", icon: <Activity className="h-4 w-4" /> },
+        { id: "integrations", label: "External Integrations", icon: <Share2 className="h-4 w-4" /> },
+        { id: "data-feeds", label: "Data Feeds", icon: <Rss className="h-4 w-4" /> },
+        { id: "watermarking-classification", label: "Watermarking & Classification", icon: <Shield className="h-4 w-4" /> },
+      ],
+    },
   ],
   System: [
-    { id: "agent-management", label: "Agent Management", icon: <SettingsIcon className="h-4 w-4" /> },
-    { id: "user-access-control", label: "User & Access Control", icon: <ShieldCheck className="h-4 w-4" /> },
-    { id: "audit-logs", label: "Audit Logs", icon: <History className="h-4 w-4" /> },
-    { id: "api-management", label: "API Management", icon: <FileCode className="h-4 w-4" /> },
-    { id: "token-economy", label: "Token Economy", icon: <BadgeDollarSign className="h-4 w-4" /> },
-    { id: "system-health-performance", label: "System Performance", icon: <Activity className="h-4 w-4" /> },
-    { id: "security-compliance", label: "Security & Compliance", icon: <Shield className="h-4 w-4" /> },
-    { id: "customization", label: "Customization", icon: <SlidersHorizontal className="h-4 w-4" /> },
+    {
+      type: "group",
+      id: "platform-ops",
+      label: "Platform Ops & Observability",
+      items: [
+        { id: "system-health-performance", label: "System Performance", icon: <Activity className="h-4 w-4" /> },
+        { id: "health-metrics", label: "Health & Metrics", icon: <Activity className="h-4 w-4" /> },
+        { id: "audit-logs", label: "Audit Logs", icon: <History className="h-4 w-4" /> },
+        { id: "scheduler-queues", label: "Job Scheduler & Queues", icon: <Calendar className="h-4 w-4" /> },
+        { id: "backups-restore", label: "Backups & Restore", icon: <CloudDownload className="h-4 w-4" /> },
+        { id: "datastores-caches", label: "Data Stores & Caches", icon: <Database className="h-4 w-4" /> },
+      ],
+    },
+    {
+      type: "group",
+      id: "access-security",
+      label: "Access, Security & Compliance",
+      items: [
+        { id: "user-access-control", label: "User & Access Control", icon: <ShieldCheck className="h-4 w-4" /> },
+        { id: "security-compliance", label: "Security & Compliance", icon: <Shield className="h-4 w-4" /> },
+        { id: "secrets-keys", label: "Secrets & Keys", icon: <Shield className="h-4 w-4" /> },
+        { id: "sso-oauth", label: "SSO / OAuth", icon: <Users className="h-4 w-4" /> },
+        { id: "rate-limits", label: "Rate Limits & Throttling", icon: <AlertTriangle className="h-4 w-4" /> },
+      ],
+    },
+    {
+      type: "group",
+      id: "apis-integrations",
+      label: "APIs & Integrations",
+      items: [
+        { id: "api-management", label: "API Management", icon: <FileCode className="h-4 w-4" /> },
+        { id: "webhooks-callbacks", label: "Webhooks & Callbacks", icon: <Activity className="h-4 w-4" /> },
+        { id: "sdks-client-keys", label: "SDKs & Client Keys", icon: <FileCode className="h-4 w-4" /> },
+        { id: "external-integrations", label: "External Integrations", icon: <Share2 className="h-4 w-4" /> },
+      ],
+    },
+    {
+      type: "group",
+      id: "agents-models-billing",
+      label: "Agents, Models & Billing",
+      items: [
+        { id: "agent-management", label: "Agent Management", icon: <SettingsIcon className="h-4 w-4" /> },
+        { id: "token-economy", label: "Token Economy", icon: <BadgeDollarSign className="h-4 w-4" /> },
+        { id: "billing-quotas", label: "Billing & Quotas", icon: <BadgeDollarSign className="h-4 w-4" /> },
+        { id: "model-registry", label: "Model Registry & Keys", icon: <Sparkles className="h-4 w-4" /> },
+        { id: "runtime-sandboxes", label: "Runtime Sandboxes", icon: <Bot className="h-4 w-4" /> },
+      ],
+    },
+    {
+      type: "group",
+      id: "customization-workspace",
+      label: "Customization & Workspace",
+      items: [
+        { id: "customization", label: "Customization", icon: <SlidersHorizontal className="h-4 w-4" /> },
+        { id: "feature-flags", label: "Feature Flags", icon: <SlidersHorizontal className="h-4 w-4" /> },
+        { id: "localization", label: "Localization", icon: <Languages className="h-4 w-4" /> },
+        { id: "appearance-themes", label: "Appearance & Themes", icon: <SlidersHorizontal className="h-4 w-4" /> },
+        { id: "workspace-settings", label: "Tenant & Workspace Settings", icon: <Users className="h-4 w-4" /> },
+      ],
+    },
   ],
 };
 
@@ -131,6 +448,7 @@ export default function Sidebar({
   // Track expanded accordion group and active submenu selection
   const [openGroup, setOpenGroup] = React.useState<PanelKey | null>(null);
   const [activeSub, setActiveSub] = React.useState<Partial<Record<PanelKey, string | null>>>({});
+  const [openSubGroups, setOpenSubGroups] = React.useState<Record<string, boolean>>({});
 
   // Reset expanded groups when the sidebar collapses
   React.useEffect(() => {
@@ -141,7 +459,7 @@ export default function Sidebar({
   return (
     <aside
       className={
-        (collapsed ? "w-[64px]" : "w-[252px]") +
+        (collapsed ? "w-[64px]" : "w-[320px]") +
         " relative shrink-0 h-full bg-[#263B4C]/65 shadow-[4px_4px_4px_rgba(0,0,0,0.25)] text-white transition-[width] duration-200"
       }
     >
@@ -166,7 +484,7 @@ export default function Sidebar({
         {/* Top divider under logo: thicker, more solid, harmonized with item dividers */}
         {!collapsed ? (
           <div className="w-full flex justify-center mt-1 mb-2">
-            <div className="relative w-[204px] h-[14px]">
+            <div className="relative w-[260px] h-[14px]">
               {/* Base bright line */}
               <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[3px] bg-gradient-to-r from-transparent via-white/40 to-transparent" />
               {/* Cyan core for a more solid feel */}
@@ -201,29 +519,69 @@ export default function Sidebar({
                 ariaExpanded={openGroup === it.key}
               />
 
-              {!collapsed && openGroup === it.key && subItems.length > 0 && (
-                <div className="relative w-full flex flex-col items-start gap-2 pl-6">
+              {!collapsed && subItems.length > 0 && (
+                <div
+                  className={
+                    "relative w-full flex flex-col items-start gap-2 pl-6 transition-all duration-200 ease-in-out " +
+                    (openGroup === it.key
+                      ? "max-h-[480px] opacity-100 mt-2 overflow-y-auto pr-1"
+                      : "max-h-0 opacity-0 mt-0 pointer-events-none overflow-hidden")
+                  }
+                  aria-hidden={openGroup !== it.key}
+                >
                   {/* Vertical connector aligned to bullet centers */}
-                  <span className="pointer-events-none absolute left-[18px] top-3 bottom-3 w-px bg-white/15 z-0" />
-
-                  {subItems.map((sub) => (
-                    <SidebarSubPill
-                      key={sub.id}
-                      label={sub.label}
-                      icon={sub.icon}
-                      active={activeSub[it.key] === sub.id}
-                      onClick={() => {
-                        setActiveSub((s) => ({ ...s, [it.key]: sub.id }));
-                        onChange(it.key);
-                      }}
+                  {openGroup === it.key && (
+                    <span
+                      className="pointer-events-none absolute w-px bg-white/15 z-0"
+                      style={{ left: GROUP_CONNECTOR_LEFT, top: "12px", bottom: "12px" }}
                     />
-                  ))}
+                  )}
+
+                  {subItems.map((entry) => {
+                    if (entry.type === "group") {
+                      const groupKey = `${it.key}:${entry.id}`;
+                      return (
+                        <SidebarSubGroup
+                          key={entry.id}
+                          label={entry.label}
+                          icon={entry.icon}
+                          items={entry.items}
+                          open={Boolean(openSubGroups[groupKey])}
+                          onToggle={() => {
+                            setOpenSubGroups((current) => ({
+                              ...current,
+                              [groupKey]: !current[groupKey],
+                            }));
+                          }}
+                          activeId={activeSub[it.key] ?? null}
+                          onItemClick={(item) => {
+                            setActiveSub((s) => ({ ...s, [it.key]: item.id }));
+                            onChange(it.key);
+                          }}
+                        />
+                      );
+                    }
+
+                    const sub = entry as SidebarSubItem;
+                    return (
+                      <SidebarSubPill
+                        key={sub.id}
+                        label={sub.label}
+                        icon={sub.icon}
+                        active={activeSub[it.key] === sub.id}
+                        onClick={() => {
+                          setActiveSub((s) => ({ ...s, [it.key]: sub.id }));
+                          onChange(it.key);
+                        }}
+                      />
+                    );
+                  })}
                 </div>
               )}
 
               {!collapsed && idx < ITEMS.length - 1 && (
-                <div className="w-full flex justify-center my-0.5">
-                  <div className="relative w-[183px] h-[10px]">
+              <div className="w-full flex justify-center my-0.5">
+                  <div className="relative w-[240px] h-[10px]">
                     <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[2px] bg-gradient-to-r from-transparent via-white/25 to-transparent" />
                     <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[6px] w-14 rounded-full bg-cyan-400/25 blur-[10px]" />
                   </div>
@@ -238,7 +596,7 @@ export default function Sidebar({
           {!collapsed && (
             <>
               <div className="w-full flex justify-center my-1">
-                <div className="relative w-[183px] h-[10px]">
+                <div className="relative w-[240px] h-[10px]">
                   <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[2px] bg-gradient-to-r from-transparent via-white/25 to-transparent" />
                   <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[6px] w-14 rounded-full bg-cyan-400/25 blur-[10px]" />
                 </div>
@@ -307,6 +665,146 @@ function SidebarPill({
   );
 }
 
+// Expandable subgroup wrapper that nests additional sidebar pills
+function SidebarSubGroup({
+  label,
+  icon,
+  items,
+  open,
+  onToggle,
+  activeId,
+  onItemClick,
+}: {
+  label: string;
+  icon?: React.ReactNode;
+  items: SidebarSubItem[];
+  open: boolean;
+  onToggle: () => void;
+  activeId: string | null | undefined;
+  onItemClick: (item: SidebarSubItem) => void;
+}) {
+  const headerRef = React.useRef<HTMLDivElement>(null);
+  const childrenRef = React.useRef<HTMLDivElement>(null);
+  const hasActiveChild = React.useMemo(() => items.some((item) => item.id === activeId), [items, activeId]);
+
+  const focusChild = React.useCallback(
+    (position: "first" | "last") => {
+      const buttons = childrenRef.current?.querySelectorAll<HTMLDivElement>("[role='button']");
+      if (!buttons?.length) return;
+      const target = position === "first" ? buttons[0] : buttons[buttons.length - 1];
+      target?.focus();
+    },
+    []
+  );
+
+  const handleHeaderKeyDown = React.useCallback(
+    (e: React.KeyboardEvent<HTMLDivElement>) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        onToggle();
+        return;
+      }
+
+      if (!open || !items.length) return;
+
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        focusChild("first");
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        focusChild("last");
+      }
+    },
+    [focusChild, items, onToggle, open]
+  );
+
+  const handleChildAreaKeyDown = React.useCallback(
+    (e: React.KeyboardEvent<HTMLDivElement>) => {
+      if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
+
+      const buttons = childrenRef.current?.querySelectorAll<HTMLDivElement>("[role='button']");
+      if (!buttons?.length) return;
+
+      const targetIndex = Array.from(buttons).findIndex((btn) => btn === e.target);
+      if (targetIndex === -1) return;
+
+      e.preventDefault();
+
+      if (e.key === "ArrowDown") {
+        const next = buttons[targetIndex + 1] ?? buttons[targetIndex];
+        next?.focus();
+      } else {
+        if (targetIndex === 0) {
+          headerRef.current?.focus();
+        } else {
+          buttons[targetIndex - 1]?.focus();
+        }
+      }
+    },
+    [headerRef]
+  );
+
+  const highlight = open || hasActiveChild;
+
+  return (
+    <div className="w-full">
+      <div
+        ref={headerRef}
+        role="button"
+        tabIndex={0}
+        aria-expanded={open}
+        onClick={onToggle}
+        onKeyDown={handleHeaderKeyDown}
+        className={
+          "relative w-full h-8 rounded-md pr-3 pl-2 flex items-center justify-start gap-1.5 select-none cursor-pointer transition-colors duration-150 " +
+          (highlight
+            ? "bg-cyan-600/20 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.06),inset_-8px_0_16px-rgba(0,0,0,0.25)]"
+            : "text-white/90 hover:bg-white/10")
+        }
+      >
+        <span className="absolute -left-3 top-1/2 -translate-y-1/2 h-4 w-4 grid place-items-center text-white/80 transition-transform duration-200 z-10">
+          <ChevronRight
+            className={
+              "h-4 w-4 transition-transform duration-200" +
+              (open ? " rotate-90" : "")
+            }
+          />
+        </span>
+        {icon ? <span className="grid place-items-center h-4 w-4 shrink-0 opacity-90">{icon}</span> : null}
+        <span className="text-xs leading-tight whitespace-nowrap">{label}</span>
+      </div>
+
+      <div
+        ref={childrenRef}
+        onKeyDown={handleChildAreaKeyDown}
+        className={
+          "relative w-full pl-5 flex flex-col gap-2 overflow-hidden transition-all duration-200 ease-in-out " +
+          (open ? "max-h-[480px] opacity-100 mt-2" : "max-h-0 opacity-0 mt-0 pointer-events-none")
+        }
+        aria-hidden={!open}
+      >
+        {open && (
+          <span
+            className="pointer-events-none absolute w-px bg-white/15"
+            style={{ left: SUBGROUP_CONNECTOR_LEFT, top: "10px", height: "90px" }}
+          />
+        )}
+
+        {items.map((item) => (
+          <div key={item.id} className="relative">
+            <SidebarSubPill
+              label={item.label}
+              icon={item.icon}
+              active={activeId === item.id}
+              onClick={() => onItemClick(item)}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 // Nested submenu entry with bullet indicator and keyboard support
 function SidebarSubPill({
   label,
@@ -337,7 +835,7 @@ function SidebarSubPill({
       {/* Left bullet point (z-index raises it above the connector line) */}
       <span
         className={
-          "absolute -left-3 top-1/2 -translate-y-1/2 h-3 w-3 rounded-full border z-10 " +
+          "absolute -left-3 top-1/2 -translate-y-1/2 h-2.5 w-2.5 rounded-full border z-10 " +
           (active
             ? "border-cyan-300/70 bg-[#22d3ee]"
             : "border-white/40 bg-[#999999]")

@@ -1,15 +1,14 @@
 ﻿// Importing React and necessary hooks for state management and performance optimization
 import React, { useCallback, useMemo, useState } from "react";
-// Importing all icons from lucide-react library for dynamic icon rendering
 import * as Icons from "lucide-react";
-// Importing widget registry and type definition for widget identification
-import { widgetRegistry, type WidgetId } from "../../widgets/registry";
+import {
+  widgetRegistry,
+  type WidgetId,
+  type WidgetGroup,
+  type WidgetMeta,
+} from "../../widgets/registry";
 // Importing custom hook to access dashboard state management functions
 import { useDash } from "../../store/dashboard";
-
-// Creating a lookup table to map icon names from the registry to actual Lucide React components
-// This enables dynamic rendering of icons based on string identifiers stored in the registry
-const iconLookup = Icons as Record<string, React.ComponentType<{ className?: string }>>;
 
 // Modal component definition for displaying overlay content
 // Reusable modal wrapper with title, close functionality, and content area
@@ -53,12 +52,34 @@ export default function WidgetPalette() {
   const [isAddOpen, setAddOpen] = useState(false);
   const [selectedIds, setSelectedIds] = useState<WidgetId[]>([]);
 
-  // Memoized transformation of widget registry into array format for efficient rendering
-  // This optimization prevents unnecessary recalculations on each render
-  const registryEntries = useMemo(
-    () => Object.entries(widgetRegistry) as Array<[WidgetId, typeof widgetRegistry[WidgetId]]>,
-    [] // Empty dependency array ensures this only runs once
-  );
+  const groupedEntries = useMemo(() => {
+    const entries = Object.entries(widgetRegistry) as Array<[
+      WidgetId,
+      WidgetMeta
+    ]>;
+    const map = new Map<WidgetGroup, Array<[WidgetId, WidgetMeta]>>();
+    for (const entry of entries) {
+      const [id, meta] = entry;
+      const groupEntries = map.get(meta.group) ?? [];
+      groupEntries.push([id, meta]);
+      map.set(meta.group, groupEntries);
+    }
+    return Array.from(map.entries())
+      .sort((a, b) => a[0].localeCompare(b[0]))
+      .map(([group, items]) => [
+        group,
+        items.sort((a, b) => a[1].title.localeCompare(b[1].title)),
+      ] as [WidgetGroup, Array<[WidgetId, WidgetMeta]>]);
+  }, []);
+
+  const [collapsedGroups, setCollapsedGroups] = useState<Partial<Record<WidgetGroup, boolean>>>({});
+
+  const toggleGroup = useCallback((group: WidgetGroup) => {
+    setCollapsedGroups((prev) => ({
+      ...prev,
+      [group]: !prev[group],
+    }));
+  }, []);
 
   // Callback function to open the modal and reset selection state
   const handleOpenModal = useCallback(() => {
@@ -114,37 +135,65 @@ export default function WidgetPalette() {
         <Modal title="Add widget" onClose={handleCloseModal}>
           <div className="space-y-3">
             {/* Grid layout for displaying available widgets */}
-            <div className="grid grid-cols-1 gap-2">
-              {registryEntries.map(([id, config]) => {
-                // Determine the appropriate icon component for this widget
-                const Icon = iconLookup[config.icon] ?? Icons.LayoutGrid;
-                // Check if this widget is currently selected
-                const isSelected = selectedIds.includes(id);
+            <div className="flex flex-col gap-3 max-h-[420px] overflow-y-auto pr-1">
+              {groupedEntries.map(([group, items]) => {
+                const isCollapsed = collapsedGroups[group] ?? false;
                 return (
-                  // Button for each widget that toggles its selection state
-                  <button
-                    key={id}
-                    type="button"
-                    onClick={() => toggleSelection(id)}
-                    className={
-                      "flex items-center justify-between rounded-md border px-3 py-2 text-left text-sm transition-colors " +
-                      (isSelected
-                        ? "border-cyan-300/60 bg-cyan-500/15 text-white" // Selected state styling
-                        : "border-white/10 bg-white/5 hover:bg-white/10 text-white") // Default state styling
-                    }
-                    aria-pressed={isSelected} // Accessibility attribute for selection state
-                  >
-                    <span className="flex items-center gap-2">
-                      <Icon className="h-4 w-4" />
-                      {config.name} {/* Display name from widget config */}
-                    </span>
-                    {/* Show checkmark for selected widgets, plus icon for unselected */}
-                    {isSelected ? (
-                      <Icons.Check className="h-4 w-4 text-cyan-300" />
-                    ) : (
-                      <Icons.Plus className="h-4 w-4 text-white/80" />
+                  <div key={group} className="rounded-md border border-white/10 bg-white/5">
+                    <button
+                      type="button"
+                      onClick={() => toggleGroup(group)}
+                      className="flex w-full items-center justify-between px-3 py-2 text-left text-sm font-semibold text-white transition-colors hover:bg-white/10"
+                      aria-expanded={!isCollapsed}
+                    >
+                      <span>{group}</span>
+                      <Icons.ChevronDown
+                        className={
+                          "h-4 w-4 transition-transform " +
+                          (isCollapsed ? "rotate-90" : "rotate-0")
+                        }
+                      />
+                    </button>
+                    {!isCollapsed && (
+                      <div className="flex flex-col divide-y divide-white/5">
+                        {items.map(([id, config]) => {
+                          const Icon = config.icon ?? Icons.LayoutGrid;
+                          const isSelected = selectedIds.includes(id);
+                          return (
+                            <button
+                              key={id}
+                              type="button"
+                              onClick={() => toggleSelection(id)}
+                              className={
+                                "flex items-center justify-between px-3 py-2 text-left text-sm transition-colors " +
+                                (isSelected
+                                  ? "bg-cyan-500/15 text-white"
+                                  : "hover:bg-white/10 text-white/90")
+                              }
+                              aria-pressed={isSelected}
+                            >
+                              <span className="flex items-center gap-2">
+                                <Icon className="h-4 w-4" />
+                                <span className="flex flex-col">
+                                  <span>{config.title}</span>
+                                  {config.disabled && (
+                                    <span className="text-[10px] uppercase tracking-wide text-white/60">
+                                      Placeholder
+                                    </span>
+                                  )}
+                                </span>
+                              </span>
+                              {isSelected ? (
+                                <Icons.Check className="h-4 w-4 text-cyan-300" />
+                              ) : (
+                                <Icons.Plus className="h-4 w-4 text-white/60" />
+                              )}
+                            </button>
+                          );
+                        })}
+                      </div>
                     )}
-                  </button>
+                  </div>
                 );
               })}
             </div>
