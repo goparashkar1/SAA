@@ -1,5 +1,5 @@
 ﻿// Importing React and necessary hooks for state management and performance optimization
-import React, { useCallback, useMemo, useState } from "react";
+import React, { useCallback, useMemo, useRef, useState } from "react";
 import * as Icons from "lucide-react";
 import {
   widgetRegistry,
@@ -9,6 +9,11 @@ import {
 } from "../../widgets/registry";
 // Importing custom hook to access dashboard state management functions
 import { useDash } from "../../store/dashboard";
+import SaveLayoutModal from "../layouts/SaveLayoutModal";
+import LoadLayoutModal from "../layouts/LoadLayoutModal";
+import ManageLayoutsModal from "../layouts/ManageLayoutsModal";
+import { serializeLayout } from "../../lib/layouts/serialize";
+import type { PlacedWidget } from "../../lib/layouts/types";
 
 // Modal component definition for displaying overlay content
 // Reusable modal wrapper with title, close functionality, and content area
@@ -47,10 +52,18 @@ export default function WidgetPalette() {
   // Accessing dashboard state management functions from the store
   const addWidget = useDash((state) => state.addWidget);
   const reset = useDash((state) => state.reset);
+  const importLayoutFromFile = useDash((state) => state.importLayoutFromFile);
+  const layout = useDash((state) => state.layout);
 
   // State management for modal visibility and selected widget IDs
   const [isAddOpen, setAddOpen] = useState(false);
   const [selectedIds, setSelectedIds] = useState<WidgetId[]>([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [layoutsMenuOpen, setLayoutsMenuOpen] = useState(false);
+  const [isSaveOpen, setSaveOpen] = useState(false);
+  const [isLoadOpen, setLoadOpen] = useState(false);
+  const [isManageOpen, setManageOpen] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   const groupedEntries = useMemo(() => {
     const entries = Object.entries(widgetRegistry) as Array<[
@@ -73,6 +86,20 @@ export default function WidgetPalette() {
   }, []);
 
   const [collapsedGroups, setCollapsedGroups] = useState<Partial<Record<WidgetGroup, boolean>>>({});
+  const searchValue = searchTerm.trim().toLowerCase();
+
+  const filteredGroups = useMemo(() => {
+    return groupedEntries
+      .map(([group, items]) => {
+        const visibleItems = searchValue
+          ? items.filter(([, meta]) =>
+              meta.title.toLowerCase().includes(searchValue)
+            )
+          : items;
+        return [group, visibleItems] as [WidgetGroup, Array<[WidgetId, WidgetMeta]>];
+      })
+      .filter(([, items]) => items.length > 0);
+  }, [groupedEntries, searchValue]);
 
   const toggleGroup = useCallback((group: WidgetGroup) => {
     setCollapsedGroups((prev) => ({
@@ -110,8 +137,75 @@ export default function WidgetPalette() {
     setAddOpen(false); // Close the modal
   }, [addWidget, selectedIds]); // Dependencies for the callback
 
+  const currentSnapshot: PlacedWidget[] = useMemo(
+    () =>
+      layout
+        .slice()
+        .sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
+        .map((item, idx) => ({
+          id: item.widgetId,
+          instanceId: item.instanceId ?? item.i,
+          title: item.title,
+          props: item.props ?? {},
+          order: item.order ?? idx,
+          x: item.x,
+          y: item.y,
+          w: item.w,
+          h: item.h,
+        })),
+    [layout]
+  );
+
+  const handleExportCurrent = useCallback(() => {
+    const defaultName = `dashboard-${new Date().toISOString().slice(0, 19)}`;
+    const name = window.prompt("Export current layout as:", defaultName);
+    if (!name) return;
+    const payload = serializeLayout(name, currentSnapshot);
+    const blob = new Blob([JSON.stringify(payload, null, 2)], {
+      type: "application/json",
+    });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `${name}.micr_layout.json`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  }, [currentSnapshot]);
+
+  const handleImportClick = useCallback(() => {
+    fileInputRef.current?.click();
+  }, []);
+
+  const handleImportChange = useCallback(
+    async (event: React.ChangeEvent<HTMLInputElement>) => {
+      const file = event.target.files?.[0];
+      if (!file) return;
+      try {
+        const importedName = await importLayoutFromFile(file, false);
+        window.alert(
+          importedName
+            ? `Imported layout "${importedName}"`
+            : `Imported layout from ${file.name}`
+        );
+      } catch (err) {
+        console.warn(err);
+        const message = err instanceof Error ? err.message : "";
+        if (message === "UNSUPPORTED_VERSION") {
+          window.alert("Layout file version not supported.");
+        } else {
+          window.alert("Failed to import layout. Check the file format.");
+        }
+      } finally {
+        event.target.value = "";
+      }
+    },
+    [importLayoutFromFile]
+  );
+
   return (
-    <div className="flex flex-wrap gap-3">
+    <div className="flex flex-wrap items-center gap-3">
       {/* Button to open the widget addition modal */}
       <button
         type="button"
@@ -130,19 +224,108 @@ export default function WidgetPalette() {
         <Icons.RotateCcw className="h-4 w-4" /> Reset
       </button>
 
+      <div className="relative">
+        <button
+          type="button"
+          onClick={() => setLayoutsMenuOpen((prev) => !prev)}
+          className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-white/10"
+        >
+          <Icons.LayoutGrid className="h-4 w-4" /> Layouts
+          <Icons.ChevronDown
+            className={
+              "h-4 w-4 transition-transform " +
+              (layoutsMenuOpen ? "rotate-180" : "rotate-0")
+            }
+          />
+        </button>
+        {layoutsMenuOpen && (
+          <div className="absolute z-40 mt-2 w-56 rounded-md border border-white/10 bg-slate-900/95 py-2 text-sm shadow-xl">
+            <button
+              type="button"
+              className="flex w-full items-center gap-2 px-3 py-2 text-left text-white/90 hover:bg-white/10"
+              onClick={() => {
+                setLayoutsMenuOpen(false);
+                setSaveOpen(true);
+              }}
+            >
+              <Icons.Save className="h-4 w-4" /> Save as…
+            </button>
+            <button
+              type="button"
+              className="flex w-full items-center gap-2 px-3 py-2 text-left text-white/90 hover:bg-white/10"
+              onClick={() => {
+                setLayoutsMenuOpen(false);
+                setLoadOpen(true);
+              }}
+            >
+              <Icons.DownloadCloud className="h-4 w-4" /> Load…
+            </button>
+            <button
+              type="button"
+              className="flex w-full items-center gap-2 px-3 py-2 text-left text-white/90 hover:bg-white/10"
+              onClick={() => {
+                setLayoutsMenuOpen(false);
+                setManageOpen(true);
+              }}
+            >
+              <Icons.Settings className="h-4 w-4" /> Manage…
+            </button>
+            <div className="my-1 border-t border-white/10" />
+            <button
+              type="button"
+              className="flex w-full items-center gap-2 px-3 py-2 text-left text-white/90 hover:bg-white/10"
+              onClick={() => {
+                setLayoutsMenuOpen(false);
+                handleExportCurrent();
+              }}
+            >
+              <Icons.Download className="h-4 w-4" /> Export current…
+            </button>
+            <button
+              type="button"
+              className="flex w-full items-center gap-2 px-3 py-2 text-left text-white/90 hover:bg-white/10"
+              onClick={() => {
+                setLayoutsMenuOpen(false);
+                handleImportClick();
+              }}
+            >
+              <Icons.Upload className="h-4 w-4" /> Import…
+            </button>
+          </div>
+        )}
+      </div>
+
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept="application/json"
+        onChange={handleImportChange}
+        className="hidden"
+      />
+
       {/* Conditionally render the modal when isAddOpen is true */}
       {isAddOpen && (
         <Modal title="Add widget" onClose={handleCloseModal}>
           <div className="space-y-3">
             {/* Grid layout for displaying available widgets */}
-            <div className="flex flex-col gap-3 max-h-[420px] overflow-y-auto pr-1">
-              {groupedEntries.map(([group, items]) => {
-                const isCollapsed = collapsedGroups[group] ?? false;
-                return (
-                  <div key={group} className="rounded-md border border-white/10 bg-white/5">
-                    <button
-                      type="button"
-                      onClick={() => toggleGroup(group)}
+            <div className="flex flex-col gap-2">
+              <input
+                type="text"
+                value={searchTerm}
+                onChange={(event) => setSearchTerm(event.target.value)}
+                placeholder="Search widgets"
+                className="w-full rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder:text-white/40 focus:border-cyan-400 focus:outline-none"
+              />
+              <div className="flex flex-col gap-3 max-h-[420px] overflow-y-auto pr-1">
+                {filteredGroups.map(([group, items]) => {
+                  const isCollapsed = searchValue
+                    ? false
+                    : collapsedGroups[group] ?? false;
+                  return (
+                    <div key={group} className="rounded-md border border-white/10 bg-white/5">
+                      <button
+                        type="button"
+                        onClick={() => toggleGroup(group)}
                       className="flex w-full items-center justify-between px-3 py-2 text-left text-sm font-semibold text-white transition-colors hover:bg-white/10"
                       aria-expanded={!isCollapsed}
                     >
@@ -194,8 +377,14 @@ export default function WidgetPalette() {
                       </div>
                     )}
                   </div>
-                );
-              })}
+                  );
+                })}
+                {filteredGroups.length === 0 && searchValue && (
+                  <div className="rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm text-white/60">
+                    No widgets match “{searchTerm}”.
+                  </div>
+                )}
+              </div>
             </div>
 
             {/* Footer section with selection count and action buttons */}
@@ -229,6 +418,19 @@ export default function WidgetPalette() {
           </div>
         </Modal>
       )}
+
+      <SaveLayoutModal
+        isOpen={isSaveOpen}
+        onClose={() => setSaveOpen(false)}
+      />
+      <LoadLayoutModal
+        isOpen={isLoadOpen}
+        onClose={() => setLoadOpen(false)}
+      />
+      <ManageLayoutsModal
+        isOpen={isManageOpen}
+        onClose={() => setManageOpen(false)}
+      />
     </div>
   );
 }
