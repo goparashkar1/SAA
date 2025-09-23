@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { PanelKey } from "../types";
 import {
   Search,
@@ -95,8 +95,8 @@ const SUB_ITEMS: Partial<Record<PanelKey, SidebarEntry[]>> = {
       label: "Social & Open Web",
       items: [
         { id: "social-media-monitor", label: "Social Media Monitor", icon: <Share2 className="h-4 w-4" /> },
-        { id: "forums-blogs", label: "Forums & Blogs (future)", icon: <FileText className="h-4 w-4" /> },
-        { id: "messaging-platforms", label: "Messaging Platforms (future)", icon: <MessageSquare className="h-4 w-4" /> },
+        { id: "forums-blogs", label: "Forums & Blogs", icon: <FileText className="h-4 w-4" /> },
+        { id: "messaging-platforms", label: "Messaging Platforms", icon: <MessageSquare className="h-4 w-4" /> },
       ],
     },
     {
@@ -117,7 +117,7 @@ const SUB_ITEMS: Partial<Record<PanelKey, SidebarEntry[]>> = {
         { id: "live-event-monitoring", label: "Live Event Monitoring", icon: <Activity className="h-4 w-4" /> },
         { id: "flight-tracker", label: "Flight Tracker", icon: <Plane className="h-4 w-4" /> },
         { id: "transit-monitoring", label: "Transit Monitoring", icon: <MapPin className="h-4 w-4" /> },
-        { id: "vessel-maritime-tracker", label: "Vessel / Maritime Tracker (future)", icon: <Anchor className="h-4 w-4" /> },
+        { id: "vessel-maritime-tracker", label: "Vessel / Maritime Tracker", icon: <Anchor className="h-4 w-4" /> },
       ],
     },
   ],
@@ -143,7 +143,7 @@ const SUB_ITEMS: Partial<Record<PanelKey, SidebarEntry[]>> = {
         { id: "transcription", label: "Transcription", icon: <AudioLines className="h-4 w-4" /> },
         { id: "speaker-diarization", label: "Speaker Diarization", icon: <Users className="h-4 w-4" /> },
         { id: "audio-lang-id", label: "Audio Language ID", icon: <AudioLines className="h-4 w-4" /> },
-        { id: "subtitle-alignment", label: "Subtitle Alignment & Captioning", icon: <ClipboardList className="h-4 w-4" /> },
+        { id: "subtitle-alignment", label: "Subtitle Alignment", icon: <ClipboardList className="h-4 w-4" /> },
       ],
     },
     {
@@ -154,7 +154,7 @@ const SUB_ITEMS: Partial<Record<PanelKey, SidebarEntry[]>> = {
         { id: "ocr", label: "OCR", icon: <Scan className="h-4 w-4" /> },
         { id: "table-form-extraction", label: "Table & Form Extraction", icon: <ClipboardList className="h-4 w-4" /> },
         { id: "layout-parsing", label: "Layout / Structure Parsing", icon: <LayoutDashboard className="h-4 w-4" /> },
-        { id: "doc-conversion", label: "Document Conversion (PDF/HTML/Text)", icon: <FileCode className="h-4 w-4" /> },
+        { id: "doc-conversion", label: "Document Conversion", icon: <FileCode className="h-4 w-4" /> },
       ],
     },
     {
@@ -164,8 +164,8 @@ const SUB_ITEMS: Partial<Record<PanelKey, SidebarEntry[]>> = {
       items: [
         { id: "clean-dedup", label: "Cleaning & Deduplication", icon: <Sparkles className="h-4 w-4" /> },
         { id: "pii-redaction", label: "PII Detection & Redaction", icon: <Shield className="h-4 w-4" /> },
-        { id: "canonicalization", label: "Canonicalization (names, dates, units)", icon: <SlidersHorizontal className="h-4 w-4" /> },
-        { id: "fuzzy-dedup", label: "Fuzzy Dedup / Clustering", icon: <GitBranch className="h-4 w-4" /> },
+        { id: "canonicalization", label: "Canonicalization", icon: <SlidersHorizontal className="h-4 w-4" /> },
+        { id: "fuzzy-dedup", label: "Clustering", icon: <GitBranch className="h-4 w-4" /> },
       ],
     },
     {
@@ -187,7 +187,7 @@ const SUB_ITEMS: Partial<Record<PanelKey, SidebarEntry[]>> = {
       items: [
         { id: "sentiment-analysis", label: "Sentiment Analysis", icon: <Smile className="h-4 w-4" /> },
         { id: "emotion-toxicity", label: "Emotion / Toxicity", icon: <AlertTriangle className="h-4 w-4" /> },
-        { id: "stance-propaganda", label: "Stance / Propaganda Indicators", icon: <Shield className="h-4 w-4" /> },
+        { id: "stance-propaganda", label: "Stance / Propaganda", icon: <Shield className="h-4 w-4" /> },
         { id: "topic-modeling", label: "Topic Modeling", icon: <TrendingUp className="h-4 w-4" /> },
       ],
     },
@@ -198,7 +198,7 @@ const SUB_ITEMS: Partial<Record<PanelKey, SidebarEntry[]>> = {
       items: [
         { id: "geolocation-mapping", label: "Geolocation & Mapping", icon: <MapPin className="h-4 w-4" /> },
         { id: "geocoding", label: "Geocoding / Reverse Geocoding", icon: <MapPin className="h-4 w-4" /> },
-        { id: "placename-disambig", label: "Place-name Disambiguation / Gazetteer Match", icon: <MapPin className="h-4 w-4" /> },
+        { id: "placename-disambig", label: "Disambiguation", icon: <MapPin className="h-4 w-4" /> },
         { id: "route-proximity", label: "Route / Proximity Analysis", icon: <Map className="h-4 w-4" /> },
       ],
     },
@@ -218,8 +218,8 @@ const SUB_ITEMS: Partial<Record<PanelKey, SidebarEntry[]>> = {
       id: "metadata-provenance",
       label: "Metadata & Provenance",
       items: [
-        { id: "metadata-extraction", label: "Metadata Extraction (EXIF/headers)", icon: <FileText className="h-4 w-4" /> },
-        { id: "source-fingerprint", label: "Source Fingerprint / Hash", icon: <History className="h-4 w-4" /> },
+        { id: "metadata-extraction", label: "Metadata Extraction", icon: <FileText className="h-4 w-4" /> },
+        { id: "source-fingerprint", label: "Source Fingerprint", icon: <History className="h-4 w-4" /> },
         { id: "provenance-lineage", label: "Provenance & Lineage", icon: <ShieldCheck className="h-4 w-4" /> },
       ],
     },
@@ -338,7 +338,7 @@ const SUB_ITEMS: Partial<Record<PanelKey, SidebarEntry[]>> = {
         { id: "alerts-notifications", label: "Alerts & Notifications", icon: <Megaphone className="h-4 w-4" /> },
         { id: "rule-triggers", label: "Threshold & Rule Triggers", icon: <AlertTriangle className="h-4 w-4" /> },
         { id: "digests-summaries", label: "Digests & Summaries", icon: <FileText className="h-4 w-4" /> },
-        { id: "channel-delivery", label: "Channel Delivery (Email/Slack/Teams)", icon: <Share2 className="h-4 w-4" /> },
+        { id: "channel-delivery", label: "Channel Delivery", icon: <Share2 className="h-4 w-4" /> },
         { id: "geofence-topic-watchers", label: "Geofence & Topic Watchers", icon: <MapPin className="h-4 w-4" /> },
       ],
     },
@@ -361,7 +361,7 @@ const SUB_ITEMS: Partial<Record<PanelKey, SidebarEntry[]>> = {
       label: "Export & API",
       items: [
         { id: "export-api", label: "Export & API", icon: <CloudDownload className="h-4 w-4" /> },
-        { id: "export-formats", label: "Export Formats (PDF/DOCX/CSV/JSON)", icon: <CloudDownload className="h-4 w-4" /> },
+        { id: "export-formats", label: "Export Formats", icon: <CloudDownload className="h-4 w-4" /> },
         { id: "rest-api", label: "Programmatic Access (REST)", icon: <FileCode className="h-4 w-4" /> },
         { id: "webhooks-callbacks", label: "Webhooks & Callbacks", icon: <Activity className="h-4 w-4" /> },
         { id: "integrations", label: "External Integrations", icon: <Share2 className="h-4 w-4" /> },
@@ -449,6 +449,23 @@ export default function Sidebar({
   const [openGroup, setOpenGroup] = React.useState<PanelKey | null>(null);
   const [activeSub, setActiveSub] = React.useState<Partial<Record<PanelKey, string | null>>>({});
   const [openSubGroups, setOpenSubGroups] = React.useState<Record<string, boolean>>({});
+
+  const ItemDivider = React.useCallback(
+    ({ inset = "0" }: { inset?: string }) => (
+      <div className="w-full flex justify-center my-0.5 transition-all duration-200 ease-in-out">
+        <div
+          className={`relative h-[10px] transition-all duration-200 ease-in-out ${
+            collapsed ? "w-10" : "w-[240px]"
+          }`}
+          style={{ insetInline: inset }}
+        >
+          <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[2px] bg-gradient-to-r from-transparent via-white/25 to-transparent" />
+          <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[6px] w-14 rounded-full bg-cyan-400/25 blur-[10px]" />
+        </div>
+      </div>
+    ),
+    [collapsed]
+  );
 
   // Reset expanded groups when the sidebar collapses
   React.useEffect(() => {
@@ -579,35 +596,21 @@ export default function Sidebar({
                 </div>
               )}
 
-              {!collapsed && idx < ITEMS.length - 1 && (
-              <div className="w-full flex justify-center my-0.5">
-                  <div className="relative w-[240px] h-[10px]">
-                    <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[2px] bg-gradient-to-r from-transparent via-white/25 to-transparent" />
-                    <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[6px] w-14 rounded-full bg-cyan-400/25 blur-[10px]" />
-                  </div>
-                </div>
-              )}
+              {idx < ITEMS.length - 1 && <ItemDivider />}
             </React.Fragment>
           );
         })}
 
         {/* Footer utilities and branding */}
         <div className="mt-auto w-full pt-2">
+          <ItemDivider />
           {!collapsed && (
-            <>
-              <div className="w-full flex justify-center my-1">
-                <div className="relative w-[240px] h-[10px]">
-                  <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[2px] bg-gradient-to-r from-transparent via-white/25 to-transparent" />
-                  <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[6px] w-14 rounded-full bg-cyan-400/25 blur-[10px]" />
-                </div>
+            <div className="w-full flex justify-center">
+              <div className="pointer-events-none select-none text-center uppercase tracking-[0.25em] text-white/25 mt-2 leading-tight">
+                <div className="text-[8px] sm:text-[8px]">Powered by</div>
+                <div className="text-[10px] sm:text-xs mt-0.5">microsint</div>
               </div>
-              <div className="w-full flex justify-center">
-                <div className="pointer-events-none select-none text-center uppercase tracking-[0.25em] text-white/25 mt-2 leading-tight">
-                  <div className="text-[8px] sm:text-[8px]">Powered by</div>
-                  <div className="text-[10px] sm:text-xs mt-0.5">microsint</div>
-                </div>
-              </div>
-            </>
+            </div>
           )}
         </div>
       </div>
@@ -846,3 +849,7 @@ function SidebarSubPill({
     </div>
   );
 }
+
+
+
+

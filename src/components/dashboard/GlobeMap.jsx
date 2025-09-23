@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import Globe from "react-globe.gl";
 import { MapPin, X, Loader2, CloudOff } from "lucide-react";
@@ -233,3 +233,4 @@ const GlobeMap = ({ selectedRegion, onRegionSelect, onRemove }) => {
 };
 
 export default GlobeMap;  // Export the component for use in other files
+

@@ -47,11 +47,10 @@ const Modal: React.FC<{ title: string; onClose: () => void; children: React.Reac
   );
 };
 
-// Main WidgetPalette component that provides interface for adding widgets and resetting dashboard
+// Main WidgetPalette component that provides interface for adding widgets and managing saved layouts
 export default function WidgetPalette() {
   // Accessing dashboard state management functions from the store
   const addWidget = useDash((state) => state.addWidget);
-  const reset = useDash((state) => state.reset);
   const importLayoutFromFile = useDash((state) => state.importLayoutFromFile);
   const layout = useDash((state) => state.layout);
 
@@ -205,7 +204,7 @@ export default function WidgetPalette() {
   );
 
   return (
-    <div className="flex flex-wrap items-center gap-3">
+    <div className="flex flex-wrap items-center gap-2 md:gap-3">
       {/* Button to open the widget addition modal */}
       <button
         type="button"
@@ -215,14 +214,6 @@ export default function WidgetPalette() {
         <Icons.Plus className="h-4 w-4" /> Add widget
       </button>
 
-      {/* Button to reset the dashboard to its default state */}
-      <button
-        type="button"
-        onClick={() => reset()}
-        className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-white/10"
-      >
-        <Icons.RotateCcw className="h-4 w-4" /> Reset
-      </button>
 
       <div className="relative">
         <button
@@ -230,7 +221,7 @@ export default function WidgetPalette() {
           onClick={() => setLayoutsMenuOpen((prev) => !prev)}
           className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-white/10"
         >
-          <Icons.LayoutGrid className="h-4 w-4" /> Layouts
+          <Icons.SquareStack className="h-4 w-4" /> Layouts
           <Icons.ChevronDown
             className={
               "h-4 w-4 transition-transform " +
@@ -248,7 +239,7 @@ export default function WidgetPalette() {
                 setSaveOpen(true);
               }}
             >
-              <Icons.Save className="h-4 w-4" /> Save as…
+              <Icons.Save className="h-4 w-4" /> Save as
             </button>
             <button
               type="button"
@@ -258,7 +249,7 @@ export default function WidgetPalette() {
                 setLoadOpen(true);
               }}
             >
-              <Icons.DownloadCloud className="h-4 w-4" /> Load…
+              <Icons.DownloadCloud className="h-4 w-4" /> Load
             </button>
             <button
               type="button"
@@ -268,7 +259,7 @@ export default function WidgetPalette() {
                 setManageOpen(true);
               }}
             >
-              <Icons.Settings className="h-4 w-4" /> Manage…
+              <Icons.Settings className="h-4 w-4" /> Manage
             </button>
             <div className="my-1 border-t border-white/10" />
             <button
@@ -279,7 +270,7 @@ export default function WidgetPalette() {
                 handleExportCurrent();
               }}
             >
-              <Icons.Download className="h-4 w-4" /> Export current…
+              <Icons.Upload className="h-4 w-4" /> Export current
             </button>
             <button
               type="button"
@@ -289,7 +280,7 @@ export default function WidgetPalette() {
                 handleImportClick();
               }}
             >
-              <Icons.Upload className="h-4 w-4" /> Import…
+              <Icons.Download className="h-4 w-4" /> Import
             </button>
           </div>
         )}
@@ -434,3 +425,7 @@ export default function WidgetPalette() {
     </div>
   );
 }
+
+
+
+

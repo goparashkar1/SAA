@@ -1,4 +1,4 @@
-// Importing React and necessary hooks for state management, side effects, and DOM references
+﻿// Importing React and necessary hooks for state management, side effects, and DOM references
 import React, { useState, useEffect, useRef } from "react";
 // Importing various icons from lucide-react for header navigation elements
 import { Bell, Database, Settings, UserCircle2, Sun, Moon, Search } from "lucide-react";
@@ -7,7 +7,7 @@ import logo from "../assets/logo.png";
 
 // Main Header component with props for sidebar state management
 export default function Header({
-  sidebarCollapsed: _sidebarCollapsed,  // Destructured prop (currently unused but available for future expansion)
+  sidebarCollapsed, // Used to line the header logo up with the sidebar midpoint
   onToggleSidebar: _onToggleSidebar,    // Destructured prop (currently unused but available for future expansion)
 }: {
   sidebarCollapsed: boolean;   // Type definition for sidebar collapsed state
@@ -32,6 +32,9 @@ export default function Header({
   
   // Reference to store the interval ID for time updates (for cleanup)
   const timeIntervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Compute the current sidebar width so the logo aligns with its center point
+  const sidebarWidth = sidebarCollapsed ? 64 : 320;
 
   // Effect hook for setting up time updates and click-outside detection
   useEffect(() => {
@@ -106,12 +109,15 @@ export default function Header({
 
   return (
     // Header container with semi-transparent background and shadow
-    <header className="w-full bg-[#263B4C]/65 shadow-header px-4 py-1 text-white">
+    <header className="w-full bg-[#263B4C]/65 shadow-header pl-0 pr-4 py-1 text-white">
       {/* Inner container for header content with flex layout */}
       <div className="relative flex items-center justify-between gap-4">
-        {/* Logo Section - Fixed width container */}
-        <div className="w-[200px] flex-shrink-0 flex items-center">
-          <img src={logo} alt="Logo" className="h-10 w-auto object-contain" />
+        {/* Logo Section - Matches sidebar width to keep the mark centered */}
+        <div
+          className="flex-shrink-0 flex items-center justify-center transition-[width] duration-200"
+          style={{ width: sidebarWidth }}
+        >
+          <img src={logo} alt="Logo" className="h-14 max-w-full object-contain drop-shadow-[3px_4px_4px_rgba(0,0,0,0.25)]" />
         </div>
 
         {/* Date and Time Display - Centered with responsive design */}
@@ -248,3 +254,7 @@ function IconCircleButton({
     </button>
   );
 }
+
+
+
+
