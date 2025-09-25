@@ -1,4 +1,4 @@
-﻿// Importing React and necessary hooks for component lazy loading and memoization
+// Importing React and necessary hooks for component lazy loading and memoization
 import React, { Suspense, useMemo } from "react";
 // Importing specific icons from lucide-react for loading spinner and close button
 import { Loader2, X } from "lucide-react";
@@ -53,7 +53,7 @@ export default function WidgetSlot({ item }: WidgetSlotProps) {
 
   return (
     // Container for the widget with styling for glassmorphism effect
-    <div className="relative flex h-full flex-col rounded-lg border border-white/10 bg-white/5 backdrop-blur-sm shadow p-4">
+    <div className="widget-card relative flex h-full flex-col rounded-xl border border-white/25 bg-white/20 backdrop-blur-lg p-4 shadow-[0_18px_40px_rgba(12,24,36,0.45)] transition-all duration-200 ease-in-out">
       {/* Close button positioned absolutely in the top-right corner */}
       <button
         type="button"
@@ -75,3 +75,5 @@ export default function WidgetSlot({ item }: WidgetSlotProps) {
     </div>
   );
 }
+
+

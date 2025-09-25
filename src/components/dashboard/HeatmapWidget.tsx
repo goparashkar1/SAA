@@ -379,7 +379,7 @@ export default function HeatmapWidget() {
   }, [visibleEvents, selectedEvent]);
 
   return (
-    <div className="rounded-lg border border-white/10 bg-white/5 p-4 text-white shadow backdrop-blur-sm">
+    <div className="globe-fade flex h-full flex-col text-white">
       {/* Header conveys widget identity and dynamic zoom/event counts. */}
     <div className="mb-4 flex items-center justify-between">
         <div className="flex items-center gap-2">

@@ -1,4 +1,4 @@
-﻿import React, { useCallback, useMemo, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import { Languages, Sparkles } from "lucide-react";
 
 // TranslationWidget simulates a translation workspace with language detection heuristics and curated outputs.
@@ -146,7 +146,7 @@ export default function TranslationWidget() {
       </div>
 
       <div className="grid flex-1 gap-6 xl:grid-cols-2">
-        <section className="flex h-full flex-col gap-4 rounded-lg border border-white/10 bg-slate-950/60 p-4 shadow-inner">
+        <section className="flex h-full flex-col gap-4 p-4">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <label className="text-sm font-medium text-white/80" htmlFor="translation-source">
               Source text
@@ -172,7 +172,7 @@ export default function TranslationWidget() {
           </p>
         </section>
 
-        <section className="flex h-full flex-col gap-4 rounded-lg border border-white/10 bg-slate-950/60 p-4 shadow-inner">
+        <section className="flex h-full flex-col gap-4 p-4">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center gap-2">
               <label className="text-sm font-medium text-white/80" htmlFor="translation-target">
@@ -217,6 +217,7 @@ export default function TranslationWidget() {
     </div>
   );
 }
+
 
 
 

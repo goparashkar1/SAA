@@ -1,4 +1,5 @@
-﻿import React from "react";
+import React from "react";
+import CopilotDock from "./copilot/CopilotDock";
 import { PanelKey } from "../types";
 import {
   Search,
@@ -44,7 +45,6 @@ import {
   Plane,
   Anchor,
 } from "lucide-react";
-import Divider from "./ui/Divider";
 
 // Composite icon used for the monitoring menu badge
 function MonitorIcon() {
@@ -450,22 +450,6 @@ export default function Sidebar({
   const [activeSub, setActiveSub] = React.useState<Partial<Record<PanelKey, string | null>>>({});
   const [openSubGroups, setOpenSubGroups] = React.useState<Record<string, boolean>>({});
 
-  const ItemDivider = React.useCallback(
-    ({ inset = "0" }: { inset?: string }) => (
-      <div className="w-full flex justify-center my-0.5 transition-all duration-200 ease-in-out">
-        <div
-          className={`relative h-[10px] transition-all duration-200 ease-in-out ${
-            collapsed ? "w-10" : "w-[240px]"
-          }`}
-          style={{ insetInline: inset }}
-        >
-          <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[2px] bg-gradient-to-r from-transparent via-white/25 to-transparent" />
-          <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[6px] w-14 rounded-full bg-cyan-400/25 blur-[10px]" />
-        </div>
-      </div>
-    ),
-    [collapsed]
-  );
 
   // Reset expanded groups when the sidebar collapses
   React.useEffect(() => {
@@ -484,7 +468,7 @@ export default function Sidebar({
       <button
         type="button"
         onClick={onToggleCollapse}
-        className="absolute top-1/2 -translate-y-1/2 translate-x-1/2 right-0 z-10 h-9 w-9 rounded-md border border-white/10 bg-white/10 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/20 grid place-items-center shadow"
+        className="absolute top-1/2 -translate-y-1/2 translate-x-1/2 right-0 z-10 h-9 w-9 rounded-md border border-white/10 bg-white/10 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/20 grid place-items-center shadow transition-all duration-200 ease-in-out"
         aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
         title={collapsed ? "Expand" : "Collapse"}
       >
@@ -494,8 +478,8 @@ export default function Sidebar({
       {/* Scrollable navigation column */}
       <div
         className={
-          (collapsed ? "p-3" : "px-6 pt-3 pb-6") +
-          " h-full overflow-y-auto overflow-x-hidden flex flex-col items-center gap-3 sidebar-scroll"
+          (collapsed ? "py-3" : "pt-3 pb-6") +
+          " h-full overflow-y-auto overflow-x-hidden flex flex-col items-stretch gap-0 px-0 sidebar-scroll"
         }
       >
         {/* Top divider under logo: thicker, more solid, harmonized with item dividers */}
@@ -594,24 +578,11 @@ export default function Sidebar({
                     );
                   })}
                 </div>
-              )}
-
-              {idx < ITEMS.length - 1 && <ItemDivider />}
-            </React.Fragment>
+              )}            </React.Fragment>
           );
         })}
-
-        {/* Footer utilities and branding */}
-        <div className="mt-auto w-full pt-2">
-          <ItemDivider />
-          {!collapsed && (
-            <div className="w-full flex justify-center">
-              <div className="pointer-events-none select-none text-center uppercase tracking-[0.25em] text-white/25 mt-2 leading-tight">
-                <div className="text-[8px] sm:text-[8px]">Powered by</div>
-                <div className="text-[10px] sm:text-xs mt-0.5">microsint</div>
-              </div>
-            </div>
-          )}
+        <div className="mt-auto w-full border-t border-white/10 pt-3">
+          <CopilotDock collapsed={collapsed} />
         </div>
       </div>
     </aside>
@@ -634,34 +605,30 @@ function SidebarPill({
   ariaExpanded?: boolean;
   collapsed?: boolean;
 }) {
+  const labelStyle: React.CSSProperties = {
+    maxWidth: collapsed ? 0 : LABEL_MAX_WIDTH,
+    letterSpacing: "0.5px",
+    transition: "max-width 280ms ease, opacity 200ms ease, transform 200ms ease",
+    willChange: "max-width, opacity, transform",
+    opacity: collapsed ? 0 : 1,
+    transform: collapsed ? "translateX(-8px)" : "translateX(0)",
+    paddingLeft: collapsed ? 0 : 8,
+  };
+
   return (
     <button
       type="button"
       onClick={onClick}
-      className={
-        "relative inline-flex items-center overflow-hidden transition-colors duration-150 focus:outline-none text-white/90 border h-10 w-full rounded-md " +
-        (collapsed ? "justify-center px-0 gap-0 " : "justify-start px-2.5 gap-2 ") +
-        (active
-          ? " border-cyan-300/30 bg-cyan-600/20 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.06),inset_-8px_0_16px_rgba(0,0,0,0.25)]"
-          : " border-white/10 bg-white/5 hover:bg-white/10 text-white/90")
-      }
+      data-active={active ? "true" : undefined}
+      className={("sidebar-button relative grid h-10 w-full grid-cols-[48px_auto] items-center overflow-hidden border-t border-white/10 px-2 transition-all duration-200 ease-in-out focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-200/60 text-white/90 ") + (active ? "bg-cyan-600/20 text-white" : "bg-white/5")}
       aria-current={active ? "page" : undefined}
       aria-expanded={ariaExpanded}
       aria-label={collapsed ? label : undefined}
       title={collapsed ? label : undefined}
+      style={{ gridTemplateColumns: collapsed ? "48px 0fr" : "48px 1fr", columnGap: collapsed ? 0 : 0 }}
     >
-      {active && (
-        <span className="absolute right-0 top-0 bottom-0 w-1.5 bg-cyan-400/90 shadow-[0_0_8px_rgba(34,211,238,0.6)] rounded-r-md" />
-      )}
-      <span className="grid place-items-center h-5 w-5 shrink-0 opacity-90">{icon}</span>
-      <span
-        className={"text-[13px] leading-tight whitespace-nowrap overflow-hidden " + (collapsed ? "opacity-0" : "opacity-100")}
-        style={{
-          maxWidth: collapsed ? 0 : LABEL_MAX_WIDTH,
-          transition: "max-width 300ms ease-in-out, opacity 300ms ease-in-out",
-          willChange: "max-width, opacity",
-        }}
-      >
+      <span className="pointer-events-none flex h-5 w-5 items-center justify-center justify-self-center opacity-90">{icon}</span>
+      <span className="text-[13px] leading-tight whitespace-nowrap overflow-hidden justify-self-start" style={labelStyle}>
         {label}
       </span>
     </button>
@@ -756,14 +723,10 @@ function SidebarSubGroup({
         role="button"
         tabIndex={0}
         aria-expanded={open}
+        data-active={highlight ? "true" : undefined}
         onClick={onToggle}
         onKeyDown={handleHeaderKeyDown}
-        className={
-          "relative w-full h-8 rounded-md pr-3 pl-2 flex items-center justify-start gap-1.5 select-none cursor-pointer transition-colors duration-150 " +
-          (highlight
-            ? "bg-cyan-600/20 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.06),inset_-8px_0_16px-rgba(0,0,0,0.25)]"
-            : "text-white/90 hover:bg-white/10")
-        }
+        className={ "sidebar-button relative flex h-8 w-full items-center justify-start gap-1.5 px-2 text-white/90 border-t border-white/10 transition-all duration-200 ease-in-out focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-200/60 " + (highlight ? "bg-cyan-600/20 text-white" : "bg-white/5") }
       >
         <span className="absolute -left-3 top-1/2 -translate-y-1/2 h-4 w-4 grid place-items-center text-white/80 transition-transform duration-200 z-10">
           <ChevronRight
@@ -774,7 +737,12 @@ function SidebarSubGroup({
           />
         </span>
         {icon ? <span className="grid place-items-center h-4 w-4 shrink-0 opacity-90">{icon}</span> : null}
-        <span className="text-xs leading-tight whitespace-nowrap">{label}</span>
+        <span
+          className="text-xs leading-tight whitespace-nowrap"
+          style={{ letterSpacing: "0.5px" }}
+        >
+          {label}
+        </span>
       </div>
 
       <div
@@ -824,18 +792,13 @@ function SidebarSubPill({
     <div
       role="button"
       tabIndex={0}
+      data-active={active ? "true" : undefined}
       onClick={onClick}
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") onClick();
       }}
-      className={
-        "relative w-full h-8 rounded-md pr-3 pl-2 flex items-center justify-start gap-2 select-none cursor-pointer transition-colors duration-150 " +
-        (active
-          ? "bg-cyan-600/20 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.06),inset_-8px_0_16px-rgba(0,0,0,0.25)]"
-          : "text-white/90 hover:bg-white/10")
-      }
+      className={ "sidebar-button relative flex h-8 w-full items-center justify-start gap-2 px-2 select-none cursor-pointer border-t border-white/10 transition-all duration-200 ease-in-out text-white/90 focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-200/60 " + (active ? "bg-cyan-600/20 text-white" : "bg-white/5") }
     >
-      {/* Left bullet point (z-index raises it above the connector line) */}
       <span
         className={
           "absolute -left-3 top-1/2 -translate-y-1/2 h-2.5 w-2.5 rounded-full border z-10 " +
@@ -845,10 +808,33 @@ function SidebarSubPill({
         }
       />
       <span className="grid place-items-center h-4 w-4 shrink-0 opacity-90">{icon}</span>
-      <span className="text-xs leading-tight whitespace-nowrap">{label}</span>
+      <span
+        className="text-xs leading-tight whitespace-nowrap"
+        style={{ letterSpacing: "0.5px" }}
+      >
+        {label}
+      </span>
     </div>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

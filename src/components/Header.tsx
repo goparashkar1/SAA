@@ -117,7 +117,7 @@ export default function Header({
           className="flex-shrink-0 flex items-center justify-center transition-[width] duration-200"
           style={{ width: sidebarWidth }}
         >
-          <img src={logo} alt="Logo" className="h-14 max-w-full object-contain drop-shadow-[3px_4px_4px_rgba(0,0,0,0.25)]" />
+          <img src={logo} alt="Logo" className="h-16 max-w-full object-contain drop-shadow-[3px_4px_4px_rgba(0,0,0,0.25)]" />
         </div>
 
         {/* Date and Time Display - Centered with responsive design */}

@@ -1,4 +1,4 @@
-/* Tailwind CSS directives to include base styles, component classes, and utility classes */
+﻿/* Tailwind CSS directives to include base styles, component classes, and utility classes */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -55,4 +55,54 @@ body {
 /* Scrollbar corner styling (where horizontal and vertical scrollbars meet) */
 .sidebar-scroll::-webkit-scrollbar-corner {
   background: transparent; /* Make the corner transparent for a cleaner look */
+}
+
+.widget-card h3 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* Widget cards */
+.widget-card {
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s ease-in-out;
+}
+
+.widget-card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+/* Sidebar button interactions */
+.sidebar-button {
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+.sidebar-button:not([data-active="true"]):hover,
+.sidebar-button:not([data-active="true"]):focus-visible {
+  box-shadow: inset 2px 0 0 rgba(34, 211, 238, 0.75);
+}
+
+.sidebar-button[data-active="true"] {
+  box-shadow: inset 3px 0 0 rgba(34, 211, 238, 0.95), 0 0 12px rgba(34, 211, 238, 0.25);
+}
+
+/* Globe fade-in */
+.globe-fade {
+  opacity: 0;
+  animation: globeFadeIn 0.6s ease forwards;
+}
+
+@keyframes globeFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
