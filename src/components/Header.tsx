@@ -1,9 +1,10 @@
-﻿// Importing React and necessary hooks for state management, side effects, and DOM references
+// Importing React and necessary hooks for state management, side effects, and DOM references
 import React, { useState, useEffect, useRef } from "react";
 // Importing various icons from lucide-react for header navigation elements
 import { Bell, Database, Settings, UserCircle2, Sun, Moon, Search } from "lucide-react";
 // Importing the application logo image
 import logo from "../assets/logo.png";
+import SecretHub from "./SecretHub";
 
 // Main Header component with props for sidebar state management
 export default function Header({
@@ -27,8 +28,15 @@ export default function Header({
   // State management for current time display (updates every second)
   const [currentTime, setCurrentTime] = useState(new Date());
   
+  // Local state for the secret hub panel
+  const [hubOpen, setHubOpen] = useState(false);
+
   // Reference for navigation container to detect outside clicks
   const navRef = useRef<HTMLElement | null>(null);
+
+  // Reference to the time toggle button for focus management
+  const timeButtonRef = useRef<HTMLButtonElement | null>(null);
+
   
   // Reference to store the interval ID for time updates (for cleanup)
   const timeIntervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -121,15 +129,23 @@ export default function Header({
         </div>
 
         {/* Date and Time Display - Centered with responsive design */}
-        <div className="flex-grow flex flex-col items-center justify-center min-w-0 mx-4">
-          {/* Time display with larger font and tracking for better readability */}
-          <div className="text-lg font-semibold tracking-wide whitespace-nowrap">
-            {formatTime(currentTime)}
-          </div>
-          {/* Date display with smaller font and reduced opacity for hierarchy */}
-          <div className="text-xs opacity-80 tracking-wide whitespace-nowrap">
-            {formatDate(currentTime)}
-          </div>
+        <div className="relative mx-4 flex min-w-0 flex-grow items-center justify-center">
+          <button
+            ref={timeButtonRef}
+            type="button"
+            onClick={() => setHubOpen((prev) => !prev)}
+            aria-haspopup="dialog"
+            aria-expanded={hubOpen}
+            aria-controls="secret-control-hub"
+            className="group flex flex-col items-center justify-center rounded-lg border border-transparent px-4 py-1 transition-colors duration-200 hover:border-cyan-400/30 hover:bg-white/5 focus:outline-none focus-visible:border-cyan-400/50 focus-visible:ring-2 focus-visible:ring-cyan-400/40"
+          >
+            <span className="whitespace-nowrap text-lg font-semibold tracking-wide text-white group-hover:text-cyan-100">
+              {formatTime(currentTime)}
+            </span>
+            <span className="whitespace-nowrap text-xs tracking-wide text-white/80 group-hover:text-cyan-200/90">
+              {formatDate(currentTime)}
+            </span>
+          </button>
         </div>
 
         {/* Navigation Section - Fixed width to prevent squeezing */}
@@ -210,6 +226,12 @@ export default function Header({
             <UserCircle2 className="h-6 w-6" />
           </IconCircleButton>
         </nav>
+        <SecretHub
+          id="secret-control-hub"
+          open={hubOpen}
+          onClose={() => setHubOpen(false)}
+          anchorRef={timeButtonRef}
+        />
       </div>
     </header>
   );
@@ -254,6 +276,17 @@ function IconCircleButton({
     </button>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

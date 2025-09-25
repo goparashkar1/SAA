@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useDash } from "../../store/dashboard";
 import DashboardTabs from "./DashboardTabs";
 import DashboardToolbar from "./DashboardToolbar";
@@ -25,17 +25,18 @@ const colSpanClass = (w) => {
   }
 };
 
-const Dashboard = () => {
+export default function Dashboard() {
   const dashboards = useDash((state) => state.workspace.dashboards);
   const activeId = useDash((state) => state.workspace.activeDashboardId);
   const renameDashboard = useDash((state) => state.renameDashboard);
   const loadWorkspace = useDash((state) => state.loadWorkspace);
-  const layout = useDash((state) => state.layout);
 
   const activeDashboard = useMemo(
     () => dashboards.find((dashboard) => dashboard.id === activeId) ?? null,
     [dashboards, activeId]
   );
+
+  const layout = useDash((state) => state.layout);
 
   const [selectedRegion, setSelectedRegion] = useState(null);
   const [title, setTitle] = useState(activeDashboard?.name ?? "Dashboard");
@@ -150,21 +151,21 @@ const Dashboard = () => {
 
   return (
     <div className="p-4 md:p-6 text-white/90">
-      <div className="mb-4 flex flex-col gap-4 md:mb-6">
-        <DashboardTabs />
+      <div className="mb-8 flex flex-col gap-6">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <div>
-            <div className="flex items-center gap-2">
-              <input
-                value={title}
-                onChange={(event) => setTitle(event.target.value)}
-                onBlur={handleTitleBlur}
-                className="w-full max-w-xl rounded border border-white/10 bg-transparent px-2 py-1 text-xl font-semibold text-white focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-white/20 md:text-2xl"
-                aria-label="Dashboard title"
-              />
-            </div>
+          <input
+            value={title}
+            onChange={(event) => setTitle(event.target.value)}
+            onBlur={handleTitleBlur}
+            className="w-full max-w-xl flex-1 bg-transparent text-2xl font-semibold text-white placeholder-white/40 focus:outline-none focus:ring-0 md:text-3xl"
+            aria-label="Dashboard title"
+          />
+          <div className="flex w-full justify-end md:w-auto">
+            <DashboardToolbar />
           </div>
-          <DashboardToolbar />
+        </div>
+        <div className="flex flex-wrap items-center gap-3">
+          <DashboardTabs />
         </div>
       </div>
 
@@ -183,6 +184,4 @@ const Dashboard = () => {
       </div>
     </div>
   );
-};
-
-export default Dashboard;
+}

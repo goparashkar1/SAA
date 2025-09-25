@@ -1,36 +1,23 @@
 // Importing React and necessary hooks for component lazy loading and memoization
 import React, { Suspense, useMemo } from "react";
-// Importing specific icons from lucide-react for loading spinner and close button
-import { Loader2, X } from "lucide-react";
-// Importing widget registry to access widget configuration data
+import { Loader2, X, Maximize2, SlidersHorizontal } from "lucide-react";
 import { widgetRegistry } from "../../widgets/registry";
-// Importing custom dashboard hook and type definition for placed widgets
 import { useDash, type Placed } from "../../store/dashboard";
 
-// Loading spinner component shown while widgets are being lazy-loaded
-// Uses a spinning Loader2 icon with cyan color for visual consistency
 const spinner = (
   <div className="flex flex-1 items-center justify-center py-10 text-cyan-300">
     <Loader2 className="h-6 w-6 animate-spin" />
   </div>
 );
 
-// Type definition for WidgetSlot component props
-// Expects an item object that conforms to the Placed type with optional runtimeProps
 type WidgetSlotProps = {
   item: Placed & { runtimeProps?: Record<string, any> };
 };
 
-// Main WidgetSlot component that renders individual widget instances
 export default function WidgetSlot({ item }: WidgetSlotProps) {
-  // Accessing the closeWidget function from the dashboard store to remove widgets
   const closeWidget = useDash((state) => state.closeWidget);
-  
-  // Retrieving widget configuration from the registry using the widgetId
   const config = widgetRegistry[item.widgetId];
 
-  // Error handling for unknown widget IDs
-  // Displays an error message if the widget configuration is not found in the registry
   if (!config) {
     return (
       <div className="rounded-lg border border-white/10 bg-white/5 p-4 text-sm text-red-300">
@@ -39,41 +26,54 @@ export default function WidgetSlot({ item }: WidgetSlotProps) {
     );
   }
 
-  // Memoized lazy loading of the widget component using React.lazy()
-  // This ensures the component import only happens once and is cached for performance
   const Component = useMemo(() => config.component, [config]);
 
   const mergedProps = useMemo(
     () => ({
-      ...(item.props ?? {}),        // Spread static props from widget configuration
-      ...(item.runtimeProps ?? {}), // Spread runtime props passed to the component
+      ...(item.props ?? {}),
+      ...(item.runtimeProps ?? {}),
     }),
-    [item.props, item.runtimeProps] // Dependencies for the memoization
+    [item.props, item.runtimeProps]
   );
 
   return (
-    // Container for the widget with styling for glassmorphism effect
-    <div className="widget-card relative flex h-full flex-col rounded-xl border border-white/25 bg-white/20 backdrop-blur-lg p-4 shadow-[0_18px_40px_rgba(12,24,36,0.45)] transition-all duration-200 ease-in-out">
-      {/* Close button positioned absolutely in the top-right corner */}
-      <button
-        type="button"
-        onClick={() => closeWidget(item.i)} // Calls closeWidget with the widget's unique identifier
-        className="absolute -top-2 -right-2 rounded-tr rounded-bl bg-red-500/80 px-2 py-1 text-white transition-colors hover:bg-red-500"
-        aria-label={"Close " + config.title + " widget"} // Accessibility label describing the button action
-      >
-        <X className="h-3 w-3" /> {/* Close icon */}
-      </button>
+    <div className="group relative flex h-full w-full">
+      <div className="absolute inset-0 rounded-[18px] opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100">
+        <div className="absolute inset-0 rounded-[18px] bg-gradient-to-br from-cyan-200/20 via-transparent to-transparent blur-sm" />
+      </div>
 
-      {/* React Suspense boundary for handling lazy loading */}
-      <Suspense fallback={spinner}> {/* Shows spinner while widget component is loading */}
-        {/* Container to ensure the widget fills available space */}
-        <div className="flex h-full flex-col">
-          {/* Render the widget component (may be lazy) with merged props */}
-          <Component {...mergedProps} />
+      <div className="widget-card relative flex h-full w-full flex-col rounded-[18px] border border-white/20 bg-white/12 backdrop-blur-lg p-4 shadow-[0_14px_32px_rgba(8,18,28,0.35)] transition-all duration-300 ease-out will-change-transform group-hover:-translate-y-1 group-hover:scale-[1.01] group-hover:border-cyan-300/40 group-hover:shadow-[0_28px_60px_rgba(0,180,255,0.25)]">
+        <div className="absolute -top-2 -right-2 flex overflow-hidden rounded-tr rounded-bl bg-transparent opacity-0 shadow-[0_4px_16px_rgba(8,18,28,0.4)] transition-opacity duration-200 ease-out group-hover:opacity-100">
+          <button
+            type="button"
+            className="flex h-6 w-7 items-center justify-center bg-cyan-400/70 text-white transition-colors hover:bg-cyan-300"
+            aria-label={`Widget options for ${config.title} (coming soon)`}
+          >
+            <SlidersHorizontal className="h-3.5 w-3.5" />
+          </button>
+          <button
+            type="button"
+            className="flex h-6 w-7 items-center justify-center bg-cyan-500/80 text-white transition-colors hover:bg-cyan-400"
+            aria-label={`Expand ${config.title} widget (coming soon)`}
+          >
+            <Maximize2 className="h-3.5 w-3.5" />
+          </button>
+          <button
+            type="button"
+            onClick={() => closeWidget(item.i)}
+            className="flex h-6 w-7 items-center justify-center bg-red-500/80 text-white transition-colors hover:bg-red-500"
+            aria-label={`Close ${config.title} widget`}
+          >
+            <X className="h-3.5 w-3.5" />
+          </button>
         </div>
-      </Suspense>
+
+        <Suspense fallback={spinner}>
+          <div className="flex h-full flex-col transition-[box-shadow,filter] duration-300 ease-out">
+            <Component {...mergedProps} />
+          </div>
+        </Suspense>
+      </div>
     </div>
   );
 }
-
-

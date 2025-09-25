@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { ClipboardList, FileDown, Save } from "lucide-react";
 import type { Thread, CopilotMessage, Attachment } from "./types";
 
@@ -162,7 +162,7 @@ export default function MessageStream({ thread, loading }: MessageStreamProps) {
   }
 
   return (
-    <div ref={containerRef} className="flex-1 overflow-y-auto pr-3">
+    <div ref={containerRef} className="flex-1 overflow-y-auto pr-3 copilot-scroll">
       <div className="space-y-6">
         {thread.messages.map((message) => {
           const isUser = message.role === "user";
@@ -194,4 +194,5 @@ export default function MessageStream({ thread, loading }: MessageStreamProps) {
     </div>
   );
 }
+
 

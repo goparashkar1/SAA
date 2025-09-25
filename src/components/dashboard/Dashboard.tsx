@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useDash } from "../../store/dashboard";
 import DashboardTabs from "./DashboardTabs";
 import DashboardToolbar from "./DashboardToolbar";
@@ -185,8 +185,3 @@ export default function Dashboard() {
     </div>
   );
 }
-
-
-
-
-

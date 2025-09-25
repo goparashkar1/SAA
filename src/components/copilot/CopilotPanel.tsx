@@ -26,6 +26,23 @@ export default function CopilotPanel({ sidebarCollapsed }: CopilotPanelProps) {
   const [temperature, setTemperature] = React.useState(0.2);
   const [includeContext, setIncludeContext] = React.useState(true);
   const panelRef = React.useRef<HTMLDivElement | null>(null);
+  const dragState = React.useRef({ startX: 0, startWidth: 0 });
+
+  const minWidth = 420;
+  const maxWidth = 860;
+
+  const clampWidth = React.useCallback(
+    (value: number) => Math.min(Math.max(value, minWidth), maxWidth),
+    [minWidth, maxWidth]
+  );
+
+  const defaultWidth = React.useMemo(
+    () => clampWidth(sidebarCollapsed ? 520 : 640),
+    [clampWidth, sidebarCollapsed]
+  );
+
+  const [panelWidth, setPanelWidth] = React.useState(defaultWidth);
+  const [dragging, setDragging] = React.useState(false);
 
   React.useEffect(() => {
     if (isOpen && panelRef.current) {
@@ -33,10 +50,53 @@ export default function CopilotPanel({ sidebarCollapsed }: CopilotPanelProps) {
     }
   }, [isOpen]);
 
-  const expandedWidth = sidebarCollapsed ? 560 : 640;
+  React.useEffect(() => {
+    setPanelWidth(defaultWidth);
+  }, [defaultWidth]);
+
+  React.useEffect(() => {
+    if (!dragging) return;
+    const previousCursor = document.body.style.cursor;
+    const previousSelect = document.body.style.userSelect;
+    document.body.style.cursor = "col-resize";
+    document.body.style.userSelect = "none";
+    return () => {
+      document.body.style.cursor = previousCursor;
+      document.body.style.userSelect = previousSelect;
+    };
+  }, [dragging]);
+
+  const handleResizeStart = React.useCallback(
+    (event: React.PointerEvent<HTMLDivElement>) => {
+      if (event.button !== 0) return;
+      event.preventDefault();
+      dragState.current = { startX: event.clientX, startWidth: panelWidth };
+      setDragging(true);
+
+      const handleMove = (moveEvent: PointerEvent) => {
+        const delta = moveEvent.clientX - dragState.current.startX;
+        setPanelWidth(clampWidth(dragState.current.startWidth + delta));
+      };
+
+      const handleUp = () => {
+        setDragging(false);
+        window.removeEventListener("pointermove", handleMove);
+        window.removeEventListener("pointerup", handleUp);
+      };
+
+      window.addEventListener("pointermove", handleMove);
+      window.addEventListener("pointerup", handleUp);
+    },
+    [clampWidth, panelWidth]
+  );
+
   const baseClasses =
     "copilot-panel relative flex h-full min-h-0 flex-col overflow-hidden border-l border-cyan-900/30 bg-[#0B1520]/95 text-white shadow-[0_0_28px_rgba(5,15,30,0.55)] transition-[width,opacity] duration-300 ease-out";
   const stateClasses = isOpen ? " opacity-100 pointer-events-auto" : " opacity-0 pointer-events-none";
+  const panelStyle: React.CSSProperties = {
+    width: isOpen ? panelWidth : 0,
+    transition: dragging ? "opacity 200ms ease" : undefined,
+  };
 
   return (
     <div
@@ -44,7 +104,7 @@ export default function CopilotPanel({ sidebarCollapsed }: CopilotPanelProps) {
       data-copilot-interactive="true"
       tabIndex={isOpen ? 0 : -1}
       className={baseClasses + stateClasses}
-      style={{ width: isOpen ? expandedWidth : 0 }}
+      style={panelStyle}
       aria-hidden={!isOpen}
     >
       <div className="flex h-full min-h-0">
@@ -86,6 +146,16 @@ export default function CopilotPanel({ sidebarCollapsed }: CopilotPanelProps) {
           <Composer />
         </div>
 
+        {isOpen ? (
+          <div
+            role="separator"
+            aria-orientation="vertical"
+            tabIndex={-1}
+            className={`flex h-full w-[5px] cursor-col-resize items-stretch transition-colors duration-150 ${dragging ? "bg-cyan-400/40" : "bg-cyan-400/15 hover:bg-cyan-400/30"}`}
+            onPointerDown={handleResizeStart}
+          />
+        ) : null}
+
         <ThreadList
           threads={threads}
           activeId={activeThread?.id ?? null}
@@ -99,4 +169,5 @@ export default function CopilotPanel({ sidebarCollapsed }: CopilotPanelProps) {
     </div>
   );
 }
+
 

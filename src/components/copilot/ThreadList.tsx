@@ -48,7 +48,7 @@ export default function ThreadList({ threads, activeId, onSelect, onNewThread, o
           <Plus className="h-4 w-4" />
         </button>
       </div>
-      <div className="flex-1 space-y-1 overflow-y-auto px-2 pb-2">
+      <div className="flex-1 space-y-1 overflow-y-auto px-2 pb-2 copilot-scroll">
         {ordered.map((thread) => {
           const isActive = thread.id === activeId;
           return (
@@ -98,6 +98,7 @@ export default function ThreadList({ threads, activeId, onSelect, onNewThread, o
     </aside>
   );
 }
+
 
 
 
