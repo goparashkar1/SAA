@@ -1,6 +1,7 @@
 import React from "react";
 import CopilotDock from "./copilot/CopilotDock";
 import { PanelKey } from "../types";
+import { createLightSweepVars, SIDEBAR_LIGHT_SWEEP_SETTINGS } from "../ui/shimmer";
 import {
   Search,
   FileText,
@@ -450,7 +451,6 @@ export default function Sidebar({
   const [activeSub, setActiveSub] = React.useState<Partial<Record<PanelKey, string | null>>>({});
   const [openSubGroups, setOpenSubGroups] = React.useState<Record<string, boolean>>({});
 
-
   // Reset expanded groups when the sidebar collapses
   React.useEffect(() => {
     if (collapsed) setOpenGroup(null);
@@ -614,21 +614,38 @@ function SidebarPill({
     transform: collapsed ? "translateX(-8px)" : "translateX(0)",
     paddingLeft: collapsed ? 0 : 8,
   };
+  const sweepStyle = React.useMemo(
+    () => createLightSweepVars(SIDEBAR_LIGHT_SWEEP_SETTINGS),
+    []
+  );
 
   return (
     <button
       type="button"
       onClick={onClick}
       data-active={active ? "true" : undefined}
-      className={("sidebar-button relative grid h-10 w-full grid-cols-[48px_auto] items-center overflow-hidden border-t border-white/10 px-2 transition-all duration-200 ease-in-out focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-200/60 text-white/90 ") + (active ? "bg-cyan-600/20 text-white" : "bg-white/5")}
+      className={
+        "sidebar-button light-sweep-surface relative grid h-10 w-full grid-cols-[48px_auto] items-center overflow-hidden border-t border-white/10 px-2 transition-all duration-200 ease-in-out focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-200/60 text-white/90 " +
+        (active ? "bg-cyan-600/20 text-white" : "bg-white/5")
+      }
       aria-current={active ? "page" : undefined}
       aria-expanded={ariaExpanded}
       aria-label={collapsed ? label : undefined}
       title={collapsed ? label : undefined}
-      style={{ gridTemplateColumns: collapsed ? "48px 0fr" : "48px 1fr", columnGap: collapsed ? 0 : 0 }}
+      data-light-sweep="sidebar"
+      style={{
+        ...sweepStyle,
+        gridTemplateColumns: collapsed ? "48px 0fr" : "48px 1fr",
+        columnGap: 0,
+      }}
     >
-      <span className="pointer-events-none flex h-5 w-5 items-center justify-center justify-self-center opacity-90">{icon}</span>
-      <span className="text-[13px] leading-tight whitespace-nowrap overflow-hidden justify-self-start" style={labelStyle}>
+      <span className="pointer-events-none flex h-5 w-5 items-center justify-center justify-self-center opacity-90">
+        {icon}
+      </span>
+      <span
+        className="text-[13px] leading-tight whitespace-nowrap overflow-hidden justify-self-start"
+        style={labelStyle}
+      >
         {label}
       </span>
     </button>
@@ -656,6 +673,10 @@ function SidebarSubGroup({
   const headerRef = React.useRef<HTMLDivElement>(null);
   const childrenRef = React.useRef<HTMLDivElement>(null);
   const hasActiveChild = React.useMemo(() => items.some((item) => item.id === activeId), [items, activeId]);
+  const sweepStyle = React.useMemo(
+    () => createLightSweepVars(SIDEBAR_LIGHT_SWEEP_SETTINGS),
+    []
+  );
 
   const focusChild = React.useCallback(
     (position: "first" | "last") => {
@@ -726,7 +747,12 @@ function SidebarSubGroup({
         data-active={highlight ? "true" : undefined}
         onClick={onToggle}
         onKeyDown={handleHeaderKeyDown}
-        className={ "sidebar-button relative flex h-8 w-full items-center justify-start gap-1.5 px-2 text-white/90 border-t border-white/10 transition-all duration-200 ease-in-out focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-200/60 " + (highlight ? "bg-cyan-600/20 text-white" : "bg-white/5") }
+        className={
+          "sidebar-button light-sweep-surface relative flex h-8 w-full items-center justify-start gap-1.5 px-2 text-white/90 border-t border-white/10 transition-all duration-200 ease-in-out focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-200/60 " +
+          (highlight ? "bg-cyan-600/20 text-white" : "bg-white/5")
+        }
+        data-light-sweep="sidebar"
+        style={sweepStyle}
       >
         <span className="absolute -left-3 top-1/2 -translate-y-1/2 h-4 w-4 grid place-items-center text-white/80 transition-transform duration-200 z-10">
           <ChevronRight
@@ -788,6 +814,11 @@ function SidebarSubPill({
   onClick: () => void;
   active?: boolean;
 }) {
+  const sweepStyle = React.useMemo(
+    () => createLightSweepVars(SIDEBAR_LIGHT_SWEEP_SETTINGS),
+    []
+  );
+
   return (
     <div
       role="button"
@@ -797,14 +828,17 @@ function SidebarSubPill({
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") onClick();
       }}
-      className={ "sidebar-button relative flex h-8 w-full items-center justify-start gap-2 px-2 select-none cursor-pointer border-t border-white/10 transition-all duration-200 ease-in-out text-white/90 focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-200/60 " + (active ? "bg-cyan-600/20 text-white" : "bg-white/5") }
+      className={
+        "sidebar-button light-sweep-surface relative flex h-8 w-full items-center justify-start gap-2 px-2 select-none cursor-pointer border-t border-white/10 transition-all duration-200 ease-in-out text-white/90 focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-200/60 " +
+        (active ? "bg-cyan-600/20 text-white" : "bg-white/5")
+      }
+      data-light-sweep="sidebar"
+      style={sweepStyle}
     >
       <span
         className={
           "absolute -left-3 top-1/2 -translate-y-1/2 h-2.5 w-2.5 rounded-full border z-10 " +
-          (active
-            ? "border-cyan-300/70 bg-[#22d3ee]"
-            : "border-white/40 bg-[#999999]")
+          (active ? "border-cyan-300/70 bg-[#22d3ee]" : "border-white/40 bg-[#999999]")
         }
       />
       <span className="grid place-items-center h-4 w-4 shrink-0 opacity-90">{icon}</span>
@@ -817,25 +851,6 @@ function SidebarSubPill({
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

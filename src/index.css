@@ -89,6 +89,98 @@ body {
   box-shadow: inset 3px 0 0 rgba(34, 211, 238, 0.95), 0 0 12px rgba(34, 211, 238, 0.25);
 }
 
+/* Premium light sweep overlay */
+.light-sweep-surface {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  --light-sweep-angle: 225deg;
+  --light-sweep-peak-opacity: 0.24;
+  --light-sweep-gradient-width: 150%;
+  --light-sweep-gradient-start-opacity: 0.08;
+  --light-sweep-gradient-end-opacity: 0.06;
+  --light-sweep-active-duration: 6000ms;
+  --light-sweep-loop-duration: 15000ms;
+  --light-sweep-ease-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.light-sweep-surface::before {
+  content: "";
+  position: absolute;
+  inset: -18%;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: 0;
+  background: linear-gradient(
+    var(--light-sweep-angle),
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, var(--light-sweep-gradient-start-opacity, 0.08)) 25%,
+    rgba(255, 255, 255, var(--light-sweep-peak-opacity, 0.24)) 50%,
+    rgba(255, 255, 255, var(--light-sweep-gradient-end-opacity, 0.06)) 75%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: var(--light-sweep-gradient-width, 150%) var(--light-sweep-gradient-width, 150%);
+  background-repeat: no-repeat;
+  mix-blend-mode: screen;
+  filter: drop-shadow(0 0 32px rgba(94, 234, 255, 0.28));
+  will-change: background-position, opacity;
+  clip-path: inset(0 round inherit);
+}
+
+.light-sweep-surface:hover::before,
+.light-sweep-surface:focus-visible::before,
+.light-sweep-surface[data-light-sweep-state="active"]::before {
+  animation: lightSweepTraverse var(--light-sweep-loop-duration, 15000ms)
+    var(--light-sweep-ease-function, cubic-bezier(0.4, 0, 0.2, 1)) infinite;
+}
+
+@keyframes lightSweepTraverse {
+  0% {
+    opacity: 0;
+    background-position: 140% -40%;
+  }
+  10% {
+    opacity: var(--light-sweep-gradient-start-opacity, 0.08);
+    background-position: 110% -10%;
+  }
+  30% {
+    opacity: var(--light-sweep-peak-opacity, 0.24);
+    background-position: 70% 30%;
+  }
+  45% {
+    opacity: var(--light-sweep-peak-opacity, 0.24);
+    background-position: 30% 70%;
+  }
+  65% {
+    opacity: var(--light-sweep-gradient-end-opacity, 0.06);
+    background-position: -10% 110%;
+  }
+  75% {
+    opacity: 0;
+    background-position: -30% 130%;
+  }
+  100% {
+    opacity: 0;
+    background-position: 140% -40%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .light-sweep-surface::before,
+  .light-sweep-surface:hover::before,
+  .light-sweep-surface:focus-visible::before,
+  .light-sweep-surface[data-light-sweep-state]::before {
+    animation: none !important;
+    opacity: 0 !important;
+    filter: none !important;
+    content: none;
+  }
+}
+
+
+
+
+
 /* Globe fade-in */
 .globe-fade {
   opacity: 0;
@@ -165,3 +257,17 @@ body {
   background: linear-gradient(180deg, rgba(34, 211, 238, 0.5), rgba(56, 189, 248, 0.58));
   border-color: rgba(191, 245, 255, 0.32);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
