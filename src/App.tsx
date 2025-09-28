@@ -18,12 +18,12 @@ function AppContent() {
 
   return (
     // Full viewport shell
-    <div className="relative w-full h-dvh min-h-screen" dir="ltr">
+    <div className="relative w-full h-dvh min-h-screen overflow-hidden" dir="ltr">
       {/* Background */}
       <MicrosintDynamicBackground />
 
       {/* Foreground */}
-      <div className="relative z-10 grid grid-rows-[auto,1fr] h-full">
+      <div className="relative z-10 flex flex-col h-full">
         {/* Row 1: header (auto height) */}
         <Header
           sidebarCollapsed={sidebarCollapsed}
@@ -31,8 +31,8 @@ function AppContent() {
         />
 
         {/* Row 2: content row fills the rest */}
-        <div className="relative grid grid-cols-[auto,auto,1fr] min-h-0 overflow-hidden">
-          {/* Sidebar column — stretches to full row height */}
+        <div className="flex-1 min-h-0 flex overflow-hidden">
+          {/* Sidebar column */}
           <div className="flex-none h-full">
             <div className="h-full min-h-0 flex flex-col">
               <Sidebar
@@ -44,13 +44,13 @@ function AppContent() {
             </div>
           </div>
 
-          {/* Copilot panel column (kept as-is, but ensure it inherits height) */}
+          {/* Copilot panel column */}
           <div className="flex-none h-full">
             <CopilotPanel sidebarCollapsed={sidebarCollapsed} />
           </div>
 
           {/* Main column — grows and scrolls within the row */}
-          <main className="sidebar-scroll flex-1 min-h-0 overflow-auto p-6 text-white/90 transition-[padding] duration-300">
+          <main className="flex-1 min-h-0 overflow-auto p-6 text-white/90 transition-[padding] duration-300">
             {active === "Dashboard" && <Dashboard />}
 
             {active === "Data Collection" && (
