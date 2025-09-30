@@ -46,6 +46,9 @@ import {
   Plane,
   Anchor,
 } from "lucide-react";
+import { WorkflowDock } from "./WorkflowDock";
+// ... your imports
+
 
 // Composite icon used for the monitoring menu badge
 function MonitorIcon() {
@@ -539,53 +542,70 @@ export default function Sidebar({
                   )}
 
                   {subItems.map((entry) => {
-                    if (entry.type === "group") {
-                      const groupKey = `${it.key}:${entry.id}`;
-                      return (
-                        <SidebarSubGroup
-                          key={entry.id}
-                          label={entry.label}
-                          icon={entry.icon}
-                          items={entry.items}
-                          open={Boolean(openSubGroups[groupKey])}
-                          onToggle={() => {
-                            setOpenSubGroups((current) => ({
-                              ...current,
-                              [groupKey]: !current[groupKey],
-                            }));
-                          }}
-                          activeId={activeSub[it.key] ?? null}
-                          onItemClick={(item) => {
-                            setActiveSub((s) => ({ ...s, [it.key]: item.id }));
-                            onChange(it.key);
-                          }}
-                        />
-                      );
-                    }
+  if (entry.type === "group") {
+    const groupKey = `${it.key}:${entry.id}`;
+    return (
+      <SidebarSubGroup
+        key={entry.id}
+        label={entry.label}
+        icon={entry.icon}
+        items={entry.items}
+        open={Boolean(openSubGroups[groupKey])}
+        onToggle={() => {
+          const thisKey = `${it.key}:${entry.id}`;
+          setOpenSubGroups((current) => {
+            const isOpen = !!current[thisKey];
 
-                    const sub = entry as SidebarSubItem;
-                    return (
-                      <SidebarSubPill
-                        key={sub.id}
-                        label={sub.label}
-                        icon={sub.icon}
-                        active={activeSub[it.key] === sub.id}
-                        onClick={() => {
-                          setActiveSub((s) => ({ ...s, [it.key]: sub.id }));
-                          onChange(it.key);
-                        }}
-                      />
-                    );
-                  })}
-                </div>
-              )}            </React.Fragment>
-          );
-        })}
-        <div className="mt-auto w-full border-t border-white/10 pt-3">
-          <CopilotDock collapsed={collapsed} />
-        </div>
-      </div>
-    </aside>
+            // Keep groups from OTHER top-level sections; close siblings in THIS section
+            const next: Record<string, boolean> = {};
+            for (const k of Object.keys(current)) {
+              if (!k.startsWith(`${it.key}:`)) next[k] = current[k];
+            }
+
+            // If it wasn't open, open this one; otherwise leave all closed for this section
+            if (!isOpen) next[thisKey] = true;
+
+            return next;
+          });
+        }}
+        activeId={activeSub[it.key] ?? null}
+        onItemClick={(item) => {
+          setActiveSub((s) => ({ ...s, [it.key]: item.id }));
+          onChange(it.key);
+        }}
+      />
+    );
+  }
+
+  const sub = entry as SidebarSubItem;
+  return (
+    <SidebarSubPill
+      key={sub.id}
+      label={sub.label}
+      icon={sub.icon}
+      active={activeSub[it.key] === sub.id}
+      onClick={() => {
+        setActiveSub((s) => ({ ...s, [it.key]: sub.id }));
+        onChange(it.key);
+      }}
+    />
+  );
+})}
+</div>
+) }            </React.Fragment>
+);
+})}
+
+{/* --- Workflows Dock (dedicated space above Copilot) --- */}
+<div className="w-full border-t border-white/10 pt-3 pb-2">
+  <WorkflowDock collapsed={collapsed} />
+</div>
+
+<div className="mt-auto w-full border-t border-white/10 pt-3">
+  <CopilotDock collapsed={collapsed} />
+</div>
+</div>
+</aside>
   );
 }
 
@@ -754,7 +774,7 @@ function SidebarSubGroup({
         data-light-sweep="sidebar"
         style={sweepStyle}
       >
-        <span className="absolute -left-3 top-1/2 -translate-y-1/2 h-4 w-4 grid place-items-center text-white/80 transition-transform duration-200 z-10">
+        <span className="inline-flex items-center justify-center h-4 w-4 text-white/80 transition-transform duration-200">
           <ChevronRight
             className={
               "h-4 w-4 transition-transform duration-200" +
@@ -781,11 +801,11 @@ function SidebarSubGroup({
         aria-hidden={!open}
       >
         {open && (
-          <span
-            className="pointer-events-none absolute w-px bg-white/15"
-            style={{ left: SUBGROUP_CONNECTOR_LEFT, top: "10px", height: "90px" }}
-          />
-        )}
+  <span
+    className="pointer-events-none absolute w-px bg-white/15"
+    style={{ left: SUBGROUP_CONNECTOR_LEFT, top: 0, bottom: 0 }}
+  />
+)}
 
         {items.map((item) => (
           <div key={item.id} className="relative">

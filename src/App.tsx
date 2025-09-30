@@ -50,7 +50,7 @@ function AppContent() {
           </div>
 
           {/* Main column — grows and scrolls within the row */}
-          <main className="flex-1 min-h-0 overflow-auto p-6 text-white/90 transition-[padding] duration-300">
+          <main className="main-scroll flex-1 min-h-0 overflow-auto p-6 text-white/90 transition-[padding] duration-300">
             {active === "Dashboard" && <Dashboard />}
 
             {active === "Data Collection" && (

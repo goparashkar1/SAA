@@ -14,12 +14,21 @@ body {
   -moz-osx-font-smoothing: grayscale;  /* Smooth fonts on Firefox */
 }
 
+/* Prevent extra scrollbars on html and #root */
+html, #root {
+  overflow-y: hidden;
+}
+
+/* Enable single scrollbar on body */
+body {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
 /* Custom scrollbar styling specifically for sidebar elements */
 /* Firefox scrollbar customization */
 .sidebar-scroll {
-  /* Set scrollbar width to 'thin' (native Firefox styling) */
   scrollbar-width: thin;
-  /* Custom scrollbar colors: thumb color | track color */
   scrollbar-color: rgba(255, 255, 255, 0.28) rgba(6, 27, 44, 0.45);
 }
 
@@ -57,12 +66,100 @@ body {
   background: transparent; /* Make the corner transparent for a cleaner look */
 }
 
+/* Copilot panel scrollbar styling */
+.copilot-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(94, 234, 212, 0.55) rgba(4, 17, 29, 0.55);
+}
+
+.copilot-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.copilot-scroll::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, rgba(5, 20, 32, 0.6), rgba(6, 29, 45, 0.35));
+  border-radius: 9999px;
+  box-shadow: inset 0 0 0 1px rgba(148, 233, 255, 0.08);
+}
+
+.copilot-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(94, 234, 212, 0.45), rgba(14, 165, 233, 0.35));
+  border-radius: 9999px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), inset 0 -2px 4px rgba(9, 19, 30, 0.55);
+  border: 1px solid rgba(163, 230, 255, 0.2);
+}
+
+.copilot-scroll::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(94, 234, 212, 0.65), rgba(14, 165, 233, 0.5));
+  border-color: rgba(186, 230, 253, 0.35);
+}
+
+/* Secret hub panel scrollbar styling */
+.secret-hub-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(34, 211, 238, 0.5) rgba(15, 23, 42, 0.45);
+}
+
+.secret-hub-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.secret-hub-scroll::-webkit-scrollbar-track {
+  background: rgba(9, 19, 34, 0.55);
+  border-radius: 9999px;
+  box-shadow: inset 0 0 0 1px rgba(45, 212, 191, 0.12);
+}
+
+.secret-hub-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(210, 222, 224, 0.35), rgba(56, 189, 248, 0.45));
+  border-radius: 9999px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), inset 0 -2px 4px rgba(2, 8, 23, 0.55);
+  border: 1px solid rgba(165, 243, 252, 0.2);
+}
+
+.secret-hub-scroll::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(34, 211, 238, 0.5), rgba(56, 189, 248, 0.58));
+  border-color: rgba(191, 245, 255, 0.32);
+}
+
+/* Main page scrollbar styling */
+.main-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(34, 211, 238, 0.5) rgba(9, 19, 34, 0.5);
+}
+
+.main-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.main-scroll::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, rgba(9, 19, 34, 0.6), rgba(6, 29, 45, 0.4));
+  border-radius: 9999px;
+  box-shadow: inset 0 0 0 1px rgba(45, 212, 191, 0.1);
+}
+
+.main-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(34, 211, 238, 0.4), rgba(56, 189, 248, 0.5));
+  border-radius: 9999px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -2px 4px rgba(2, 8, 23, 0.5);
+  border: 1px solid rgba(165, 243, 252, 0.18);
+}
+
+.main-scroll::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(34, 211, 238, 0.55), rgba(56, 189, 248, 0.65));
+  border-color: rgba(191, 245, 255, 0.3);
+}
+
+.main-scroll::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Widget cards */
 .widget-card h3 {
   font-weight: 600;
   line-height: 1.2;
 }
 
-/* Widget cards */
 .widget-card {
   border: 1px solid rgba(0, 255, 255, 0.1);
   border-radius: 8px;
@@ -177,10 +274,6 @@ body {
   }
 }
 
-
-
-
-
 /* Globe fade-in */
 .globe-fade {
   opacity: 0;
@@ -192,82 +285,8 @@ body {
     opacity: 0;
     transform: translateY(8px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-
-
-/* Copilot panel scrollbar styling */
-.copilot-scroll {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(94, 234, 212, 0.55) rgba(4, 17, 29, 0.55);
-}
-
-.copilot-scroll::-webkit-scrollbar {
-  width: 8px;
-}
-
-.copilot-scroll::-webkit-scrollbar-track {
-  background: linear-gradient(180deg, rgba(5, 20, 32, 0.6), rgba(6, 29, 45, 0.35));
-  border-radius: 9999px;
-  box-shadow: inset 0 0 0 1px rgba(148, 233, 255, 0.08);
-}
-
-.copilot-scroll::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, rgba(94, 234, 212, 0.45), rgba(14, 165, 233, 0.35));
-  border-radius: 9999px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), inset 0 -2px 4px rgba(9, 19, 30, 0.55);
-  border: 1px solid rgba(163, 230, 255, 0.2);
-}
-
-.copilot-scroll::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, rgba(94, 234, 212, 0.65), rgba(14, 165, 233, 0.5));
-  border-color: rgba(186, 230, 253, 0.35);
-}
-
-
-
-/* Secret hub panel scrollbar styling */
-.secret-hub-scroll {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(34, 211, 238, 0.5) rgba(15, 23, 42, 0.45);
-}
-
-.secret-hub-scroll::-webkit-scrollbar {
-  width: 8px;
-}
-
-.secret-hub-scroll::-webkit-scrollbar-track {
-  background: rgba(9, 19, 34, 0.55);
-  border-radius: 9999px;
-  box-shadow: inset 0 0 0 1px rgba(45, 212, 191, 0.12);
-}
-
-.secret-hub-scroll::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, rgba(34, 211, 238, 0.35), rgba(56, 189, 248, 0.45));
-  border-radius: 9999px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), inset 0 -2px 4px rgba(2, 8, 23, 0.55);
-  border: 1px solid rgba(165, 243, 252, 0.2);
-}
-
-.secret-hub-scroll::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, rgba(34, 211, 238, 0.5), rgba(56, 189, 248, 0.58));
-  border-color: rgba(191, 245, 255, 0.32);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
