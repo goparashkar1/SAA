@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import CopilotDock from "./copilot/CopilotDock";
 import { PanelKey } from "../types";
 import { createLightSweepVars, SIDEBAR_LIGHT_SWEEP_SETTINGS } from "../ui/shimmer";
@@ -459,153 +459,214 @@ export default function Sidebar({
     if (collapsed) setOpenGroup(null);
   }, [collapsed]);
 
+  const activeGroupHasSubItems =
+    openGroup != null && (SUB_ITEMS[openGroup]?.length ?? 0) > 0;
+
+  const anyNestedGroupOpen =
+    openGroup != null &&
+    Object.keys(openSubGroups).some((key) =>
+      key.startsWith(`${openGroup}:`) && openSubGroups[key]
+    );
+
+  const dockOverlayActive =
+    !collapsed && (activeGroupHasSubItems || anyNestedGroupOpen);
+
+  const [overlayMode, setOverlayMode] = React.useState(dockOverlayActive);
+  const overlayTimeoutRef = React.useRef<number | null>(null);
+
+  React.useEffect(() => {
+    if (dockOverlayActive) {
+      if (overlayTimeoutRef.current) {
+        window.clearTimeout(overlayTimeoutRef.current);
+        overlayTimeoutRef.current = null;
+      }
+      setOverlayMode(true);
+      return;
+    }
+
+    overlayTimeoutRef.current = window.setTimeout(() => {
+      setOverlayMode(false);
+      overlayTimeoutRef.current = null;
+    }, 220);
+
+    return () => {
+      if (overlayTimeoutRef.current) {
+        window.clearTimeout(overlayTimeoutRef.current);
+        overlayTimeoutRef.current = null;
+      }
+    };
+  }, [dockOverlayActive]);
+
+  const navClassName = [
+    "row-start-1 col-span-full",
+    overlayMode ? "row-span-3" : "row-span-1",
+    collapsed ? "py-3" : "pt-3 pb-6",
+    "px-0 sidebar-scroll flex flex-col items-stretch gap-0",
+    "relative min-h-0 overflow-y-auto overflow-x-hidden transition-[box-shadow] duration-200 ease-in-out",
+    overlayMode
+      ? "z-50 bg-[#263B4C]/95 shadow-[0_0_0_1px_rgba(148,233,255,0.35)]"
+      : "z-30",
+  ].join(" ");
+
+  const workflowDockClassName = [
+    "row-start-2 col-span-full relative w-full border-t border-white/10 pt-3 pb-2 transition-all duration-300 ease-in-out",
+    overlayMode
+      ? "z-0 pointer-events-none blur-sm opacity-60 saturate-75"
+      : "z-10 opacity-100",
+  ].join(" ");
+
+  const copilotDockClassName = [
+    "row-start-3 col-span-full relative w-full border-t border-white/10 pt-3 transition-all duration-300 ease-in-out",
+    overlayMode
+      ? "z-0 pointer-events-none blur-sm opacity-60 saturate-75"
+      : "z-10 opacity-100",
+  ].join(" ");
+
   // Render the collapsible shell and navigation content
   return (
     <aside
       className={
         (collapsed ? "w-[64px]" : "w-[320px]") +
-        " relative shrink-0 h-full bg-[#263B4C]/65 shadow-[4px_4px_4px_rgba(0,0,0,0.25)] text-white transition-[width] duration-200"
+        " relative isolate z-40 shrink-0 h-full bg-[#263B4C]/65 shadow-[4px_4px_4px_rgba(0,0,0,0.25)] text-white transition-[width] duration-200"
       }
     >
       {/* Collapse toggle control on the sidebar edge */}
       <button
         type="button"
         onClick={onToggleCollapse}
-        className="absolute top-1/2 -translate-y-1/2 translate-x-1/2 right-0 z-10 h-9 w-9 rounded-md border border-white/10 bg-white/10 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/20 grid place-items-center shadow transition-all duration-200 ease-in-out"
+        className="absolute top-1/2 -translate-y-1/2 translate-x-1/2 right-0 z-60 h-9 w-9 rounded-md border border-white/10 bg-white/10 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/20 grid place-items-center shadow transition-all duration-200 ease-in-out"
         aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
         title={collapsed ? "Expand" : "Collapse"}
       >
         {collapsed ? <ChevronRight className="h-5 w-5" /> : <ChevronLeft className="h-5 w-5" />}
       </button>
 
-      {/* Scrollable navigation column */}
-      <div
-        className={
-          (collapsed ? "py-3" : "pt-3 pb-6") +
-          " h-full overflow-y-auto overflow-x-hidden flex flex-col items-stretch gap-0 px-0 sidebar-scroll"
-        }
-      >
-        {/* Top divider under logo: thicker, more solid, harmonized with item dividers */}
-        {!collapsed ? (
-          <div className="w-full flex justify-center mt-1 mb-2">
-            <div className="relative w-[260px] h-[14px]">
-              {/* Base bright line */}
-              <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[3px] bg-gradient-to-r from-transparent via-white/40 to-transparent" />
-              {/* Cyan core for a more solid feel */}
-              <div className="absolute left-2 right-2 top-1/2 -translate-y-1/2 h-[3px] rounded-full bg-gradient-to-r from-cyan-400/0 via-cyan-400 to-cyan-400/0" />
-               {/* Cyan core - symmetrical fade using consistent syntax */}
-              <div className="absolute left-2 top-1/2 -translate-y-1/2 h-2.5 w-2.5 rounded-full bg-cyan-400/80 shadow-[0_0_8px_rgba(34,211,238,0.5)]" />
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 h-2.5 w-2.5 rounded-full bg-cyan-400/80 shadow-[0_0_8px_rgba(34,211,238,0.5)]" />
+      <div className="relative grid h-full grid-rows-[minmax(0,1fr)_auto_auto]">
+        {/* Scrollable navigation column */}
+        <div className={navClassName}>
+          {/* Top divider under logo: thicker, more solid, harmonized with item dividers */}
+          {!collapsed ? (
+            <div className="w-full flex justify-center mt-1 mb-2">
+              <div className="relative w-[260px] h-[14px]">
+                {/* Base bright line */}
+                <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[3px] bg-gradient-to-r from-transparent via-white/40 to-transparent" />
+                {/* Cyan core for a more solid feel */}
+                <div className="absolute left-2 right-2 top-1/2 -translate-y-1/2 h-[3px] rounded-full bg-gradient-to-r from-cyan-400/0 via-cyan-400 to-cyan-400/0" />
+                {/* Cyan core - symmetrical fade using consistent syntax */}
+                <div className="absolute left-2 top-1/2 -translate-y-1/2 h-2.5 w-2.5 rounded-full bg-cyan-400/80 shadow-[0_0_8px_rgba(34,211,238,0.5)]" />
+                <div className="absolute right-0 top-1/2 -translate-y-1/2 h-2.5 w-2.5 rounded-full bg-cyan-400/80 shadow-[0_0_8px_rgba(34,211,238,0.5)]" />
+              </div>
             </div>
-          </div>
-        ) : (
-          <div className="w-full flex justify-center mt-1 mb-2">
-            <div className="relative w-10 h-[12px]">
-              <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[2px] bg-gradient-to-r from-transparent via-white/35 to-transparent" />
-              <div className="absolute left-2.5 right-2.5 top-1/2 -translate-y-1/2 h-[2px] rounded-full bg-gradient-to-r from-cyan-300/25 via-cyan-400/50 to-cyan-300/25" />
+          ) : (
+            <div className="w-full flex justify-center mt-1 mb-2">
+              <div className="relative w-10 h-[12px]">
+                <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[2px] bg-gradient-to-r from-transparent via-white/35 to-transparent" />
+                <div className="absolute left-2.5 right-2.5 top-1/2 -translate-y-1/2 h-[2px] rounded-full bg-gradient-to-r from-cyan-300/25 via-cyan-400/50 to-cyan-300/25" />
+              </div>
             </div>
-          </div>
-        )}
-        {/* Primary navigation with optional nested submenus */}
-        {ITEMS.map((it, idx) => {
-          const subItems = SUB_ITEMS[it.key] ?? [];
-          return (
-            <React.Fragment key={it.key}>
-              <SidebarPill
-                collapsed={collapsed}
-                active={active === it.key}
-                onClick={() => {
-                  setOpenGroup((v) => (v === it.key ? null : it.key));
-                  onChange(it.key);
-                }}
-                icon={it.icon}
-                label={it.label}
-                ariaExpanded={openGroup === it.key}
-              />
+          )}
+          {/* Primary navigation with optional nested submenus */}
+          {ITEMS.map((it, idx) => {
+            const subItems = SUB_ITEMS[it.key] ?? [];
+            return (
+              <React.Fragment key={it.key}>
+                <SidebarPill
+                  collapsed={collapsed}
+                  active={active === it.key}
+                  onClick={() => {
+                    setOpenGroup((v) => (v === it.key ? null : it.key));
+                    onChange(it.key);
+                  }}
+                  icon={it.icon}
+                  label={it.label}
+                  ariaExpanded={openGroup === it.key}
+                />
 
-              {!collapsed && subItems.length > 0 && (
-                <div
-                  className={
-                    "relative w-full flex flex-col items-start gap-2 pl-6 transition-all duration-200 ease-in-out " +
-                    (openGroup === it.key
-                      ? "max-h-[480px] opacity-100 mt-2 overflow-y-auto pr-1"
-                      : "max-h-0 opacity-0 mt-0 pointer-events-none overflow-hidden")
-                  }
-                  aria-hidden={openGroup !== it.key}
-                >
-                  {/* Vertical connector aligned to bullet centers */}
-                  {openGroup === it.key && (
-                    <span
-                      className="pointer-events-none absolute w-px bg-white/15 z-0"
-                      style={{ left: GROUP_CONNECTOR_LEFT, top: "12px", bottom: "12px" }}
-                    />
-                  )}
+                {!collapsed && subItems.length > 0 && (
+                  <div
+                    className={
+                      "relative z-50 w-full flex flex-col items-start gap-2 pl-6 transition-all duration-200 ease-in-out " +
+                      (openGroup === it.key
+                        ? "max-h-[1600px] opacity-100 mt-2 overflow-visible pr-1"
+                        : "max-h-0 opacity-0 mt-0 pointer-events-none overflow-hidden")
+                    }
+                    aria-hidden={openGroup !== it.key}
+                  >
+                    {/* Vertical connector aligned to bullet centers */}
+                    {openGroup === it.key && (
+                      <span
+                        className="pointer-events-none absolute w-px bg-white/15 z-0"
+                        style={{ left: GROUP_CONNECTOR_LEFT, top: "12px", bottom: "12px" }}
+                      />
+                    )}
 
-                  {subItems.map((entry) => {
-  if (entry.type === "group") {
-    const groupKey = `${it.key}:${entry.id}`;
-    return (
-      <SidebarSubGroup
-        key={entry.id}
-        label={entry.label}
-        icon={entry.icon}
-        items={entry.items}
-        open={Boolean(openSubGroups[groupKey])}
-        onToggle={() => {
-          const thisKey = `${it.key}:${entry.id}`;
-          setOpenSubGroups((current) => {
-            const isOpen = !!current[thisKey];
+                    {subItems.map((entry) => {
+                      if (entry.type === "group") {
+                        const groupKey = `${it.key}:${entry.id}`;
+                        return (
+                          <SidebarSubGroup
+                            key={entry.id}
+                            label={entry.label}
+                            icon={entry.icon}
+                            items={entry.items}
+                            open={Boolean(openSubGroups[groupKey])}
+                            onToggle={() => {
+                              const thisKey = `${it.key}:${entry.id}`;
+                              setOpenSubGroups((current) => {
+                                const isOpen = !!current[thisKey];
 
-            // Keep groups from OTHER top-level sections; close siblings in THIS section
-            const next: Record<string, boolean> = {};
-            for (const k of Object.keys(current)) {
-              if (!k.startsWith(`${it.key}:`)) next[k] = current[k];
-            }
+                                // Keep groups from OTHER top-level sections; close siblings in THIS section
+                                const next: Record<string, boolean> = {};
+                                for (const k of Object.keys(current)) {
+                                  if (!k.startsWith(`${it.key}:`)) next[k] = current[k];
+                                }
 
-            // If it wasn't open, open this one; otherwise leave all closed for this section
-            if (!isOpen) next[thisKey] = true;
+                                // If it wasn't open, open this one; otherwise leave all closed for this section
+                                if (!isOpen) next[thisKey] = true;
 
-            return next;
-          });
-        }}
-        activeId={activeSub[it.key] ?? null}
-        onItemClick={(item) => {
-          setActiveSub((s) => ({ ...s, [it.key]: item.id }));
-          onChange(it.key);
-        }}
-      />
-    );
-  }
+                                return next;
+                              });
+                            }}
+                            activeId={activeSub[it.key] ?? null}
+                            onItemClick={(item) => {
+                              setActiveSub((s) => ({ ...s, [it.key]: item.id }));
+                              onChange(it.key);
+                            }}
+                          />
+                        );
+                      }
 
-  const sub = entry as SidebarSubItem;
-  return (
-    <SidebarSubPill
-      key={sub.id}
-      label={sub.label}
-      icon={sub.icon}
-      active={activeSub[it.key] === sub.id}
-      onClick={() => {
-        setActiveSub((s) => ({ ...s, [it.key]: sub.id }));
-        onChange(it.key);
-      }}
-    />
-  );
-})}
-</div>
-) }            </React.Fragment>
-);
-})}
+                      const sub = entry as SidebarSubItem;
+                      return (
+                        <SidebarSubPill
+                          key={sub.id}
+                          label={sub.label}
+                          icon={sub.icon}
+                          active={activeSub[it.key] === sub.id}
+                          onClick={() => {
+                            setActiveSub((s) => ({ ...s, [it.key]: sub.id }));
+                            onChange(it.key);
+                          }}
+                        />
+                      );
+                    })}
+                  </div>
+                )}
+              </React.Fragment>
+            );
+          })}
+        </div>
 
-{/* --- Workflows Dock (dedicated space above Copilot) --- */}
-<div className="w-full border-t border-white/10 pt-3 pb-2">
-  <WorkflowDock collapsed={collapsed} />
-</div>
+        {/* --- Workflows Dock (dedicated space above Copilot) --- */}
+        <div className={workflowDockClassName}>
+          <WorkflowDock collapsed={collapsed} />
+        </div>
 
-<div className="mt-auto w-full border-t border-white/10 pt-3">
-  <CopilotDock collapsed={collapsed} />
-</div>
-</div>
-</aside>
+        <div className={copilotDockClassName}>
+          <CopilotDock collapsed={collapsed} />
+        </div>
+      </div>
+    </aside>
   );
 }
 
@@ -644,10 +705,11 @@ function SidebarPill({
       type="button"
       onClick={onClick}
       data-active={active ? "true" : undefined}
-      className={
-        "sidebar-button light-sweep-surface relative grid h-10 w-full grid-cols-[48px_auto] items-center overflow-hidden border-t border-white/10 px-2 transition-all duration-200 ease-in-out focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-200/60 text-white/90 " +
-        (active ? "bg-cyan-600/20 text-white" : "bg-white/5")
-      }
+      className={[
+        "sidebar-button light-sweep-surface relative grid h-10 w-full grid-cols-[48px_auto] items-center overflow-hidden border-t border-white/10 transition-all duration-200 ease-in-out focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-200/60 text-white/90",
+        collapsed ? "px-0" : "px-2",
+        active ? "bg-cyan-600/20 text-white" : "bg-white/5",
+      ].join(" ")}
       aria-current={active ? "page" : undefined}
       aria-expanded={ariaExpanded}
       aria-label={collapsed ? label : undefined}
@@ -795,8 +857,8 @@ function SidebarSubGroup({
         ref={childrenRef}
         onKeyDown={handleChildAreaKeyDown}
         className={
-          "relative w-full pl-5 flex flex-col gap-2 overflow-hidden transition-all duration-200 ease-in-out " +
-          (open ? "max-h-[480px] opacity-100 mt-2" : "max-h-0 opacity-0 mt-0 pointer-events-none")
+          "relative z-50 w-full pl-5 flex flex-col gap-2 transition-all duration-200 ease-in-out " +
+          (open ? "max-h-[960px] opacity-100 mt-2 overflow-visible" : "max-h-0 opacity-0 mt-0 pointer-events-none overflow-hidden")
         }
         aria-hidden={!open}
       >
@@ -871,6 +933,9 @@ function SidebarSubPill({
     </div>
   );
 }
+
+
+
 
 
 

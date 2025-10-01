@@ -136,7 +136,7 @@ function WorkflowDock({
       </div>
 
       {/* Body (top 3 runs) */}
-      <ul className="max-h-60 overflow-auto">
+      <ul className="max-h-60 overflow-auto sidebar-scroll">
         {runs.slice(0, 3).map((r) => (
           <li
             key={r.id}
