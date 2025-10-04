@@ -1,7 +1,7 @@
 // Importing React and necessary hooks for state management, side effects, and DOM references
 import React, { useState, useEffect, useRef } from "react";
 // Importing various icons from lucide-react for header navigation elements
-import { Bell, Database, Settings, UserCircle2, Sun, Moon, Search } from "lucide-react";
+import { Bell, Database, Settings, UserCircle2, Sun, Moon, Search, ChevronLeft } from "lucide-react";
 // Importing the application logo image
 import logo from "../assets/logo.png";
 import SecretHub from "./SecretHub";
@@ -9,7 +9,7 @@ import SecretHub from "./SecretHub";
 // Main Header component with props for sidebar state management
 export default function Header({
   sidebarCollapsed, // Used to line the header logo up with the sidebar midpoint
-  onToggleSidebar: _onToggleSidebar,    // Destructured prop (currently unused but available for future expansion)
+  onToggleSidebar,    // Sidebar toggle handler sourced from app shell
 }: {
   sidebarCollapsed: boolean;   // Type definition for sidebar collapsed state
   onToggleSidebar: () => void; // Type definition for sidebar toggle function
@@ -114,6 +114,18 @@ export default function Header({
       year: 'numeric'    // Full numeric year (e.g., 2024)
     });
   };
+  const sidebarToggleLabel = sidebarCollapsed ? "Expand sidebar" : "Collapse sidebar";
+  const sidebarToggleTitle = sidebarToggleLabel;
+  const sidebarToggleIconClassName =
+    "h-5 w-5 transition-transform duration-[200ms] ease-in-out text-white/90 " +
+    (sidebarCollapsed ? "rotate-180" : "rotate-0");
+  const sidebarToggleButtonClassName = [
+    "relative order-2 inline-flex h-9 w-9 items-center justify-center rounded-full flex-shrink-0",
+    "border border-white/15 bg-white/10 text-white/90",
+    "hover:bg-white/15 hover:border-white/25",
+    "focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-300/70 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent",
+    "transition-colors duration-[200ms]",
+  ].join(" ");
 
   return (
     // Header container with semi-transparent background and shadow
@@ -125,7 +137,25 @@ export default function Header({
           className="flex-shrink-0 flex items-center justify-center transition-[width] duration-200"
           style={{ width: sidebarWidth }}
         >
-          <img src={logo} alt="Logo" className="h-16 max-w-full object-contain drop-shadow-[3px_4px_4px_rgba(0,0,0,0.25)]" />
+          <div className="flex items-center gap-2">
+            <img
+              src={logo}
+              alt="Logo"
+              className="order-1 block h-16 max-w-full shrink object-contain drop-shadow-[3px_4px_4px_rgba(0,0,0,0.25)]"
+            />
+            <button
+              type="button"
+              onClick={onToggleSidebar}
+              aria-label={sidebarToggleLabel}
+              aria-expanded={!sidebarCollapsed}
+              aria-controls="app-sidebar"
+              aria-pressed={sidebarCollapsed}
+              title={sidebarToggleTitle}
+              className={sidebarToggleButtonClassName}
+            >
+              <ChevronLeft className={sidebarToggleIconClassName} />
+            </button>
+          </div>
         </div>
 
         {/* Date and Time Display - Centered with responsive design */}
@@ -251,7 +281,7 @@ function IconCircleButton({
   active?: boolean;               // Whether the button is in active state
   onClick?: () => void;           // Click handler function
 }) {
-  return (
+return (
     <button
       type="button"
       onClick={onClick}
@@ -276,6 +306,29 @@ function IconCircleButton({
     </button>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

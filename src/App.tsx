@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { PanelKey } from "./types";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
+import CopilotPanel from "./components/copilot/CopilotPanel";
 import TranslationReportPage from "./pages/TranslationReportPage";
 import Dashboard from "./components/dashboard/dashboard";
 import { CopilotProvider, useCopilotHotkeys } from "./components/copilot/hooks/useCopilot";
-import CopilotPanel from "./components/copilot/CopilotPanel";
 import CommandPalette from "./components/copilot/CommandPalette";
 
 // Only background in the app (fixed, overscanned, tinted)
@@ -29,7 +29,6 @@ function AppContent() {
           sidebarCollapsed={sidebarCollapsed}
           onToggleSidebar={() => setSidebarCollapsed((v) => !v)}
         />
-
         {/* Row 2: content row fills the rest */}
         <div className="flex-1 min-h-0 flex overflow-hidden">
           {/* Sidebar column */}
@@ -39,7 +38,6 @@ function AppContent() {
                 active={active}
                 onChange={setActive}
                 collapsed={sidebarCollapsed}
-                onToggleCollapse={() => setSidebarCollapsed((v) => !v)}
               />
             </div>
           </div>
@@ -48,7 +46,6 @@ function AppContent() {
           <div className="flex-none h-full">
             <CopilotPanel sidebarCollapsed={sidebarCollapsed} />
           </div>
-
           {/* Main column — grows and scrolls within the row */}
           <main className="main-scroll flex-1 min-h-0 overflow-auto p-6 text-white/90 transition-[padding] duration-300">
             {active === "Dashboard" && <Dashboard />}
@@ -99,3 +96,8 @@ export default function App() {
     </CopilotProvider>
   );
 }
+
+
+
+
+
