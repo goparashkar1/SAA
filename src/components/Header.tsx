@@ -2,14 +2,13 @@
 import React, { useState, useEffect, useRef } from "react";
 // Importing various icons from lucide-react for header navigation elements
 import { Bell, Database, Settings, UserCircle2, Sun, Moon, Search, ChevronLeft } from "lucide-react";
-// Importing the application logo image
-import logo from "../assets/logo.png";
 import SecretHub from "./SecretHub";
+import { useTheme } from "../lib/theme/ThemeContext";
 
 // Main Header component with props for sidebar state management
 export default function Header({
   sidebarCollapsed, // Used to line the header logo up with the sidebar midpoint
-  onToggleSidebar,    // Sidebar toggle handler sourced from app shell
+  onToggleSidebar,  // Sidebar toggle handler sourced from app shell
 }: {
   sidebarCollapsed: boolean;   // Type definition for sidebar collapsed state
   onToggleSidebar: () => void; // Type definition for sidebar toggle function
@@ -19,8 +18,8 @@ export default function Header({
     "data" | "settings" | "notifications" | "profile" | null
   >(null);
   
-  // State management for dark/light mode toggle (defaults to dark mode)
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  // Theme management
+  const { theme, toggleTheme } = useTheme();
   
   // State management for search input value
   const [searchQuery, setSearchQuery] = useState("");
@@ -37,9 +36,8 @@ export default function Header({
   // Reference to the time toggle button for focus management
   const timeButtonRef = useRef<HTMLButtonElement | null>(null);
 
-  
   // Reference to store the interval ID for time updates (for cleanup)
-  const timeIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const timeIntervalRef = useRef<number | null>(null);
 
   // Compute the current sidebar width so the logo aligns with its center point
   const sidebarWidth = sidebarCollapsed ? 64 : 320;
@@ -47,7 +45,7 @@ export default function Header({
   // Effect hook for setting up time updates and click-outside detection
   useEffect(() => {
     // Set up interval to update current time every second (1000ms)
-    timeIntervalRef.current = setInterval(() => {
+    timeIntervalRef.current = window.setInterval(() => {
       setCurrentTime(new Date());
     }, 1000);
 
@@ -72,11 +70,9 @@ export default function Header({
     
     // Cleanup function to remove event listeners and clear interval
     return () => {
-      // Clear the time update interval to prevent memory leaks
       if (timeIntervalRef.current) {
         clearInterval(timeIntervalRef.current);
       }
-      // Remove all event listeners
       document.removeEventListener("mousedown", handlePointerDown, true);
       document.removeEventListener("touchstart", handlePointerDown, true);
       document.removeEventListener("focusin", handleFocusIn, true);
@@ -85,8 +81,7 @@ export default function Header({
 
   // Function to toggle between dark and light mode
   const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-    // Note: Placeholder for actual theme switching logic implementation
+    toggleTheme();
   };
 
   // Form submission handler for search functionality
@@ -99,21 +94,22 @@ export default function Header({
   // Helper function to format time as HH:MM:SS
   const formatTime = (date: Date) => {
     return date.toLocaleTimeString([], { 
-      hour: '2-digit',   // 2-digit hour format (00-23)
-      minute: '2-digit', // 2-digit minute format (00-59)
-      second: '2-digit'  // 2-digit second format (00-59)
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
     });
   };
 
   // Helper function to format date as "Day, Month Date, Year"
   const formatDate = (date: Date) => {
     return date.toLocaleDateString([], {
-      weekday: 'short',  // Abbreviated weekday name (e.g., "Mon")
-      day: 'numeric',    // Numeric day of month (1-31)
-      month: 'short',    // Abbreviated month name (e.g., "Jan")
-      year: 'numeric'    // Full numeric year (e.g., 2024)
+      weekday: 'short',
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric'
     });
   };
+
   const sidebarToggleLabel = sidebarCollapsed ? "Expand sidebar" : "Collapse sidebar";
   const sidebarToggleTitle = sidebarToggleLabel;
   const sidebarToggleIconClassName =
@@ -128,36 +124,17 @@ export default function Header({
   ].join(" ");
 
   return (
-    // Header container with semi-transparent background and shadow
-    <header className="w-full bg-[#263B4C]/65 shadow-header pl-0 pr-4 py-1 text-white">
+    // Header container with semi-transparent background and a gradient shadow that fades right→left
+    <header
+      className="relative w-full pl-0 pr-4 py-1 text-white"
+      style={{
+        // Color gradient: right (opaque) → left (transparent)
+        backgroundImage:
+          "linear-gradient(270deg, rgba(38,59,76,0.65) 0%, rgba(38,59,76,0.55) 40%, rgba(38,59,76,0.25) 75%, rgba(38,59,76,0.00) 95%)",
+      }}
+    >
       {/* Inner container for header content with flex layout */}
       <div className="relative flex items-center justify-between gap-4">
-        {/* Logo Section - Matches sidebar width to keep the mark centered */}
-        <div
-          className="flex-shrink-0 flex items-center justify-center transition-[width] duration-200"
-          style={{ width: sidebarWidth }}
-        >
-          <div className="flex items-center gap-2">
-            <img
-              src={logo}
-              alt="Logo"
-              className="order-1 block h-16 max-w-full shrink object-contain drop-shadow-[3px_4px_4px_rgba(0,0,0,0.25)]"
-            />
-            <button
-              type="button"
-              onClick={onToggleSidebar}
-              aria-label={sidebarToggleLabel}
-              aria-expanded={!sidebarCollapsed}
-              aria-controls="app-sidebar"
-              aria-pressed={sidebarCollapsed}
-              title={sidebarToggleTitle}
-              className={sidebarToggleButtonClassName}
-            >
-              <ChevronLeft className={sidebarToggleIconClassName} />
-            </button>
-          </div>
-        </div>
-
         {/* Date and Time Display - Centered with responsive design */}
         <div className="relative mx-4 flex min-w-0 flex-grow items-center justify-center">
           <button
@@ -180,9 +157,9 @@ export default function Header({
 
         {/* Navigation Section - Fixed width to prevent squeezing */}
         <nav 
-          ref={navRef} // Reference for click-outside detection
-          className="flex items-center gap-2 flex-shrink-0" 
-          aria-label="Header actions" // Accessibility label for the navigation region
+          ref={navRef}
+          className="flex items-center gap-2 flex-shrink-0"
+          aria-label="Header actions"
         >
           {/* Search Form */}
           <form onSubmit={handleSearch} className="relative">
@@ -193,7 +170,7 @@ export default function Header({
                 placeholder="Search..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-3 pr-10 py-1.5 w-64 bg-white/10 border border-white/20 rounded-md text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:border-cyan-400/30 transition-colors duration-200 text-sm h-9"
+                className="pl-3 pr-10 py-1.5 w-80 bg-white/10 border border-white/20 rounded-md text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:border-cyan-400/30 transition-colors duration-200 text-sm h-9"
               />
               {/* Search submit button */}
               <button
@@ -211,11 +188,10 @@ export default function Header({
             type="button"
             onClick={toggleDarkMode}
             className="relative overflow-hidden inline-flex items-center justify-center h-9 w-9 rounded-md border border-white/10 bg-white/5 hover:bg-white/10 text-white/90 transition-colors duration-150 focus:outline-none"
-            aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
-            title={isDarkMode ? "Light mode" : "Dark mode"}
+            aria-label={theme === 'dark' ? "Switch to light mode" : "Switch to dark mode"}
+            title={theme === 'dark' ? "Light mode" : "Dark mode"}
           >
-            {/* Conditionally render sun or moon icon based on current mode */}
-            {isDarkMode ? (
+            {theme === 'dark' ? (
               <Sun className="h-5 w-5" />
             ) : (
               <Moon className="h-5 w-5" />
@@ -256,6 +232,7 @@ export default function Header({
             <UserCircle2 className="h-6 w-6" />
           </IconCircleButton>
         </nav>
+
         <SecretHub
           id="secret-control-hub"
           open={hubOpen}
@@ -263,6 +240,18 @@ export default function Header({
           anchorRef={timeButtonRef}
         />
       </div>
+
+      {/* Gradient shadow that fades right→left, matching header’s fade */}
+      <span
+        aria-hidden
+        className="pointer-events-none absolute left-0 right-0 -bottom-1 h-4"
+        style={{
+          backgroundImage:
+            "linear-gradient(270deg, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0.22) 40%, rgba(0,0,0,0.10) 75%, rgba(0,0,0,0.00) 95%)",
+          filter: "blur(6px)",
+          transform: "translateY(2px)",
+        }}
+      />
     </header>
   );
 }
@@ -281,66 +270,25 @@ function IconCircleButton({
   active?: boolean;               // Whether the button is in active state
   onClick?: () => void;           // Click handler function
 }) {
-return (
+  return (
     <button
       type="button"
       onClick={onClick}
       className={
         "relative overflow-hidden inline-flex items-center justify-center h-9 w-9 rounded-md border bg-white/5 hover:bg-white/10 text-white/90 transition-colors duration-150 focus:outline-none " +
-        // Conditional styling based on active state
         (active
           ? "border-cyan-300/30 bg-cyan-600/20 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.06),inset_-8px_0_16px_rgba(0,0,0,0.25)]"
           : "border-white/10")
       }
       aria-label={ariaLabel}
-      aria-pressed={active}       // Accessibility attribute indicating pressed state
-      title={label}               // Browser tooltip text
+      aria-pressed={active}
+      title={label}
     >
-      {/* Active state indicator bar at the top of the button */}
       {active && (
         <span className="absolute left-0 right-0 top-0 h-1.5 bg-cyan-400/90 shadow-[0_0_8px_rgba(34,211,238,0.6)] rounded-t-md" />
       )}
       {children}
-      {/* Screen reader only text for accessibility */}
       <span className="sr-only">{label || ariaLabel}</span>
     </button>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

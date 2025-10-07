@@ -1,7 +1,10 @@
 ﻿import React from "react";
 import CopilotDock from "./copilot/CopilotDock";
+import FlyoutPanel from "./FlyoutPanel";
 import { PanelKey } from "../types";
 import { createLightSweepVars, SIDEBAR_LIGHT_SWEEP_SETTINGS } from "../ui/shimmer";
+import { ChevronLeft } from "lucide-react";
+import logo from "../assets/logo.png";
 import {
   Search,
   FileText,
@@ -441,19 +444,27 @@ export default function Sidebar({
   active,
   onChange,
   collapsed = false,
+  onToggleSidebar,
 }: {
   active: PanelKey;
   onChange: (k: PanelKey) => void;
   collapsed?: boolean;
+  onToggleSidebar?: () => void;
 }) {
   // Track expanded accordion group and active submenu selection
   const [openGroup, setOpenGroup] = React.useState<PanelKey | null>(null);
   const [activeSub, setActiveSub] = React.useState<Partial<Record<PanelKey, string | null>>>({});
   const [openSubGroups, setOpenSubGroups] = React.useState<Record<string, boolean>>({});
+  
+  // Flyout state for collapsed sidebar
+  const [openFlyoutKey, setOpenFlyoutKey] = React.useState<PanelKey | null>(null);
 
   // Reset expanded groups when the sidebar collapses
   React.useEffect(() => {
-    if (collapsed) setOpenGroup(null);
+    if (collapsed) {
+      setOpenGroup(null);
+      setOpenFlyoutKey(null);
+    }
   }, [collapsed]);
 
   const activeGroupHasSubItems =
@@ -515,15 +526,93 @@ export default function Sidebar({
     "z-20 opacity-100",
   ].join(" ");
 
+  // Flyout handlers
+  const handleFlyoutToggle = React.useCallback((key: PanelKey) => {
+    if (collapsed) {
+      // Only show flyout if the key has subitems
+      const hasSubItems = (SUB_ITEMS[key]?.length ?? 0) > 0;
+      if (hasSubItems) {
+        setOpenFlyoutKey(openFlyoutKey === key ? null : key);
+      }
+    } else {
+      setOpenGroup((v) => (v === key ? null : key));
+    }
+    onChange(key);
+  }, [collapsed, openFlyoutKey, onChange]);
+
+  const handleFlyoutClose = React.useCallback(() => {
+    setOpenFlyoutKey(null);
+  }, []);
+
+  const handleSubGroupToggle = React.useCallback((groupKey: string) => {
+    setOpenSubGroups((current) => {
+      const isOpen = !!current[groupKey];
+      const next: Record<string, boolean> = {};
+      
+      // Preserve groups from other top-level sections
+      for (const k of Object.keys(current)) {
+        const [topLevelKey] = k.split(':');
+        const [newTopLevelKey] = groupKey.split(':');
+        if (topLevelKey !== newTopLevelKey) {
+          next[k] = current[k] ?? false;
+        }
+      }
+
+      if (!isOpen) next[groupKey] = true;
+      return next;
+    });
+  }, []);
+
+  const handleSubItemClick = React.useCallback((key: PanelKey, itemId: string) => {
+    setActiveSub((s) => ({ ...s, [key]: itemId }));
+    onChange(key);
+    if (collapsed) {
+      setOpenFlyoutKey(null);
+    }
+  }, [onChange, collapsed]);
+
   return (
     <aside
       id="app-sidebar"
       className={
         (collapsed ? "w-[64px]" : "w-[320px]") +
-        " relative isolate z-40 shrink-0 h-full bg-[#263B4C]/65 shadow-[4px_4px_4px_rgba(0,0,0,0.25)] text-white transition-[width] duration-200"
+        " fixed left-0 top-0 z-50 h-full bg-[#263B4C]/65 shadow-[4px_4px_4px_rgba(0,0,0,0.25)] text-white transition-[width] duration-200"
       }
     >
       <div className="relative flex h-full flex-col">
+        {/* Top bar with logo and toggle */}
+        <div className="flex-shrink-0 px-3 border-b border-white/10 h-16">
+          <div className="flex items-center justify-center relative h-full">
+            {/* Logo - fills entire height */}
+            <img
+              src={logo}
+              alt="microSINT"
+              className="block shrink-0 object-contain drop-shadow-[3px_4px_4px_rgba(0,0,0,0.25)] transition-all duration-200 h-full w-auto"
+            />
+            
+            {/* Toggle button - positioned absolutely in both states */}
+            {onToggleSidebar && (
+              <button
+                type="button"
+                onClick={onToggleSidebar}
+                aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
+                aria-expanded={!collapsed}
+                aria-controls="app-sidebar"
+                aria-pressed={false}
+                title={collapsed ? "Expand sidebar" : "Collapse sidebar"}
+                className="absolute right-0 inline-flex h-8 w-8 items-center justify-center rounded-full flex-shrink-0 border border-white/15 bg-white/10 text-white/90 hover:bg-white/15 hover:border-white/25 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-300/70 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent transition-colors duration-200"
+              >
+                {collapsed ? (
+                  <ChevronRight className="h-4 w-4" />
+                ) : (
+                  <ChevronLeft className="h-4 w-4" />
+                )}
+              </button>
+            )}
+          </div>
+          
+        </div>
+
         <div className="relative grid flex-1 min-h-0 grid-rows-[minmax(0,1fr)_auto_auto]">
           {/* Blur overlay for workflow console when submenus are open */}
           {overlayMode && (
@@ -571,13 +660,10 @@ export default function Sidebar({
                   <SidebarPill
                     collapsed={collapsed}
                     active={active === it.key}
-                    onClick={() => {
-                      setOpenGroup((v) => (v === it.key ? null : it.key));
-                      onChange(it.key);
-                    }}
+                    onClick={() => handleFlyoutToggle(it.key)}
                     icon={it.icon}
                     label={it.label}
-                    ariaExpanded={openGroup === it.key}
+                    ariaExpanded={collapsed ? openFlyoutKey === it.key : openGroup === it.key}
                   />
 
                   {!collapsed && subItems.length > 0 && (
@@ -664,6 +750,22 @@ export default function Sidebar({
           </div>
         </div>
       </div>
+
+      {/* Flyout Panel for collapsed sidebar */}
+      {collapsed && openFlyoutKey && (
+        <FlyoutPanel
+          isOpen={true}
+          onClose={handleFlyoutClose}
+          activeKey={openFlyoutKey}
+          subItems={SUB_ITEMS[openFlyoutKey] ?? []}
+          anchorWidth={64}
+          onItemClick={onChange}
+          activeSub={activeSub}
+          openSubGroups={openSubGroups}
+          onSubGroupToggle={handleSubGroupToggle}
+          onSubItemClick={handleSubItemClick}
+        />
+      )}
     </aside>
   );
 }

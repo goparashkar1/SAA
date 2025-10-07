@@ -1,4 +1,4 @@
-/* Tailwind CSS directives to include base styles, component classes, and utility classes */
+﻿/* Tailwind CSS directives to include base styles, component classes, and utility classes */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -289,4 +289,388 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Light Theme Styles - Professional & Harmonious */
+[data-theme="light"] {
+  /* Professional Light Theme Color Palette */
+  --bg-primary: #fafbfc;
+  --bg-secondary: #f4f6f8;
+  --bg-tertiary: #eef2f6;
+  
+  /* Surface Colors - Consistent Glass Morphism */
+  --surface-primary: rgba(255, 255, 255, 0.95);
+  --surface-secondary: rgba(248, 250, 252, 0.9);
+  --surface-glass: rgba(255, 255, 255, 0.8);
+  --surface-glass-hover: rgba(255, 255, 255, 0.9);
+  --surface-elevated: rgba(255, 255, 255, 0.98);
+  
+  /* Text Colors - Professional Contrast */
+  --text-primary: #1a202c;
+  --text-secondary: #4a5568;
+  --text-tertiary: #718096;
+  --text-inverse: #ffffff;
+  --text-accent: #2d3748;
+  
+  /* Border Colors - Subtle & Consistent */
+  --border-primary: rgba(226, 232, 240, 0.8);
+  --border-secondary: rgba(226, 232, 240, 0.6);
+  --border-accent: rgba(6, 182, 212, 0.3);
+  --border-glass: rgba(226, 232, 240, 0.7);
+  --border-focus: rgba(6, 182, 212, 0.5);
+  
+  /* Accent Colors - Refined Cyan Palette */
+  --accent-primary: #0891b2;
+  --accent-secondary: #0e7490;
+  --accent-tertiary: #155e75;
+  --accent-glow: rgba(8, 145, 178, 0.25);
+  --accent-glow-hover: rgba(8, 145, 178, 0.4);
+  --accent-glow-strong: rgba(8, 145, 178, 0.6);
+  
+  /* Interactive States - Subtle & Professional */
+  --interactive-hover: rgba(8, 145, 178, 0.08);
+  --interactive-active: rgba(8, 145, 178, 0.12);
+  --interactive-focus: rgba(8, 145, 178, 0.2);
+  --interactive-selected: rgba(8, 145, 178, 0.15);
+  
+  /* Shadow System - Professional Depth */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+  --shadow-glow: 0 0 20px rgba(8, 145, 178, 0.15);
+  --shadow-glow-strong: 0 0 30px rgba(8, 145, 178, 0.25);
+  
+  /* Transition System - Smooth & Consistent */
+  --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== LIGHT THEME COMPONENT STYLES ===== */
+
+/* Header - Professional Glass Effect */
+[data-theme="light"] header {
+  background: linear-gradient(135deg, var(--surface-glass), var(--surface-elevated)) !important;
+  backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid var(--border-primary) !important;
+  color: var(--text-primary) !important;
+  box-shadow: var(--shadow-md) !important;
+  transition: var(--transition-normal) !important;
+}
+
+/* Sidebar - Consistent Glass Morphism */
+[data-theme="light"] #app-sidebar {
+  background: linear-gradient(135deg, var(--surface-glass), var(--surface-elevated)) !important;
+  backdrop-filter: blur(20px) !important;
+  border-right: 1px solid var(--border-primary) !important;
+  color: var(--text-primary) !important;
+  box-shadow: var(--shadow-lg) !important;
+  transition: var(--transition-normal) !important;
+}
+
+/* Main Content Area */
+[data-theme="light"] .main-scroll {
+  color: var(--text-primary) !important;
+  background: transparent !important;
+}
+
+/* Widget Cards - Elevated Glass Design */
+[data-theme="light"] .widget-card {
+  background: linear-gradient(135deg, var(--surface-primary), var(--surface-elevated)) !important;
+  backdrop-filter: blur(15px) !important;
+  border: 1px solid var(--border-primary) !important;
+  color: var(--text-primary) !important;
+  box-shadow: var(--shadow-md) !important;
+  transition: var(--transition-normal) !important;
+}
+
+[data-theme="light"] .widget-card:hover {
+  background: linear-gradient(135deg, var(--surface-elevated), var(--surface-primary)) !important;
+  border-color: var(--border-accent) !important;
+  box-shadow: var(--shadow-lg), var(--shadow-glow) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Sidebar Buttons - No Fill, Text Only with Divider and Blue Strip on Active */
+[data-theme="light"] .sidebar-button {
+  color: var(--text-primary) !important;
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important; /* Low-opacity divider */
+  transition: var(--transition-fast) !important;
+  position: relative; /* For positioning the active strip */
+}
+
+[data-theme="light"] .sidebar-button:hover {
+  color: var(--text-accent) !important;
+  background: transparent !important; /* No fill on hover */
+}
+
+[data-theme="light"] .sidebar-button[data-active="true"] {
+  color: var(--text-accent) !important; /* Blue text when active */
+  background: transparent !important; /* No fill when active */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important; /* Maintain divider */
+}
+
+[data-theme="light"] .sidebar-button[data-active="true"]::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px; /* Vertical deep blue strip */
+  background: var(--accent-primary) !important; /* Deep blue strip */
+}
+
+/* Input Fields - Professional Form Design */
+[data-theme="light"] input {
+  background: var(--surface-primary) !important;
+  border: 1px solid var(--border-primary) !important;
+  color: var(--text-primary) !important;
+  transition: var(--transition-fast) !important;
+}
+
+[data-theme="light"] input:focus {
+  background: var(--surface-elevated) !important;
+  border-color: var(--border-focus) !important;
+  box-shadow: 0 0 0 3px var(--accent-glow), var(--shadow-sm) !important;
+  outline: none !important;
+}
+
+[data-theme="light"] input::placeholder {
+  color: var(--text-tertiary) !important;
+}
+
+/* Buttons - Consistent Interactive States */
+[data-theme="light"] button {
+  color: var(--text-primary) !important;
+  background: var(--surface-primary) !important;
+  border: 1px solid var(--border-primary) !important;
+  transition: var(--transition-fast) !important;
+}
+
+[data-theme="light"] button:hover {
+  background: var(--interactive-hover) !important;
+  border-color: var(--border-accent) !important;
+  color: var(--text-accent) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+[data-theme="light"] button:active {
+  background: var(--interactive-active) !important;
+  transform: translateY(1px) !important;
+}
+
+/* ===== COMPREHENSIVE LIGHT THEME OVERRIDES ===== */
+
+/* Border Colors - Consistent & Professional */
+[data-theme="light"] .border-white\/10,
+[data-theme="light"] .border-white\/20,
+[data-theme="light"] .border-white\/15 {
+  border-color: var(--border-primary) !important;
+}
+
+/* Text Colors - Professional Hierarchy */
+[data-theme="light"] .text-white {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="light"] .text-white\/80,
+[data-theme="light"] .text-white\/90 {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="light"] .text-white\/70 {
+  color: var(--text-tertiary) !important;
+}
+
+/* Background Colors - Consistent Surfaces */
+[data-theme="light"] .bg-white\/5 {
+  background-color: var(--interactive-hover) !important;
+}
+
+[data-theme="light"] .bg-white\/10 {
+  background-color: var(--interactive-active) !important;
+}
+
+[data-theme="light"] .bg-white\/15 {
+  background-color: var(--interactive-selected) !important;
+}
+
+[data-theme="light"] .bg-cyan-600\/20 {
+  background-color: var(--interactive-selected) !important;
+}
+
+/* Hover States - Smooth Interactions */
+[data-theme="light"] .hover\:bg-white\/10:hover {
+  background-color: var(--interactive-active) !important;
+}
+
+[data-theme="light"] .hover\:bg-white\/15:hover {
+  background-color: var(--interactive-selected) !important;
+}
+
+[data-theme="light"] .hover\:border-cyan-400\/30:hover {
+  border-color: var(--border-accent) !important;
+}
+
+[data-theme="light"] .hover\:text-cyan-100:hover {
+  color: var(--text-accent) !important;
+}
+
+[data-theme="light"] .hover\:text-cyan-200\/90:hover {
+  color: var(--text-secondary) !important;
+}
+
+/* Focus States - Professional Accessibility */
+[data-theme="light"] .focus\:border-cyan-400\/30:focus {
+  border-color: var(--border-focus) !important;
+}
+
+[data-theme="light"] .focus\:ring-cyan-400\/50:focus {
+  --tw-ring-color: var(--accent-glow) !important;
+}
+
+[data-theme="light"] .focus-visible\:ring-cyan-400\/40:focus-visible,
+[data-theme="light"] .focus-visible\:ring-cyan-200\/60:focus-visible,
+[data-theme="light"] .focus-visible\:ring-sky-300\/70:focus-visible {
+  --tw-ring-color: var(--accent-glow) !important;
+}
+
+/* Active States - Clear Visual Feedback */
+[data-theme="light"] .border-cyan-300\/30 {
+  border-color: var(--border-accent) !important;
+}
+
+[data-theme="light"] .text-cyan-100 {
+  color: var(--text-accent) !important;
+}
+
+[data-theme="light"] .text-cyan-200\/90 {
+  color: var(--text-secondary) !important;
+}
+
+/* Glow Effects - Subtle & Professional */
+[data-theme="light"] .shadow-\[0_0_8px_rgba\(34,211,238,0\.6\)\] {
+  box-shadow: 0 0 8px var(--accent-glow) !important;
+}
+
+[data-theme="light"] .shadow-\[0_0_12px_rgba\(34,211,238,0\.25\)\] {
+  box-shadow: var(--shadow-glow) !important;
+}
+
+[data-theme="light"] .shadow-\[0_0_8px_rgba\(34,211,238,0\.5\)\] {
+  box-shadow: 0 0 8px var(--accent-glow) !important;
+}
+
+[data-theme="light"] .shadow-\[inset_0_1px_0_rgba\(255,255,255,0\.06\),inset_-8px_0_16px_rgba\(0,0,0,0\.25\)\] {
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), inset -8px 0 16px rgba(0,0,0,0.05) !important;
+}
+
+/* Divider & Accent Elements */
+[data-theme="light"] .bg-gradient-to-r {
+  background: linear-gradient(to right, transparent, var(--border-primary), transparent) !important;
+}
+
+[data-theme="light"] .bg-cyan-400\/80,
+[data-theme="light"] .bg-cyan-400 {
+  background-color: var(--accent-primary) !important;
+}
+
+[data-theme="light"] .bg-cyan-300\/25 {
+  background-color: var(--accent-glow) !important;
+}
+
+/* Gradient Overrides */
+[data-theme="light"] .via-cyan-400 {
+  --tw-gradient-to: var(--accent-primary) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--accent-primary), var(--tw-gradient-to) !important;
+}
+
+[data-theme="light"] .via-cyan-400\/50 {
+  --tw-gradient-to: var(--accent-glow) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--accent-glow), var(--tw-gradient-to) !important;
+}
+
+[data-theme="light"] .from-cyan-400\/0 {
+  --tw-gradient-from: transparent !important;
+}
+
+[data-theme="light"] .to-cyan-400\/0 {
+  --tw-gradient-to: transparent !important;
+}
+
+/* ===== ADDITIONAL PROFESSIONAL ENHANCEMENTS ===== */
+
+[data-theme="light"] .transition-colors {
+  transition: var(--transition-fast) !important;
+}
+
+[data-theme="light"] .transition-all {
+  transition: var(--transition-normal) !important;
+}
+
+/* Enhanced Glass Morphism Effects */
+[data-theme="light"] .backdrop-blur-sm {
+  backdrop-filter: blur(8px) !important;
+}
+
+[data-theme="light"] .backdrop-blur-md {
+  backdrop-filter: blur(12px) !important;
+}
+
+[data-theme="light"] .backdrop-blur-lg {
+  backdrop-filter: blur(16px) !important;
+}
+
+/* Professional Shadow System */
+[data-theme="light"] .shadow-sm {
+  box-shadow: var(--shadow-sm) !important;
+}
+
+[data-theme="light"] .shadow-md {
+  box-shadow: var(--shadow-md) !important;
+}
+
+[data-theme="light"] .shadow-lg {
+  box-shadow: var(--shadow-lg) !important;
+}
+
+[data-theme="light"] .shadow-xl {
+  box-shadow: var(--shadow-xl) !important;
+}
+
+/* Enhanced Interactive States */
+[data-theme="light"] .group:hover .group-hover\:text-cyan-100 {
+  color: var(--text-accent) !important;
+}
+
+[data-theme="light"] .group:hover .group-hover\:text-cyan-200\/90 {
+  color: var(--text-secondary) !important;
+}
+
+/* Professional Scrollbars */
+[data-theme="light"] .sidebar-scroll::-webkit-scrollbar-track {
+  background: var(--surface-secondary) !important;
+}
+
+[data-theme="light"] .sidebar-scroll::-webkit-scrollbar-thumb {
+  background: var(--border-primary) !important;
+}
+
+[data-theme="light"] .sidebar-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--border-accent) !important;
+}
+
+[data-theme="light"] .main-scroll::-webkit-scrollbar-track {
+  background: var(--surface-secondary) !important;
+}
+
+[data-theme="light"] .main-scroll::-webkit-scrollbar-thumb {
+  background: var(--border-primary) !important;
+}
+
+[data-theme="light"] .main-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--border-accent) !important;
 }

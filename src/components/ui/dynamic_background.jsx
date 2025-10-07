@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState, useMemo } from "react";
+import { useTheme } from "../../lib/theme/ThemeContext";
 
 // === Microsint Dynamic Background — Ordered Triangulated Mesh ===
 // - Nodes glow (same glow as sparks).
@@ -8,11 +9,20 @@ import React, { useEffect, useRef, useState, useMemo } from "react";
 const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
 const rand = (a, b) => a + Math.random() * (b - a);
 
-const COLORS = {
+// Dark theme colors (original)
+const DARK_COLORS = {
   bg1: "#0c1a24",
   bg2: "#0a1620",
   node: "#1fefff",
   linkBase: "rgba(31, 239, 255, 0.2)",
+};
+
+// Light theme colors
+const LIGHT_COLORS = {
+  bg1: "#e0f2fe",
+  bg2: "#bae6fd",
+  node: "#0891b2",
+  linkBase: "rgba(8, 145, 178, 0.3)",
 };
 
 // Node tiers: hubs, medium, small
@@ -30,6 +40,10 @@ export default function MicrosintDynamicBackground() {
   const canvasRef = useRef(null);
   const [dpi, setDpi] = useState(typeof window !== "undefined" ? window.devicePixelRatio || 1 : 1);
   const [running] = useState(true);
+  const { theme } = useTheme();
+  
+  // Use theme-appropriate colors
+  const colors = theme === 'light' ? LIGHT_COLORS : DARK_COLORS;
 
   const tiers = useMemo(() => TIER_CONFIG, []);
   const nodesRef = useRef([]);
@@ -148,16 +162,16 @@ export default function MicrosintDynamicBackground() {
       const now = performance.now();
       const dt = Math.min(0.05, (now - last) / 1000); last = now; timeRef.current += dt;
 
-      // Background gradient (deep blue shades)
+      // Background gradient (theme-aware)
       const grad = ctx.createLinearGradient(0, 0, W, H);
-      grad.addColorStop(0, COLORS.bg1); grad.addColorStop(1, COLORS.bg2);
+      grad.addColorStop(0, colors.bg1); grad.addColorStop(1, colors.bg2);
       ctx.fillStyle = grad; ctx.fillRect(0, 0, W, H);
 
       const nodes = nodesRef.current; const links = linksRef.current;
 
       // Links
       ctx.lineWidth = 1;
-      ctx.strokeStyle = COLORS.linkBase;
+      ctx.strokeStyle = colors.linkBase;
       links.forEach(L => {
         const na = nodes[L.a], nb = nodes[L.b];
         ctx.beginPath(); ctx.moveTo(na.x, na.y); ctx.lineTo(nb.x, nb.y); ctx.stroke();
@@ -181,16 +195,16 @@ export default function MicrosintDynamicBackground() {
         // Subtle trail + bright core (same glow as nodes)
         const r = 2 * dpi;
         const grd = ctx.createRadialGradient(x, y, 0, x, y, r * 3.5);
-        grd.addColorStop(0, "rgba(31,239,255,0.45)"); grd.addColorStop(1, "rgba(31,239,255,0)");
+        grd.addColorStop(0, `${colors.node}73`); grd.addColorStop(1, `${colors.node}00`);
         ctx.save(); ctx.fillStyle = grd; ctx.beginPath(); ctx.arc(x, y, r * 3.5, 0, Math.PI * 2); ctx.fill(); ctx.restore();
 
-        ctx.save(); ctx.shadowColor = COLORS.node; ctx.shadowBlur = 22;
-        ctx.globalAlpha = 0.9; ctx.fillStyle = COLORS.node;
+        ctx.save(); ctx.shadowColor = colors.node; ctx.shadowBlur = 22;
+        ctx.globalAlpha = 0.9; ctx.fillStyle = colors.node;
         ctx.beginPath(); ctx.arc(x, y, 1.8 * dpi, 0, Math.PI * 2); ctx.fill(); ctx.restore();
 
         // When reaching target, emit a ring pulse
         if (s.t >= 1) {
-          pulsesRef.current.push(makePulse(nb.x, nb.y, COLORS.node, 1));
+          pulsesRef.current.push(makePulse(nb.x, nb.y, colors.node, 1));
           sparksRef.current.splice(i, 1);
         }
       }
@@ -203,8 +217,8 @@ export default function MicrosintDynamicBackground() {
         n.x = n.baseX + ox; n.y = n.baseY + oy;
 
         ctx.save();
-        ctx.shadowColor = COLORS.node; ctx.shadowBlur = 22; // same glow as sparks
-        ctx.fillStyle = COLORS.node;
+        ctx.shadowColor = colors.node; ctx.shadowBlur = 22; // same glow as sparks
+        ctx.fillStyle = colors.node;
         ctx.beginPath(); ctx.arc(n.x, n.y, n.size * dpi, 0, Math.PI * 2); ctx.fill();
         ctx.restore();
       });
@@ -235,12 +249,13 @@ export default function MicrosintDynamicBackground() {
       {/* Canvas dimmed to ~70% */}
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full opacity-80" />
 
-      {/* Gradient overlay tint (same look you had before) */}
+      {/* Gradient overlay tint (theme-aware with smooth transitions) */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 transition-all duration-700 ease-in-out"
         style={{
-          backgroundImage:
-            "linear-gradient(rgba(11, 44, 78, 0.4), rgba(0, 0, 0, 0.9))",
+          backgroundImage: theme === 'light' 
+            ? "linear-gradient(135deg, rgba(186, 230, 253, 0.2), rgba(255, 255, 255, 0.6), rgba(240, 249, 255, 0.8))"
+            : "linear-gradient(135deg, rgba(11, 44, 78, 0.4), rgba(0, 0, 0, 0.9))",
         }}
       />
     </div>
