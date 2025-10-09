@@ -1,0 +1,9 @@
+{
+  "source": {
+    "type": "url",
+    "url": "https://www.understandingwar.org/backgrounder/russian-offensive-campaign-assessment-september-1-2025"
+  },
+  "out_format": "html",
+  "model": "gpt-4o-mini",
+  "dest": "C:\\Users\\pc\\Desktop\\freshrss\\services\\translator_agent\\Verbose\\job_1756793524\\output.fa.html"
+}

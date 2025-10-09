@@ -1,0 +1,9 @@
+{
+  "source": {
+    "type": "file",
+    "path": "C:\\Users\\pc\\Desktop\\Files\\Re-evaluation by factoring in Azure and Martin Fowler's guidelines.pdf"
+  },
+  "out_format": "docx",
+  "model": "gpt-4o-mini",
+  "dest": "C:\\Users\\pc\\Desktop\\SAA\\services\\translator_agent\\Verbose\\job_1757235447\\Re-evaluation by factoring in Azure and Martin Fowler's guidelines.fa.docx"
+}

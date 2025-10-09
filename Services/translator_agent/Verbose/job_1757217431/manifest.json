@@ -1,0 +1,9 @@
+{
+  "source": {
+    "type": "file",
+    "path": "C:\\Users\\pc\\Desktop\\250903_Dickson_Playbook_Iran.pdf"
+  },
+  "out_format": "docx",
+  "model": "gpt-4o-mini",
+  "dest": "C:\\Users\\pc\\Desktop\\SAA\\services\\translator_agent\\Verbose\\job_1757217431\\250903_Dickson_Playbook_Iran.fa.docx"
+}

@@ -1,0 +1,9 @@
+{
+  "source": {
+    "type": "file",
+    "path": "C:\\Users\\pc\\Downloads\\russian-offensive-campaign-assessment-september-6-2025.pdf"
+  },
+  "out_format": "docx",
+  "model": "gpt-4o-mini",
+  "dest": "C:\\Users\\pc\\Desktop\\SAA\\services\\translator_agent\\Verbose\\job_1757216846\\russian-offensive-campaign-assessment-september-6-2025.fa.docx"
+}

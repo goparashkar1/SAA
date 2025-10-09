@@ -1,0 +1,642 @@
+{
+  "blocks": [
+    {
+      "id": "188ff443d9a6",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Translation section"
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "1f07eef8405f",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "API key not valid"
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "6244c2f29a76",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "With the Global Sumud Flotilla en route to Gaza, Colombian journalist Mauricio Morales, who has been covering the flotilla’s journey for Al Jazeera, describes a typical day at sea for the two dozen or so volunteers on board his boat.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "b267d8c46ee4",
+      "type": "heading",
+      "level": 3,
+      "spans": [
+        {
+          "text": "7am",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "fece4a36fc00",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "People begin to stir, grab their phones, and scroll for news. Most boats have a Wi-Fi connection: a lifeline for the volunteers and the mission.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "bcb452bd4f4f",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Recommended Stories ",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "831b99247bf0",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "As some get up, those who spent the night sleeping on the floor move quickly to the sofas or mattresses they vacated, hoping to eke out a little more rest. Others return from night watches, spent keeping a lookout for Israeli drones or other larger vessels that the ship must avoid so no accidents occur.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "ad704381d9b5",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "As rough seas and uncomfortable sleeping conditions take their toll on the volunteers, most of whom have no prior experience at sea, rest is valuable. The boat operates a “buddy system”, which pairs up the volunteers, who are aged between 24 and 73 and represent around 14 nationalities. The buddies periodically check on one another, making sure their partner is getting enough sleep and food, and that they are coping with the physical and emotional strains of the mission. Conditions are cramped on a boat built for a dozen people but carrying twice as many, and the knowledge of what has happened to previous flotillas that have been ",
+          "bold": false,
+          "italic": false,
+          "code": false
+        },
+        {
+          "text": "intercepted or attacked",
+          "bold": false,
+          "italic": false,
+          "code": false,
+          "href": "/news/2025/6/9/freedom-flotillas-a-history-of-attempts-to-break-israels-siege-of-gaza"
+        },
+        {
+          "text": " means anxiety is ever present.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "8dd9b69afead",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "5765910c844a",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "8c1eff0e74b1",
+      "type": "heading",
+      "level": 3,
+      "spans": [
+        {
+          "text": "9am",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "1d8a31440363",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Food is rationed, and breakfast is usually only a cup of coffee or tea. But when the conversation drifts to the shortages, thoughts quickly turn to the man-made famine in Gaza, where people are dying daily of hunger, as others are killed waiting in line in the hope of getting food for their families.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "99e92e78cc73",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "The purpose of the mission is never far from the volunteers’ minds. Omar, a 73-year-old Palestinian whose family was displaced during the Nakba, leads lessons on Palestinian history on the boat’s deck. Although tragedy is woven through the accounts he shares, his conviction and years of involvement in efforts to break the siege of Gaza make the sessions not only informative but uplifting.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "cf115950ccd8",
+      "type": "heading",
+      "level": 3,
+      "spans": [
+        {
+          "text": "10am ",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "48ccd19c2e66",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Volunteers and crew gather for the daily meeting, where a headcount is taken and updates given.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "c20c54760914",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Tasks and chores are assigned. There’s a rotation where, after everyone has done a task or chore once, the cycle repeats. Everyone has to pitch in with toilet duty, dishwashing, cooking, and cleaning the decks and cabins. There are no arguments, and everyone willingly does what they are assigned.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "6982d499b45a",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "News circulates, too. We are updated on developments, such as Israeli National Security Minister Itamar Ben-Gvir’s threat to treat the flotilla volunteers",
+          "bold": false,
+          "italic": false,
+          "code": false
+        },
+        {
+          "text": "as “terrorists” and to imprison them in the same high-security jails where many Palestinians are detained without trial and subjected to torture. It increases the urgency the volunteers feel about raising awareness of the mission among governments and civil society movements.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "27a71064a950",
+      "type": "heading",
+      "level": 3,
+      "spans": [
+        {
+          "text": "11am",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "1ece8206a89d",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Volunteers begin their tasks. Marcin, a 41-year-old Polish volunteer, has become the unofficial handyman, carrying out small repairs, fixing portholes, readjusting toilet seats, and refastening shelves. Others assist the sailors in spotting nearby vessels, fishing nets, or drones.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "829c332d4d68",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "32fb44b0aa5a",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "In between their own tasks, the journalists",
+          "bold": false,
+          "italic": false,
+          "code": false
+        },
+        {
+          "text": "on board prepare their reports, while some volunteers give interviews to media outlets following the flotilla. Others update social networks with developments from the ship or find a quiet spot to get some sleep.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "ffae9588038a",
+      "type": "heading",
+      "level": 3,
+      "spans": [
+        {
+          "text": "2-3pm ",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "a2b035dd6109",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Training sessions teach the volunteers what to do in case of a fire, somebody falling overboard, or if the ship needs to be abandoned. But there are other training sessions as well: what to do if the ship is intercepted or attacked. The volunteers are taught how to raise their hands should Israeli soldiers board; the position should be comfortable enough to hold for an extended period of time, while in no way appearing threatening, which might offer the soldiers a pretext for violence.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "7f7962ecfb5b",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "For some of the volunteers, the training provides an uncomfortable reminder of the very real risk of violence that may await them. During training sessions in Barcelona, before boarding the flotilla, training leaders shared previous flotilla experiences. They emphasised the importance of adopting a non-violent response to attacks, which all of the volunteers have agreed to.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "1685859aedb8",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "The cooking team begins preparing the ship’s only hot meal of the day.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "052ff0ab81fa",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Cooking for around 24 people in a galley meant for 12 is no small feat",
+          "bold": false,
+          "italic": false,
+          "code": false
+        },
+        {
+          "text": ".",
+          "bold": true,
+          "italic": false,
+          "code": false
+        },
+        {
+          "text": " Kubra, a German citizen of Turkish descent, is one of the main cooks. She is an activist deeply involved in the pro-Palestine movement in Germany, where she once spent 24 hours in police detention for taking part in a pro-Palestine protest.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "424a8618c345",
+      "type": "heading",
+      "level": 3,
+      "spans": [
+        {
+          "text": "5pm",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "b02fce58c2cf",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "The one hot meal is a highlight of the day for the volunteers. Some choose to eat together, while others prefer to find a quiet spot to eat and rest alone.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "021983a8b34c",
+      "type": "heading",
+      "level": 3,
+      "spans": [
+        {
+          "text": "6pm",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "13734786a2de",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "On the ship’s deck, volunteers discuss any challenges from the day and resolve any small issues that arose so that no tension builds among those on board.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "ae4a4ddffa81",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "f9ee1722c7e1",
+      "type": "heading",
+      "level": 3,
+      "spans": [
+        {
+          "text": "8pm",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "a9492e9a1b9f",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Night watch begins as volunteers keep a lookout for other vessels that may impact the flotilla’s trajectory, as well as for Israeli drones. They will keep watch until dawn.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "efc6cb86275d",
+      "type": "heading",
+      "level": 3,
+      "spans": [
+        {
+          "text": "10pm ",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "ff320d27a700",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "After Omar’s evening session on Palestinian history, a discussion takes place about the meaning of mass action as volunteers share their experiences.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "67be3fb57b0d",
+      "type": "heading",
+      "level": 3,
+      "spans": [
+        {
+          "text": "11pm ",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "a2e5b82aed01",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Bed rotation begins. With limited beds and cushions, volunteers give priority to the elderly or those with medical conditions.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "83c204ae9746",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Many others continue working with the media, adjusting to the time zones of their home countries. Uploading content can be slow. With so many people online, the connection flickers in and out.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "6b31170a9688",
+      "type": "heading",
+      "level": 3,
+      "spans": [
+        {
+          "text": "12am",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "dc6202d1fd9d",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Some volunteers sleep, others call friends and family, or take advantage of a moment of quiet before trying to rest. From the portholes of the ship or the upper decks, some just sit and quietly observe the Mediterranean.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "b479d68c87b6",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Despite the prospect of violence should the ship be intercepted by Israeli forces, spirits remain high. There’s a genuine hope that, after all the flotillas that were intercepted or attacked, this time might be different, and we may actually reach Gaza’s shores.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "27acf71fb7ac",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "114b0bfeaef4",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [],
+      "children": [],
+      "attrs": {}
+    }
+  ],
+  "attrs": {
+    "lang": "auto",
+    "dir": "auto"
+  }
+}

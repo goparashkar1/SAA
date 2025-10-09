@@ -1,0 +1,832 @@
+{
+  "blocks": [
+    {
+      "id": "a86342b74574",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Translation section"
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "8529ad2dbeb9",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "API key not valid"
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "0ce9c547c5e2",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "New Delhi, India ",
+          "bold": true,
+          "italic": false,
+          "code": false
+        },
+        {
+          "text": "— On February 15, thousands of men, women and children scrambled to board trains at New Delhi railway station, bound for the pilgrimage city of Prayagraj, which was playing host to the Kumbh Mela festival, one of Hinduism’s holiest gatherings.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "97a372ae29d4",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "A deadly stampede followed, and 18 people died.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "4191367e76ac",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Yet, in the aftermath, India’s Ministry of Railways did not only focus on rescue efforts, investigations into crowd management and compensation for families of victims. It had another concern, too: fighting social media posts that criticised the government over the incident.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "fe688de970cd",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "The ministry used a government platform known as Sahyog to issue notices to a range of social media companies, including Meta and Google, which owns YouTube, demanding they pull down posts that the Indian government deemed detrimental to law and order.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        },
+        {
+          "text": "Most platforms complied: the government has threatened that those who do not, risk losing what is known as their “intermediary immunity” status, which shields them from legal liability for the content posted on their sites.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "315fe3ca83d3",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Until late last year, such takedown notices were issued solely by two federal ministries: the Ministry of Electronics and Information Technology (IT), and the Ministry of Information and Broadcasting (I&B).",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "3163a6fd9a86",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "But in October 2024, the government of Prime Minister Narendra Modi launched the Sahyog platform, extending the power to issue takedown demands to all federal and state government agencies, and even district-level officials and the police.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "1ddb14e5c47e",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Since then, officers at these multiple levels of government and bureaucracy have sought the removal of content from 3,465 URLs in India, in nearly 300 demands they have submitted through Sahyog, data obtained by Al Jazeera through the country’s Right to Information Act reveals.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "605cfba81901",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "It is early days, and these numbers are not yet huge, but analysts say they point to how the tentacles of India’s censorship apparatus are spreading deeper, at a time when the country is already facing growing questions over its alleged crackdown on public speech.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "369cf0d249ac",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Al Jazeera sought responses from the IT and I&B ministries to allegations of deepening censorship, but has not yet received a response.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "c9b531ac5d47",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Inside expanding online censorship",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "c3d1c30f172e",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Historically, officials at the IT and I&B ministries have relied on Section 69a of the Information Technology Act, 2000, to demand that social platforms pull down content.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "c9f382b5562e",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "4fa53535597b",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Section 69a authorises the government to block public access to any online information, citing the country’s sovereignty, security, public order, or similar grounds, by issuing takedown orders to intermediary companies.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "43a237d67e6a",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "The government has drawn mounting criticism in recent years for a lack of transparency in issuing takedown orders, and has been challenged repeatedly in court. In two judgements – in 2015 and 2020 – the Supreme Court of India upheld the constitutionality of Section 69a, but stressed that blocking orders must be narrowly tailored, subject to procedural safeguards, and not used to impose blanket restrictions.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "479b05e2761d",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "With Sahyog, the Modi government has turned to a new legal provision: Section 79 of the IT Act.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "620b3736f37e",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "The new platform operates under Section 79(3)(b), which states that intermediaries (tech companies) would lose immunity if they fail to remove unlawful content upon government notification.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "f997147f2fad",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Tech policy observers and lawyers point out that since this provision has not yet been reviewed by courts, using it allows the government to completely circumvent the safeguards established by the Supreme Court for Section 69a.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "d580057f270c",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "The government has made it mandatory for all social media platforms to join Sahyog and appoint an employee tasked with acting on demands for takedowns. So far, at least 72 companies have onboarded the centralised government platform, including Meta’s WhatsApp and Instagram, Apple, LinkedIn, Google, Telegram, and Snapchat, said Manish Garg, the director of the Indian Cybercrime Coordination Centre (I4C), a body under India’s Ministry of Home Affairs.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "8063743a27d5",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "A team of I4C officials manages the Sahyog platform, Garg replied in a Right to Information request to Al Jazeera.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "c9011ae91ca1",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "But X, owned by Elon Musk, the world’s richest man, has not joined the platform, and has instead taken the Modi government to court in a lawsuit that fiercely argues that Sahyog is a “censorship portal” and that the Indian administration is clamping down on freedom of speech.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "0cb98495c435",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "“Despite [court’s directions] that the ‘power to block for access by the public can be exercised only in exceptional circumstances’ under Section 69a with checks and balances, [the government] enabled countless executive officers and police to use Section 79(3)(b) freely and routinely to restrict speech with no checks and balances,” X has said in its court filings.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "55905434e55c",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "“Thousands of unnamed officers are empowered to unilaterally decide that information is ‘unlawful’ and block it in all of India,” X argues.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "bc8bae3f79f5",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Still, even though X has not joined Sahyog, government agencies send the company requests for takedowns through the platform. Often, the demand has nothing to do with perceived national security concerns.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "02f34f53d87a",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "In April this year, a district-level police officer in the eastern Indian state of Bihar issued a notice to X seeking the removal of posts from a man who had alleged corruption by a local official.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "5d00ab87b6ca",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "The X user whose post drew the takedown order was not informed, until Al Jazeera reached out to him for comment in September. His name is being withheld on his request. X did not act on the demand, and the post is still up.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "1f712fde0f95",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Musk’s platform, though, is an outlier.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "0c05cd50a0c8",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Mishi Choudhary, a technology lawyer and founder of the New Delhi-based Software Freedom Law Center (SFLC), said that the name Sahyog (Hindi for “collaboration”) “itself gives away what has been happening for years: close coordination between executive and platforms, who have become complicit in ensuring that censorship works well while parroting free speech rhetoric worldwide”.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "107f059a6eab",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "The new platform is simply the latest move by the Modi government to expand censorship powers, she said. “Appointing police officers results in unbridled discretion and opens the door to unchecked censorship,” Choudhary told Al Jazeera.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "a5ae1d8cacd1",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Like X, the SFLC has also challenged Sahyog’s constitutionality in the Delhi High Court.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "4d0d0f61a819",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Kashmir hostilities worsen woes",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "76167619c736",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Since Modi came to power in 2014, takedown orders issued by the Indian government were on the rise even before the introduction of Sahyog. By 2022, the orders rose 14-fold – from 471 in 2014 to 6,775 in 2022.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "394c91fb1776",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "These were demands made by the Indian government under Section 69a. Data after 2022 has been denied under the Right to Information Act. Al Jazeera’s request in July this year was rejected, citing a national security exemption.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "cd3afdf07b77",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "But while the Supreme Court has ruled on – and laid down rules for the use of – Section 69a, there are no safeguards in place for the use of Section 79, pointed out Tanmay Singh, a lawyer at the Supreme Court, who has previously worked on several censorship-related cases.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "ef7e106e39c6",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "And that is the provision that Sahyog relies on – opening up a parallel censorship mechanism, even as the government has continued to use Section 69a, too.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "1973805eb497",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Since Sahyog became operational in October last year, through June this year, different government agencies issued 294 takedown requests. In the last three months of 2024, there were 25 takedown orders issued through the Sahyog platform, including 87 URLs. In the six months this year, until June, the numbers rose by 269 more takedown orders, including 3,276 URLs.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "b75b75d880d1",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Orders under both mechanisms – Sections 69a and 79 – are alike, and spelled alike, citing similar laws. “It’s like having two different types of cooking pans. A deeper one for broths and a shallow one for stir fry,” said a lawyer engaged in the ongoing lawsuit between X and the Modi government.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "2d945f060b72",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "“You can use both to cook interchangeably as well, but it’s based on your convenience.”",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "186d3a5a86eb",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "The use of both provisions rose in the aftermath of the heightened tensions between India and Pakistan in April and May, after an attack in Indian-administered Kashmir killed 26 civilians.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "3e3eec92b234",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "New Delhi targeted online platforms and social media accounts linked to Pakistan and ordered a widespread takedown and blocking of accounts – several of them of Pakistani journalists, news outlets and celebrities – across all major social media platforms.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "c75beac5f036",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Alongside them were several prominent Indian journalists and international news outlets, including Reuters. On May 8, Aslah Kayyalakkath, the editor-in-chief at Maktoob, an independent news outlet in India focused on communities marginalised in the face of rising Hindu nationalism, was informed by one of his readers that their account on X was inaccessible in India.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "403386b84137",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "“We remain completely in the dark about the reasons behind the move, as no one has informed us or offered any explanation about the specific content that triggered this action,” Kayyalakkath told Al Jazeera.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "e656802e98de",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "In a statement on May 8, X said the company has received executive orders from the Indian government to block more than 8,000 accounts in India, or face significant fines and imprisonment of the company’s local employees.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "01b3695f9b74",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "“The orders include demands to block access in India to accounts belonging to international news organizations and prominent X users,” the company said, adding that in most cases, the Indian government did not specify any evidence or justification to block the accounts.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "5d53611fab2b",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Anuradha Bhasin, the managing editor of the daily Kashmir Times, was in the US when her account was blocked in India. She read the news but only realised the ban included her when a friend in India confirmed it.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "72c0701d35b6",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "“These blocking orders of de-platforming content, of blocking news websites, are becoming more and more brazen and common,” Bhasin told Al Jazeera.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "30fc99ccb0eb",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Last month, the Indian government banned 25 books in Indian-administered Kashmir, saying that works like those by Booker Prize-winning writer Arundhati Roy propagated “false narratives” and “secessionism” in the contested Muslim-majority region. It included Bhasin’s A Dismantled State: The Untold Story of Kashmir After Article 370.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "7a3e7f5dad29",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "While Bhasin and Kayyalakkath were targeted under Section 69a, the government also ramped up its use of the Sahyog platform amid the crisis with Pakistan. Since the platform’s launch, and until April 8, different government bodies issued 130 takedown orders through Sahyog.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "00522bdbc6ee",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "In less than three months after that, until June 30, another 164 orders were issued.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "18d7d911cfa1",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "‘No sense of humour’",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "f9c10ff87899",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "While Sahyog is the brainchild of the Modi government, X’s court filings show how the police in opposition-governed states, like West Bengal and Tamil Nadu, have also leveraged the model’s expansive nature.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "6283b4d0def9",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Koustav Bagchi, a lawyer at Calcutta High Court and a spokesperson of Modi’s Bharatiya Janata Party, is a critic of the state government, governed by West Bengal Chief Minister Mamata Banerjee of the Trinamool Congress.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "fe305331b9fe",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Bagchi often takes digs at her, and in one instance in March, he posted an image on X that depicted Banerjee in an astronaut suit. He was mocking the chief minister over comments she had made earlier, suggesting that Sunita Williams, an Indian-origin NASA astronaut, be given India’s highest civilian honour. The state police ordered the blocking of the post, citing “risks to public safety and national security”.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "73d4d207091a",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "X did not act on the demand. “I was not aware of this until I was called by a reporter for this two months ago,” Bagchi told Al Jazeera. “The government just doesn’t have any sense of humour. What else is there to say?”",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    }
+  ],
+  "attrs": {
+    "lang": "auto",
+    "dir": "auto"
+  }
+}

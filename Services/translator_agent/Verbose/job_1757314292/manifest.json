@@ -1,0 +1,9 @@
+{
+  "source": {
+    "type": "url",
+    "url": "https://www.aljazeera.com/news/2025/9/7/ships-log-a-day-on-board-the-global-sumud-flotilla-heading-for-gaza"
+  },
+  "out_format": "docx",
+  "model": "gpt-4o-mini",
+  "dest": "C:\\Users\\pc\\Desktop\\SAA\\services\\translator_agent\\Verbose\\job_1757314292\\output.fa.docx"
+}

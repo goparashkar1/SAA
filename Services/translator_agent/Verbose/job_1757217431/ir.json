@@ -1,0 +1,1682 @@
+{
+  "blocks": [
+    {
+      "id": "4b7bcd595ce9",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Translation section"
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "997110a1d61e",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "API key not valid"
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "86f19065d5b3",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 1",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "43c7656798bc",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "A Report of the CSIS Intelligence, National Security, and Technology Program\nJulia Dickson      Emily Harding\nA Playbook for Winning \nthe Cyber War\nPart 4: Evaluating Iran’s Cyber Strategy\nSEPTEMBER 2025",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "2c173c0d4582",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 2",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "091c8ab6eecf",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "A Playbook for Winning \nthe Cyber War\nPart 4: Evaluating Iran’s Cyber Strategy\nAUTHORS\nJulia Dickson\nEmily Harding\nSEPTEMBER 2025\nA Report of the CSIS Intelligence, National Security, and Technology Program",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "0819802e5096",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 3",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "a96af7be3126",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "A Playbook for Winning the Cyber War  |  II\nAbout CSIS\nThe Center for Strategic and International Studies (CSIS) is a bipartisan, nonprofit policy research \norganization dedicated to advancing practical ideas to address the world’s greatest challenges.\nThomas J. Pritzker was named chairman of the CSIS Board of Trustees in 2015, succeeding former \nU.S. senator Sam Nunn (D-GA). Founded in 1962, CSIS is led by John J. Hamre, who has served as \npresident and chief executive officer since 2000.\nCSIS’s purpose is to define the future of national security. We are guided by a distinct set of \nvalues—nonpartisanship, independent thought, innovative thinking, cross-disciplinary scholarship, \nintegrity and professionalism, and talent development. CSIS’s values work in concert toward the \ngoal of making real-world impact.\nCSIS scholars bring their policy expertise, judgment, and robust networks to their research, \nanalysis, and recommendations. We organize conferences, publish, lecture, and make media \nappearances that aim to increase the knowledge, awareness, and salience of policy issues with \nrelevant stakeholders and the interested public.\nCSIS has impact when our research helps to inform the decisionmaking of key policymakers and the \nthinking of key influencers. We work toward a vision of a safer and more prosperous world.\nCSIS does not take specific policy positions; accordingly, all views expressed herein should be \nunderstood to be solely those of the author(s).\n© 2025 by the Center for Strategic and International Studies. All rights reserved.\nCenter for Strategic & International Studies\n1616 Rhode Island Avenue, NW\nWashington, DC 20036\n202-887-0200 | www.csis.org",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "6db196ebbde8",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 4",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "18aeb54c0bd1",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Julia Dickson and Emily Harding  |  III\nAcknowledgments\nThe authors would like to extend their gratitude to those who agreed to be interviewed and to their \nforeign partners who contributed valuable insights from the front lines of this fight. The authors \nwould also like to thank Rex Booth and Dana Stroul for graciously providing valuable feedback, \nSusan Hines for helping with the project contract, and the CSIS iDeas Lab for offering their \ndesign expertise. \nThis report is made possible by project support from the Smith Richardson Foundation.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "07da757c0072",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 5",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "68134d69aa1a",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "A Playbook for Winning the Cyber War  |  IV\nContents\nAuthors’ Note about the Series \t\n1\nOverview of Iran’s Cyber Playbook\t\n2\nCore Elements of Iran’s Strategy\t\n5\nHow Cyber Strategy Fits into Foreign Policy\t\n8\nHow Iran Approaches Deniability\t\n10\nImplementation: Campaigns or Opportunism?\t\n11\nOrganization of Capabilities\t\n13\nWho Are the Fighters?\t\n13\nCase Study 1: Deserts vs. Sands\t\n29\nCase Study 2: Tehran Targets Tirana\t\n31\nCase Study 3: Iranian Cyberattacks During the Israel-Hamas War\t\n34\nAbout the Authors\t\n37\nEndnotes\t\n39",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "1e6012385094",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 6",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "84c70982cb78",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Authors’ Note About\nthe Series \nT\nhis report is part of a series on the future of cyber warfare. This section examines how Iran \nfights in the cyber domain, including the core elements of Tehran’s strategy for conducting \ncyber operations, how that strategy fits in a larger foreign policy context, and who the \nfrontline fighters are in this new mode of conflict. \nPart 1 of this series offers a broad introduction to the report, covers key takeaways from the \ncomparative studies and wargames, and summarizes the authors’ recommendations. Part 2, 3, and \n4 examine how Russia, China, and Iran, respectively, fight in the cyber domain, and Part 5 examines \nU.S. cyber practices. Part 6 tests how U.S. policymakers view cyber operations as part of the spectrum \nof war, peace, and irregular warfare, illuminated by a set of wargames. Finally, Part 7 fully explains \nthe new playbook that will close the gap between how the United States and its adversaries fight and \nsucceed in the cyber domain.\nJulia Dickson and Emily Harding  |  1\nPhoto Source: Emanuele Mazzoni/Adobe Stock",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "a67af83cbac4",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 7",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "836856aa9c3a",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "A Playbook for Winning the Cyber War  |  2\nOverview of Iran’s \nCyber Playbook\nI\nn July 2022, Albanian government networks began to crash. Ransom notes appeared from \n“HomeLand Justice,” but it was clear the attackers were not Albanian. The attackers collected \nand then either deleted or leaked classified information, including the identities of undercover \nintelligence officers and emails from the director of intelligence. As Foreign Policy put it at the \ntime: “all aspects of the lives of Albanian citizens, from births to marriages to deaths, were thrown \ninto disarray.”1\nIran, angry at Albania’s hosting of an Iranian opposition group that it classifies as a terrorist \norganization, had used an intensive cyberattack to coerce and punish the country. Though Albania’s \nsystems largely were restored within weeks, Iran hit Tirana again in September 2022 and a third \ntime in December 2023. By the December attack, Albania had learned hard lessons and was resilient \nenough to avoid severe consequences.2\nIran can fairly be described as a rising, aggressive cyber actor. Persistent cyber operations for \ndomestic surveillance as well as years of constant confrontation with Israel and Saudi Arabia have \ngiven Tehran significant experience in this domain. Two key events catalyzed Iran’s cyber focus: \n(1) a set of regime-threatening protests in 2009 called the Green Movement, and (2) the discovery \nof the Stuxnet virus, which targeted Iran’s nuclear program.3 More recently, Iran has shown a \nwillingness to escalate dramatically and to engage in high-profile attacks. In addition to the attack \non Albania in 2022, for instance, Iran attempted to interfere in the 2020 and 2024 U.S. elections and \nattacked water infrastructure in the United States in 2013 and again in 2023.4",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "63082de62287",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 8",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "ed32f95f96e2",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Julia Dickson and Emily Harding  |  3\nIn the wake of the Green Movement, also known as “Iran’s Twitter Revolution,” Tehran found \nit necessary to develop cyber capabilities in order to maintain the strength of the regime. As \nmillions of Iranians took to the streets to protest the presidential elections, protestors also \ngathered on social media sites and conducted distributed denial of service (DDoS) attacks against \ngovernment websites.5 According to analysis by the Carnegie Endowment for International \nPeace, the government became acutely aware that the internet “could be used as an instrument \nof mass mobilization and represented a significant challenge to the regime’s long-held \ninformation monopoly.”6\nIn response to the protests, the regime developed tools to control its domestic cyberspace and \nsurveil its population. Government-affiliated groups defaced websites associated with the political \nopposition, Israeli businesses, and social media sites. Official government groups also conducted \nDDoS attacks against critical websites and spied on government critics. The surveillance and \ncensorship eventually paralyzed the Green Movement, and the strategy, tools, and threat actors that \ndeveloped during this period laid the groundwork for Iran’s modern cyber operations.7\nLikewise, the discovery of the Stuxnet attack may have encouraged Tehran’s development of \noffensive, retaliatory tools. Stuxnet, a series of exploits that infected Iran’s nuclear facilities around \n2009, caused not only digital problems but also physical damage. Centrifuges, in particular, seem \nto have been affected by the code.8 Not long after, in 2011, Iran launched attacks against at least \nsix big American banks and a small dam in New York.9 The country then hit Saudi Aramco, the \nlargest Saudi oil company, in 2012, destroying an estimated 35,000 computers.10 Since then, Iranian \nhackers have conducted thousands of cyberattacks, primarily against Israel, the United States, \nand Saudi Arabia.11\nTehran has committed millions of dollars to developing its cyber capabilities. According to a report \nby the Institute for National Security Studies at Tel Aviv University, “some 18 percent of Iranian \nuniversity students were reportedly studying computer science” by the late 2010s and “Iran’s cyber \nbudget jumped twelvefold between 2013–2021.”12 The regime uses compulsory military service to \nchannel these technologically knowledgeable graduates into the state security apparatus, including \nthe two components best known for carrying out cyberattacks: the Islamic Revolutionary Guard \nCorps (IRGC) and the Ministry of Intelligence ( ).13\nCooperation with other countries has also contributed to Iran’s cyber capabilities. Tehran and \nMoscow have signed numerous cyber cooperation agreements, starting with a preliminary \nagreement in 2015.14 In 2017, the two countries signed a memorandum of understanding for \ncooperation on information technology and communications-related issues, including “internet \ngovernance [and] network security.”15 Further, they signed an updated agreement in 2021 to \nshare information related to “the fight against crimes committed with the use of information and \ncommunications technology,” which includes cooperation in detecting cyber intrusions, technology \ntransfer, and combined training.16 Moscow is also supplying Tehran with technology. For example, \nin 2023, the Kremlin provided Tehran with powerful communications-surveillance capabilities and \nadvanced software for hacking dissidents’ systems and phones.17",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "a0b1389194d3",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 9",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "c7fba286c1bc",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "A Playbook for Winning the Cyber War  |  4\nChina has also contributed to Iran’s defensive cyber capabilities. In 2021, the two countries signed \na 25-year strategic agreement, which was leaked on social media and published by Iranian news \nsites. It includes both military and cybersecurity cooperation, and as part of this agreement, \nBeijing will help Tehran build its 5G telecommunications infrastructure and assert greater control \nover its cyberspace by sharing knowledge and technologies related to digital surveillance and \nonline censorship.18\nWhile Tehran is rapidly improving its cyber capabilities, they somewhat lag behind other advanced \ncyber actors. In 2017, an Israeli general assessed that Iran is “not state of the art” nor the “strongest \nsuperpower in the cyber dimension,” but is nonetheless quickly improving its cyber capabilities.19 \nIranian leaders are known to oversell the nation’s offensive cyber capabilities as part of their \nmilitary propaganda, and Tehran lacks an advanced and organized security apparatus, so the \nmost sophisticated kinds of cyberattack (such as Stuxnet or the Russian actions in Ukraine) are still \nbeyond Iranian capabilities.20\nAlthough Tehran is not yet as advanced as Russia or China, the United States and its allies should \nnot underestimate this adversary. Tehran has demonstrated a brazen willingness to attack civilian \ncritical infrastructure and will likely continue to reach for destructive tools. Poorly defended targets \nin the United States (of which there are many) are vulnerable; they include smaller banks or local \npower companies, or poorly secured pipeline control systems. Further, Iran conflates Israel and \nthe United States, viewing the latter as a legitimate target in retaliation for Israeli actions. As the \n2023 Annual Threat Assessment from the Office of the Director of National Intelligence states: “Iran’s \ngrowing expertise and willingness to conduct aggressive cyber operations make it a major threat to \nthe security of the U.S. and allied networks and data.”21\nAlthough Tehran is not yet as advanced as Russia or China, \nthe United States and its allies should not underestimate this \nadversary. Tehran has demonstrated a brazen willingness to \nattack civilian critical infrastructure and will likely continue to \nreach for destructive tools.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "e8cecbb34e49",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 10",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "83dde0087e62",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Julia Dickson and Emily Harding  |  5\nCore Elements of \nIran’s Strategy\nI\nran has emerged as an aggressive cyber actor unburdened by concerns about norms and \ninternational law. In developing its offensive and defensive cyber capabilities, the country has \ntwo main goals: (1) to create a “technological envelope” to protect its critical and sensitive \ninfrastructure from cyberattacks, and (2) to counter adversaries in cyberspace.22 Central to \nthe second goal is “forward defense,” a concept holding that militarily confronting adversaries \noutside of Iran’s borders is preferable to fighting them within Iran.23 Offensive cyber operations \nare an important component of this hybrid strategy, suggesting that Iran will continue to invest in \ndeveloping its cyber capabilities.24\nThis section will cover several key features of Iran’s cyber strategy: sophisticated social engineering \ncampaigns to gain access to networks, cyber-enabled influence operations, disruptive and \ndestructive attacks, and the use of proxies to carry out these various methods of attack.\nAs part of their cyber operations, Iranians have become particularly adept at crafting sophisticated \nsocial engineering campaigns. According to a 2022 report by Insikt Group, Iranian hackers are \ncapable of social engineering in ways that are similarly as advanced as Russia’s advanced persistent \nthreat (APT) groups, demonstrating the capability to understand and dissect foreign societies, \npolitical systems, and languages. Iranian APTs “use many of the studied ‘principles of influence’ \nand overlap with human intelligence (HUMINT) recruitment processes” to target their victims. They \nare known for employing a variety of approaches such as using “charismatic sock puppets” and \ncreating fake prospective job opportunities to connect with victims.25 They also pose as journalists",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "c7f88f7ac49d",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 11",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "18f3f93ba307",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "A Playbook for Winning the Cyber War  |  6\nand think tank experts seeking comments on a particular topic.26 Some examples of advanced social \nmedia campaigns include the following:\n  \t\n▪\nAn Iranian APT known as Imperial Kitten used the social media persona “Marcella Flores” \nto engage with a subsidiary of an aerospace defense contractor. The APT friended the victim \non Facebook in 2019, if not before, and actively had conversations with the victim on both \ncorporate and personal communication platforms in 2020. In early June 2021, Imperial \nKitten delivered a malicious email in an attempt to infect the victim’s system with malware. \nIn mid-July, Facebook announced that it removed a network of fake users, including Marcella \nFlores, from its platform.27 \n  \t\n▪\nIsrael’s Shin Bet internal intelligence agency announced in late July 2023 that Iranian hackers \ncreated fake LinkedIn profiles and initiated conversations with Israeli citizens, specifically \ncivil servants and researchers, eventually moving to email. The Israeli agency managed to \nthwart the campaign.28\nAnother key component of Iran’s recent cyber strategy is the use of cyber-enabled influence \noperations. These operations have become significantly more common since mid-2022 and surged \nin particular as the Israel–Hamas conflict broke out in October 2023. They “combine offensive \ncomputer operations with messaging and amplification in a coordinated and manipulative fashion \nto shift [victims’] perceptions, behaviors, or decisions” and further the regime’s strategic objectives, \naccording to Microsoft.29 Tactics include leaking sensitive data to undermine public trust in \ninstitutions and posting hacked material to social media pages to drive fear in Iranian adversaries \nand boast about Iran’s capabilities. Iranian threat actors adopted this technique as a way to boost, \nexaggerate, and compensate for Iran’s lower level of technical capability.30\nTable 1: Cyber-Enabled Influence Operation Methods\nCyber Method\n  \t\n▪Stealing data\n  \t\n▪Website defacement\n  \t\n▪Ransomware\n  \t\n▪DDoS attacks\nInfluence Method\n  \t\n▪Data leaks\n  \t\n▪Sharing stolen data on social media or \nvia SMS and email\n  \t\n▪Impersonating victims\n  \t\n▪Sock puppets\nSource: “Iran turning to cyber-enabled influence operations for greater effect,” Microsoft Threat Intelligence, May 2, 2024, https://\nwww.microsoft.com/en-us/security/security-insider/intelligence-reports/iran-turning-to-cyber-enabled-influence-operations-for-g\nreater-effect.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "15251df89059",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 12",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "64905d2a3263",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Julia Dickson and Emily Harding  |  7\nThroughout Israel’s war in Gaza, Iranian APTs have used cyber-enabled influence operations to \nintimidate Israelis and criticize the Israeli government’s military strategy and handling of hostages, \nwith the ultimate goal of polarizing Israeli society and eventually destabilizing the country. Iran also \nuses this technique against Israel’s allies to undermine support for Israel’s military campaigns.31 In \none instance, Emennet Pasargad, an Iranian-state-affiliated front company, interrupted multiple \nbroadcast channels in the United Arab Emirates, the United Kingdom, and Canada. The front \ncompany accessed the news stations’ internal networks and used this access to broadcast their own \ncontent. Their video began with an AI-generated newscaster reading a message saying, “We had no \nchoice but to deliver this to you,” before showing unverified graphic images of Palestinians killed or \ninjured by the Israeli military.32\nIn early July 2024, then-Director of National Intelligence Avril Haines issued a formal statement \nabout Iranian influence operations directed at Americans. She warned:\nIn recent weeks, Iranian government actors have sought to opportunistically take advantage \nof ongoing protests regarding the war in Gaza, using a playbook we’ve seen other actors use \nover the years. We have observed actors tied to Iran’s government posing as activists online, \nseeking to encourage protests, and even providing financial support to protesters.33\nHaines also stated that Americans were protesting to express their authentic views on the war in \nGaza and highlighted that expressing those opinions is a core part of being a democracy. However, \nIran-backed hackers interrupt news broadcasting with AI-generated content.\nSource: “Iran Surges cyber-enabled influence operations in support of Hamas,” Microsoft Threat Intelligence, February 26, 2024, \nhttps://www.microsoft.com/en-us/security/security-insider/intelligence-reports/iran-surges-cyber-enabled-influence-operations-i\nn-support-of-hamas.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "dc235242150c",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 13",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "e170ee8930f9",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "A Playbook for Winning the Cyber War  |  8\nher larger warning was that Iran was hiding its true identity, pushing additional protest action, and \nseeking to foment unrest through these campaigns.\nTehran’s willingness to conduct disruptive, even destructive, attacks against civilian targets makes it \na cyber adversary requiring additional focus. In short, Tehran is predictably aggressive, but against \nunpredictable targets, and its attacks can range from feckless to highly destructive. In 2012, for \nexample, Tehran targeted one of the world’s largest oil companies, Saudi Aramco, using a phishing \nemail and a wiper to partially wipe or completely destroy an estimated 35,000 computers in a few \nhours. While the attack failed to impact oil production, it froze all payment systems and prevented \ngasoline tank trucks from processing payments. CNN reported in a deep dive on the attack that \n“Managing supplies, shipping, contracts with governments and business partners—all of that was \nforced to happen on paper. . . . After 17 days, the corporation relented and started giving oil away \nfor free to keep it flowing within Saudi Arabia” and to ensure the country had a sufficient supply as \nSaudi Aramco worked to bring the systems back online.34\nThe use of proxies and front organizations is another important component of Iranian strategy \nthat allows the country to maintain a level of plausible deniability. For instance, a group called \n“Cutting Sword of Justice” claimed responsibility for the attack on Saudi Aramco, citing it as an \nact of retaliation for supporting the Al Saud regime and its crimes and atrocities against citizens \nin Syria, Lebanon, and Egypt, amongst others. Iran denied any involvement in the attack, but U.S. \nintelligence attributed it to Tehran.35 For more about proxies and front organizations, see page 23.\nHow Cyber Strategy Fits into Foreign Policy\nIran views cyber as a cost-effective, low-risk tool for harassing its adversaries abroad. Iran uses \ncyberattacks as one tool in its asymmetric tool kit, enabling a less risky way to challenge nations that \nit could not compete with in a conventional armed conflict. Using cyber tools, Tehran can damage \nconventionally stronger opponents and quickly collect intelligence on a variety of strategically \nvaluable targets while maintaining a level of deniability. The intended outcomes of the attacks range \nfrom espionage and embarrassment of an adversary to real, lasting damage against an enemy that is \nconventionally stronger.36\nIran also uses cyber operations as a defense mechanism for maintaining stability at home, \nspecifically to ensure regime survival. Domestic surveillance is a strong focus of the regime’s cyber \noperations. Iranian threat actors, for example, frequently target current Iranian government \nofficials (such as diplomats) and their families as well as reformist politicians and journalists. Tehran \ncollects personal information and monitors the political and personal networks of these individuals \nwho are of strategic interest to the Iranian government. This allows the regime to watch for \npotential rivals and obtain sensitive information that can later be used for blackmail.37\nAnother key component of Tehran’s strategy is to control its domestic information space to prevent \nWestern values and culture from “corrupting” Iranian society. Iran views cyberspace as “a cultural \nbattlefield between Iran and the Western world.” The IRGC persistently blocks international news \nsites, social media sites such as Facebook and Twitter, and other popular media sites such as",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "662f1d39cf77",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 14",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "d969d72547a3",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Julia Dickson and Emily Harding  |  9\nYouTube and Netflix, with the aim of “block[ing] the West’s use of cultural and political ideals to \nsubvert the Iranian State.”38 In February 2024, Tehran implemented a partial ban on the use of \nvirtual private networks (VPNs), an escalation in enforcement following the 2022 decision to punish \nthe purchase and sale of VPNs.39\nTo further control its information space, Iran is developing the National Information Network (NIN), \na local intranet entirely supported by domestic infrastructure. According to the U.S. Department of \nthe Treasury, the NIN is “being used to disconnect the Iranian people from the global internet.”40 \nAs it will be completely under government control, the NIN, once operational, will allow the \ngovernment to keep critical infrastructure online when it imposes internet blackouts to silence \ncriticism. Such control is already evident; in 2019, as protests erupted over a petrol-rationing \nscheme that significantly raised oil prices, the Iranian government imposed an internet blackout \nthat cut access for most of the country for a week. Services such as banking transactions were able \nto continue, and local versions of other internet-based tools such as a navigation app and a search \nengine also remained online and even gained customers.41 When the NIN becomes fully operational, \nthe government will have full control over the information available to the Iranian population, \nlimiting the accessibility of foreign news and reducing Iran’s vulnerability to cyberattacks.42\nWhile many cyber intrusions are used to monitor and control the Iranian population and thus \nmaintain the strength of the regime, Iran also conducts destructive cyberattacks. Tehran notably \ndoes not make a discernible distinction between operations carried out against domestic and \nforeign adversaries. The same cyber tools developed and used against domestic organizations and \nIranian citizens have since been used against adversaries as disparate as the U.S. defense industry, \nPersian-language women’s development programs, and Saudi government institutions. The same \nthreat actors also target both domestic and international organizations and individuals.43\nThe same cyber tools developed and used against domestic \norganizations and Iranian citizens have since been used \nagainst adversaries as disparate as the U.S. defense industry, \nPersian-language women’s development programs, and Saudi \ngovernment institutions. The same threat actors also target both \ndomestic and international organizations and individuals.\nIn conducting destructive cyberattacks, Iran tends to portray itself as a victim that is simply \nresponding to an attack on its own infrastructure to “deflect attention away from its own  actions.”44 \nFor example, upon discovery of the Stuxnet intrusion against its nuclear facilities in 2010, Iran \nlaunched a series of attacks against U.S. assets, including against dozens of U.S. banks and a small \ndam in New York.45 Similarly, in 2020 following a fire at its Natanz power plant that Iranian officials \nattributed to a cyberattack, Iran’s head of civilian defense said that Iran would retaliate against any \ncountry that carries out cyberattacks against its nuclear sites.46",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "6cd659c20a10",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 15",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "96424ad8be9d",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "A Playbook for Winning the Cyber War  |  10\nIn its offensive operations, Iran’s brazenness and disregard for international norms makes the \ncountry a particularly dangerous adversary. Tehran does not shy away from targeting civilian critical \ninfrastructure, having already attacked the financial sector, pipelines, dams, and water facilities, \nwhich “can enable actions that harm the public and cause devastating humanitarian consequences.”47 \nWhile Iran has increasingly turned to cyber operations as a tool in its tool kit for irregular conflict, \nTehran may not be ready to fully integrate cyber into active conflict operations. Tehran continues \nto support groups involved in conflicts in Gaza, Iraq, Yemen, and Syria, but cyber operations have \nnot featured in those wars. Part of the reason is likely the difficulty of executing tactical cyber \noperations, which requires intensive coordination and seamless communication. Instead, Iran has \ncontinued to pursue cyber-enabled influence operations and cyber operations on the margins of \nconflict. Although past attacks in these conflicts have not been particularly damaging, Tehran’s \nrapidly developing tool kit may lead to more destabilizing and escalatory attacks in the future.\nThroughout the war in Gaza, a complex Iranian influence campaign called Emerald Divide has \nsought to “psychologically manipulate Israeli citizens to take real-world actions that exacerbate \nideological divisions within Israeli society and undermine the Israeli government,” according to \nSean Minor, a senior threat intelligence analyst at Insikt Group.48 While Emerald Divide has been \noperational since at least 2021, the group has focused on the ongoing conflict in Gaza since the \nattacks on October 7, 2023. One such effort, the “Tears of War” Telegram channel, posts content \nrelated to the Hamas-captured hostages and Israeli victims to encourage Israelis to partake in \nanti-government protests and raise internal conflict.49 \nHow Iran Approaches Deniability\nTehran rarely claims responsibility for cyber operations and instead tends to emphasize its \ndefensive capabilities while touting claims of victimhood.50 Overall, Iran provides conflicting \ninformation about its offensive cyber operations—it simultaneously burnishes its capabilities while \nconsistently denying involvement in attacks.51\nJust as it does in other warfare domains, Tehran relies on proxies and front organizations to \nmaintain a degree of separation and plausible deniability, which emboldens the government to \nvehemently deny involvement in cyber operations. In general, the use of proxies has been a key \naspect of Iran’s military strategy since the Iranian Revolution. Tehran has a robust network of \nproxies such as Hezbollah and Hamas that it uses as channels for action in conflicts throughout \nthe Middle East.52 Similarly, Tehran conducts many of its cyber operations using cyber proxies that \ndisguise themselves as hacktivists or pan-Islamists. By doing so, Iran avoids definite attribution, \npreserving its claims of victimhood. However, cyber defenders have increasingly been able to \nidentify hallmarks of IRGC and MOIS campaigns. For more information about proxy and front \norganizations, see page 23.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "097ca8282ca4",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 16",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "3e1b168d3430",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Julia Dickson and Emily Harding  |  11\nImplementation: Campaigns or Opportunism?\nWhile Iranian actors tend to be reactive, exploiting opportunities for cyberattacks as they arise, \nthey are patient and persistent in their social engineering campaigns. Many of Iran’s cyber efforts \nare designed to be splashy and public, both making a political statement and causing actual \ndamage. Those are generally presented as retaliatory attacks—activism attempting to right a social \nwrong. It is not clear, however, how far in advance Iran attempts to establish these accesses for \nlater exploitation. In other words, which comes first, the desire to retaliate or the capability, \nheld in reserve?\nFollowing Israel’s invasion of Gaza, Iran demonstrated its opportunistic tendencies to quickly react \nin support of Gaza. In one such attack, Malek Team, an Iranian actor likely associated with the \nMOIS, leaked personal data from an Israeli university. When publishing the data on Twitter, Malek \nTeam used hashtags to support Hamas and later shifted messaging to belittle Israeli prime minister \nBenjamin Netanyahu. The group either took advantage of any vulnerability it found quickly or \nrepurposed existing access to support its campaign against Israel, regardless of the relevance of the \ndata or victim to the conflict.53 For more information about Iranian attacks during the war in Gaza, \nsee the case study on page 36.\nSimilarly, the 2023 Annual Threat Assessment of the U.S. Intelligence Community highlighted that \n“Iran’s opportunistic approach to cyberattacks makes critical infrastructure owners in the United \nStates susceptible to being targeted by Tehran.”54 This warning came to fruition in November \n2023 when an Iranian cyber persona linked with the IRGC Cyber–Electronic Command targeted \na programmable logic controller manufactured by Unitronics (an Israeli company) at a water \nutility in Pennsylvania. The group, known as CyberAv3ngers, left a warning on the screen of the \ndevice: “Every equipment ‘made in Israel’ is CyberAv3ngers legal target.” While the water utility \nhas no intrinsic value to Iran, all poorly defended systems in adversary countries are potential \ntargets, allowing Tehran to engage with adversaries without spending a significant amount of time \ncarefully crafting a campaign. Even partially successful attacks that result in no significant damage \nor disruption of services are used in Iranian propaganda to further its strategic agenda.55 In this \ncase, the extent of the attackers’ access prompted the water facility managers to switch to manual \noperations out of concern that safety was compromised.\nU.S. election infrastructure is another critical sector that Tehran has targeted in furtherance of its \nstrategic goals. Similar to its initial attacks in support of Gaza, Iran’s 2020 campaign against U.S. \nelection systems attempted to advance Tehran’s long-term strategic goals—to undermine Americans’ \nfaith in the U.S. electoral system, sow discord in American society, and “undercut the reelection \nprospects of President Trump,” according to an unclassified report by the U.S. National Intelligence \nCouncil.56 A press release published by the U.S. Department of the Treasury stated that Iranian \nhackers attempted to compromise 11 state voter websites but were only successful in exploiting one. \nDespite failing 10 times, Tehran’s single success had the potential to spread fear and undermine \nfaith in electoral systems; it also allowed the country to download the personal information of over \n100,000 voters. Posing as a far-right group, hackers subsequently sent emails to tens of thousands \nof Democratic voters, including many whose data had been stolen from the successful attack,",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "60babf63cc2e",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 17",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "93bbf6acd0e2",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "A Playbook for Winning the Cyber War  |  12\nthreatening violence if they did not vote for Trump.57 Iran has shown the capability to adapt and \nadvance its tactics in other domains, suggesting that it will continue to learn from failures and grow \ntheir cyber capabilities.\nIn addition, Iranian hackers claiming to be Proud Boys volunteers sent Facebook messages and \nemails to Republican members of Congress as well as people associated with the Trump campaign. \nAccording to the U.S. Department of the Treasury, the messages claimed that the Democratic Party \nwas “planning to exploit ‘serious security vulnerabilities’ in state voter registration websites to ‘edit \nmail-in ballots or even register non-existent voters.’” The hackers also sent a video purporting to \nshow someone fraudulently casting ballots via the Federal Voting Assistance Program for military \nand overseas voters.58 The fraud, however, never actually took place.\nWhile most attacks are opportunistic, Iranian hackers are known to invest considerable time and \nresources into developing advanced social engineering campaigns. Mandiant Intelligence, for \ninstance, reported that to gain access to victims’ email accounts or install Android malware on their \nmobile devices, APT42 “uses highly targeted spear-phishing and social engineering techniques \ndesigned to build trust and rapport with their victims.”59 In May 2024, Mandiant reported that the \ngroup was “posing as journalists and event organizers . . . to deliver invitations to conferences \nor legitimate documents,” which allowed the APT to harvest credentials and gain access to \ncloud environments.60\nCybersecurity researchers have also witnessed increased collaboration between Iranian-state \naffiliated actors, suggesting a degree of pre-planning. Two groups that Microsoft tracks as \nStorm-0861 and Storm-0842 collaborated on destructive cyberattacks in Israel and Albania. In both \nattacks, Storm-0861 provided initial access and Storm-0842 executed wiper malware. Similarly, \nMicrosoft reported collaboration between an MOIS-affiliated group, Argius (Pink Sandstorm), and \nHezbollah cyber units.61",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "4d51de3f3b03",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 18",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "9ea2ca38abfa",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Julia Dickson and Emily Harding  |  13\nOrganization \nof Capabilities\nWho Are the Fighters?\nTwo main organizations lead offensive cyber operations for the Iranian regime: the IRGC and the \nMOIS. The following section will discuss the IRGC, MOIS, and the APTs associated with each. This \nis not an exhaustive list, given that researchers have identified as many as 40 separate APTs, and \nit is still unclear how much their activities and personnel overlap. There is more publicly available \ninformation about the groups discussed below, many of which have conducted some of Iran’s more \nhigh-profile attacks.\nFigure 1: Iranian Offensive Cyber Actors\nSource: CSIS research.\nPioneer Kitten\nAgruis\nChrono\nKitten\nRemix\nKitten\nStatic\nKitten\nHelix\nKitten\nCharming \nKitten\nReﬁned\nKitten\nImperial\nKitten\nAPT42\nIslamic Revolutionary Guard Corps\n(IRGC)\nMinistry of Intelligence and Security\n(MOIS)",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "a195f2d2cb5a",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 19",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "93bc7d50e826",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "A Playbook for Winning the Cyber War  |  14\nIRANIAN REVOLUTIONARY GUARD CORPS (IRGC)\nThe IRGC is a branch of the Iranian armed forces that was established after the Iranian Revolution \nin 1979 to protect the new Islamic political system and regime. Since its establishment, the IRGC has \ntaken on an exceedingly large role in executing Iran’s foreign policy, particularly via Iran’s covert, \nasymmetric operations abroad. The IRGC has ties to regional armed groups, including Hezbollah \nin Lebanon, militant groups in Iraq, and Hamas in Gaza. It has considerable influence in domestic \npolitics as well because key positions are appointed by the country’s supreme leader, Ali Khamenei, \nand are answerable to him, bypassing the president’s office.62 The United States designated the IRGC \nas a terrorist organization in 2019.63\nThe IRGC is composed of ground, naval, land, and air forces as well as cyber-focused units, \nwhich have conducted cyberattacks against many targets in Israel, the United States, and Saudi \nArabia, among others. The IRGC also is the parent organization of the Basij, a civilian paramilitary \norganization that manages a legion of cyberwar volunteers recruited from universities and \nreligious schools who also act as a proxy hacker force. While the exact number is unknown, Iranian \nleadership claims to have 120,000 basij cyber warriors. The volunteers are sometimes referred to as \n“cyber war commandos.”64\nAPTs associated with the IRGC include Refined Kitten, Charming Kitten, Imperial Kitten, APT42, \nand Pioneer Kitten, each of which are detailed below.\nRefined Kitten\nRefined Kitten has been active since at least 2013 and is likely tied to the IRGC, according to \nCrowdStrike.65 The group is known for gathering intelligence on companies in the United States, \nSaudi Arabia, and South Korea, with a particular interest in the military and commercial aviation \nsectors and the energy sector, especially companies with ties to petrochemical production.66 These \ntargets are in line with Iranian strategic interests, which include gaining insights into Saudi military \naviation capabilities, supporting Iranian decisionmaking regarding Saudi Arabia, and expanding \nIran’s petrochemical production to grow its competitiveness within the region. Although the group’s \nactivities mainly focus on intelligence gathering, there have been suspected links between Refined \nKitten and destructive attacks such as the Shamoon wiper-malware attacks in 2018.67\nRefined Kitten is known for using relatively sophisticated tactics, including custom-built malware \nand advanced social engineering strategies. This adversary often uses targeted spear-phishing \ncampaigns to gain initial access. In one instance, Refined Kitten sent recruitment themed emails \nto employees of aviation-related organizations that contained links to malicious application files. \nTable 2: Aliases of Refined Kitten\nCrowdStrike\nMandiant\nMicrosoft (old)\nMicrosoft \n(new)\nSecureworks\nOther\nRefined Kitten\nAPT33\nHOLMIUM\nPeach \nSandstorm\nCobalt Trinity\nElfin",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "311f45b7dd85",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 20",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "39c4ad976278",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Julia Dickson and Emily Harding  |  15\nThese files also contained job descriptions and links to legitimate job postings that were relevant to \nthe targeted individuals.68\nNotable attacks by Refined Kitten include the following:\n  \t\n▪\nIn 2023, Microsoft reported that Refined Kitten was carrying out password spray activity \nagainst thousands of organizations in the satellite, defense, and pharmaceutical sectors, \nwhich was likely an attempt to gain initial access and collect intelligence in line with \nIranian strategic interests. When these campaigns were successful, Refined Kitten used “a \ncombination of publicly available and custom tools for discovery, persistence, and lateral \nmovement,” with a few instances of data exfiltration reported.69 \n  \t\n▪\nFrom mid-2016 to 2017, Refined Kitten compromised a U.S. aerospace organization and \ntargeted a Saudi corporation with aviation holdings, according to Mandiant. To do so, the \ngroup sent targeted spear-phishing emails and registered domains that masqueraded as \nSaudi aviation and Western organizations.70\n  \t\n▪\nAccording to a 2018 report by McAfee, Refined Kitten is responsible for Shamoon Version \n3 wiper-malware attacks in December 2018 that used a supply chain attack to target \norganizations in the Middle East through their suppliers in Europe. To gain initial access, \nRefined Kitten hackers created websites that closely resembled legitimate job-posting \nwebsites, many of which were related to the Middle Eastern energy sector. Some of the \nwebsites contained malicious application files, while others had victims log in using their \ncorporate credentials.71 Similarly, in September 2017, Mandiant (then FireEye) assessed that \nRefined Kitten likely has ties to earlier uses of Shamoon malware.72\nCharming Kitten\nCharming Kitten is an Iranian APT, likely affiliated with the IRGC, that is known for targeting \nmilitary, diplomatic, and government personnel; private companies in the media, energy, and \ntelecommunications sectors; and organizations and companies in the defense industrial base.73 \nThe group has been active since at least 2014 and typically conducts long-term, resource-intensive \noperations to collect intelligence and surveil Iranians and foreign citizens who have strategic value.74\nAccording to Mandiant, Charming Kitten has “historically relied on marginally sophisticated tools \n. . . suggesting a relatively nascent development capability. However, the breadth and scope of [its] \noperations, particularly as it relates to its complex social engineering efforts, likely indicates that \nthe group is well resourced in other areas.”75 The group relies on spear phishing to gain initial access \nTable 3: Aliases of Charming Kitten\nCrowdStrike\nMandiant\nMicrosoft (old)\nMicrosoft \n(new)\nSecureworks\nOther\nCharming \nKitten\nAPT35\nPHOSPHORUS\nMint Sandstorm\nCobalt Illusion\nMagic Hound",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "54242aa3e8a6",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 21",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "ea06f8d2fb91",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "A Playbook for Winning the Cyber War  |  16\nand occasionally utilizes strategic web compromises and password spray attacks against externally \nfacing web applications.\nAttacks attributed to Charming Kitten include the following:\n  \t\n▪\nIn February 2017, Palo Alto Networks reported that Charming Kitten targeted organizations \nthat are either based in Saudi Arabia or have interests in Riyadh in the energy, government, \nand technology sectors. The campaign, dating to mid-2016, was focused on espionage.76 \nCharming Kitten disguised malicious files as holiday greeting cards, job offers, and \ngovernment documents from Saudi Arabia’s Ministry of Health and Ministry of Commerce \nand used custom tools, including “droppers, downloaders, executable loaders, document \nloaders, and IRC bots,” to carry out the campaign.77 \n  \t\n▪\nIn 2020, the group targeted medical research organizations in Israel, focusing particularly on \ntargets in oncology, genetics, and neurology.78\n  \t\n▪\nIn September 2020, Microsoft reported that Charming Kitten “continued to attack the \npersonal accounts of people associated with the Donald J. Trump for President campaign.” \nBetween May and June 2020, the threat actor attempted to sign in to administration officials’ \nand campaign staffs’ personal or work accounts but was unsuccessful.79\n  \t\n▪\nIn January 2023, Germany’s Federal Office for the Protection of the Constitution warned that, \nsince the end of 2022, Charming Kitten had been conducting cyberattacks against Iranian \ndissident organizations and individuals such as lawyers and human rights activists residing \nboth inside and outside of Iran.80 The group used advanced spear-phishing tactics to gain \naccess to targets’ accounts.81\nNemesis Kitten is generally classified as a sub-group of Charming Kitten. For more information \nabout Nemesis Kitten, see the section on Najee Technology and Afkar Systems on page 25.\nImperial Kitten\nImperial Kitten has been active since at least 2017 and, according to CrowdStrike, is affiliated with \nthe IRGC. Mandiant tracks Imperial Kitten’s activity under APT35 (the same as Charming Kitten) \nand UNC1549. Microsoft also tracks this threat actor under two different names, Crimson Sandstorm \nand Smoke Sandstorm.82 Imperial Kitten’s activity is characterized by its use of social engineering \ntechniques, specifically creating false social media profiles and using job recruitment–themed \ncontent to deliver custom malware. This APT has targeted multiple industries, including defense, \nTable 4: Aliases of Imperial Kitten\nCrowdStrike\nMandiant\nMicrosoft (old)\nMicrosoft \n(new)\nSecureworks\nOther\nImperial Kitten\nAPT35, \nUNC1549\nCURIUM, \nBOHRIUM\nCrimson \nSandstorm, \nSmoke \nSandstorm\nCobalt Fireside\nTortoiseshell",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "c2591781cfbe",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 22",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "60c927284a59",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Julia Dickson and Emily Harding  |  17\ntechnology, telecommunications, maritime, energy, and consulting companies.83 Examples of such \nactivities include the following:\n  \t\n▪\nIn November 2023, CrowdStrike reported that Imperial Kitten conducted a series of \ncyberattacks against organizations in the transportation, logistics, and technology \nsectors the month prior. These attacks utilized public scanning tools, one-day exploits, \nSQL injection, and stolen VPN credentials for initial access before moving laterally and \nexfiltrating data. Similarly, between 2022 and 2023, Imperial Kitten conducted strategic web \ncompromise operations, targeting organizations in the same sectors.84\n  \t\n▪\nIn February 2024, Mandiant reported that Imperial Kitten was targeting the aerospace, \naviation, and defense industries of countries in the Middle East, including Israel and \nthe United Arab Emirates, as well as potentially Turkey, India, and Albania. The threat \ngroup used a fake recruiting website hosting a malicious payload to do so. According to \nMandiant, the link between these attacks and the IRGC is “noteworthy given the focus on \ndefense-related entities and the recent tensions with Iran in light of the Israel-Hamas war.”85\nAPT42\nAPT42 has been active since at least 2015 and is responsible for at least 30 confirmed operations. \nMandiant previously tracked APT42 as UNC788 and assesses with moderate confidence that the \ngroup operates on behalf of the IRGC Intelligence Organization. Other cybersecurity researchers \ncombine Charming Kitten’s (APT35) activity with that of APT42, but Mandiant assesses with \nmoderate confidence that Charming Kitten and APT42 are separate groups that both “operate \non behalf of the IRGC but originate from different missions and contracts or contractors based \non substantial differences in their respective targeting patterns and tactics, techniques and \nprocedures.” Similarly, though Microsoft reports a connection between Nemesis Kitten (UNC2448) \nand APT42, Mandiant “has not observed any technical overlaps between APT42 and UNC2448.”86\nAPT42 has targeted the personal and corporate email accounts of current and former Iranian \ngovernment officials, policymakers, political figures, members of the Iranian diaspora, opposition \ngroups, journalists, and academics. It also targets organizations in the following sectors: civil \nsociety, education, government, healthcare, legal, manufacturing, media, entertainment, and \npharmaceutical. However, unlike other groups associated with the IRGC, APT42 does not target the \ndefense industrial base or focus on the collection of personally identifiable information. Instead, \nit seeks out “enemies or opponents of the regime, specifically gaining access to their personal and \nmobile devices.” The group relies primarily on highly targeted social engineering efforts to build \ntrust with their victims. APT42 has targeted organizations and individuals in at least 14 countries, \nTable 5: Aliases of APT42\nCrowdStrike\nMandiant\nMicrosoft (old)\nMicrosoft \n(new)\nSecureworks\nOther\nCharming \nKitten\nAPT42\nPHOSPHORUS\nMint \nSandstorm\nCobalt Illusion\nDamselfly, Crooked \nCharms",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "a2cc9f5e0b14",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 23",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "2a2fb67febd8",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "A Playbook for Winning the Cyber War  |  18\nincluding Australia and the United States, as well as countries in the Middle East and Europe.87 \nNotable attacks include the following:\n  \t\n▪\nIn May 2024, Mandiant reported that APT42 was observed masquerading as journalists and event \norganizers. The group spent considerable time building rapport with their victims, typically \nindividuals perceived as being a threat to the regime, such as NGO leaders and human rights \nactivists. APT42 eventually sent a link to a legitimate conference invitation or other document, \nwhich prompted victims to enter credentials. Upon harvesting credentials, the group gained \naccess to cloud environments and covertly exfiltrated data of strategic value to Iran.88\n  \t\n▪\nIn another campaign beginning in 2021, APT42 impersonated news sources such as the \nWashington Post, The Economist, and the Jerusalem Post to target journalists and researchers \nwith spear-phishing campaigns.89\nMINISTRY OF INTELLIGENCE AND SECURITY (MOIS)\nThe MOIS (VEVAK in Farsi) is one of the two most powerful intelligence branches in Iran, alongside \nthe IRGC Intelligence Organization. The MOIS is the primary civilian intelligence organization, and \nall other intelligence services are required to share information with the MOIS. Notably, the MOIS \nreports to the president rather than the supreme leader and “is assessed to be more technical and \nless ideology-driven than IRGC leaders.”90\nThe MOIS’s main priority is to collect domestic intelligence. To do so it “spies on Iranians \nabroad, collects intelligence on other governments, counters foreign intelligence plots, and \nworks with allied intelligence agencies.”91 The organization is known to be responsible for signals \nintelligence and collecting information from electronic communications.\nAPTs associated with the MOIS include Static Kitten, Helix Kitten, Remix Kitten, Agrius, and Chrono \nKitten. The section below details these APTs.\nStatic Kitten \nStatic Kitten has been active since at least 2017. In January 2022, U.S. Cyber Command reported \nthat this APT is a “subordinate element” within the MOIS.92 This adversary is known for targeting \norganizations located in the Middle East and Eurasia, including telecommunications, local \ngovernment, defense, oil, and natural gas companies. Static Kitten is most known for cyber \nespionage campaigns and intellectual property (IP) theft but is believed to occasionally deploy \nransomware, perhaps to cover its tracks.93 According to Microsoft, Static Kitten has collaborated \nwith another threat actor, tracked as DEV-1084 (also known as Storm-1084 and as the DarkBit \npersona); Static Kitten gains initial access before DEV-1084 carries out destructive actions.94 Static \nTable 6: Aliases of Static Kitten\nCrowdStrike\nMandiant\nMicrosoft (old)\nMicrosoft \n(new)\nSecureworks\nOther\nStatic Kitten\nUNC3313\nTEMP.Zargos\nMERCURY\nMango \nSandstorm\nCobalt Ulster\nMuddyWater",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "4bf9bdee735d",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 24",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "d86ecca9200d",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Julia Dickson and Emily Harding  |  19\nKitten typically exploits publicly reported vulnerabilities and mainly uses open-source tools and \nstrategies.95 Notable attacks by Static Kitten include the following:\n  \t\n▪\nIn February 2022, Static Kitten attacked what Mandiant describes as a “Middle Eastern \ngovernment.” According to Mandiant, Static Kitten gained access to the system through a \ntargeted phishing email. The group moved quickly and used new, targeted malware that also \npossessed backdoor functionalities and publicly available remote-access software. Mandiant \nassessed that Static Kitten “conducts surveillance and collects strategic information to \nsupport Iranian interests and decision-making.”96\n  \t\n▪\nIn early November 2023, Deep Instinct’s Threat Research Team reported that Static Kitten \nunleashed a new social engineering campaign aimed at Israeli organizations. The group \ntargeted two Israeli organizations with spear-phishing emails and used subsequent access to \nconduct reconnaissance.97\nHelix Kitten\nHelix Kitten has been active since at least 2015 and is known to target organizations in the \naerospace, energy, financial, government, hospitality, and telecommunications industries across \nthe Middle Eastern region, mostly for espionage purposes. According to the Cybersecurity and \nInfrastructure Security Agency (CISA), Helix Kitten works on behalf of the Iranian government, \nlikely the MOIS.98 According to a Palo Alto Networks report, Helix Kitten attacks are “not \nparticularly sophisticated” but are “extremely persistent in the pursuit of their mission objective,” \nand have become more sophisticated over time, following the general trend of Iranian cyber \ncapabilities.99 Notable attacks by Helix Kitten include the following:\n  \t\n▪\nIn an interesting attack in 2019, Venomous Bear, a Russian APT that has been attributed to \nthe Russia’s Federal Security Service (FSB), hijacked Helix Kitten’s infrastructure and used \nit to deliver malware against a target in the Middle East. Symantec found no evidence to \nsuggest that the two groups were collaborating and instead assessed that Venomous Bear’s \nuse of Helix Kitten’s infrastructure “appears to have been a hostile takeover.”100\n  \t\n▪\nDuring the 2023 annual Cyber Security Weekend for the Middle East, Türkiye, and Africa, \nKaspersky researchers warned of increased IT supply chain attacks by Helix Kitten that \ntargeted high-profile government entities to collect credentials and sensitive data about \ntheir targets. The APT used social engineering techniques and exploited software and other \ntechnical vulnerabilities to gain initial access, and Kaspersky reported that “the group has \nupdated their arsenal, resorting to persistent, stealthier ways of infiltrating their targets \nthrough third-party IT companies.”101\nTable 7: Aliases of Helix Kitten\nCrowdStrike\nMandiant\nMicrosoft (old)\nMicrosoft \n(new)\nSecureworks\nOther\nHelix Kitten\nAPT34\nEUROPIUM\nHazel \nSandstorm\nCobalt Gypsy\nOilRig",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "2d111097f822",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 25",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "ea8b219ca22d",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "A Playbook for Winning the Cyber War  |  20\n  \t\n▪\nIn August 2023, Helix Kitten attempted to use a supply chain attack to gain access to targets \nwithin the government of the United Arab Emirates (UAE). The group created a fake IT \ncompany website and sent a malicious job recruitment form to a target IT company; the \nform, when opened, deployed malware to collect sensitive information. From there, Helix \nKitten looked to target government clients, “using the victim IT group’s email infrastructure \nfor command-and-control communication and data exfiltration.”102\nRemix Kitten \nRemix Kitten is an Iranian APT known to target the Middle East and the United States. The group \nhas been active since at least 2014 and has a particular focus on the telecommunications sector \nas well as the travel and hospitality industries. Remix Kitten has engaged in the widespread theft \nof personally identifiable information in order to “perform monitoring, tracking, or surveillance \noperations against individuals, collect proprietary or customer data for commercial or operational \npurposes that serve strategic requirements related to national priorities, or create additional \naccesses and vectors to facilitate future campaigns.”103 According to the U.S. Department of the \nTreasury, Remix Kitten is “owned or controlled” by the MOIS.104 Notable attacks by Remix Kitten \ninclude the following:\n  \t\n▪\nAccording to Symantec, Remix Kitten compromised a major telecommunications services \nprovider in the Middle East in 2017 and likely attempted to attack a major travel reservations \nfirm. The same year, Remix Kitten attacked nine organizations in Israel, Jordan, the UAE, \nSaudi Arabia, and Türkiye using seven new tools. The attacks hit airlines, aircraft services, \ndocument management software, software and IT services companies working with the \nair and sea transport sectors, engineering consultancies, and payroll services to “facilitate \nwidescale surveillance of targets.”105\n  \t\n▪\nRemix Kitten targeted air transportation organizations and government entities in Kuwait \nand Saudi Arabia in a campaign that began in 2018. Researchers believe Remix Kitten gained \ninitial access through a social engineering campaign, and the attacks used custom-built tools \nand living-off-the-land tactics. The attacks on Kuwait were more sophisticated, as the hackers \nwere able to move laterally.106\nTable 8: Aliases of Remix Kitten\nCrowdStrike\nMandiant\nMicrosoft (old) \nMicrosoft (new)\nSecureworks\nOther\nRemix Kitten\nAPT39\nDEV-0589\nStorm-0589\nCobalt Hickman\nChafer",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "5769d1e009f2",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 26",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "17576811c73e",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Julia Dickson and Emily Harding  |  21\nAgrius\nAgrius has been active since 2020 and is known for conducting destructive wiper and fake \nransomware attacks, mainly against Israeli organizations. It has been attributed to the MOIS.107 \nAccording to Palo Alto Networks, Agrius steals sensitive information, posts it on Telegram \nand Instagram channels, and wipes as many endpoints as possible. This adversary has both \ndeveloped custom tools and used known hacking techniques.108 Notable attacks by Agrius \ninclude the following:\n  \t\n▪\nPalto Alto Networks found that Agrius targeted the Israeli higher education and technology \nsectors throughout 2023, stealing personal information such as intellectual property \nand personally identifiable information and disabling endpoints using custom wipers. \nThe group then posted the stolen data on social media and Telegram channels. Agrius \nhackers exploited internet-facing web servers, then deployed multiple web shells to get a \nfoothold in a network.109\nChrono Kitten\nChrono Kitten has been active since at least 2018 and is known for targeting oil, gas, and \ntelecommunications companies in Africa and the Middle East for espionage purposes. While some \ncybersecurity researchers combine this group with Helix Kitten, according to MITRE ATT&CK, \nthis group’s tactics, techniques, and procedures are similar to those used by Helix Kitten and \nRefined Kitten, but it is tracked separately due to differences in victims and tools.110 Notable attacks \ninclude the following:\n  \t\n▪\nIn 2019, Secureworks reported that Chrono Kitten focused on South African targets \nin mid-2018, and the group launched a campaign against Middle Eastern oil and gas \norganizations in May 2019. Chrono Kitten gains initial access using account credentials \nobtained through password spraying or brute-force attacks. The group then sends \nspear-phishing emails with malicious Excel attachments from the compromised accounts.111\n  \t\n▪\nIn August 2021, ClearSky, an Israeli cybersecurity company, reported a campaign by Chrono \nKitten focusing on Israeli IT companies.112\nTable 9: Aliases of Agrius\nMicrosoft (old)\nMicrosoft (new)\nOther\nAMERICUM\nDEV-0022\nPink Sandstorm\nAgrius, Agonizing Serpens\nTable 10: Aliases of Chrono Kitten\nCrowdStrike\nMicrosoft (old)\nMicrosoft (new)\nSecureworks\nOthers\nChrono Kitten\nDEV-0133\nStorm-0133\nCobalt Lyceum\nSiamese Kitten, \nLyceum, HEXANE",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "cbec98ee9a4a",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 27",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "2400c0250be3",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "A Playbook for Winning the Cyber War  |  22\nUNCLEAR IRANIAN GOVERNMENT AFFILIATION\nPioneer Kitten\nPioneer Kitten has been active since at least 2017, targeting mainly North American and Israeli \norganizations in the “technology, government, defense, healthcare, aviation, media, academic, \nengineering, consulting and professional services, chemical, manufacturing, financial services, \ninsurance, and retail” sectors. Pioneer Kitten is likely connected to the Iranian government, but \ncybersecurity researchers from CrowdStrike assess that this APT is most likely a “contract element \noperating in support of the Iranian government, rather than one operated by the government itself” \ndue to certain behaviors and traits. Pioneer Kitten potentially overlaps with the IRGC’s Refined \nKitten as well as the MOIS’s Helix Kitten and Remix Kitten, but “CrowdStrike intelligence considers \nthese claims to be circumstantial and lacking in sufficient corroborative data to enable confirmation \nof such relationships.”113 Attacks by Pioneer Kitten include the following:\n  \t\n▪\nIn September 2020, CISA reported that Pioneer Kitten targeted U.S. organizations in the \ninformation technology, government, healthcare, financial, insurance, and media sectors. \nThe group “conducts mass-scanning tools . . . to identify open ports . . . [then] exploits CVEs \n[common vulnerabilities and exposures] related to VPN infrastructure to gain initial access \nto a targeted network.” The threat actor then exfiltrated data and has been observed selling \nstolen data on an online hacker forum.114\n  \t\n▪\nPioneer Kitten is likely responsible for a 2020 attack on a local government website that was \nto report the 2020 election results. The U.S. military discovered the breach. and disrupted \nthe attack before the results were finalized.115\nOTHER GOVERNMENT ENTITIES\nOther government entities that have a role in Tehran’s defensive cyber operations \ninclude the following:\n  \t\n▪\nSupreme Council of Cyberspace (SCC): Established by Supreme Leader Ayatollah Ali \nKhamenei in 2013, the SCC is responsible for managing cyberspace policy, coordinating \noffensive and defensive cyber operations, and blocking websites, including social media \nsites. It also has a role in various censorship efforts.116 All state agencies are required to \ncooperate with the SCC, so it has almost complete control over Iran’s domestic cyberspace.117 \n  \t\n▪\nNational Cyberspace Center: The National Cyberspace Center is owned or controlled by \nthe SCC and is responsible for developing tactics to control Iran’s domestic information \nspace and “preparing for a cultural war” between Iran and the West.118 It has prevented \nIranians from using VPNs to access blocked content.119\nTable 11: Aliases of Pioneer Kitten\nCrowdStrike\nMandiant\nMicrosoft (old)\nMicrosoft \n(new)\nSecureworks\nOther\nPioneer Kitten\nUNC757\nRUBIDIUM\nLemon \nSandstorm\nCobalt \nFoxglove\nFox Kitten",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "aec3925adb57",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 28",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "88fb7c0edc57",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Julia Dickson and Emily Harding  |  23\n  \t\n▪\nNational Passive Defense Organization: A quasi-military body, the National Passive \nDefense Organization (NPDO) is in charge of making Iran’s critical infrastructure more \nresilient. One of the NPDO’s main roles is to use “all national cyber and non-cyber resources \nto deter, prevent, deny, identify, and effectively counter any cyberattack against . . . Iran’s \nnational infrastructure by either hostile foreign states or groups supported by them.” In \naddition to defense, the NPDO also helps coordinate citizen surveillance and supposedly \nworks with the IRGC to conduct offensive cyberattacks.120\nNONGOVERNMENTAL\nIn conducting computer network operations, Tehran often relies on a diverse ecosystem of cyber \nactors that act on behalf of the Iranian government. A proxy-based approach is a feature of Iranian \ncyber operations and reflects Tehran’s approach in conflict zones like Syria and Yemen, where Iran \nemploys both direct and indirect means to exert influence on decisionmaking. Assessments of the \nIranian state’s control over its cyber proxies point to cases where the groups operate without strict \nrestraints. The means and logistics of a cyber response are often as much determined by the proxies \nas they are by the state.121 The use of proxies provides Iran with a level of deniability and the ability \nto maintain that it is a victim in the global cyberwar.122\nProxies and Front Organizations\nIranian companies are known to have perpetrated attacks, in affiliation with the IRGC and MOIS, \nagainst a range of targets, including universities, election apparatuses, and critical infrastructure. \nThe section below describes several proxy organizations that have been responsible for \nhigh-profile hacks.\nmabna institute\nSince its founding in 2013, the Mabna Institute has helped Iranian universities and other research \ninstitutions steal foreign scientific resources. The Mabna Institute employs and hires individuals that \nuse cyber operations to steal intellectual property, academic research, emails, and other sensitive \ninformation on behalf of both the Iranian government and private companies. In March 2018, the \nU.S. Department of Justice indicted nine individuals working at the Mabna Institute for conducting \ncyber operations on behalf of the IRGC. They are believed to have hacked 144 universities and 36 \nprivate companies in the United States, 176 foreign universities in 21 different countries, and 11 \nforeign private companies.123",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "0485e10ff32f",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 29",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "df520209c005",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "A Playbook for Winning the Cyber War  |  24\nMabna hackers wanted by the Federal Bureau of Investigation.\nSource: “Iranian Mabna Hackers,” Federal Bureau of Investigation, March 23, 2018, https://www.fbi.gov/wanted/cyber/\niranian-mabna-hackers.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "f7b42e0424c0",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 30",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "ad7838ee6fb9",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Julia Dickson and Emily Harding  |  25\nnajee technology hooshman fater llc and afkar system yazd company\nThe U.S. Department of the Treasury sanctioned both Najee Technology and Akfar System in \nSeptember 2022 for “their roles in conducting malicious cyber acts, including ransomware \nactivity” in affiliation with the IRGC Intelligence Organization. According to the press release, these \ncyber actors had been active in the United States and other countries, particularly in the Middle \nEast, since at least 2020. They have launched campaigns against personnel working in defense, \ndiplomacy, and government as well as private companies in the media, energy, business services, \nand telecommunications sectors.124\nMicrosoft Threat Intelligence tracks these two companies under the name DEV-0270—also known \nas Nemesis Kitten and UNC2448—and it is thought to be a sub-actor of Charming Kitten. According \nto Microsoft, while Nemesis Kitten conducts cyberattacks on behalf of the government of Iran, \n“judging from their geographic and sectorial targeting, which often lacked a strategic value for the \nregime,” some of their attacks are likely “a form of moonlighting for personal or company-specific \nrevenue generation.”125 Notable attacks by the group include the following:\n  \t\n▪\nIn February 2021, cyber actors hacked a New Jersey municipality. After gaining access, \nemployees from the two companies created unauthorized accounts, escalated their \nprivileges, and moved laterally to other parts of the network. They also established \npersistent remote access to a domain registered by the owner, managing director, and \nchairman of the board of Najee Technology.\n  \t\n▪\nIn March and April 2021, hackers affiliated with the companies launched their first known \nransomware activities against several small businesses, including a law firm, an accounting \nfirm, and a construction contractor.\n  \t\n▪\nIn June 2021, a group, composed of employees of the two companies, gained access to \na hospital’s supervisory control and data acquisition systems. They exfiltrated data and \nencrypted at least one device. U.S. government law enforcement partners were able to notify \nthe hospital of the attack before it impacted patient care.126\nemennet pasargad\nEmennet Pasargad is an Iranian cyber company that was formerly known as Eeleyanet Gostar \nand Net Peygard Samavat Company. Microsoft tracks the company as Cotton Sandstorm (formerly \nNEPTUNIUM). In 2019, the U.S. Department of the Treasury sanctioned the Net Peygard Samavat \nCompany for its involvement in a malicious cyber campaign that aimed to gain access to and \nimplant malware on the systems of U.S. counterintelligence agents. At that time, the company was \nnoted to work with the MOIS and the IRGC Cyber Electronic Command (IRGC-CEC). The company \nsubsequently rebranded to Emennet Pasargad in an attempt to evade U.S. sanctions.127\nSince at least 2020, Emennet Pasargad has targeted companies, primarily in Israel, using \ncyber-enabled information operations, including data theft and the subsequent leak of data, \nsometimes followed by the deployment of destructive encryption malware. To avoid attribution, \nEmennet Pasargad conducted these campaigns under fake personas, including posing as hacktivist \nor cybercriminal groups. For example, between 2020 and 2022, Emennet Pasargad operated under",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "453c5fe18a56",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 31",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "13f41d856e93",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "A Playbook for Winning the Cyber War  |  26\nthe persona “Hackers of Savior” in multiple campaigns against Israel. In 2021, the group used the \npersona “Deus” while targeting an Israeli call service center.128\nIn 2021, the Treasury Department sanctioned Emennet Pasargad for its attempts to interfere in \nthe 2020 U.S. elections on behalf of the Iranian government. Between August and November \n2020, the company “executed an online operation to intimidate and influence American voters, \nand to undermine voter confidence and sow discord.” Hackers obtained voter information, sent \nthreatening emails to voters, and created disinformation campaigns related to election security. \nThey also obtained access to accounts of media entities, which gave them the ability to edit and \ncreate fake content, but the Federal Bureau of Investigation managed to thwart that access before it \nwas used.129 Emennet Pasargad actors also claimed affiliation with the Proud Boys.130\nOther notable companies include the following:\n  \t\n▪\nRana Intelligence Computing Company: The government of Iran used this front company \nto target Iranian dissidents, journalists, and international companies in the travel sector as \nwell as the government networks of Iran’s neighboring countries and foreign organizations in \nthe academic, travel, and telecommunications sectors. Individuals working at Rana provided \nsupport for MOIS cyberattacks.131\n  \t\n▪\nITSecTeam and MERSAD: Seven Iranian individuals who worked at these two companies \nwere indicted in March 2016 on computer hacking charges. They performed work for the \nIranian government, including the IRGC, and were indicted for their involvement in an \nextensive campaign that included over 176 days of DDoS attacks primarily against targets \nin the U.S. financial sector. The campaign began in December 2011, with attacks occurring \nsporadically until September 2012, when hackers began conducting attacks almost every \nweek. The campaign lasted until mid-2013 and was able to disable bank websites and prevent \ncustomers from accessing their accounts online.132\n  \t\n▪\nRavin Academy: The Ravin Academy is a cybersecurity and hacking training school from \nwhich the MOIS recruits. It also assists the MOIS with a range of needs such as information \nsecurity training, threat hunting, digital forensics, malware analysis, penetration training, \nand reverse engineering.133\nHacktivist Groups\nIran’s hacktivist network is constantly evolving and growing. In particular, since Hamas’s attack \non Israel on October 7, 2023, and Israel’s subsequent invasion of Gaza, Iranian hacktivists have \nbeen increasing their attacks against both Israeli and non-Israeli targets, especially targets in the \nUnited States. The Iranian government hides behind hacktivist organizations as they do with front \norganizations. The section below details some of the most well-known hacktivist groups.\ncyberav3ngers\nCyberAv3ngers is a hacktivist group that has been active since at least February 2022 but came to \nthe fore during the Israel-Hamas conflict. While most cybersecurity researchers track this group as a \nhacktivist group, CISA classifies CyberAv3ngers as an IRGC-affiliated APT.134 The group is particularly \nactive on social media and has claimed several attacks against critical infrastructure sectors,",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "b5bf0ea88843",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 32",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "95cc84115520",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Julia Dickson and Emily Harding  |  27\noften publicizing both actual and overstated successes. For example, some of their claims about \ncompromising Israeli infrastructure have been proven false.135\nIn a notable attack in November 2023, CyberAv3ngers targeted a municipal water authority in \nPennsylvania. The hackers shut down a device that monitors and regulates water pressure at a \npumping station, claiming the attack was meant to target the Israeli company, Unitronics, the maker \nof the industrial control system. Luckily, the staff switched to manual pumping quickly, and there \nwas no impact on the water supply or on the health of the residents who rely on the company’s \nwater and sewer services. CyberAv3ngers has also reportedly targeted a brewery in Pittsburgh, an \naquarium, Israel’s railway infrastructure, and several Israeli water facilities.136\nhaghjoyan\nHaghjoyan is another Iranian hacktivist group that emerged during the Israel-Gaza conflict. The \ngroup self-identifies as “Iran’s cyber army” on their popular Telegram channel, which had over \n40,000 subscribers at one point (see the images on page 28). Haghjoyan’s early attacks primarily \ntargeted Israel, but the group’s focus has expanded to include the United States. The group is \nknown for focusing on data leaks, defacement attacks, and propaganda. In one notable attack, \nHaghjoyan claimed to have targeted several Israeli water pumps, electricity distribution units, and \nvirtual network computing systems at gas stations, highlighting the dangerous reality that this group \ncould disrupt critical infrastructure.137\ncyber toufan al-aqsa\nCyber Toufan Al-Aqsa (“Toufan” means flood in Arabic and is very likely a reference to Hamas’s \nOctober 7th attack on Israel, known as “Toufan Al-Aqsa”) is a relatively new hacktivist group that \nonly recently emerged, in November 2023, but has already managed to attack more than 100 \nIsraeli organizations. According to SOCRadar, the group’s operations “bear the hallmarks of a \nsophisticated entity, potentially state-sponsored.”138 Cyber Toufan has been able to rapidly rise in \nnotoriety and carry out complex cyberattacks that “suggest a level of support and resources that \nare not typically available to independent hacker collectives.”139 The group has leaked sensitive \ndata from private companies and Israeli government targets, including the Ministry of Health, the \nMinistry of Welfare and Social Security, and Max Security (an Israeli cybersecurity company); Israeli \nbranches of multinational companies such as Ikea, ACE Hardware, and Toyota; and companies that \ndid business with Israeli companies such as Berkshire eSupply and SpaceX.140 Cyber Toufan’s wiper \nmalware has caused significant damage to many of these organizations, and the group is known for \nspreading follow-on attacks down the supply chain.\nThe vast array of these actors is telling. Iran has a variety of tools to choose from and is willing to \ndeploy a range of tools and actors against several consistent targets: the United States, Israel, and \nthe Gulf states. These attacks also show determination and persistence in the tactics, techniques, \nand procedures of these actors.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "c3cf9e4efc91",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 33",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "8334ae7da8ec",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "A Playbook for Winning the Cyber War  |  28\nScreenshots of Haghjoyan’s Telegram distributing stolen data of alleged CIA and Mossad employees.\nSource: Haghjoyan, Telegram, Screenshot, Haghjoyan distributes CIA and Mossad personnel data. February 16, 2024.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "90212025c878",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 34",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "2584fc3b72be",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Case Study 1\nDeserts vs. Sands \n“Do you see that desert out there? I want to show you something.” You pick up your cell \nphone and you call somewhere in Nebraska and you say, “Ok let it go.” So there’s an \natomic weapon, goes over ballistic missiles, the middle of the [Iranian] desert, that doesn’t \nhurt a soul. . . .  Then you say, “See? The next one is in the middle of Tehran. So, we mean \nbusiness. You want to be wiped out? Go ahead and take a tough position and continue \nwith your nuclear development.”\n—Sheldon Adelstein, 2013141\nThese comments from Sheldon Adelstein, the owner of the Sands Casino in Las Vegas, from a 2013 \npanel sparked outrage in Tehran. Adelstein had been asked how he would handle the ongoing talks \nwith Iran about its nuclear program, to which he casually proposed that the United States launch \na nuclear weapon at Iran, instead of pursuing diplomatic negotiations, to send a message and get \nthe country to stop pursuing its own nuclear program.142 A few months later, in early 2014, Tehran \nretaliated with a malware bomb aimed at his casino.143\nThe attack on the Sands Casino was not particularly sophisticated—it was a brute force password \nattack on a smaller casino. Tehran then used that access to find the credentials of a systems \nengineer and plant the malware. The attack destroyed about three-quarters of the casino’s \nLas Vegas servers, and cost the company an estimated $40 million.144 A year later, Director \nof National Intelligence James Clapper attributed the hack to the Iranian government in a \ncongressional testimony.145\nJulia Dickson and Emily Harding  |  29",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "5324dccfd21b",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 35",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "38b1961c65c8",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "A Playbook for Winning the Cyber War  |  30\nThis attack set a dangerous precedent, demonstrating Iran’s willingness to target privately \nheld companies, similar to North Korea’s attacks on Sony Pictures only a year later.146 The U.S. \ngovernment was not the cavalry, coming to help. Adelstein’s comments were his own, and even \nthough the attacker was a nation-state, the U.S. government did not view protecting the Sands \nCasino as its responsibility. The business recovered, but Tehran was able to exact a heavy cost.\nIn 2013, Iran’s cyber capability was still new. In the years since, however, Tehran’s cyber activity \nhas grown bolder and more ambitious, from DDoS attacks to wiper malware to an attempt to \nundermine the 2020 and 2024 U.S. elections.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "d6d580dd322a",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 36",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "139a66ec8e6f",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Case Study 2\nTehran Targets Tirana\nI\nn 2022, Tehran hit Albania with perhaps the most aggressive and disruptive cyberattacks \nagainst a foreign government during peacetime to date. In response, Tirana made the \nunprecedented decision to fully sever diplomatic ties with Tehran.147 The attacks, part of Iran’s \nlarger foreign policy strategy, aimed to retaliate against Albania for offering refuge to thousands of \nmembers of the People’s Mujahedeen of Iran (Mujahedeen-e-Khalq, or MEK), an Iranian opposition \nmovement that Tehran considers a terrorist organization and a potential threat to the regime. \nTirana’s 2013 offer of refuge entangled Tirana in the geopolitical standoff between the United States \nand Iran.148 In its devastating cyberattacks on Albania, Tehran sent a clear signal that it would seek \nrevenge against those who act against its interests.\nOn July 15, 2022, Iranian cyber actors calling themselves HomeLand Justice hit the government of \nAlbania with a destructive cyberattack that shut down government services and websites, including \nthe e-Albania portal which then offered 1,225 electronic services to Albanian citizens.149 Several \ngroups, all of which Microsoft linked to MOIS-affiliated Helix Kitten, conducted the attack. A group \nMicrosoft tracks as DEV-0861 gained initial access to the network in May 2021 and maintained \ncontinuous network access for over a year. Throughout that time, DEV-0861 and DEV-0166 accessed \nand exfiltrated data and harvested credentials from Albanian government networks while moving \nlaterally. Another MOIS-affiliated group, which Microsoft tracks as DEV-0842, deployed both the \nransomware and wiper malware (See Figure 2 on page 33). The ransomware image contained \nan anti-MEK political ransom note, which “closely mirrored the messaging used in cyberattacks \nagainst Iran . . . suggesting an intent to signal the attack as a form of retaliation” for earlier attacks.150 \nFurther, the MEK was planning to host a “Free Iran World Summit” on July 23–24, 2022, in Durrës, \nJulia Dickson and Emily Harding  |  31",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "12439f6f5c9c",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 37",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "5dfe227f0586",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "A Playbook for Winning the Cyber War  |  32\nHomeLand Justice ransom note.\nSource: Mandiant, “ROADSWEEP Ransomware-Likely Iranian Threat Actor Conducts Politically Motivated Disruptive Activity \nAgainst Albanian Government Organizations,” Google Cloud Blog, August 4, 2022, https://www.microsoft.com/en-us/security/\nblog/2022/09/08/microsoft-investigates-iranian-attacks-against-the-albanian-government.\nLeading up to the destructive attack, HomeLand Justice had created a website and various social \nmedia profiles on which they circulated anti-MEK messages. Following the attack, the group \nofficially claimed credit and posted videos of the attack on their website. They also leaked Albanian \ngovernment data between late July and mid-August on the group’s social media accounts.152\nDespite the severity of the attack, Tirana was able to recover relatively quickly. An Albanian \ngovernment official highlighted that Iran had aimed to completely paralyze Albania’s government \ninfrastructure, but that Albania was able to prevent the spread of the ransomware and recover \nmost of the data from a backup within a matter of days.153 On August 12, 2022, the government \nreported, “All the online public services for the citizens and businesses and government websites \nin Albania have been fully restored and are normally accessible after almost four weeks of intense \ncounterattacks against a massive and synchronized cyber attack.” The report indicated that 1,214 of \nthe 1,225 services provided on the e-Albania platform were fully accessible, with a few others, such \nas the ability to issue diplomas, not yet restored.154\nAlbania. The ransom note referenced Durrës, saying “Why should our taxes be spent on the benefit \nof DURRES terrorists?”151",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "7b5932e6a07c",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 38",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "3534f5ed02d8",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Only a few months later, Tehran targeted Tirana once more. The September 2022 attacks used similar \ntactics, techniques, and procedures and were “likely done in retaliation for public attribution of the \ncyber attacks in July.”155 The second attack targeted the Albanian police force’s Total Information \nManagement System (TIMS), which stores information about people entering and leaving the country. \nThe attack forced police departments across the country to take the TIMS offline for 24 hours. \nAlbania benefited from its strong partnerships with the United States and NATO in recovering from \nthese attack; both the U.S. government and private sector partners came to Tirana to help with the \ninvestigation and recovery.156 Albanian Prime Minister Edi Rama tweeted on July 24: “the good news is \nthat the aggression was successfully repelled by an Albanian-American super team, that no data was \ndeleted, that public services are back to work!”157 \nIn response to these attack, the Albanian government fully cut diplomatic ties with Tehran, forcing \nIranian embassy staff to leave the country within 24 hours.158 Ties have not been restored. The United \nStates also condemned the attack because it “violated the peacetime norm of not damaging critical \ninfrastructure that the public relied on.”159\nIn December 2023, Iran, again posing as HomeLand Justice, attacked the Albanian parliament, \nONE Albania, and Air Albania. The attackers used the hashtag #DestroyDurresMilitaryCamp.160 In \nFebruary 2024, they attacked the Albanian Institute of Statistics.161\nThese attacks exemplify many tactics commonly associated with Iranian hacking groups, including \ntheir use of fake personae to avoid attribution and retaliatory messaging, but they also represent an \n“aggressive escalatory step,” according to Mandiant’s vice president of intelligence, John Hultquist. \nPrior to this attack, Iran had only conducted disruptive cyberattacks in the Middle East, suggesting \nthat the country’s risk tolerance for using destructive cyber tools against its adversaries, including \nthose outside of the region, may be increasing. Hultquist also emphasized “whatever deterrents \nwe believe exist between us and them may not exist at all.” 162 So, as Tehran continues to increase \nits cyber capabilities, it will likely be willing to target the United States and its allies with similarly \ndestructive and disruptive cyberattacks. \nJulia Dickson and Emily Harding  |  33\nFigure 2: MOIS-Affiliated Groups Involved in the July 2022 Cyberattack\n  \t\n▪\nDEV-0842 deployed the \nransomware and wiper \nmalware.\n  \t\n▪\nDEV-0861 gained initial access \nand exfiltrated data.\n  \t\n▪\nDEV-0166 exfiltrated data.\n  \t\n▪\nDEV-0133 probed victim \ninfrastructure.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "a4826e3af73b",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 39",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "77bfebaa2b03",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "A Playbook for Winning the Cyber War  |  34\nCase Study 3\nIranian Cyberattacks During the Israel-Hamas War\nB\nefore Hamas attacked Israel on October 7, 2023, and Israel subsequently invaded Gaza, \nIsrael was already a top target of Iranian cyberattacks. Following the war’s commencement, \nIranian actors seemed to use existing accesses to make a statement, even if the connection \nbetween the target and the war was slim at best. Iran soon increased the frequency and \nsophistication of its cyberattacks in order to undercut support for the war and collect intelligence \non key decisionmakers.163 At first, attacks mainly aimed at quickly stirring public discord, but \neventually they became more targeted and focused on disruption. Iran’s tactics in Israel and against \nIsraeli allies demonstrate key components of its evolving cyber strategy, including its opportunistic \noperations, use of advanced social engineering campaigns, increasing use of cyber-enabled \ninfluence operations, and reliance on proxies.\nImmediately following October 7, Iranian threat actors conducted a series of clearly opportunistic \ncyberattacks combined with influence operations designed to mislead and exaggerate Iranian \ncapabilities and access. Iranian hackers quickly boosted their cyber operations in support of Gaza, \nutilizing pre-existing access and re-leaking old data. For instance, on October 8, Malek Team—\nlikely an MOIS-affiliated cyber persona—leaked personal data from an Israeli university on Twitter. \nWithout any clear link to the Israel-Hamas conflict, Microsoft Threat Intelligence concluded that the \nattack was most likely based on preexisting access and was opportunistic in nature; Malek Team saw \na new opportunity within its existing capabilities and took it.164\nIran also re-leaked old data and published ambiguous details and false information about \nsupposedly successful cyberattacks in state media. For instance, Tasnim News Agency, a news",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "13d0a0035771",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 40",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "4a58f4651183",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "outlet affiliated with the IRGC, stated on Twitter that the CyberAv3ngers attacked Israel’s Dorad \npowerplant “at the same time as the ‘Al-Aqsa Storm,’” but the group already had claimed to have \nconducted a cyberattack against an Israeli electricity company the evening before Hamas’s attack. \nFurther, a Kaspersky report found that the images posted on CyberAv3nger’s Telegram were \nfrom a 2022 attack by Moses Staff, another Iranian group, which has no known affiliation with \nCyberAv3ngers.165 The confusing information and false claims of Iran’s successes are part of Iran’s \nbroader influence operations that seek to intimidate Israel by overstating Iran’s capabilities. These \nattacks—both real and exaggerated—aimed to affect Israeli citizens’ and allies’ beliefs about the \nconflict, and thereby their behavior, but did not actually cause significant disruption or damage.\nAs the war progressed, however, a growing number of groups shifted their focus to Israel, and \nattacks moved from being opportunistic or fabricated to being more carefully planned and \nsomewhat destructive. Microsoft Threat Intelligence found that 9 groups were targeting Israel \nduring the first week of the war, increasing to 14 groups after two weeks of conflict; the number \nof attacks more than doubled in the first month. Further, multiple groups affiliated with the \nIRGC and MOIS focused on the same targets, “suggesting coordination, common objectives set in \nTehran, or both.”166\nDuring this second phase of the war from mid- to late October 2023, Iranian groups conducted \nmore disruptive attacks while continuing to publish misleading and false information and rely on \ninfluence activity to exaggerate the effects of their attacks and abilities. For instance, on October 18, \nthe IRGC’s Shahid Kaveh Group used custom ransomware to target Israeli security cameras. Soldiers \nof Solomon, one of Iran’s cyber personas, then claimed it had hacked security cameras and stolen \ndata from the Nevatim air base. In actuality, the footage was from nowhere near the military base; it \nwas from a town north of Tel Aviv with a street named Nevatim.167\nThroughout this period, Iran-linked threat actors continued to use advanced social engineering \ncampaigns to target individuals of strategic interest to the Iranian government. In one instance, \nCharming Kitten sent emails to a series of targets, pretending to be a notable individual. The \ngroup posed as a journalist from a well-known news outlet reporting on the conflict in Gaza. After \nbuilding rapport, Charming Kitten sent a follow-up email, including a link to a malicious domain. \nThese campaigns targeted research and academic institutions in Belgium, France, Gaza, the United \nKingdom, and the United States, and they were first spotted in November 2023.168\nAs the war continued to progress, so too did the scope of Iran’s activities. By late November, \nIranian groups had begun targeting countries that Iran perceives as supporting Israel, as well as \nIsraeli-made systems in countries around the world. These destructive attacks highlight Tehran’s \nwillingness to attack civilian critical infrastructure, its general disregard for international norms, \nand its willingness to conduct potentially escalatory acts when operating in the cyber domain. \nIn December 2023, the Iranian front HomeLand Justice used wiper malware against Albania’s \nparliament, two local telecommunications companies, and Air Albania (a local airline).169 Microsoft \nThreat Intelligence assesses that two MOIS-affiliated groups collaborated on this destructive \nattack: One provided access to the network and the other executed wiper malware. See the case \nstudy on page 32 for more about Iran’s attacks on Albania.170 In another instance, IRGC-affiliated \nJulia Dickson and Emily Harding  |  35",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "db0c428e048b",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 41",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "13f2e58469c3",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "A Playbook for Winning the Cyber War  |  36\nCyberAv3ngers targeted and compromised programmable logic controllers made by Israeli \ncompany, Unitronics. The group hacked a small western Pennsylvania water authority using this \nIsraeli system, warning that “every equipment made in Israel is CyberAv3ngers legal target.”171\nAt the same time, Iran’s cyber-enabled influence operations also grew more sophisticated, utilizing \nnew advanced techniques. In February 2024, Iranian hackers used artificial intelligence (AI) for the \nfirst time as a key component of a cyber-enabled influence campaign. State-backed actor Emennet \nPasargad interrupted multiple broadcast channels to broadcast this deepfake. See page 25 for \nmore information about this attack.172 The threat from Iran is likely to grow as its operations and \ncapabilities continue to advance, becoming more carefully targeted and destructive and utilizing \nemerging technologies.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "04d3e82d1d02",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 42",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "481668bcc9b2",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "About the Authors\n Julia Dickson is a research associate with the Intelligence, National Security, and Technology \n(INT) Program at CSIS. Her research interests include cybersecurity and cybercrime and the \nrole of technology in conflict. Prior to joining CSIS, she was awarded a Fulbright grant and \nspent a year teaching English in Osh, Kyrgyzstan. She was also previously a research assistant \nat the Wilson Center, an intern for the Conventional Defense Program at the Stimson Center, \nand a communications and outreach intern at the International Crisis Group. She holds a BA in \ninternational studies with a minor in French from the Johns Hopkins University.\nEmily Harding is director of the Intelligence, National Security, and Technology (INT) Program \nand vice president of the Defense and Security Department at CSIS. As the head of the INT Program, \nshe provides thought leadership on the most critical issues facing intelligence professionals and \non the future of intelligence work. She also serves as vice president of the Defense and Security \nDepartment, where she is responsible for leading a team of world-renowned scholars providing \npolicy solutions that shape national security. Drawing on her decades of experience in national \nsecurity, Emily has established herself as an expert on how technology is revolutionizing national \nsecurity work. Harding has served in a series of high-profile national security positions at critical \nmoments. While serving as deputy staff director on the Senate Select Committee on Intelligence, \nshe led the committee’s investigation into Russian interference in the 2016 elections, which was \nlauded for its bipartisanship. At CIA, she led analysts and analytic programs through moments of \ncrisis, including shepherding the Iraq Group during the attempted Islamic State takeover. During a \ntour at the National Security Council, she served as director for Iran. After leaving the White House, \nher team ran the first Office of the Director of National Intelligence-led presidential transition, \nJulia Dickson and Emily Harding  |  37",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "9d8f595d5669",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 43",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "4e4705a7b593",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "A Playbook for Winning the Cyber War  |  38\nwhere she was responsible for briefing the incoming administration. Harding is an adjunct lecturer \nat the Johns Hopkins School of Advanced International Studies. Her analysis has appeared in the \nWall Street Journal, BBC, NPR, Bloomberg, and other outlets. Harding holds a master’s degree \nfrom Harvard University’s Kennedy School of Government and a bachelor’s degree from the \nUniversity of Virginia.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "3019fdc5f060",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 44",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "698e9951081c",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Endnotes\n1\t\nAyman Oghanna, “How Albania Became a Target for Cyberattacks,” Foreign Policy, July 24, 2024, https://\nforeignpolicy.com/2023/03/25/albania-target-cyberattacks-russia-iran/.\n2\t\n“A Cyberattack Targets Albanian Parliament’s Data System, Halting Its Work,” AP News, December 26, \n2023, https://apnews.com/article/albania-cyberattack-parliament-iran-cc1a03b58bd753bbe935ad74f1ab­\nc0f7.\n3\t\nAlex Campbell et al., “How Does Iran Conceive of Cyber as Part of Its National Strategy?,” Columbia \nSchool of International Public Affairs, 2019, https://www.sipa.columbia.edu/how-does-iran-conceiv\ne-cyber-part-its-national-strategy.\n4\t\nMark Thompson, “Iranian Cyber Attack on New York Dam Shows Future of War,” TIME, March 24, 2016, \nhttps://time.com/4270728/iran-cyber-attack-dam-fbi/.\n5\t\nJames P. Farwell and Darby Arkelian, “What Does Iran’s Cyber Capability Mean for Future Conflict?,” \nWhitehead Journal of Diplomacy and International Relations (Winter/Spring 2013), https://ciaotest.cc.co­\nlumbia.edu/journals/shjdir/v14i1/f_0028742_23336.pdf.\n6\t\nColin Anderson and Karim Sadjadpour, Iran’s Cyber Threat: Espionage, Sabotage, and Revernge (Wash­\nington, DC: Carnegie Endowment for International Peace, 2018), https://carnegieendowment.org/files/\nIran_Cyber_Final_Full_v2.pdf.\n7\t\nIbid.\n8\t\nKim Zetter, “An Unprecedented Look at Stuxnet, the World’s First Digital Weapon,” Wired, November 3, \n2014, https://www.wired.com/2014/11/countdown-to-zero-day-stuxnet/.\nJulia Dickson and Emily Harding  |  39",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "31106581495b",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 45",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "f26f302fd6bd",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "A Playbook for Winning the Cyber War  |  40\n9\t\nNicole Perlroth, “Attacks on 6 Banks Frustrate Customers,” New York Times, September 30, 2012, https://\nwww.nytimes.com/2012/10/01/business/cyberattacks-on-6-american-banks-frustrate-customers.html; \nand Thompson, “Iranian Cyber Attack on New York Dam Shows Future of War.”\n10\t\n“Connect the Dots on State-Sponsored Cyber Incidents - Compromise of Saudi Aramco and RasGas,” \nCouncil on Foreign Relations, accessed July 25, 2024, https://www.cfr.org/cyber-operations/compromis\ne-saudi-aramco-and-rasgas; and Nicole Perlroth, “In Cyberattack on Saudi Firm, U.S. Sees Iran Fir­\ning Back,” New York Times, October 24, 2012, https://www.nytimes.com/2012/10/24/business/global/\ncyberattack-on-saudi-oil-firm-disquiets-us.html.\n11\t\nDavid E. Sanger, “U.S. Indicts 7 Iranians in Cyberattack on Banks and a Dam,” New York Times, March 24, \n2016, https://www.nytimes.com/2016/03/25/world/middleeast/us-indicts-iranians-in-cyberattacks-on-\nbanks-and-a-dam.html; “Iran Cyber Threat Overview,” Sekoia (blog), June 5, 2023, https://blog.sekoia.io/\niran-cyber-threat-overview/.\n12\t\nChuck Freilich, “Part 2: Iran’s Cyber Strategy, Institutions, and Capabilities,” in The Iranian Cyber Threat: \nThe Institutions and Praxis of Iran’s Cyber Strategy (Washington, DC: Institute for National Security Stud­\nies, February 2024), https://www.inss.org.il/wp-content/uploads/2024/02/Part-2.pdf.\n13\t\nClint Watts, “Iran Accelerates cyber ops against Israel from chaotic start,” Microsoft Threat Analysis \nCenter, February 6, 2024, https://blogs.microsoft.com/on-the-issues/2024/02/06/iran-accelerates-cybe\nr-ops-against-israel/.\n14\t\n“Iran, Russia Agree on Cyber-Defense Cooperation: Official,” Tasnim News Agency, June 13, 2015, \nhttps://www.tasnimnews.com/en/news/2015/06/13/768309/iran-russia-agree-on-cyber-defens\ne-cooperation-official.\n15\t\n“Россия и Иран подписали меморандум о сотрудничестве в области связи и ИТ” [Russia and \nIran signed a memorandum of cooperation in the field of communications and IT], Министерство \nцифрового развития, связи и массовых коммуникаций Российской Федерации [Ministry of \nDigital Development, Communications, and Mass Comunications of the Russian Federation], March 28, \n2017, https://digital.gov.ru/ru/events/36659/.\n16\t\n“Iran, Russia Sign Information Security Cooperation Pact,” Ministry of Foreign Affairs of the Islamic \nRepublic of Iran, January 26, 2021, https://en.mfa.ir/portal/NewsView/625777.\n17\t\nDov Lieber, “Russia Supplies Iran with Cyber Weapons as Military Cooperation Grows,” Wall Street \nJournal, March 27, 2023, https://www.wsj.com/articles/russia-supplies-iran-with-cyber-weapons-as-milita\nry-cooperation-grows-b14b94cd.\n18\t\nGolnaz Esfandiari, “Iran to Work With China to Create National Internet System,” Radio Free Eu­\nrope Radio Library, September 4, 2020, https://www.rferl.org/a/iran-china-national-internet-syste\nm-censorship/30820857.html.\n19\t\nJames Andrew Lewis, “Iran and Cyber Power,” CSIS, Commentary, June 25, 2019, https://www.csis.org/\nanalysis/iran-and-cyber-power.\n20\t\nCampbell et al., “How Does Iran Conceive of Cyber as Part of Its National Strategy?”\n21\t\n“Iran Cyber Threat Overview and Advisories,” Cybersecurity and Infrastrure Agency (CISA), accessed \nAugust 24, 2024, https://www.cisa.gov/topics/cyber-threats-and-advisories/advanced-persistent-threats/\niran.\n22\t\nGabi Siboni and Sami Kronenfeld, “Iran’s Cyber Warfare,” Institute for National Security Studies, INSS \nInsight, no. 375 October 15, 2012, https://www.files.ethz.ch/isn/154842/No375_15OCT2012.pdf.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "18531dfea92d",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 46",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "6c98bf6d4ebe",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "23\t\nAlex Vatanka, “Whither the IRGC of the 2020s? Is Iran’s Proxy Warfare Strategy of Forward Defense \nSustainable?,” New America, January 15, 2021, https://www.newamerica.org/future-security/reports/\nwhither-irgc-2020s/ii-introduction.\n24\t\nAmr Yossef, “Upgrading Iean’s Military Doctrine: An Offensive ‘Forward Defense’,” Middle East In­\nstitute, December 10, 2019, https://www.mei.edu/publications/upgrading-irans-military-doctrin\ne-offensive-forward-defense.\n25\t\nA sock puppet is a false online identity. Iranian hackers are known for creating fake social media profiles \nand emails to have elaborate conversations with their victims. After building trust, the sock puppet \nsends a malicious link or attachment.\n26\t\n“Social Engineering Remains Key Tradecraft for Iranian APTs,” Insikt Group, March 30, 2022, https://\nwww.recordedfuture.com/blog/social-engineering-remains-key-tradecraft-for-iranian-apts.\n27\t\nIonut Arghire, “Iranian Spies Maintained Social Media Persona for Years Before Targeting Defense \nContractor,” SecurityWeek, July 28, 2021, https://www.securityweek.com/iranian-spies-maintained-socia\nl-media-persona-years-targeting-defense-contractor/.\n28\t\n“Israel Busts Iran’s Phishing Network Active in LinkedIn,” Iran International, July 31, 2023, https://www.\niranintl.com/en/202307308905.\n29\t\n“Iran Surges cyber-enabled influence operations in support of Hamas,” Microsoft Threat Intelligence, \nFebruary 26, 2024, https://www.microsoft.com/en-us/security/security-insider/intelligence-reports/ira\nn-surges-cyber-enabled-influence-operations-in-support-of-hamas.\n30\t\n“Iran and the Rise of Cyber-Enabled Influence Operations,” Dark Reading, August 16, 2023, https://www.\ndarkreading.com/cybersecurity-operations/iran-and-the-rise-of-cyber-enabled-influence-operations-.\n31\t\n“Iran Surges cyber-enabled influence operations in support of Hamas,” Microsoft Threat Intelligence.\n32\t\nKat Duffy, Kyle Fendorf, and Cecilia Marrinan, “Cyber Week in Review: February 16, 2024,” Council on \nForeign Relations, February 16, 2024, https://www.cfr.org/blog/cyber-week-review-february-16-2024.\n33\t\n“Statement from Director of National Intelligence Avril Haines on Recent Iranian Influence Efforts,” \nOffice of the Director of National Intelligence, July 9, 2024, https://www.dni.gov/index.php/newsroom/\npress-releases/press-releases-2024/3842-statement-from-director-of-national-intelligence-avril-haine\ns-on-recent-iranian-influence-efforts.\n34\t\nJose Pagliery, “The inside Story of the Biggest Hack in History,” CNN Money, August 5, 2015, https://mon­\ney.cnn.com/2015/08/05/technology/aramco-hack/index.html.\n35\t\n“Shamoon (2012),” Cyber Law toolkit, September 17, 2021, https://cyberlaw.ccdcoe.org/wiki/Shamoon_\n(2012).\n36\t\nCenter for Security Studies, Hotspot Analysis: Iranian cyber-activities in the context of regional rival­\nries and international tensions (Zurich: ETH Zurich, May 2019), https://css.ethz.ch/content/dam/ethz/\nspecial-interest/gess/cis/center-for-securities-studies/pdfs/20190507_MB_HS_IRN%20V1_rev.pdf.\n37\t\nAnderson and Sadjadpour, Iran’s Cyber Threat.\n38\t\n“Iran,” Freedom House, 2022, https://freedomhouse.org/country/iran/freedom-net/2022; and Paul \nBucala and Caitlin Shayda Pendleton, “Iranian Cyber Strategy: A View from the Iranian Military,” Critical \nThreats, November 24, 2015, https://www.criticalthreats.org/analysis/iranian-cyber-strategy-a-view-fro\nm-the-iranian-military.\nJulia Dickson and Emily Harding  |  41",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "51ef9943e4a9",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 47",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "351f201f3aef",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "A Playbook for Winning the Cyber War  |  42\n39\t\nMaziar Motamedi, “Iran unveiled plan for tighter internet rules to promote local platforms,” Al Jazeera, \nFebruary 24, 2024, https://www.aljazeera.com/news/2024/2/24/iran-unveils-plan-for-tighter-internet-\nrules-to-promote-local-platforms.\n40\t\n“Treasury Sanctions Iranian Company Aiding in Internet Censorship,” U.S. Department of the Treasury, \nJune 2, 2023, https://home.treasury.gov/news/press-releases/jy1518.\n41\t\n“After internet blackout, Iranians take stock,” Al Jazeera, November 27, 2019, https://www.aljazeera.com/\neconomy/2019/11/27/after-internet-blackout-iranians-take-stock.\n42\t\nRaksha Kumar, “As the world focuses on Ukraine, Iran is on the verge of becoming an internet black \nhole,” Reuters Institute for the Study of Journalism, April 5, 2022, https://reutersinstitute.politics.ox.ac.\nuk/news/world-focuses-ukraine-iran-verge-becoming-internet-black-hole.\n43\t\nAnderson and Sadjadpour, Iran’s Cyber Threat.\n44\t\nIbid.\n45\t\nDavid E. Sanger, “U.S. Indicts 7 Iranians in Cyberattacks on Banks and a Dam,” New York Times, March \n24, 2016, https://www.nytimes.com/2016/03/25/world/middleeast/us-indicts-iranians-in-cyberat­\ntacks-on-banks-and-a-dam.html?module=inline; and\n“Iran Cyber Threat Overview,” Sekoia (blog), June 5, 2023, https://blog.sekoia.io/iran-cyber-threat-overview/.\n46\t\n“Iran threatens retaliation after what it calls possible cyber attacl on nuclear site,” Reuters, July 3, 2020, \nhttps://www.reuters.com/article/idUSKBN24424H/.\n47\t\n“Treasury Sanctions Actors Responsible for Malicious Cyber Activities on Critical Infrastructure,” U.S. \nDepartment of the Treasury, February 2, 2024, https://home.treasury.gov/news/press-releases/jy2072. \n48\t\nA. J. Vicens, “How an Iranian-Linked Influence Campaign Pivoted after Oct. 7 Attack on Israel,” Cyber­\nScoop (blog), May 8, 2024, https://cyberscoop.com/how-an-iranian-linked-influence-campaign-pivoted-a\nfter-oct-7-attack-on-israel/.\n49\t\nIbid.\n50\t\nAnderson and Sadjadpour, Iran’s Cyber Threat.\n51\t\nAnderson and Sadjadpour, Iran’s Cyber Threat.\n52\t\nAshley Lane, “Iran’s Islamist Proxies in the Middle East,” Wilson Center, September 12, 2023, https://\nwww.wilsoncenter.org/article/irans-islamist-proxies.\n53\t\n“Iran Surges cyber-enabled influence operations in support of Hamas,” Microsoft Threat Intelligence.\n54\t\n“Iran Cyber Threat Overview and Advisories,” CISA, accessed August 26, 2024, https://www.cisa.gov/top­\nics/cyber-threats-and-advisories/advanced-persistent-threats/iran.\n55\t\nErika Stanish, “Municipal Water Authority of Aliquippa hacked by Iran-backed cyber group,” CBS News, \nNovember 23, 2023, https://www.cbsnews.com/pittsburgh/news/municipal-water-authority-of-aliqui\nppa-hacked-iranian-backed-cyber-group/.\n56\t\n“Foreign Threats to the 2020 US Federal Elections,” National Intelligence Council, March 10, 2021, \nhttps://www.dni.gov/files/ODNI/documents/assessments/ICA-declass-16MAR21.pdf.\n57\t\n“Treasury Sanctions Iraian Cyber Actors for Attempting to Influence the 2020 U.S. Presidential \nElection,” U.S. Department of the Treasury, November 18, 2021, https://home.treasury.gov/news/\npress-releases/jy0494.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "80f9f97aca8c",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 48",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "bde6928216ce",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "58\t\nOffice of Public Affairs,, “Two Iranian Nationals Charged for Cyber-Enabled Disinformation and Threat \nCampaign Designed to Influence the 2020 U.S. Presidential Election,” U.S. Department of Justice, \nNovember 18, 2021, https://www.justice.gov/opa/pr/two-iranian-nationals-charged-cyber-enabled-\ndisinformation-and-threat-campaign-designed.\n59\t\nMandiant, “APT42: Crooked Charms, Cons, and Compromises,” Google Cloud, September 7, 2022, \nhttps://www.mandiant.com/resources/blog/apt42-charms-cons-compromises.\n60\t\nOfir Rozmann et al., “Uncharmed: Untangling Iran’s APT42 Operations,” Mandiant, Google Cloud, May 1, \n2024, https://cloud.google.com/blog/topics/threat-intelligence/untangling-iran-apt42-operations.\n61\t\n“Iran Surges cyber-enabled influence operations in support of Hamas,” Microsoft Threat Intelligence.\n62\t\n“Iran’s Revolutionary Guards,” Council on Foreign Relations, April 17, 2024, https://www.cfr.org/back­\ngrounder/irans-revolutionary-guards.\n63\t\n“Islamic Revolution Guard Corps (IRGC),” National Counterterrorism Center, March 2022, https://www.\ndni.gov/nctc/ftos/irgc_fto.html.\n64\t\nLewis, “Iran and Cyber Power.”\n65\t\nAdam Meyers, “Who is REFINED KITTEN?,” CrowdStrike (blog), December 12, 2019, https://www.crowd­\nstrike.com/blog/who-is-refined-kitten/.\n66\t\nJacqueline O’Leary et al., “Insights into Iranian Cyber Espionage: APT33 Targets Aerospace and Energy \nSectors and has Ties to Destructive Malware,” Mandiant, September 20, 2017, https://www.mandiant.\ncom/resources/blog/apt33-insights-into-iranian-cyber-espionage.\n67\t\n“APT33,” Council on Foreign Relations, accessed August 26, 2024, https://www.cfr.org/cyber-operations/\napt-33.\n68\t\nMeyers, “Who is REFINED KITTEN?”\n69\t\n“Peach Sandstorm password spray campaigns enable intelligence collection at high-value targets,” \nMicrosoft Threat Intelligence, September 14, 2023, https://www.microsoft.com/en-us/security/\nblog/2023/09/14/peach-sandstorm-password-spray-campaigns-enable-intelligence-collection-at-high-v\nalue-targets/.\n70\t\nJacqueline O’Leary et al., “Insights into Iranian Cyber Espionage: APT33 Targets Aerospace and Energy \nSectors and has Ties to Destructive Malware,” Mandiant, September 20, 2017, https://www.mandiant.\ncom/resources/blog/apt33-insights-into-iranian-cyber-espionage.\n71\t\nThomas Roccia, “Shamoon Attackers Employ New Tool Kit to Wipe Infected Systems,” McAfee, Decem­\nber 19, 2018, https://www.mcafee.com/blogs/other-blogs/mcafee-labs/shamoon-attackers-employ-ne\nw-tool-kit-to-wipe-infected-systems/.\n72\t\nO’Leary et al., “Insights into Iranian Cyber Espionage.”\n73\t\n“Charming Kitten,” CrowdStrike, accessed August 26, 2024, https://www.crowdstrike.com/adversaries/\ncharming-kitten/.\n74\t\n“Magic Hound,” MITRE Corporation, last updated January 8, 2024, https://attack.mitre.org/groups/\nG0059/.\n75\t\n“Advanced Persistent Threats (APTs),” Mandiant, accessed August 26, 2024, https://www.mandiant.com/\nresources/insights/apt-groups. \nJulia Dickson and Emily Harding  |  43",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "95f03c584d40",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 49",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "c6c0d2cf60e6",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "A Playbook for Winning the Cyber War  |  44\n76\t\nBryan Lee and Robert Falcone, “Magic Hound Campaign Attacks Saudi Targets,” Unit 42 by Palo Alto \nNetworks, February 15, 2017, https://unit42.paloaltonetworks.com/unit42-magic-hound-campaig\nn-attacks-saudi-targets/.\n77\t\nEduard Kovacs, “Iranian Spies Target Saudi Arabia in ‘Magic Hound’ Attacks,” SecurityWeek, February \n16, 2017, https://www.securityweek.com/iranian-spies-target-saudi-arabia-magic-hound-attacks/.\n78\t\n“Advanced Persistent Threats (APTs),” Mandiant.\n79\t\nTom Burt, “New cyberattacks targeting U.S. elections,” Microsoft, September 10, 2020, https://blogs.mic­\nrosoft.com/on-the-issues/2020/09/10/cyberattacks-us-elections-trump-biden/.\n80\t\n“Advisory on cyber espionage against critics of the Iranian regime in Germany,” Federal Office for the \nProtection of the Constitution, BfV Cyber-Brief Nr. 01/2023, August 10, 2023, https://www.verfassungss­\nchutz.de/SharedDocs/kurzmeldungen/DE/2023/2023-08-10-cyber-brief-01-2023.html?nn=679196#Start.\n81\t\n“Germany says Charming Kitten Hackers target Iran dissidents,” Deutsche Welle, August 10, 2023, https://\nwww.dw.com/en/germany-says-charming-kitten-hackers-target-iran-dissidents/a-66493687.\n82\t\n“Imperial Kitten,” CrowdStrike, accessed August 26, 2024, https://www.crowdstrike.com/adversaries/\nimperial-kitten/; And “Charming Kitten,” CrowdStrike, accessed August 26, 2024, https://www.crowd­\nstrike.com/adversaries/charming-kitten/.\n83\t\n“IMPERIAL KITTEN Deploys Novel Malware Families in Middle East-Focused Operations,” CrowdStrike \n(blog), November 9, 2023, https://www.crowdstrike.com/blog/imperial-kitten-deploys-novel-malwar\ne-families/.\n84\t\nIbid.\n85\t\nOfir Rozmann, Chen Evgi, and Jonathan Leathery, “When Cats Fly: Suspected Iranian Treat Actor \nUNC1549 Targets Israeli and Middle East Aerospace and Defense Sectors,” Mandiant, Google Cloud, \nFebruary 27, 2024, https://cloud.google.com/blog/topics/threat-intelligence/suspected-iranian-unc154\n9-targets-israel-middle-east.\n86\t\nMandiant, “APT42: Crooked Charms, Cons, and Compromises,” Google Cloud, September 7, 2022, \nhttps://cloud.google.com/blog/topics/threat-intelligence/apt42-charms-cons-compromises.\n87\t\nIbid.\n88\t\nRozmann et al., “Uncharmed.”.\n89\t\nIbid.\n90\t\nConnor Bradbury, “Profiles: Iran’s Intelligence Agencies,” The Iran Primer, April 5, 2023, https://iran­\nprimer.usip.org/blog/2023/apr/05/profiles-iran%E2%80%99s-intelligence-agencies.\n91\t\nMaxime A. and Sekoia TDR, “Iranian Cyber Threat Overview,” Sekoia (blog), June 5, 2023, https://blog.\nsekoia.io/iran-cyber-threat-overview.\n92\t\n“Iranian intel cyber suite of malware uses open source tools,” U.S. Cyber Command, January \n12, 2022, https://www.cybercom.mil/Media/News/Article/2897570/iranian-intel-cyber-suite-o\nf-malware-uses-open-source-tools/.\n93\t\n“MuddyWater,” SOCRadar, January 2, 2023, https://socradar.io/dark-web-profile-muddywater-ap\nt-group/.\n94\t\n“MERCURY and DEV-1084: Destructive attack on hybrid environment,” Microsoft Threat Intelligence, \nApril 7, 2023, https://www.microsoft.com/en-us/security/blog/2023/04/07/mercury-and-dev-108\n4-destructive-attack-on-hybrid-environment/.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "bfe1235cb2d7",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 50",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "23e0275d0874",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "95\t\n“MuddyWater,” SOCRadar, January 2, 2023, https://socradar.io/dark-web-profile-muddywater-ap\nt-group/.\n96\t\nRyan Tomcik, Emiel Haeghebaert, and Tufail Ahmen, “Left on Read: Telegram Malware Spotted in Lat­\nest Iranian Cyber Espionage Activity,” Mandiant, Google Cloud, February 24, 2022, https://cloud.google.\ncom/blog/topics/threat-intelligence/telegram-malware-iranian-espionage/.\n97\t\nSimon Kenin, “MiddyWater eN-Able spear-phishing with new TTPs,” Deep Instinct Threat Lab, Novem­\nber 1, 2023, https://www.deepinstinct.com/blog/muddywater-en-able-spear-phishing-with-new-ttps.\n98\t\n“Iranian Government-Sponsored MuddyWater Actors Conducting Malicious Cyber Operations,” CISA, \nFebruary 24, 2022, https://www.cisa.gov/news-events/alerts/2022/02/24/iranian-government-sponsore\nd-muddywater-actors-conducting-malicious.\n99\t\nBryan Lee and Robert Falcone, “Behind the Scenes with OilRig,” Unit42, April 30, 2019, https://unit42.\npaloaltonetworks.com/behind-the-scenes-with-oilrig/.\n100\t\n“Waterbug: Espionage Group Rolls Out Brand-New Toolset in Attack Against Governments,” Syman­\ntec, June 20, 2019, https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/waterbu\ng-espionage-governments.\n101\t\n“Kaspersky experts warn of increase IT supply chain attacks by OilRig APT in the Middle East and Turki­\nye,” Kaspersky, May 8, 2023, https://me-en.kaspersky.com/about/press-releases/2023_kaspersky-expert\ns-warn-of-increased-it-supply-chain-attacks-by-oilrig-apt-in-the-middle-east-and-turkiye.\n102\t\nDan Raywood, “Iran’s APT34 Hits UAE With Supply Chain Attack,” Dark Reading, August 2, 2023, https://\nwww.darkreading.com/cyberattacks-data-breaches/iran-apt34-uae-supply-chain-attack.\n103\t\n“Advanced Persistent Threats (APTs),” Mandiant.\n104\t\n“Treasury Sanctions Iranian Ministry of Intelligence and Minister for Malign Cyber Activities,” U.S. De­\npartment of the Treasury, September 9, 2022, https://home.treasury.gov/news/press-releases/jy0941.\n105\t\n“Chafer: Latest Attacks Reveal Heightened Ambitions,” Symantec, February 28, 2018, https://\nsymantec-enterprise-blogs.security.com/threat-intelligence/chafer-latest-attacks-revea\nl-heightened-ambitions.\n106\t\nLiviu Arsene, “Iranian Chafer APT Targeted Air Transportation and Government in Kuwait and Saudi \nArabia,” Bitdefender, May 21, 2020, https://www.bitdefender.com/blog/labs/iranian-chafer-apt-targete\nd-air-transportation-and-government-in-kuwait-and-saudi-arabia/.\n107\t\n“Iran Surges cyber-enabled influence operations in support of Hamas,” Microsoft Threat Intelligence.\n108\t\nOr Chechik et al., “Agonizing Serpens (Aka Agrius) Targeting the Israeli Higher Education and Tech Sec­\ntors,” Unit 42 at Palo Alto Networks, November 6, 2023, https://unit42.paloaltonetworks.com/agonizin\ng-serpens-targets-israeli-tech-higher-ed-sectors/.\n109\t\nDan Raywood, “Iran-Linked Agrius APT Group Targets Israeli Education, Tech Sectors,” Dark Reading, \nNovember 7, 2023, https://www.darkreading.com/cyberattacks-data-breaches/iran-linked-agrius-ap\nt-group-israeli-education-tech-sectors.\n110\t\n“Hexane,” Mitre Corporation, accessed August 26, 2024, https://attack.mitre.org/groups/G1001/.\n111\t\n“Lyceum takes Center Stage in Middle East Campaign,” Secureworks, August 27, 2019, https://www.\nsecureworks.com/blog/lyceum-takes-center-stage-in-middle-east-campaign.\n112\t\n“New Iranian Espionage Campaign by ‘Siamesekitten’—Lyceum,” ClearSky, August 17, 2021, https://www.\nclearskysec.com/siamesekitten/.\nJulia Dickson and Emily Harding  |  45",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "b09ad41f172f",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 51",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "7e911c521379",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "A Playbook for Winning the Cyber War  |  46\n113\t\nAlex Orleans, “Who Is PIONEER KITTEN?,” CrowdStrike, August 31, 2020, https://www.crowdstrike.\ncom/blog/who-is-pioneer-kitten/.\n114\t\n“Iran Based Threat Actor Exploits VPN Vulnerabilities,” CISA, September 15, 2020, https://www.cisa.gov/\nnews-events/cybersecurity-advisories/aa20-259a.\n115\t\nJoseph Menn, “Oiran gained access to election result website in 2020, military reveals,” Washington Post, \nApril 24, 2020, https://www.washingtonpost.com/technology/2023/04/24/election-2020-iran-hacking/. \nAJ Vicens, “Microsoft says Iranian hackers combined influence ops with hacking for maxi­\nmum impact,” Cyberscoop, May 2, 2023, https://cyberscoop.com/iranian-information-operation\ns-hacking-microsoft-report/.\n116\t\n“Treasury Sanctions Senior Iranian Officials Overseeing Violent Protest Suppression and Censorship,” \nU.S. Department of the Treasury, April 24, 2023, https://home.treasury.gov/news/press-releases/jy1436.\n“Supreme Council of Cyberspace,” United Against Nuclear Iran, accessed August 26, 2024, https://www.united­\nagainstnucleariran.com/sanctioned-person/supreme-council-of-cyberspace-scc.”\n117\t\n“Iran,” Center for Internet and Society at Stanford Law School, accessed August 26, 2024, https://wil­\nmap.stanford.edu/country/iran.\n118\t\nCatherine A. Theohary, “Iranian Offensive Cyber Attack Capabilities,” Congressional Research Service, \nIF11406, January 13, 2020, https://sgp.fas.org/crs/mideast/IF11406.pdf.\n119\t\n“Treasury Sanction Individuals and Entities for Human Rights Abuses and Censorship in Iran, and Sup­\nport to Sanctioned Weapons Proliferators,” U.S. Department of the Treasury, January 12, 2018, https://\nhome.treasury.gov/news/press-releases/sm0250.\n120\t\nFarzin Nadimi, “Iran’s Passive Defense Organization: Another Target for Sanctions,” Washington Insti­\ntution for Near East Policy, August 16, 2018, https://www.washingtoninstitute.org/policy-analysis/iran\ns-passive-defense-organization-another-target-sanctions.\n121\t\nTim Maurer, Cyber Mercenaries: The State, Hackers, and Power (Cambridge: Cambridge University \nPress, 2018).\n122\t\nCampbell et al., “How Does Iran Conceive of Cyber as Part of Its National Strategy?”\n123\t\n“Treasury Sanctions Iranian Cyber Actors for Malicious Cyber-Enabled Activities Targeting Hundreds \nof University,” U.S. Department of the Treasury, March 23, 2018, https://home.treasury.gov/news/\npress-releases/sm0332.\n124\t\n“Treasury Sanctions IRGC-Affiliated Cyber Actors for Roles in Ransomware Activity,” U.S. Department of \nthe Treasury, September 14, 2022, https://home.treasury.gov/news/press-releases/jy0948.\n125\t\n“Profiling DEV-0270: PHOSPHORUS’ ransomware operations,” Microsoft Threat Intelligence, Septem­\nber 7, 2022, https://www.microsoft.com/en-us/security/blog/2022/09/07/profiling-dev-0270-phosphoru\ns-ransomware-operations/.\n126\t\n“Treasury Sanctions IRGC-Affiliated Cyber Actors for Roles in Ransomware Activity,” the U.S. Depart­\nment of the Treasury, September 14, 2022, https://home.treasury.gov/news/press-releases/jy0948.\n127\t\n“U.S. Sanctions Iran for Election Hacking,” U.S. Institute of Peace, The Iran Primer, November 19, 2021, \nhttps://iranprimer.usip.org/blog/2021/nov/18/us-sanctions-iran-election-hacking.\n128\t\n“Iranian Cyber Group Emennet Pasargad Conducting Hack-and-Leak Operations Using False-Flag Perso­\nnas,” Federal Bureau of Investigation, October 20, 2022, https://www.ic3.gov/Media/News/2022/221020.\npdf.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "f683d9b288a3",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 52",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "67d0e9ef1981",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "129\t\n“Treasury Sanctions Iran Cyber Actors for Attempting to Influence the 2020 U.S. Presidential Election,” \nU.S. Department of the Treasury, November 18, 2021, https://home.treasury.gov/news/press-releases/\njy0494.\n130\t\nCatalin Cimpanu, “US charges Iranian hackers for spoofed Proud Boys emails threatening US voters,” \nThe Record, November 17, 2021, https://therecord.media/us-charges-iranian-hackers-for-spoofed\n-proud-boys-emails-threatening-us-voters.\n131\t\n“FBI Releases Cybersecurity Advisory on Previously Undisclosed Iranian Malware Used to Monitor Dissi­\ndents and Travel and Telecommunicaitons Companies,” Federal Bureau of Investigation, September 17, \n2020, https://www.fbi.gov/contact-us/field-offices/boston/news/press-releases/fbi-releases-cybersecurit\ny-advisory-on-previously-undisclosed-iranian-malware-used-to-monitor-dissidents-and-travel-and-t\nelecommunications-companies.\n132\t\n“Seven Iranians Working for Islamic Revolutionary Guard Corps-Affiliated Entities Charged for Con­\nducting Coordinated Campaign of Cyber Attacks Against U.S. Financial Sector,” U.S. Department of the \nTreasury, March 24, 2016, https://www.justice.gov/opa/pr/seven-iranians-working-islamic-revolutiona\nry-guard-corps-affiliated-entities-charged.\n133\t\n“Treasury Sanctions Iranian Officials and Entities Responsible for Ongoing Crackdown on Protests and \nInternet Censorship,” U.S. Department of the Treasury, October 26, 2022, https://home.treasury.gov/\nnews/press-releases/jy1048.\n134\t\n“IRGC-Affiliated Cyber Actors Exploit PLCs in Multiple Sectors, Including U.S. Water and Wastewater \nSystems Facilities,” CISA, December 1, 2023, https://www.cisa.gov/news-events/cybersecurity-advisories/\naa23-335a.\n135\t\n“Dark Web Profile: CyberAv3ngers,” SOCRadar, December 22, 2023, https://socradar.io/dark-web-profil\ne-cyber-av3ngers/.\n136\t\nAJ Vicens, “U.S. government sanctions Iranian officials over Pennsylvania water facility hack,” Cyber­\nscoop, February 2, 2024, https://cyberscoop.com/u-s-government-sanctions-iranian-officials-over-penn­\nsylvania-water-facility-hack/.\n137\t\n“Dark Web Profile: Haghjoyan,” SOCRadar, December 28, 2023, https://socradar.io/\ndark-web-profile-haghjoyan/.\n138\t\n“Dark Web Profile: Cyber Toufan Al-aqsa,” SOCRadar, December 28, 2023, https://socradar.io/dark-we\nb-profile-cyber-toufan-al-aqsa/; “Claims of cyberattack on Israeli power plant found to be false: Re­\nport,” The Hindu, October 18, 2023, https://www.thehindu.com/sci-tech/technology/gadgets/claims-o\nf-cyberattack-israeli-power-plant-false/article67433778.ece.\n139\t\n“Dark Web Profile: Cyber Toufan Al-aqsa,” SOCRadar, December 28, 2023, https://socradar.io/dark-we\nb-profile-cyber-toufan-al-aqsa/.\n140\t\nNate Nelson, “’Cyber Toufan’ Hacktivists Leaked 100-Plus Israeli Orgs in One Month,” Dark Reading, \nJanuary 4, 2024, https://www.darkreading.com/cyberattacks-data-breaches/-cyber-toufan-hacktivists-l\neaked-100-plus-israeli-orgs-in-one-month.\n141\t\nConnor Simpson, “Sheldon Adelson Has an Idea: Lob a Nuclear Bomb in the Iranian Desert,” The Atlan­\ntic, October 23, 2013, https://www.justice.gov/opa/pr/north-korean-regime-backed-programmer-charg\ned-conspiracy-conduct-multiple-cyber-attacks-and.\n142\t\nIbid.\nJulia Dickson and Emily Harding  |  47",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "becadd42910d",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 53",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "4af7f0ee8d20",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "A Playbook for Winning the Cyber War  |  48\n143\t\nSean Gallagher, “Iranian Hackers Used Visual Basic Malware to Wipe Vegas Casino’s Network,” Ars Tech­\nnica, December 12, 2014, https://arstechnica.com/information-technology/2014/12/iranian-hackers-use\nd-visual-basic-malware-to-wipe-vegas-casinos-network/.\n144\t\n“Iran’s Cyber Attack on Billionaire Adelson Provides Lesson on Strategy,” Claims Journal, January 6, \n2020, https://www.claimsjournal.com/news/national/2020/01/06/294849.htm.\n145\t\nJose Pagliery, “Iran Hacked an American Casino, U.S. Says,” CNN Money, February 27, 2015, https://mon­\ney.cnn.com/2015/02/27/technology/security/iran-hack-casino/index.html.\n146\t\n“North Korean Regime-Backed Programmer Charged With Conspiract to Conduct Multiple Cyber Attacks \nand Intrusions,” Office of Public Affairs, U.S. Department of Justice, September 6, 2018, https://www.\njustice.gov/opa/pr/north-korean-regime-backed-programmer-charged-conspiracy-conduct-multiple-c\nyber-attacks-and.\n147\t\nAyman Oghanna, “How Albania Became a Target for Cyberattacks,” Foreign Policy, March 25, 2023, \nhttps://foreignpolicy.com/2023/03/25/albania-target-cyberattacks-russia-iran/.\n148\t\nHarun Karclc, “How Albania Ended Up in Iran’s Cyber Crosshairs,” Foreign Policy, November 8, 2022, \nhttps://foreignpolicy.com/2022/11/08/albania-iran-cyberattack-mek-us-israel/.\n149\t\n“e-Albania Partially Restored after Cyber Attack,” Albanian Daily News, July 20, 2022, https://albanianda­\nilynews.com/news/e-albania-partially-restored-after-cyber-attack.\n150\t\n“Microsoft investigates Iranian attacks against the Albanian government,” Microsoft, April 2023, https://\nwww.microsoft.com/en-us/security/blog/2022/09/08/microsoft-investigates-iranian-attacks-against-th\ne-albanian-government/.\n151\t\nA. J. Vicens, “Hackers Deploy New Ransomware Tool in Attacks on Albanian Government Websites,” \nCyberScoop, August 4, 2022, https://cyberscoop.com/iran-hack-albania-ransomware-mek/.\n152\t\n“Iranian State Actors Conduct Cyber Operations Against the Government of Albania,” U.S. Department \nof Justice and the Cybersecurity and Infrastructure Security Agency, September 21, 2022, https://cisa.\ngov/sites/default/files/publications/aa22-264a-iranian-cyber-actors-conduct-cyber-operations-against-th\ne-government-of-albania.pdf.\n153\t\nInterview with General Director of the National Authority on Electronic Certification and Cybersecurity \nof Albania and National Coordinator for Cyber Security, October 13, 2023.\n154\t\n“Online Services Via e-Albania Portal Rully Restored,” Government of Albania, August 12, 2022, \nhttps://www.kryeministria.al/en/newsroom/sherbimet-publike-online-rikthehen-ne-normalit\net-te-plote-ne-e-albania.\n155\t\n“Iranian State Actors Conduct Cyber Operations Against the Government of Albania,” CISA, September \n23, 2022, https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-264a.\n156\t\n“Albania cuts Iran ties over cyberattack, U.S. vows further action,” Reuters, September 7, \n2022, https://www.reuters.com/world/albania-cuts-iran-ties-orders-diplomats-go-after-cyber-a\nttack-pm-says-2022-09-07/.\n157\t\n“Lajmi i mirë është se agresioni është zmbrapsur me sukses nga një superskuadër shqiptaro-amerikane, \nse asnjë e dhënë nuk është fshirë, se shërbimet publike janë kthyer në punë! Vazhdon operacioni i \nforcimit të mureve mbrojtëse dhe hetimit për identifikimin e sigurtë të agresorit!” Edi Rama, Twitter \npost, July 24, 2022, 9:08 am, https://twitter.com/ediramaal/status/1551192528669605888.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "04c33c5ad304",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 54",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "70b0898ba8d0",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "158\t\nElona Elezi, “Albania blames Iran for cyberattacks,” Deutsche Welle, September 16, 2022, https://www.\ndw.com/en/albania-once-again-the-target-of-cyberattacks-after-cutting-diplomatic-ties-with-iran-and-exp\nelling-diplomats/a-63146285.\n159\t\n“Albania cuts Iran ties over cyberattack, U.S. vows further action,” Reuters, September 7, \n2022, https://www.reuters.com/world/albania-cuts-iran-ties-orders-diplomats-go-after-cyber-a\nttack-pm-says-2022-09-07/.\n160\t\n“Pro-Iranian Hacker Group Targeting Albania with No-Justice Wiper Malware,” The Hacker News, Janu­\nary 6, 2024, https://thehackernews.com/2024/01/pro-iranian-hacker-group-targeting.html.\n161\t\nLlazar Semini, “A cyberattack targets Albanian Parliament’s data system, halting its work,” Asso­\nciated Press, December 26, 2023, https://apnews.com/article/albania-cyberattack-parliament-ira\nn-cc1a03b58bd753bbe935ad74f1abc0f7; and “Albanian authorities accurse Iranian-backed hackers of \ncyberattack on Institute of Statistics,” Associated Press, February 14, 2024, https://apnews.com/article/\nalbania-iran-hackers-cyberattack-statistics-e80780e2d927394589c3d8903e36d066.\n162\t\nLily Hay Newman, “An Attack on Albanian Government Suggests New Iranian Aggression,” Wired, Au­\ngust 4, 2022, https://www.wired.com/story/iran-cyberattack-albania/.\n163\t\n“Tool of First Resort: Israel-Hamas War in Cyber,” Google, February 2024, https://services.google.com/\nfh/files/misc/tool-of-first-resort-israel-hamas-war-cyber.pdf.\n164\t\n“Iran Surges cyber-enabled influence operations in support of Hamas,” Microsoft Threat Intelligence.\n165\t\nSecurelist, “A hack in hand is worth two in the bush,” AO Kaspersky Lab, 16 October 2023, https://se­\ncurelist.com/a-hack-in-hand-is-worth-two-in-the-bush/110794/.\n166\t\n“Iran Surges cyber-enabled influence operations in support of Hamas,” Microsoft Threat Intelligence.\n167\t\n“Iran Surges cyber-enabled influence operations in support of Hamas,” Microsoft Threat Intelligence.\n168\t\nJames Coker, “Iranian Phishing Campaign Targets Israel-Hamas War Experts,” Infosecurity Magazine, \nJanuary 18, 2024, https://www.infosecurity-magazine.com/news/iranian-phishing-israel-hamas/. \n169\t\nDaryna Antoniuk, “Wiper malware found in analysis or Iran-linked attacks on Albanian institu­\ntions,” The Record, January 8, 2024, https://therecord.media/albania-parliament-telecoms-airlin\ne-cyberattacks-wiper-malware.\n170\t\n“Iran Surges cyber-enabled influence operations in support of Hamas,” Microsoft Threat Intelligence.\n171\t\n“IRGC-Affiliated Cyber Actors Exploit PLCs in Multiple Sectors, Including U.S. Water and Wastewater \nSystems Facilities,” CISA, December 1, 2023, https://www.cisa.gov/news-events/cybersecurity-advisories/\naa23-335a; and Vicens, “U.S. government sanctions Iranian officials over Pennsylvania water facility \nhack.”\n172\t\nDan Milmo, “Iran-backed hackers interrupt UAE TV streaming services with deepfake news,” The \nGuardian, February 8, 2024, https://www.theguardian.com/technology/2024/feb/08/iran-backed-hacker\ns-interrupt-uae-tv-streaming-services-with-deepfake-news. \nJulia Dickson and Emily Harding  |  49",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "83ef6f10319d",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 55",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "02fd3ad1d034",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "1616 Rhode Island Avenue NW\nWashington, DC 20036\n202 887 0200 | www.csis.org\nCOVER PHOTO LEENA MARTE/CSIS; MOCKO/ADOBE STOCK",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    }
+  ],
+  "attrs": {
+    "lang": "auto",
+    "dir": "auto"
+  }
+}

@@ -1,0 +1,362 @@
+{
+  "blocks": [
+    {
+      "id": "87e8be312d56",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Translation section"
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "c53957ddd5e3",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "API key not valid"
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "361898e630cc",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 1",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "6e1425e7073a",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Re-evaluation by factoring in Azure and\nMartin Fowler's guidelines\nHere’s a point-by-point re-evaluation of your draft (“MicrOSINT”) against\nMicrosoft’s Azure architecture styles and Fowler’s guidance—plus the specific\nchanges I think you should make.\n1) How your layers map to Azure styles\nYour Layer 1 — Infrastructure & Persistent Storage → N-tier “shell” + Big\nData foundation.\nThis layer is the right place to host the “governance shell” (front end/API/data) that\nAzure labels N-tier. But because you plan to store raw HTML/PDF/media and\nprogressively refined structures, you also need a lakehouse (bronze/silver/gold)\nas the durable backbone for historical analytics, joins, lineage, and reproducibility\n—i.e., Azure’s Big Data architecture style. Microsoft Learn+2Microsoft Learn+2\nYour Layer 2 — NLP & Translation → Big Data + Big Compute adjunct.\nThe microservices are correct; make them consumers of stream/queue events,\npersisting normalized outputs to the lake’s silver layer. For heavy jobs (OCR on\nlarge PDFs, batch translation, embedding generation), treat this as Big Compute\n(burstable, batch, fault-tolerant) rather than always-on services. Microsoft Learn\nYour Layer 3 — Data Ingestion & Source Integration → Event-driven ingress.\nThis layer is textbook Event-Driven architecture: producers (scrapers, APIs, file\ndrops) → event channels → consumers (normalizers, enrichers). Use an event\nmesh (Event Hubs/Event Grid/Kafka) plus Service Bus topics for business\nevents and routing. Microsoft Learn\nYour Layer 4 — Agent Engine → Event-driven + Web-Queue-Worker.\nAgents should not be directly invoked by the UI or by crawlers. Instead, they\nshould: (a) subscribe to events; (b) pick up queued work items for long-running\nflows. That is exactly Azure’s Web-Queue-Worker style: a thin web/API tier, a\nqueue, and workers that process with retries/idempotency. Add queue-based\nload leveling to ride out news spikes. Microsoft Learn+1\nYour Layers 5–6 — Command Console & UI / User Interface → N-tier façade.\nKeep them as the access/governance shell (auth, RBAC, throttling, API",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "69f5d064c187",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 2",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "68b43dd08e0b",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Management). They should never orchestrate long jobs—just enqueue or publish\nevents and return immediately. Microsoft Learn\n2) Fowler lens: where to tighten the design\n3) Concrete changes I recommend\nA. Insert an explicit event mesh and split streams by purpose.\nB. Wrap all long-running work in Web-Queue-Worker.\nThe UI/API acknowledges quickly, enqueues a job, and returns a job ID. Workers\n(Functions, Container Apps, or AKS) pick up jobs with queue-based load\nleveling, retries, idempotency keys, and poison queues. This is the most impactful\nreliability upgrade you can make. Microsoft Learn+1\nC. Formalize the lakehouse and enforce schema contracts.\nAdopt bronze (raw), silver (normalized/enriched), gold (curated\nentities/events/relationships). Enforce JSON schema on every event and queue\npayload; reject/repair non-conforming outputs from agents. This is Azure’s Big\nData best practice and will drastically reduce downstream fragility. Microsoft\nLearn+1\nBounded contexts. Your draft already implies them. Make them explicit:\nCollection (ingest), Enrichment (NLP/translation), Analysis (agents, scoring,\nentity/event modeling), Delivery (search, reports, alerts). Each context owns its\nmodel and contracts. martinfowler.com+1\nSelective CQRS. Use CQRS only at the Delivery edge: write-heavy pipelines\nflow to the lake/OLTP; read models are projections (search indices,\ndenormalized views) optimized for UI/API. Don’t sprinkle CQRS through\ningestion. (Fowler cautions about complexity creep.) martinfowler.com\nEvolution (Strangler Fig). For any tightly-coupled n8n or direct-call paths,\nplace a façade in front, route new functionality via events/queues, and retire\nold pieces incrementally. martinfowler.com\nIngress streams (high-throughput): Event Hubs/Kafka for raw items.\nBusiness events (routing, retries, dead-letter): Service Bus topics/queues\nbetween bounded contexts (e.g., document.normalized, entity.extracted,\nreport.published).\nThis cleanly implements the Event-Driven style, keeps components\ndecoupled, and supports fan-out/fan-in processing. Microsoft Learn",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "c717e6d0cde8",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 3",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "16dc6438241b",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "D. Treat heavy ML as Big Compute jobs.\nRun embedding refresh, similarity joins, clustering, and geospatial aggregation as\nbursty, fault-tolerant jobs (Databricks/AKS/Azure ML with autoscale). Don’t leave\nGPUs hot unless needed. Microsoft Learn\nE. Keep the N-tier façade thin.\nUse API Management + Web/App Service for the Delivery context (search,\ndashboards, alerts). All orchestration goes to events/queues, not controllers. This\naligns with Azure’s guidance for layered apps. Microsoft Learn\nF. Add observability and contracts at the seams.\nAt every boundary (topic/queue), log: schema version, producer, correlation ID,\nattempt count, and provenance. This gives you traceability and reliable replay\n(useful for audits and “why did we assert X?”).\n4) Mapping your components to Azure\nchoices (decision points)\n5) What to keep from your draft (good calls)\nEvent channel: Event Hubs (firehose) vs Kafka (self-managed) for raw\ningress; Service Bus for business events (sessions, dead-lettering, rules).\nMicrosoft Learn\nWorkers: Azure Functions for lightweight stateless steps; Container Apps or\nAKS for stateful, GPU, or long-running agent pods. Web-Queue-Worker\npattern is the umbrella. Microsoft Learn\nLakehouse: ADLS Gen2 + Parquet/Delta; transformations in\nDatabricks/Synapse/Fabric. Bronze/Silver/Gold with enforced schemas.\nMicrosoft Learn+1\nRead models: Azure AI Search indexes from gold; optional Postgres read\nreplicas for dashboards.\nGovernance: Purview (catalog/lineage), Key Vault (secrets), API Management\n(throttling/RBAC), standard Well-Architected guardrails. Microsoft Learn\nModularity as a first principle (agents as composable micro-apps).\nMessage-based agent comms (you already propose Kafka/RabbitMQ).\nFormalize this as your event mesh.\nUI agents and a console as thin clients over the API layer.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "aaa7e7982db2",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 4",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "36a43eb1d694",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "6) What to tighten (summary)\n0) Executive summary\nBuild the platform as four bounded contexts—Collection, Enrichment, Analysis,\nDelivery—stitched together by an event mesh and queues. Land everything in a\ngoverned lakehouse (bronze/silver/gold). Run slow/variable work behind web-\nqueue-worker jobs. Use CQRS only at the Delivery edge (APIs/UI). Treat heavy\nML/LLM workloads as big compute bursts. Enforce function calling +\nstructured output contracts at every boundary. Migrate incrementally via a\nStrangler façade around any legacy direct-call flows.\n1) Domain model (bounded contexts)\nA) Collection (Ingestion)\nResponsibility: Acquire external data reliably.\nInputs: Webhooks, scrapers, APIs, file drops.\nOutputs: Raw items as immutable events into an ingress stream; originals\nstored in lake bronze.\nNotes: Rate limits, politeness (robots.txt), source metadata capture, basic\nvalidation. No business logic.\nB) Enrichment (NLP/translation/normalization)\nSecurity is fractal (zero-trust per module) — keep it and wire it to RBAC at\nthe API and queue/topic levels.\nDecouple everything with events + queues (no direct calls across layers).\nEnforce schema contracts at every boundary (reject/repair non-conformant\npayloads).\nMake heavy NLP/LLM/OCR queue-driven and Big Compute when\nappropriate.\nAdopt a lakehouse bronze/silver/gold lifecycle.\nUse CQRS only where read/write concerns really diverge (Delivery).\nEvolve via Strangler façade around any legacy direct-call or n8n paths.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "0f6022c23280",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 5",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "00c2fe80b1d6",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Responsibility: Turn raw content into normalized, language-agnostic records.\nInputs: “item.received” events from Collection.\nOutputs: Clean text, metadata, language, OCR text, translation, detected entities\n→ lake silver; “item.normalized”, “entity.extracted” events.\nNotes: Stateless microservices where possible; long jobs (OCR, large PDFs,\nvideo ASR, translation batches) run via queues.\nC) Analysis (Agents & knowledge)\nResponsibility: Reasoning, correlation, deduplication, entity linking, reliability\nscoring, clustering, geospatial joins, alert thresholds.\nInputs: “entity.extracted”, “fact.detected”, “similarity.ready”.\nOutputs: Curated events/entities/relations → lake gold; “alert.triggered”,\n“report.drafted”.\nNotes: Agents are tool-using via function calling; contracts enforce structured\nJSON I/O.\nD) Delivery (APIs, Search, UI)\nResponsibility: Present read-optimized views; manage tasks/alerts; produce\nreports.\nInputs: Gold projections.\nOutputs: API responses, UI dashboards, exports.\nNotes: CQRS: writes flow through upstream services; reads served from search\nindices and denormalized projections.\n2) Interaction style (macro patterns)\nEvent-driven backbone: A high-throughput ingress stream for raw items;\nbusiness event topics between contexts (normalized, extracted, curated,\nalerted).\nWeb-queue-worker for long jobs: UI/API acknowledges quickly, enqueues\nwork; idempotent workers process with retries, back-off, and DLQs.\nN-tier façade: A thin API/UI shell for auth, RBAC, throttling; never orchestrates\nlong work.\nBig data/lakehouse: Bronze (raw), Silver (normalized), Gold (curated);\nParquet/Delta; schema enforcement and lineage.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "229dbc5e9602",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 6",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "7fd4303078b9",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "3) Data lifecycle (lakehouse)\nBronze (immutable): Original HTML/PDF/media + fetch metadata.\nSilver (normalized): Clean text, language, OCR/translation outputs, extracted\nentities with confidence, timestamps normalized to ISO-8601, geocodes.\nGold (curated): Deduplicated Events(who/what/when/where),\nEntities(person/org/place/equipment), Relations(actor-event, entity-entity),\nSource reliability scores, Provenance links.\nRetention: Bronze long-term (cold), Silver mid-term, Gold hot. Version everything;\nno in-place mutation.\n4) Contracts & schemas (function calling +\nstructured output)\nAll cross-boundary messages use JSON with versioned schema. Example\nessentials:\n4.1 item.received (Collection → Enrichment)\njson\nCopyEdit\n{ \"schema\":\"item.received@v1\", \"item_id\":\"uuid\", \"source\":\n{\"type\":\"web\",\"url\":\"...\",\"collection_rule\":\"rule-17\"}, \"content_ref\":\n{\"lake_uri\":\"bronze://...\"}, \"observed_at\":\"2025-08-09T07:10:00Z\",\n\"language_guess\": \"fa\", \"trace_id\":\"uuid\" }\n4.2 item.normalized (Enrichment → Analysis)\njson\nCopyEdit\n{ \"schema\":\"item.normalized@v1\", \"item_id\":\"uuid\", \"text\":\"...\",\n\"language\":\"fa\", \"translations\":[{\"lang\":\"en\",\"text_ref\":\"silver://...\"}],\nBig compute (elastic): Embeddings, clustering, geospatial, model fitting run\nas bursty jobs with autoscale.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "b729f2e478bb",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 7",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "a9e577706480",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "\"media\":{\"ocr\":true,\"ocr_conf\":0.86}, \"entities\":\n[{\"type\":\"Person\",\"value\":\"...\",\"confidence\":0.87}], \"geo\":[{\"lat\":...,\n\"lon\":..., \"method\":\"gazetteer\"}], \"trace_id\":\"uuid\" }\n4.3 event.curated (Analysis → Delivery)\njson\nCopyEdit\n{ \"schema\":\"event.curated@v1\", \"event_id\":\"uuid\",\n\"type\":\"Airstrike|Protest|Sanction|Deployment\", \"time\":\"2025-08-\n08T21:35:00Z\", \"place\":{\"name\":\"...\",\"lat\":...,\"lon\":...}, \"actors\":\n[\"org:...\",\"person:...\"], \"supporting_docs\":\n[{\"item_id\":\"uuid\",\"evidence_span\":[[120,180]]}],\n\"dedup_cluster_id\":\"uuid\", \"reliability\":0.78, \"provenance\":\n{\"algorithm\":\"v3.2\",\"inputs\":[\"item_id1\",\"item_id2\"]}, \"trace_id\":\"uuid\" }\nValidation: Any invalid payload is rejected with a contract error; producers must\nretry/repair. Schema versions are evolutionary (additive fields; deprecate with\ngrace periods).\n5) Compute & storage components (tech-\nagnostic with Azure mapping)\nCapability\nTech-agnostic choice\nAzure mapping (later)\nEvent ingress \n(firehose)\nKafka/Redpanda\nEvent Hubs\nBusiness events\nPub/Sub with DLQ\nService Bus Topics/Queues\nLong jobs\nWorker fleet + queues\nContainer \nApps/AKS/Functions + SB\nLake storage\nS3-compatible + \nParquet/Delta\nADLS Gen2 + Delta\nBatch \ntransforms\nSpark/SQL engines\nDatabricks/Synapse/Fabric\nSearch\nLucene-based/Vec search\nAzure AI Search\nOLTP metadata\nPostgres\nAzure Database for \nPostgreSQL",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "002654f7be7c",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 8",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "2a019e599ed2",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Capability\nTech-agnostic choice\nAzure mapping (later)\nVector memory\nQdrant/FAISS/Pinecone\nAzure Cosmos DB (vector) or \n3rd-party\nSecrets\nVault\nKey Vault\nIdentity\nOIDC\nEntra ID\nObservability\nOpenTelemetry + \nELK/Prom/Tempo\nAzure Monitor/Log \nAnalytics/Grafana\nKeep your service interfaces cloud-neutral; only adapters speak provider SDKs.\n6) Agent engine (design rules)\n7) Delivery (CQRS + APIs/UI)\nPlan-Act-Observe loop with function calling to tools: crawl, translate, OCR,\nextract, score, geocode, dedup, index, alert.\nStateless-by-default; explicit memory via vector store keyed by trace_id\nand case_id .\nCost & latency envelopes per agent (max tokens, max runtime, priority\nclass).\nSafety rails: allow-listed tools; redaction of PII; rate-limit per source;\nprovenance logging of every call with inputs/outputs hashes.\nFailure policy: idempotency keys, retries with jitter, circuit breakers; partial\nresults are acceptable with caveats.\nQueries: Read from search indices and gold projections (materialized\nviews for dashboards, timelines, maps).\nCommands: Create tasks, acknowledge alerts, attach analyst notes;\ncommands enqueue events to upstream services—no direct writes to gold.\nExports: PDF/HTML briefs created by workers (queue), then streamed to\nusers.\nAccess control: Role- and case-scoped permissions; audit every read/write;\nredact by role.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "3e0f040a99c0",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 9",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "f829e9419308",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "8) Reliability, scaling, and cost\n9) Security & governance\n10) Observability & SLOs\nLoad leveling: All heavy work passes through queues with concurrency caps.\nAutoscaling: Scale workers on queue depth and age; scale stream\nconsumers on lag.\nBack-pressure: If gold build lags, shed non-critical jobs (e.g., low-priority\ntranslations).\nCold vs hot paths: Alerts, priority sources go hot (fast lanes). Bulk crawling,\nhistorical backfills go cold (batch).\nCaching: Edge caches for common queries; content-addressable storage\n(hash-based) to avoid re-processing dupes.\nZero-trust per service: Each component gets the minimum permissions.\nSecretless runtime: Prefer managed identities; else short-lived tokens from\nVault.\nProvenance: Every curated event links to evidence items + algorithm\nversions; keep reproducibility logs.\nCompliance: Respect robots.txt; configurable source allowlists/denylists;\nencryption in transit/at rest; signed artifacts for builds.\nTracing: Propagate trace_id  end-to-end; correlate logs, metrics, spans.\nGolden signals: event lag, queue age, job success rate, schema-compliance\nrate, cost per item, time-to-alert, search p95 latency.\nSLO examples:\nTime-to-ingest (ingress → bronze): p95 ≤ 30s\nTime-to-normalize (bronze → silver): p95 ≤ 2m\nTime-to-alert (silver → alert): p95 ≤ 3m\nSearch API p95 ≤ 500ms; availability ≥ 99.9%",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "6759d59e5775",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 10",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "b5fcb807d461",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "11) Migration plan (Strangler)\n12) Two canonical flows (so you can test\nearly)\n12.1 Real-time alert flow\n12.2 Weekly report flow\n13) What to build first (vertical slice)\n1. Front a façade in front of any n8n/direct pipelines.\n2. New sources publish to the ingress stream; new processors read from\ntopics/queues.\n3. Gradually rewrite legacy processors as stateless workers; retire old endpoints.\n4. Turn on schema enforcement at edges; repair producers until pass rates\nstabilize.\n5. Move storage into bronze/silver/gold; backfill using batch jobs.\n1. Collection publishes item.received .\n2. Enrichment normalizes → item.normalized .\n3. Analysis agent extracts facts, links entities, scores reliability; if threshold met\n→ alert.triggered .\n4. Delivery sends notification; UI shows alert with evidence links.\n1. Scheduler enqueues “compose.weekly.report(case=XYZ)”.\n2. Worker queries gold + search for week window, clusters events, drafts\nnarrative with citations.\n3. Human review; upon approve, worker renders PDF/HTML and emits\nreport.published .\nIngress: one source (RSS or webhook) → item.received .\nEnrichment: language detect + translation → item.normalized .\nAnalysis: simple rule (keyword + geo) → alert.triggered .\nDelivery: minimal search index + alert view.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "4ffadb556f5c",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Page 11",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "d705934d673a",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "This gives you an end-to-end line you can demo, measure, and harden—then\nscale horizontally with more sources, more enrichers, and smarter agents.\nPractical Guidelines\nLakehouse: bronze/silver/gold folders + basic schemas.\nObservability: trace IDs, queue depth dashboards.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    }
+  ],
+  "attrs": {
+    "lang": "auto",
+    "dir": "auto"
+  }
+}

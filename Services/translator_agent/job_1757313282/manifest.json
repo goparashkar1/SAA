@@ -1,0 +1,9 @@
+{
+  "source": {
+    "type": "url",
+    "url": "https://www.aljazeera.com/features/2025/9/8/india-expands-censorship-powers-lets-lower-officials-demand-takedowns"
+  },
+  "out_format": "terminal",
+  "model": "gpt-4o-mini",
+  "dest": "C:\\Users\\pc\\Desktop\\SAA\\services\\translator_agent\\job_1757313282\\output.fa.html"
+}

@@ -1,0 +1,3913 @@
+{
+  "blocks": [
+    {
+      "id": "c3c838d11bc5",
+      "type": "heading",
+      "level": 2,
+      "spans": [
+        {
+          "text": "Translation section"
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "cc64c0158d26",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "API key not valid"
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "5e84379876f2",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "50d6a524fde3",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "afc284ebdcb3",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "29c5a374be37",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "112a02015b73",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Jessica Sobieski, Christina Harward, Jennie Olmsted, Justin Young, Olivia Gibson, and George Barros",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "844182ba068a",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "September 1, 2025, 8:45 pm ET",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "7656b155f41e",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Click ",
+          "bold": true,
+          "italic": false,
+          "code": false
+        },
+        {
+          "text": "here",
+          "bold": true,
+          "italic": false,
+          "code": false,
+          "href": "https://storymaps.arcgis.com/stories/36a7f6a6f5a9448496de641cf64bd375"
+        },
+        {
+          "text": " to see ISW’s interactive map of the Russian invasion of Ukraine. This map is updated daily alongside the static maps present in this report.",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "3d473064981e",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Click ",
+          "bold": true,
+          "italic": false,
+          "code": false
+        },
+        {
+          "text": "here",
+          "bold": true,
+          "italic": false,
+          "code": false,
+          "href": "https://storymaps.arcgis.com/stories/83a2f24901c941d581c0c523ecd2619b"
+        },
+        {
+          "text": "to see ISW's interactive map of Ukraine's offensive in Kursk Oblast.",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "7edd55b09907",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Click ",
+          "bold": true,
+          "italic": false,
+          "code": false
+        },
+        {
+          "text": "here",
+          "bold": true,
+          "italic": false,
+          "code": false,
+          "href": "https://understandingwar.maps.arcgis.com/apps/instant/3dviewer/index.html?appid=1602762dbcde419bb957dea358449580"
+        },
+        {
+          "text": " to see ISW’s 3D control of terrain topographic map of Ukraine. Use of a computer (not a mobile device) is strongly recommended for using this data-heavy tool.",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "70dc20406f0a",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Click ",
+          "bold": true,
+          "italic": false,
+          "code": false
+        },
+        {
+          "text": "here",
+          "bold": true,
+          "italic": false,
+          "code": false,
+          "href": "https://storymaps.arcgis.com/stories/733fe90805894bfc8562d90b106aa895"
+        },
+        {
+          "text": " to access ISW’s archive of interactive time-lapse maps of the Russian invasion of Ukraine. These maps complement the static control-of-terrain map that ISW produces daily by showing a dynamic frontline. ISW will update this time-lapse map archive monthly.",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "57460b71094a",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Note: The data cut-off for this product was 12:45 pm ET on September 1. ISW will cover subsequent reports in the September 2 Russian Offensive Campaign Assessment.",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "673c6bcda3f1",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Kremlin officials continue to deny White House statements about the prospect of a bilateral Ukrainian-Russian or trilateral US-Ukrainian-Russian meeting in the near future.",
+          "bold": true,
+          "italic": false,
+          "code": false
+        },
+        {
+          "text": " Russian Presidential Aide Yuriy Ushakov stated on September 1 that “there was no agreement” on a bilateral meeting between Ukrainian President Volodymyr Zelensky and Russian President Vladimir Putin, or a trilateral meeting between US President Donald Trump, Zelensky, and Putin.[1] Ushakov stated on August 16, after the US-Russian Alaska summit, that he did not know when Trump and Putin would meet again and that the leaders had not discussed the prospect of a trilateral meeting.[2] US President Donald Trump stated on August 18, however, that he was planning a bilateral meeting between Zelensky and Putin with a subsequent meeting between Trump, Zelensky, and Putin.[3] Ushakov’s reiteration of Russia’s refusal to commit to Trump's desired bilateral and trilateral meetings undermines Trump’s ongoing diplomatic efforts to achieve a peace settlement in Ukraine.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "4230d88a1706",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Russian President Vladimir Putin continues to demonstrate his unwillingness to compromise on his unwavering demands for Ukraine’s full capitulation. ",
+          "bold": true,
+          "italic": false,
+          "code": false
+        },
+        {
+          "text": "Putin claimed on September 1 at the Shanghai Cooperation Organization (SCO) summit in Tianjin, People's Republic of China (PRC), that the “crisis” in Ukraine arose from the Western-provoked \"coup” in Ukraine in 2014 (referring to Ukraine’s democratically organized Revolution of Dignity), not \"as a result of Russia's attack on Ukraine.\"[4] Putin also claimed that the war in Ukraine stemmed",
+          "bold": false,
+          "italic": false,
+          "code": false
+        },
+        {
+          "text": "from the West’s constant attempts to bring Ukraine into NATO, which Putin claimed would pose a direct threat to Russian security. Putin claimed that the 2014 \"coup\" eliminated the political leadership of Ukraine that did not support Ukrainian membership in NATO. Putin claimed that peace in Ukraine can only be sustainable and long-term if the settlement eliminates the ”root causes” of the war, which Kremlin officials have repeatedly defined as Ukraine's alleged discrimination against Russian-speakers in Ukraine and NATO expansion.[5] The Kremlin has often used this \"root causes\" narrative to call for the replacement of the current Ukrainian government with a Russian puppet government, Ukraine’s commitment to neutrality, and the revocation of NATO's Open Door Policy.[6] Putin's claim that the 2014 \"coup\" \"eliminated\" Ukrainian leaders is also a reference to the Kremlin's repeated narrative that the current Ukrainian government is illegitimate and should not be in power.[7] Putin is reiterating these Kremlin narratives in his own voice, indicating that Putin maintains his original war goals.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "5f10ded5da4d",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "The Kremlin likely timed the publication of a video address by former Ukrainian President Viktor Yanukovych to coincide with Putin's SCO speech in order to lend legitimacy to Putin's demand for regime change in Ukraine.",
+          "bold": true,
+          "italic": false,
+          "code": false
+        },
+        {
+          "text": " Russian state media published a video message on September 1 of Yanukovych claiming that he worked to bring Ukraine closer to the EU during his presidency and that his ultimate goal was Ukraine's EU accession.[8] Yanukovych blamed Ukraine's EU partners for behaving \"incorrectly\" during Ukrainian-EU negotiations and criticized the EU for not understanding the difficulties of Ukraine's economic situation. Yanukovych also claimed that he has always opposed Ukraine's membership in NATO, which he alleged would have been a \"catastrophe\" and \"a direct road to civil war.\" Yanukovych's last public media appearance was in July 2022, when he called on Ukrainians to surrender to Russia.[9] The timing of the filming of Yanukovych's video address is unknown, but he opened by stating that Putin \"is absolutely correct\" – seemingly in response to Putin's remarks about Ukraine at the SCO summit, indicating this was likely a choreographed information effort. The publication of Yanukovych's video on Russian state media was likely intentionally timed to coincide with Putin's remarks. The Kremlin may be setting conditions to claim that Yanukovych is the legitimate leader of Ukraine – not Ukrainian President Volodymyr Zelensky. Such claims are false, however, as Yanukovych fled Ukraine on his own accord after the Revolution of Dignity, and Ukraine has held several democratic elections since.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "a76f20be872a",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Putin's demands for regime change in his SCO speech are not new, but rather the reiteration of his pre-war demands that he has been pursuing throughout the war. ",
+          "bold": true,
+          "italic": false,
+          "code": false
+        },
+        {
+          "text": "Putin referenced the alleged \"coup\" in both his 2021 \"On the Historical Unity of Russians and Ukrainians\" essay and his speech launching the full-scale invasion on February 24, 2022.[10] Yanukovych was also notably in Belarus in March 2022, possibly as part of Kremlin efforts to reestablish him as the president of Ukraine.[11] Putin's reiteration of this same demand demonstrates how Putin's unwillingness to pull back from his original war aims is the key contributor to the lack of progress toward peace since the US-Russian summit in Alaska in August 2025.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "7ad99ee7ce08",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "The Russian military command reportedly redeployed relatively \"elite\" naval infantry and airborne (VDV) forces to Donetsk Oblast from northern Sumy Oblast and the Kherson direction.",
+          "bold": true,
+          "italic": false,
+          "code": false
+        },
+        {
+          "text": " A Ukrainian drone unit operating in the Pokrovsk direction reported that the Russian military command redeployed several units from Kursk Oblast, including elements of the 155th Naval Infantry Brigade (Pacific Fleet), to reinforce Russian offensive operations toward Dobropillya.[12] A Russian milblogger reportedly affiliated with the Russian Northern Group of Forces claimed on August 18 that the Russian command redeployed elements of the 177th Naval Infantry Regiment and the 155th and 40th naval infantry brigades from northern Sumy Oblast to another unspecified direction.[13] An OSINT analyst on X (formerly Twitter) reported on August 30 that the Russian command redeployed elements of the 40th and 155th naval infantry brigades (both of the Pacific Fleet) and likely elements of the 177th Naval Infantry Regiment (Caspian Flotilla) to Donetsk Oblast.[14] The OSINT analyst also stated that there are reports that elements of the 11th Separate VDV Brigade and 76th VDV Division were \"spotted nearby\" in Donetsk Oblast after the Russian military command \"urgently\" deployed these elements to ”the hottest direction.” The OSINT source noted that the exact axis of attack of the redeployed VDV elements is still unclear. The Russian command also reportedly redeployed elements of the 70th Motorized Rifle Regiment (42nd Motorized Rifle Division, 58th Combined Arms Army [CAA], Southern Military District [SMD]) from Kherson Oblast to Bakhmut, possibly to reinforce Russian offensive efforts in Kostyantynivka or Siversk.[15] ISW previously observed reports that elements of the 40th and 155th naval infantry brigades, 11th Separate VDV Brigade, and 76th VDV Division were operating in northern Sumy Oblast as of late August 2025.[16] ISW previously observed reports that elements of the 177th Naval Infantry Regiment were operating in northern Sumy Oblast as of August 11.[17] ISW previously observed reports in November 2024 that the 11th VDV Brigade formed a special battalion staffed by North Korean troops for combat operations in Kursk Oblast, and ISW assessed at the time that North Korean troops training in Russia were likely training with elements of the 155th Naval Infantry Brigade and 11th VDV Brigades.[18]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "9001682d4981",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "The reported redeployments suggest that the Russian Fall 2025 offensive will focus on efforts to seize the remainder of Donetsk Oblast, particularly in the Dobropillya, Pokrovsk, and Kostyantynivka areas. ",
+          "bold": true,
+          "italic": false,
+          "code": false
+        },
+        {
+          "text": "The Russian command’s redeployment of forces from northern Sumy Oblast to Donetsk Oblast suggests that Russia is deprioritizing its offensive operations in Sumy Oblast. Russian forces have intensified efforts to envelop Pokrovsk, advance toward Dobropillya, and bypass Ukraine’s Donetsk Oblast fortress belt from the west.[19] These efforts have resulted in significant manpower losses, likely requiring the Russian military command to redeploy forces to the area.[20] Russia’s Fall 2024 offensive also focused on offensive operations in the Pokrovsk direction - demonstrating Russia's slow progress in achieving its objectives on the battlefield at tremendous human and material costs.[21]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "fd941fb2da87",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Likely Russian GPS jamming affected a plane carrying European Commission President Ursula von der Leyen on September 1. ",
+          "bold": true,
+          "italic": false,
+          "code": false
+        },
+        {
+          "text": "The Associated Press (AP) reported on September 1 that European Commission spokesperson Adrianna Podestà confirmed that a plane carrying von der Leyen suffered problems from GPS jamming while flying to Bulgaria and noted that Bulgarian authorities suspect “blatant” Russian interference.[22] Podestà stated that von der Leyen’s plane landed safely at Plovdiv Airport in central Bulgaria after flying from Warsaw, Poland. The ",
+          "bold": false,
+          "italic": false,
+          "code": false
+        },
+        {
+          "text": "Financial Times",
+          "bold": false,
+          "italic": true,
+          "code": false
+        },
+        {
+          "text": " (FT) reported on September 1 that the pilot flying von der Leyen’s plane landed the plane using paper maps, and a knowledgeable official source confirmed that GPS in the airport’s vicinity “went dark.”[23] Bulgarian Air Traffic Services Authority stated that there has been a notable increase in GPS jamming since February 2022 and that there have been issues with spoofing more recently. Kremlin Spokesperson Dmitry Peskov claimed in response to a question from FT that their \"information is incorrect.”[24] ISW previously observed reports that Russian electronic warfare (EW) interference significantly impacted flights in the Baltics, Poland, and Finland, particularly in early 2024.[25] Russia notably likely jammed the satellite signal of a Royal Air Force (RAF) jet transporting then-UK Defense Secretary Grant Shapps, his staff, and select journalists back to the UK from Poland in March 2024.[26] The latest reports of likely Russian GPS jamming indicate that Russia is continuing its hybrid operations in Europe, and Russia could continue to target Western political and military officials as part of these operations. Von der Leyen has notably been leading discussions with European and US officials about possible European troop deployments as part of security guarantees for Ukraine after the war.[27]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "ae9f58e1d547",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Ukraine reportedly conducted its first strike with its domestically produced FP-5 Flamingo cruise missile on August 30 against occupied Crimea. ",
+          "bold": true,
+          "italic": false,
+          "code": false
+        },
+        {
+          "text": "Russian opposition outlet Astra reported on August 31 that Ukrainian forces conducted a Neptune missile strike against a Russian border post near occupied Voloshyne, Crimea, on August 30.[28] Sources in Ukraine's Main Military Intelligence Directorate (GUR) told Ukrainian outlet Militarnyi on August 31 that Ukrainian forces used a Flamingo cruise missile – not a Neptune missile –  to strike the Russian border post.[29] ISW previously reported on August 31 that Ukrainian forces conducted this strike with a Neptune missile based on available evidence at the time.[30] Astra amplified Militarnyi’s reporting on September 1.[31]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        },
+        {
+          "text": "The Associated Press (AP) reported on August 21 that Ukraine launched mass production of its new Flamingo cruise missiles, which have a range of up to three thousand kilometers and can carry warheads up to 1,150 kilograms.[32]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "198b85555239",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Ukrainian authorities reportedly collected new evidence of Chechen Republic Head Ramzan Kadyrov endorsing war crimes against Ukrainian prisoners of war (POWs). ",
+          "bold": true,
+          "italic": false,
+          "code": false
+        },
+        {
+          "text": "The Ukrainian Security Service (SBU) reported on September 1 that Kadyrov stated in a speech that he ordered Chechen military commanders to shoot Ukrainian soldiers on the battlefield instead of taking them prisoner.[33] The SBU added that Kadyrov also ordered Chechen soldiers to place Ukrainian POWs on the roofs of military facilities in Grozny, Republic of Chechnya, to act as human shields against Ukrainian drone strikes. Kadyrov’s statements endorsing war crimes are in line with March 2025 claims by Chechen Akhmat Spetsnaz Commander Apty Alaudinov that Russian forces used the same color of identification tape as Ukrainian forces during a covert attack behind Ukrainian positions in Kursk Oblast, which may constitute acts of perfidy, a war crime under the Geneva Convention.[34] There has been a sharp increase in credible reports and footage of Russian forces executing Ukrainian POWs throughout 2024 and 2025, and ISW continues to assess that Russian military commanders are either complicit in or directly enabling their subordinates to conduct systemic executions in direct violation of international law.[35]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "1d68c0451f69",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Key Takeaways:",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "be601266905b",
+      "type": "list",
+      "level": 0,
+      "spans": [],
+      "children": [
+        {
+          "id": "1933715f2147",
+          "type": "list_item",
+          "level": 0,
+          "spans": [
+            {
+              "text": "Kremlin officials continue to deny White House statements about the prospect of a bilateral Ukrainian-Russian or trilateral US-Ukrainian-Russian meeting in the near future.",
+              "bold": true,
+              "italic": false,
+              "code": false
+            }
+          ],
+          "children": [],
+          "attrs": {}
+        },
+        {
+          "id": "ece04381fb39",
+          "type": "list_item",
+          "level": 0,
+          "spans": [
+            {
+              "text": "Russian President Vladimir Putin continues to demonstrate his unwillingness to compromise on his unwavering demands for Ukraine’s full capitulation.",
+              "bold": true,
+              "italic": false,
+              "code": false
+            }
+          ],
+          "children": [],
+          "attrs": {}
+        },
+        {
+          "id": "f20b8f689ee8",
+          "type": "list_item",
+          "level": 0,
+          "spans": [
+            {
+              "text": "The Kremlin likely timed the publication of a video address by former Ukrainian President Viktor Yanukovych to coincide with Putin's SCO speech in order to lend legitimacy to Putin's demand for regime change in Ukraine.",
+              "bold": true,
+              "italic": false,
+              "code": false
+            }
+          ],
+          "children": [],
+          "attrs": {}
+        },
+        {
+          "id": "3df7bc12a767",
+          "type": "list_item",
+          "level": 0,
+          "spans": [
+            {
+              "text": "Putin's demands for regime change in his SCO speech are not new, but rather the reiteration of his pre-war demands that he has been pursuing throughout the war.",
+              "bold": true,
+              "italic": false,
+              "code": false
+            }
+          ],
+          "children": [],
+          "attrs": {}
+        },
+        {
+          "id": "687f2279acb6",
+          "type": "list_item",
+          "level": 0,
+          "spans": [
+            {
+              "text": "The Russian military command reportedly redeployed relatively \"elite\" naval infantry and airborne (VDV) forces to Donetsk Oblast from northern Sumy Oblast and the Kherson direction.",
+              "bold": true,
+              "italic": false,
+              "code": false
+            }
+          ],
+          "children": [],
+          "attrs": {}
+        },
+        {
+          "id": "e123cc5c9265",
+          "type": "list_item",
+          "level": 0,
+          "spans": [
+            {
+              "text": "The reported redeployments suggest that the Russian Fall 2025 offensive will focus on efforts to seize the remainder of Donetsk Oblast, particularly in the Dobropillya, Pokrovsk, and Kostyantynivka areas.",
+              "bold": true,
+              "italic": false,
+              "code": false
+            }
+          ],
+          "children": [],
+          "attrs": {}
+        },
+        {
+          "id": "240cd6068bf2",
+          "type": "list_item",
+          "level": 0,
+          "spans": [
+            {
+              "text": "Likely Russian GPS jamming affected a plane carrying European Commission President Ursula von der Leyen on September 1.",
+              "bold": true,
+              "italic": false,
+              "code": false
+            }
+          ],
+          "children": [],
+          "attrs": {}
+        },
+        {
+          "id": "5a32b85f8e40",
+          "type": "list_item",
+          "level": 0,
+          "spans": [
+            {
+              "text": "Ukraine reportedly conducted its first strike with its domestically produced FP-5 Flamingo cruise missile on August 30 against occupied Crimea.",
+              "bold": true,
+              "italic": false,
+              "code": false
+            }
+          ],
+          "children": [],
+          "attrs": {}
+        },
+        {
+          "id": "14a9375ac07a",
+          "type": "list_item",
+          "level": 0,
+          "spans": [
+            {
+              "text": "Ukrainian authorities reportedly collected new evidence of Chechen Republic Head Ramzan Kadyrov endorsing war crimes against Ukrainian prisoners of war (POWs).",
+              "bold": true,
+              "italic": false,
+              "code": false
+            }
+          ],
+          "children": [],
+          "attrs": {}
+        },
+        {
+          "id": "9100f4728067",
+          "type": "list_item",
+          "level": 0,
+          "spans": [
+            {
+              "text": "Ukrainian forces advanced near Pokrovsk. Russian forces advanced near Kupyansk and Novopavlivka and in western Zaporizhia Oblast.",
+              "bold": true,
+              "italic": false,
+              "code": false
+            }
+          ],
+          "children": [],
+          "attrs": {}
+        }
+      ],
+      "attrs": {
+        "ordered": false
+      }
+    },
+    {
+      "id": "00263d34b10f",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "6ecf5dc28136",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "We do not report in detail on Russian war crimes because these activities are well-covered in Western media and do not directly affect the military operations we are assessing and forecasting. We will continue to evaluate and report on the effects of these criminal activities on the Ukrainian military and the Ukrainian population and specifically on combat in Ukrainian urban areas. We utterly condemn Russian violations of the laws of armed conflict and the Geneva Conventions and crimes against humanity even though we do not describe them in these reports. ",
+          "bold": true,
+          "italic": true,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "4149bf67faf2",
+      "type": "list",
+      "level": 0,
+      "spans": [],
+      "children": [
+        {
+          "id": "f873de8e3d7b",
+          "type": "list_item",
+          "level": 0,
+          "spans": [
+            {
+              "text": "Ukrainian Operations in the Russian Federation",
+              "bold": false,
+              "italic": false,
+              "code": false
+            }
+          ],
+          "children": [],
+          "attrs": {}
+        },
+        {
+          "id": "30812b0cdb16",
+          "type": "list_item",
+          "level": 0,
+          "spans": [
+            {
+              "text": "Russian Supporting Effort – Northern Axis",
+              "bold": false,
+              "italic": false,
+              "code": false
+            }
+          ],
+          "children": [],
+          "attrs": {}
+        },
+        {
+          "id": "d4ac75be54a2",
+          "type": "list_item",
+          "level": 0,
+          "spans": [
+            {
+              "text": "Russian Main Effort – Eastern Ukraine (comprised of three subordinate main efforts)",
+              "bold": false,
+              "italic": false,
+              "code": false
+            }
+          ],
+          "children": [],
+          "attrs": {}
+        },
+        {
+          "id": "21f78fb133a4",
+          "type": "list_item",
+          "level": 0,
+          "spans": [
+            {
+              "text": "Russian Subordinate Main Effort #1 – Push Ukrainian forces back from the international border with Belgorod Oblast and approach to within tube artillery range of Kharkiv City",
+              "bold": false,
+              "italic": false,
+              "code": false
+            }
+          ],
+          "children": [],
+          "attrs": {}
+        },
+        {
+          "id": "45942795500f",
+          "type": "list_item",
+          "level": 0,
+          "spans": [
+            {
+              "text": "Russian Subordinate Main Effort #2 – Capture the remainder of Luhansk Oblast and push westward into eastern Kharkiv Oblast and encircle northern Donetsk Oblast",
+              "bold": false,
+              "italic": false,
+              "code": false
+            }
+          ],
+          "children": [],
+          "attrs": {}
+        },
+        {
+          "id": "0678101d8df8",
+          "type": "list_item",
+          "level": 0,
+          "spans": [
+            {
+              "text": "Russian Subordinate Main Effort #3 – Capture the entirety of Donetsk Oblast, the claimed territory of Russia’s proxies in Donbas, and possibly advance into Dnipropetrovsk Oblast",
+              "bold": false,
+              "italic": false,
+              "code": false
+            }
+          ],
+          "children": [],
+          "attrs": {}
+        },
+        {
+          "id": "893a13eb45dc",
+          "type": "list_item",
+          "level": 0,
+          "spans": [
+            {
+              "text": "Russian Supporting Effort – Southern Axis",
+              "bold": false,
+              "italic": false,
+              "code": false
+            }
+          ],
+          "children": [],
+          "attrs": {}
+        },
+        {
+          "id": "8c897b6eb6a2",
+          "type": "list_item",
+          "level": 0,
+          "spans": [
+            {
+              "text": "Russian Air, Missile, and Drone Campaign",
+              "bold": false,
+              "italic": false,
+              "code": false
+            }
+          ],
+          "children": [],
+          "attrs": {}
+        },
+        {
+          "id": "2bf1817d296e",
+          "type": "list_item",
+          "level": 0,
+          "spans": [
+            {
+              "text": "Significant Activity in Belarus",
+              "bold": false,
+              "italic": false,
+              "code": false
+            }
+          ],
+          "children": [],
+          "attrs": {}
+        }
+      ],
+      "attrs": {
+        "ordered": false
+      }
+    },
+    {
+      "id": "856b287903f0",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Ukrainian Operations in the Russian Federation",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "41cbeaa4364f",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Ukraine continued its long-range drone strike campaign against Russian transportation networks and oil infrastructure overnight on August 31 to September 1.",
+          "bold": true,
+          "italic": false,
+          "code": false
+        },
+        {
+          "text": " Ukrainian forces conducted a drone strike against a railway traction power substation in Kropotkin, Krasnodar Krai on the night of August 31 to September 1.[36]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        },
+        {
+          "text": "Geolocated footage published on September 1 shows fires at the Kropotkin substation.[37] NASA Fire Information for Resource Management (FIRMS) data collected on September 1 shows heat anomalies at the substation.[38] The Krasnodar Krai Operational Headquarters and Kavkazsky Raion Head Yury Khanin claimed on September 1 that drone debris caused a fire at a power substation in the Kropotkin industrial zone.[39] The Krasnodar Krai Operational Headquarters claimed on September 1 that a wrecked Ukrainian drone caused a fire in Ilsky, Seversky Raion that did not result in casualties.[40] Russian opposition outlet ASTRA reported that residents of Yelabuga, Republic of Tatarstan heard explosions, and Russian state aviation regulator Rosaviatsia temporarily closed the Kazan and Nizhnekamsk airports.[41] NASA FIRMS data shows heat anomalies at the Nizhnekamsk oil refinery on August 31.[42]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "1688a34fec56",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Satellite imagery collected on September 1 shows a scorch mark near distillation units at the Krasnodar Oil Refinery in Krasnodar Krai following August 30 Ukrainian drone strikes against the facility.[43]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "b489bc06c458",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Russian Supporting Effort – Northern Axis",
+          "bold": true,
+          "italic": false,
+          "code": false
+        },
+        {
+          "text": " (Russian objective: Create defensible buffer zones in northern Ukraine along the international border)",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "9e6a1fac3699",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Russian forces continued offensive operations in northern Sumy Oblast on September 1 but did not make confirmed advances.",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "d80e7f3f0488",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "45968e59b696",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Unconfirmed claims: Russian milbloggers claimed that Russian forces advanced within Yunakivka (northeast of Sumy City).[44]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "189db928a8f7",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Russian forces attacked north of Sumy City near Kindrativka, Andriivka, and Oleksiivka; northeast of Sumy City within Yunakivka; and in unspecified areas of Sumy and Kursk oblasts on August 31 and September 1.[45] Russian milbloggers claimed that Ukrainian forces counterattacked near Yunakivka and Andriivka.[46]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "169ba84fa141",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "A Russian milblogger reportedly affiliated with the Russian Northern Grouping of Forces claimed that unit commanders of elements of the Russian 2nd Motorized Rifle Regiment (Russian Aerospace Forces [VKS]) and the 5th Battalion of the 234th Airborne (VDV) Regiment (76th VDV Division) are struggling to force their troops to attack Novyi Put, Kursk Oblast (northwest of Sumy City across the international border) and that Russian forces have not attacked the settlement since roughly August 25.[47] The milblogger noted that Russian commanders in Kursk Oblast may have submitted false reports to superiors that Russian forces cleared Novyi Put and, more broadly, Kursk Oblast. The milblogger added that Ukrainian forces are heavily interdicting Tetkino (southwest of Glushkovo) and its ground lines of communication (GLOCs) with drones.[48]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "16560fafda28",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Sumy Oblast Military Administration Head Oleh Hryhorov stated on August 31 and September 1 that Russian drone strikes injured two civilians travelling on roads in Sumy Oblast.[49]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "aa8db5310cbb",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Order of Battle: Elements of the Russian 83rd VDV Brigade reportedly continue to operate near southern Yunakivka.[50] Drone operators of the Smuglyanka Detachment are reportedly coordinating VKS strikes on Ukrainian forces near Andriivka.[51] Drone operators of the Anvar Spetsnaz Detachment (possibly referring to the BARS-25 Anvar volunteer detachment) are reportedly striking Ukrainian forces in Senkivka, Hirsk, Klyusy, and Arkhypivka, Chernihiv Oblast (all northeast of Chernihiv City near the international border) and near Novovasylivka, Sumy Oblast (northwest of Sumy City near the international border) and Barylivka, Mohrytsya, and Velyka Rybytsya, Sumy Oblast (all northeast of Sumy City).[52] Elements of the 137th VDV Regiment (106th VDV Division) reportedly continue to operate in the Sumy direction.[53]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "670f43028d39",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Russian Main Effort – Eastern Ukraine",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "f8b037bbfc65",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Russian Subordinate Main Effort #1 – Kharkiv Oblast",
+          "bold": true,
+          "italic": false,
+          "code": false
+        },
+        {
+          "text": "(",
+          "bold": true,
+          "italic": false,
+          "code": false
+        },
+        {
+          "text": "Russian objective: Push Ukrainian forces back from the international border with Belgorod Oblast and approach to within tube artillery range of Kharkiv City)",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "36b0c58b5c5d",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Russian forces conducted offensive operations in northern Kharkiv Oblast on September 1 but did not advance. ",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "4a857424ac62",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "2ea408cbd2b3",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Unconfirmed claims: A Russian milblogger claimed that Russian forces advanced in Vovchansk and near Synelnykove (both northeast of Kharkiv City).[54]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "2ba728d3e0b7",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Russian forces attacked north of Kharkiv City near Hlyboke and toward Lyptsi and northeast of Kharkiv City near Vovchansk on August 31 and September 1.[55] A Russian milblogger claimed that Ukrainian forces are counterattacked near Synelnykove.[56]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "5801d7dc2fd3",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Order of Battle: Elements of the Russian 128th Motorized Rifle Brigade (44th Army Corps [AC], Leningrad Military District [LMD]) are operating near Vovchansk.[57]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "79ddc02265ce",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Neither Ukrainian nor Russian sources reported ground activity in the Velykyi Burluk direction on September 1.",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "1d67dc6dfb93",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "1b53148c0768",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Russian Subordinate Main Effort #2 – Luhansk Oblast",
+          "bold": true,
+          "italic": false,
+          "code": false
+        },
+        {
+          "text": " (Russian objective: Capture the remainder of Luhansk Oblast and push westward into eastern Kharkiv Oblast and northern Donetsk Oblast)",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "778c69ddd57a",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "64aec1ab87eb",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Russian forces recently advanced in the Kupyansk direction.",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "018fa478583b",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "53628e9ef11a",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Assessed Russian advances: Ukrainian military observer Kostyantyn Mashovets reported on September 1 that Russian forces advanced north of Topoli (northeast of Kupyansk near the international border) and north of Kupyansk.[58]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "64221b4dbcf5",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Unconfirmed claims: Russian milbloggers claimed that Russian forces advanced in central and southern Myrove (just northwest of Kupyansk).[59] A Russian milblogger claimed that Russian forces advanced to Tyschenkivka (northwest of Kupyansk), but Mashovets and another prominent Kremlin-linked Russian milblogger refuted these claims, however.[60]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "9fba60b235ee",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Russian forces attacked toward Kupyansk itself; northwest of Kupyansk near Kindrashivka; north of Kupyansk near Zapadne and toward Kutkivka; northeast of Kupyansk near Krasne Pershe, Fyholivka, and Synkivka and toward Novovasylivka; east of Kupyansk near Petropavlivka; and southeast of Kupyansk near Stepova Novoselivka on August 31 and September 1.[61]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "bbcfc6555603",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Mashovets stated that Russian forces occupy Kindrashivka but have not solidified their gains as Ukrainian forces are counterattacking in southern Kindrashivka.[62] Mashovets also stated that Russian forces occupy parts of the northwestern and northern outskirts of Kupyansk. Mashovets stated that Ukrainian forces pushed Russian forces out of most of Myrove and significantly reduced the Russian forces’ zone of control on the northern outskirts of Kupyansk. Mashovets stated that the Russian forces’ bridgehead north and northwest of Kupyansk is too narrow and therefore vulnerable, and that Russian forces cannot assemble the necessary manpower to conduct a large assault needed to overwhelm Ukrainian forces.[63] Mashovets stated that Russian forces have been unable to transport heavy equipment across the Oskil River to the bridgehead and that Ukrainian forces maintain fire control over the central and southern points of the bridgehead where Russian forces could otherwise move weapons to, forcing Russian forces to inconveniently transport them through the northern shoulder.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "35fc6718b80f",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "A Ukrainian brigade operating in the Kupyansk direction reported that the Russian military command recently changed its infantry tactics in the brigade's area of responsibility (AoR) in the Kupyansk direction, indicating the Russian forces have suffered significant losses.[64] The Ukrainian brigade reported that Russian forces regularly use anti-thermal imaging cloaks day and night to evade detection and that the main task for the Russian forces is to infiltrate to an assembly area in the contested \"gray\" zone and wait to assemble forces.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "c9e9f03fb8fb",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Order of Battle: Mashovets stated that elements of Russian 7th Motorized Rifle Regiment and 18th Motorized Rifle Division(both 11th Army Corps [AC], Leningrad Military District [LMD]); 4th Tank Division and 47th Tank Division (both of the 1st Guards Tank Army [GTA], Moscow Military District [MMD]); 9th Artillery Brigade (6th Combined Arms Army [CAA], LMD); and 228th Artillery Brigade (1st GTA, MMD) are all operating in the Kupyansk direction.[65] Mashovets stated that elements of the 68th Motorized Rifle Division and 69th Motorized Rifle Division (both of the 6th CAA, LMD) reinforced with elements of the 27th Motorized Rifle Brigade (1st GTA, MMD) are attacking toward Sobolivka and other elements of the 1st GTA are attacking toward Kruhlyakivka from Kolisnykivka (both southeast of Kupyansk).[66]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "1e36143eb349",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Russian forces continued offensive operations in the Borova direction on September 1 but did not make confirmed advances.",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "85e63ec803a9",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Unconfirmed claims: A Russian milblogger claimed that Russian forces seized Druzhelyubivka (southeast of Borova).[67]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "d306b33fcdeb",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Russian forces attacked north of Borova near Novoplatonivka on August 31 and September 1.[68]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "cf660985d93c",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Russian forces continued offensive operations in the Lyman direction on September 1 but did not make confirmed advances.",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "b33907723890",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Unconfirmed claims: Russian sources claimed that Russian forces advanced to the road junction between Shandryholove, Novoselivka, and Derylove (all northwest of Lyman).[69]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "e1ec3bf607af",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Russian forces attacked northwest of Lyman toward Shandryholove and Derylove; north of Lyman near Karpivka; northeast of Lyman near Kolodyazi and toward Stavky; east of Lyman near Zarichne; and southeast of Lyman toward Yampil and in the Serebryanske forest area on August 31 and September 1.[70]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "bf6af22ad6f5",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Order of Battle: Drone operators of the Berkut Group of the reconnaissance and strike battalion of the 238th Artillery Brigade (8th CAA, Southern Military District [SMD]) are reportedly striking Ukrainian positions near Novoselivka (northwest of Lyman).[71]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "b66cf2f11d2f",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "ed3b2592fc7b",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Russian Subordinate Main Effort #3 – Donetsk Oblast",
+          "bold": true,
+          "italic": false,
+          "code": false
+        },
+        {
+          "text": " (Russian objective: Capture the entirety of Donetsk Oblast, the claimed territory of Russia’s proxies in Donbas, and advance into Dnipropetrovsk Oblast)",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "03e8bcacd992",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Note: ISW has reorganized its axes in Donetsk Oblast to better analyze and assess the Russian military command's tactical and operational objectives east and west of Ukraine's fortress belt. ISW combined the Chasiv Yar and Toretsk directions into the Kostyantynivka-Druzhkivka Tactical Area, given that the previously separate Chasiv Yar and Toretsk axes have now converged into a single tactical area around Kostyantynivka. ISW also created a separate Dobropillya Tactical Area, given that the Dobropillya salient is supporting operations beyond Pokrovsk in the fortress belt area of operations. ISW will continue refining its operational-tactical framework for the fortress belt as the situation evolves.",
+          "bold": false,
+          "italic": true,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "66baa6dd32fb",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "bfc82978b8c5",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Russian forces continued offensive operations in the Siversk direction on September 1 but did not make confirmed advances. ",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "084c99adc848",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Russian forces attacked northwest of Siversk toward Dronivka, northeast of Siversk near Serebyranka and Hryhorivka, east of Siversk near Novoselivka; southeast of Siversk near Vyimka, and south of Siversk near Pereizne on August 31 and September 1.[72] A Russian milblogger claimed that Ukrainian forces are counterattacking near Serebryanka.[73]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "bf025f3aa3dc",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Ukrainian 11th Army Corps (AC) Spokesperson Lieutenant Colonel Dmytro Zaporozhets stated that Russian forces are possibly preparing a major assault in the Siversk direction before the autumn and winter rainy seasons.[74] A senior non-commissioned officer (NCO) of a Ukrainian brigade operating in the Siversk direction reported that Russian forces are attacking in small infantry groups using infiltration tactics, suggesting that Russian forces likely lost a battalion and are rotating.[75] The NCO also stated that the Russian military command will likely call up reserves and increase offensive operations before rainier fall months. The NCO noted that wet fall weather introduces unintuitive pluses and minuses. Wet weather will degrade both sides’ ability to use drones but also improve both sides’ logistics since wet weather conditions degrade the ability to fly drones - the main threat to logistics.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "8dc8f997120b",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Russian forces continued offensive operations in the Kostyantynivka-Druzhkivka tactical area on September 1 but did not make confirmed advances.",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "267d3f0d1808",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "f27e422ca736",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Unconfirmed claims: Russian milbloggers claimed that Russian forces advanced north of Poltavka and Rusyn Yar (both south of Druzhkivka).[76]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "30d7f2a2dca6",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Russian forces attacked northeast of Kostyantynivka near Mykolaivka; east of Kostyantynivka near Stupochky and Predtechyne; southeast of Kostyantynivka near Shcherbynivka, Pleshchiivka, Dyliivka, Toretsk, Bila Hora, Oleksandro-Shultyne, and Kleban Byk; south of Druzhkivka near Rusyn Yar and Poltavka; and southwest of Druzhkivka near Volodymyrivka and Sofiivka on August 31 and September 1.[77] A Russian milblogger claimed that Ukrainian forces counterattacked in Predtechyne.[78]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "298428324dc8",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "A Russian milblogger claimed that Russian forces are increasing the number of unguided glide bomb strikes against Kostyantynivka.[79]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "d8ddb36db4fe",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Order of Battle: Artillery elements of the Russian 72nd Motorized Rifle Brigade (3rd AC) are reportedly striking Ukrainian forces in the Kostyantynivka tactical area.[80]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "a16b03d509cb",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Russian forces continued offensive operations in the Dobropillya tactical area on September 1 but did not advance.",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "932773026ad7",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Russian forces attacked southeast of Dobropillya near Zapovidne and Mayak and east of Dobropillya near Nove Shakhove, Shakhove, Vilne, and Ivanivka on August 31 and September 1.[81]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "21ac96d77cc5",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Order of Battle: Drone operators of the Russian 56th Separate Spetsnaz Battalion (51st Combined Arms Army [CAA], formerly 1st Donetsk People's Republic [DNR] AC, Southern Military District [SMD]) are reportedly striking Ukrainian forces near Dorozhnie (southeast of Dobropillya).[82] Drone operators of the Smuglyanka Detachment are reportedly striking Ukrainian forces near Toretske (southeast of Dobropillya).[83]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "43f4d7ad4599",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Ukrainian forces recently advanced in the Pokrovsk direction.",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "2be5fd02de05",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "66016210a295",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Assessed Ukrainian advances: Geolocated footage published on September 1 indicates that Ukrainian forces recently advanced in Novoekonomichne (northeast of Pokrovsk).[84]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "e74e393c47b8",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Unconfirmed claims: Russian milbloggers claimed that Russian forces advanced to Likhachova, Shevchenko, and Partyzanska streets in central Pokrovsk; east of Chunyshyne (south of Pokrovsk); within Troyanda (southwest of Pokrovsk), Rodynske (north of Pokrovsk), and Krasnyi Lyman (northeast of Pokrovsk); and near Molodetske (southwest of Pokrovsk).[85] A milblogger claimed that Russian sabotage and reconnaissance groups are operating in Myrnohrad.[86] Russian milbloggers claimed that Novoekonomichne is a contested \"gray zone.\"[87]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "e4c49cf9856b",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Russian forces attacked near Pokrovsk itself; north of Pokrovsk near Rodynske and Sukhetske; northeast of Pokrovsk near Novoekonomichne, Myrolyubivka, and Fedorivkka; east of Pokrovsk near Promin and Myrnohrad; southeast of Pokrovsk near Sukhyi Yar; south of Pokrovsk near Chunyshyne; and southwest of Pokrovsk near Zvirove, Udachne, and Kotlyne and toward Molodetske on August 31 and September 1.[88] A Russian milblogger claimed that Ukrainian forces counterattacked near Leontovychi (southwest of Pokrovsk) and Troyanda.[89]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "b4241e5aaef1",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "A Ukrainian drone unit operating in the Pokrovsk direction reported that Russian forces conducted a reduced company-sized mechanized assault consisting of seven tanks and infantry fighting vehicles and up to 100 servicemembers toward Malynivka (northeast of Pokrovsk) on August 28.[90] The Ukrainian drone group reported that Ukrainian forces repelled the assault with drone and HIMARS strikes. Ukrainian forces reportedly destroyed five vehicles, and Russian forces abandoned the other two.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "d8b2a2e8bbcf",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Order of Battle:",
+          "bold": false,
+          "italic": false,
+          "code": false
+        },
+        {
+          "text": "Snipers of the Russian 55th Motorized Rifle Brigade (41st CAA, CMD) are reportedly operating in the Pokrovsk direction.[91]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "4a054375164a",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Russian forces recently advanced in the Novopavlivka direction. ",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "853288ffe036",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "a1c6b2d42457",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "4b34b6268cd8",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Assessed Russian advances: Geolocated footage published on September 1 indicates that Russian forces recently advanced to central Dachne (southeast of Novopavlivka).[92]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "e6ac70a2dc1d",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Unconfirmed claims: Russian sources claimed that Russian forces recently seized Muravka (northeast of Novopavlivka) and advanced northwest of Zelenyi Hai (southwest of Novopavlivka).[93] A Russian milblogger claimed that Dachne is a contested \"gray\" zone as Russian forces are unable to consolidate positions in the settlement.[94]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "14681997be47",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Russian forces attacked south of Novopavlivka near Piddubne, Yalta, and toward Filiya; southeast of Novopavlivka near Horikhove and Dachne; and southwest of Novopavlivka near Zelenyi Hai and Tovste on August 31 and September 1.[95]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "27da4d0c05ec",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Order of Battle: Drone operators of the Russian 5th Tank Brigade (36th CAA, Eastern Military District [EMD]), 14th Spetsnaz Brigade (Russian General Staff's Main Directorate [GRU]), 1461st Motorized Rifle Regiment (reportedly of the 36th CAA, EMD) are reportedly coordinating to strike Ukrainian Starlink terminals and repeaters in the Dnipropetrovsk (Novopavlivka) direction.[96] Reconnaissance elements of the 90th Tank Division reportedly continue to operate in the Novopavlivka-Pokrovsk direction.[97]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "c78d1eb7953a",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Russian forces continued offensive operations in the Velykomykhailivka direction on September 1 but did not make confirmed advances. ",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "6b5ad5f0c288",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Unconfirmed claims: Russian sources claimed that Russian forces seized Oleksandrohrad (east of Velykomykhailivka) and advanced west of Andriivka-Klevtsove (northeast of Velykomykhailivka) and northwest of Komyshuvakha (southeast of Velykomykhailivka).[98] Donetsk People's Republic (DNR) Head Denis Pushilin claimed on September 1 that Russian forces seized all of southern Donetsk Oblast, likely meaning up to Muravka.[99]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "af0473e4a816",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Russian forces attacked northeast of Velykomykhailivka near Komar and Andriivka-Klevtsove; east of Velykomykhailivka near Oleksandrohrad, Voskresenka, Sichneve, and Novoselivka; and southeast of Velykomykhailivka near Komyshuvakha, Maliivka, and Shevchenko on August 31 and September 1.[100]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "fc950ad606dc",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Order of Battle: Drone operators of the 14th Spetsnaz (GRU), 36th Motorized Rifle Brigade (29th CAA, EMD, the 656th Motorized Rifle Regiment (29th CAA, EMD), and 430th Motorized Rifle Regiment (29th CAA) are reportedly coordinating to strike Ukrainian positions near Novoselivka (east of Velykomykhailivka).[101] Drone operators of the Russian 37th Motorized Rifle Brigade (36th CAA) and elements of the 305th Artillery Brigade (5th CAA, EMD) reportedly continue to operate in the Vremivka (Velykomykhailivka direction).[102]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "2d5879785a74",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Russian Supporting Effort – Southern Axis",
+          "bold": true,
+          "italic": false,
+          "code": false
+        },
+        {
+          "text": " (Russian objective: Maintain frontline positions, secure rear areas against Ukrainian strikes, and advance within tube artillery range of Zaporizhzhia City)",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "de492012e759",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Russian forces continued limited offensive operations northeast of Hulyaipole near Temyrivka on September 1 but did not advance.[103]",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "e61c19caa368",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Russian forces recently advanced in western Zaporizhia Oblast. ",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "bb7752604256",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "3a21d4c1afa4",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "7f6bd3c7f351",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Assessed Russian advances: Geolocated footage published on September 1 indicates that Russian forces recently advanced south of Novodanylivka (south of Orikhiv).[104]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "814bc3747796",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Russian forces attacked west of Orikhiv near Kamyanske, Stepnohirsk, and Plavni on August 31 and September 1.[105] A Ukrainian brigade operating in western Zaporizhia Oblast and Ukrainian military observer Yuriy Butusov reported that Ukrainian forces repelled a roughly reduced company-sized Russian mechanized assault near Mala Tokmachka (southeast of Orikhiv) and damaged two T-72 tanks, five infantry fighting vehicles, four motorcycles, and one Tigr armored vehicle.[106]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "816591227ec7",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Order of Battle: Electronic warfare (EW) elements of the Russian 291st Motorized Rifle Regiment (42nd Motorized Rifle Division, 58th Combined Arms Army [CAA], Southern Military District [SMD]) reportedly continue to operate in the Zaporizhzhia direction.[107] Elements of the 7th Airborne (VDV) Division and drone operators of the Nemets group of the 291st Motorized Rifle Regiment (42nd Motorized Rifle Division, 58th CAA) reportedly continue to operate in the Zaporizhzhia direction.[108]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "10a2bb6d7a33",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Russian forces continued limited attacks in the Kherson direction on September 1 but did not advance.[109]",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "feee31017822",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "499eb9aead0d",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Order of Battle: Elements of the Russian 61st Naval Infantry Brigade (Northern Fleet) reportedly continue to operate in the Kherson direction.[110]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "c1d105b3f8a9",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "The Ukrainian Special Forces reported that Ukrainian operators destroyed a Russian radar system for the S-300 air defense system in occupied Saky, Crimea, on the night of August 20 to 30.[111] The Ukrainian Main Military Intelligence Directorate (GUR) reported on September 1 that GUR operators struck a Russian airbase near occupied Simferopol, Crimea, and disabled two Russian Mi-8 helicopters and a tugboat, reportedly a BUK-2190 used by Russia's elite underwater sabotage forces.[112]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "8b4d3e1b97c5",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Russian Air, Missile, and Drone Campaign",
+          "bold": true,
+          "italic": false,
+          "code": false
+        },
+        {
+          "text": " (Russian Objective: Target Ukrainian military and civilian infrastructure in the rear and on the frontline)",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "2dc3a34f5c44",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Russian forces conducted a series of drone strikes against Ukraine on the night of August 31 and September 1. The Ukrainian Air Force reported that Russian forces launched 86 Shahed-type and decoy drones from Kursk, Oyrol, and Bryansk cities; Millerovo, Rostov Oblast; Primorsko-Akhtarsk, Krasnodar Krai; and occupied Hvardiiske, Crimea.[113] The Ukrainian Air Force reported that Ukrainian forces downed 76 drones and that 10 drones struck six locations in Ukraine. Kyiv Oblast Military Head Mykola Kalashnyk reported that the Russian strike on Kyiv Oblast damaged an enterprise and a warehouse roof.[114]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "bc0656d50058",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "The Ukrainian Air Force reported on September 1 that Ukrainian forces destroyed 6,346 Shahed-type drones, missiles, and various other drones in August 2025.[115] The Ukrainian Air Force stated that Ukrainian forces downed five M2 Kh-47 Kinzhal aeroballistic missiles, 55 Kh-101/Kh-55SM cruise missiles, 20 Iskander-M/KN-23 ballistic missiles, 20 Kalibr cruise missiles, four Kh-59/69 guided aircraft missiles, nine Iskander-K cruise missiles, 2,129 Shahed-type drones, 930 reconnaissance drones, and 3,174 unspecified drones in August 2025.",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "f8955f3a7e22",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Significant activity in Belarus",
+          "bold": true,
+          "italic": false,
+          "code": false
+        },
+        {
+          "text": " (Russian efforts to increase its military presence in Belarus and further integrate Belarus into Russian-favorable frameworks)",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "739c871cc961",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Belarusian President Alexander Lukashenko attended the Shanghai Cooperation Organization (SCO) summit in China and called for the development of a common scientific and innovative space in the SCO.[116]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "8200e8160479",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "The Russian Ministry of Defense (MoD) claimed on September 1 that elements of the Russian 98th VDV Division are participating in the ongoing Collective Security Treaty Organization (CSTO) joint military exercises in northern Belarus.[117] ISW has observed elements of the 98th VDV Division operating largely near Chasiv Yar and Bakhmut since at least April 2023.[118]",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "914345b31401",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "Note: ISW does not receive any classified material from any source, uses only publicly available information, and draws extensively on Russian, Ukrainian, and Western reporting and social media as well as commercially available satellite imagery and other geospatial data as the basis for these reports. References to all sources used are provided in the endnotes of each update.",
+          "bold": true,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "4677f73adb3e",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "bd983c274580",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "3ecccbb20a51",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[1] https://rg dot ru/2025/09/01/ushakov-u-putina-i-trampa-poka-net-dogovorennosti-o-vstreche-s-zelenskim.html ; https://t.me/tass_agency/334873 ; https://t.me/tass_agency/334875; https://www.rbc dot ru/politics/01/09/2025/68b5b04a9a7947b0bfa2bc9f",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "c4eadcac38b5",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[2] https://www.understandingwar.org/backgrounder/russian-offensive-campaign-assessment-august-16-2025",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "07bdd57d2b02",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[3] https://truthsocial.com/@realDonaldTrump/posts/115052030103944534",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "c83ec38b7178",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[4] http://kremlin dot ru/events/president/news/77891",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "c96a4e92b80d",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[5] https://isw.pub/UkrWar051925 ; https://isw.pub/UkrWar043025 ; https://isw.pub/UkrWar070325 ; https://isw.pub/UkrWar081625",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "fb3a8ce78717",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[6] https://isw.pub/UkrWar081225 ; https://understandingwar.org/backgrounder/russian-offensive-campaign-assessment-august-7-2025 ; https://isw.pub/UkrWar073025 ; https://isw.pub/UkrWar061125 ; https://isw.pub/UkrWar052825",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "522d2b60fd93",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[7] http://en.kremlin dot ru/events/president/news/66181 ; http://kremlin dot ru/events/president/news/67843",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "2db80ba301e7",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[8] https://tass dot ru/mezhdunarodnaya-panorama/24925565; https://www.rbc dot ru/politics/01/09/2025/68b59ba79a79476b73c69cb7?utm_source=amp_full-link;  https://meduza dot io/news/2025/09/01/ria-novosti-pokazalo-video-s-yanukovichem-on-vystupil-vpervye-za-tri-goda-chtoby-skazat-chto-putin-sovershenno-prav; https://ria dot ru/20250901/yanukovich-2038859761.html",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "872e9dcb5912",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[9] https://t.me/agentstvonews/11697",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "21c1ae7da475",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[10] http://kremlin dot ru/events/president/news/66181",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "afc89dc878f7",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[11] https://www.washingtonpost.com/national-security/2022/08/19/intelligence-war-fsb-ukraine/",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "c6636a00b102",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[12] https://t.me/ivanfrankogroup/144",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "fcb5f9b3cd95",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[13] https://www.understandingwar.org/backgrounder/russian-offensive-campaign-assessment-august-18-2025",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "5d7190006bbd",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[14] https://x.com/WarUnitObserver/status/1961790275828818199",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "8cd80ce523d7",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[15] https://x.com/WarUnitObserver/status/1961790283386872130",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "6efed5dcc79e",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[16] https://www.understandingwar.org/backgrounder/russian-offensive-campaign-assessment-august-5-2025; https://www.understandingwar.org/backgrounder/russian-offensive-campaign-assessment-august-3-2025; https://www.understandingwar.org/backgrounder/russian-offensive-campaign-assessment-june-30-2025;  ",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "28ee20430650",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": " https://understandingwar.org/backgrounder/russian-offensive-campaign-assessment-august-29-2025; https://www.understandingwar.org/backgrounder/russian-offensive-campaign-assessment-august-9-2025; https://www.understandingwar.org/backgrounder/russian-offensive-campaign-assessment-august-7-2025;",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "0ec110b19a63",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "https://www.understandingwar.org/backgrounder/russian-offensive-campaign-assessment-august-27-2025; https://www.understandingwar.org/backgrounder/russian-offensive-campaign-assessment-august-25-2025; https://understandingwar.org/backgrounder/russian-offensive-campaign-assessment-august-24-2025; https://understandingwar.org/backgrounder/russian-offensive-campaign-assessment-august-4-2025; https://understandingwar.org/backgrounder/russian-offensive-campaign-assessment-july-17-2025 https://www.understandingwar.org/backgrounder/russian-offensive-campaign-assessment-august-20-2025; https://www.understandingwar.org/backgrounder/russian-offensive-campaign-assessment-august-28-2025; https://understandingwar.org/backgrounder/russian-offensive-campaign-assessment-august-1-2025; https://understandingwar.org/backgrounder/russian-offensive-campaign-assessment-august-14-2025; https://www.understandingwar.org/backgrounder/russian-offensive-campaign-assessment-august-11-2025; https://www.understandingwar.org/backgrounder/russian-offensive-campaign-assessment-august-10-2025;",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "025caad3d8bd",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[17] https://www.understandingwar.org/backgrounder/russian-offensive-campaign-assessment-august-11-2025 https://www.understandingwar.org/backgrounder/russian-offensive-campaign-assessment-august-5-2025; https://www.understandingwar.org/backgrounder/russian-offensive-campaign-assessment-august-2-2025; https://understandingwar.org/backgrounder/russian-offensive-campaign-assessment-august-1-2025; https://www.understandingwar.org/backgrounder/russian-offensive-campaign-assessment-july-30-2025; https://www.understandingwar.org/backgrounder/russian-offensive-campaign-assessment-june-11-2025-0; https://understandingwar.org/backgrounder/russian-offensive-campaign-assessment-may-21-2025",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "76f3ff2a0ad5",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[18] https://www.understandingwar.org/sites/default/files/Russian%20Offensive%20Campaign%20Assessment%2C%20November%2021%2C%202024%20PDF.pdf",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "a043eaab9040",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[19] https://isw.pub/UkrWar080825",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "b0220a91728a",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[20] https://understandingwar.org/backgrounder/russian-offensive-campaign-assessment-august-29-2025; https://www.understandingwar.org/backgrounder/russian-offensive-campaign-assessment-august-12-2025",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "8e62f0b8c7f9",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[21] https://www.understandingwar.org/backgrounder/russian-offensive-campaign-assessment-september-7-2024; https://understandingwar.org/backgrounder/ukraine%E2%80%99s-kursk-incursion-six-month-assessment",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "c4a6f629bfd3",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[22] https://apnews.com/article/europe-leyen-plane-radar-russia-jammed-51fa78294c2d0464dce5fd24dd4f273b",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "61c61ca19027",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[23] https://www.ft.com/content/3c330f87-71c4-4db9-8259-f5c132c1f0d3",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "f2ad2bf21882",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[24] https://t.me/tass_agency/334839; https://www.ft.com/content/3c330f87-71c4-4db9-8259-f5c132c1f0d3",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "0f78b1517147",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[25] https://www.understandingwar.org/backgrounder/russian-offensive-campaign-assessment-august-23-2025; https://www.understandingwar.org/backgrounder/russian-offensive-campaign-assessment-march-14-2024; https://isw.pub/UkrWar040824; https://www.understandingwar.org/backgrounder/russian-offensive-campaign-assessment-april-29-2024; https://isw.pub/UkrWar063024; https://isw.pub/UkrWar071124 ; https://www.understandingwar.org/backgrounder/russian-offensive-campaign-assessment-january-18-2024",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "2858922e3a08",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[26] https://www.understandingwar.org/backgrounder/russian-offensive-campaign-assessment-march-14-2024",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "8639718dde3f",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[27] https://www.ft.com/content/8ade14ca-7aa1-4413-887b-59712037665c",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "5865053fbaa7",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[28] https://www.understandingwar.org/backgrounder/russian-offensive-campaign-assessment-august-31-2025",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "e02777175d35",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[29] https://militarnyi dot com/en/news/fss-facility-in-crimea-hit-by-flamingo-missiles-not-neptune-sources/",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "686bc0793c6d",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[30] https://www.understandingwar.org/backgrounder/russian-offensive-campaign-assessment-august-31-2025",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "b4e2e9a6f240",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[31] https://t.me/astrapress/91140; https://www.understandingwar.org/backgrounder/russian-offensive-campaign-assessment-august-31-2025",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "7af0a6b63d7f",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[32] https://understandingwar.org/backgrounder/russian-offensive-campaign-assessment-august-21-2025",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "2f9230577c2f",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[33] https://ssu dot gov.ua/novyny/sbu-povidomyla-pro-zaochnu-pidozru-kadyrovu-yakyi-nakazav-vykorystovuvaty-ukrainskykh-polonenykh-yak-zhyvyi-shchyt-dlia-rashystiv",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "3a86db5f0fd0",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[34] https://www.understandingwar.org/backgrounder/russian-offensive-campaign-assessment-march-19-2025",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "539d238f2672",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[35] https://www.understandingwar.org/backgrounder/russian-offensive-campaign-assessment-may-22-2025",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "086c0a86e15f",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[36] https://t.me/andriyshTime/42751",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "66cb5799da73",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[37] https://t.me/andriyshTime/42751",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "800219e41deb",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[38] https://firms.modaps.eosdis.nasa.gov/map/#d:24hrs;@40.52,45.44,14.00z",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "79efbbdaf31f",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[39] https://t.me/opershtab23/14061; https://t.me/opershtab23/14062; https://t.me/HaninYuri/2626",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "bc2bf01dc431",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[40] https://t.me/opershtab23/14059",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "3b88944df31f",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[41] https://t.me/astrapress/91147; https://t.me/tass_agency/334702; https://t.me/tass_agency/334694; https://t.me/nashtatarstan_official/18500",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "5d8531966665",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[42] https://firms.modaps.eosdis.nasa.gov/map/#d:24hrs;@51.91,55.60,12.95z",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "d984a8b4d497",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[43] https://x.com/kromark/status/1962527782140826034",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "ce5ceae626cd",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[44] https://t.me/smotri_z/48372; https://t.me/sashakots/55952; https://t.me/dva_majors/78555",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "0efe70ac4017",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[45] https://t.me/GeneralStaffZSU/28508; https://t.me/GeneralStaffZSU/28483; https://t.me/GeneralStaffZSU/28480; https://t.me/dva_majors/78555; https://t.me/severnnyi/4986; https://t.me/DnevnikDesantnika/33246; https://t.me/DnevnikDesantnika/33262; https://t.me/wargonzo/28921",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "a7a11a624478",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[46] https://t.me/dva_majors/78548; https://t.me/wargonzo/28921; https://t.me/smotri_z/48372; https://t.me/sashakots/55952; https://t.me/dva_majors/78555",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "e4d5e6bc2f0b",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[47] https://t.me/severnnyi/4989",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "79dfef296bc7",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[48] https://t.me/severnnyi/4986",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "6984230030d6",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[49] https://t.me/hryhorov_oleg/570; https://t.me/hryhorov_oleg/580",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "415e46309247",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[50] https://t.me/DnevnikDesantnika/33262",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "ce35063433f4",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[51] https://t.me/dva_majors/78548",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "08666333962e",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[52] https://t.me/boris_rozhin/178075; https://t.me/boris_rozhin/178149",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "ae054fb3c493",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[53] https://t.me/DnevnikDesantnika/33246",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "93ec90c96573",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[54] https://t.me/DnevnikDesantnika/33240",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "191a12df843e",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[55] https://t.me/GeneralStaffZSU/28508; https://t.me/GeneralStaffZSU/28483; https://t.me/GeneralStaffZSU/28480; https://t.me/SJTF_Dnipro/16854",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "eafb3e5009c0",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[56] https://t.me/DnevnikDesantnika/33240",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "76f0c6f11c48",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[57] https://t.me/RVvoenkor/98857",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "914e9f3154a3",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[58] https://t.me/zvizdecmanhustu/2958",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "16c2b2b6a5d8",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[59] https://t.me/motopatriot78/41668 ; https://t.me/DnevnikDesantnika/33273 ; https://t.me/motopatriot78/41663",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "5af0ed013a85",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[60] https://t.me/wargonzo/28921 ; https://t.me/rybar/73256 ; https://t.me/zvizdecmanhustu/2956",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "d39503ea8024",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[61] https://t.me/GeneralStaffZSU/28508 ; https://t.me/GeneralStaffZSU/28483 ; https://t.me/GeneralStaffZSU/28480 ; https://t.me/SJTF_Dnipro/16854 ; https://t.me/zvizdecmanhustu/2958",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "b8dcf767a65b",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[62] https://t.me/zvizdecmanhustu/2956",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "2d5a8e2727b0",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[63] https://t.me/zvizdecmanhustu/2957",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "b730ce05f1e6",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[64] https://t.me/karadag15brop/564 ; https://armyinform dot com.ua/2025/09/01/kara-dag-rozpoviv-pro-zminu-pihotnoyi-doktryny-okupantiv-na-kupyanskomu-napryamku/",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "ef0604775a78",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[65] https://t.me/zvizdecmanhustu/2954",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "4d7f3ad716b0",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[66] https://t.me/zvizdecmanhustu/2956",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "53b4c3c50792",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[67] https://t.me/boris_rozhin/178068",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "10ca3da3690f",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[68] https://t.me/GeneralStaffZSU/28508 ; https://t.me/GeneralStaffZSU/28483 ; https://t.me/GeneralStaffZSU/28480",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "7f2036da73ec",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[69] https://t.me/tass_agency/334781 ; https://t.me/wargonzo/28921  ",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "2d7a02064594",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[70] https://t.me/GeneralStaffZSU/28508 ; https://t.me/GeneralStaffZSU/28483 ; https://t.me/GeneralStaffZSU/28480 ; https://t.me/SJTF_Dnipro/16854 ; https://t.me/dva_majors/78555",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "e7b4c2f99650",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[71] https://t.me/nm_dnr/14240 ; https://t.me/DnevnikDesantnika/33265",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "24be9c0188d1",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[72] https://t.me/GeneralStaffZSU/28508; https://t.me/GeneralStaffZSU/28480; https://t.me/SJTF_Dnipro/16854; https://t.me/DnevnikDesantnika/33265; https://t.me/wargonzo/28921; https://t.me/boris_rozhin/178074; https://t.me/dva_majors/78555",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "135016a57f9b",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[73] https://t.me/dva_majors/78555",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "f33028c560a8",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[74] https://armyinform dot com.ua/2025/09/01/stovbury-zavazhayut-vorozhym-dronam-na-siverskomu-napryamku-200-artylerijskyh-udariv-na-den/; https://www.youtube.com/watch?v=vnsq2tu2Oo0 ; https://suspilne dot media/donbas/1104264-rf-gotue-osinnij-sturm-siverska-artileria-na-limanskomu-napramku-zrosla-vtrici/",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "1c1ebbc1e9bd",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[75] https://armyinform dot com.ua/2025/09/01/chergovyj-stesanyj-bataljon-na-siverskomu-napryamku-v-rosiyan-nova-stadiya-shturmiv/; https://www.youtube.com/watch?v=vnsq2tu2Oo0",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "9e7b4a3f9b04",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[76] https://t.me/dva_majors/78555; https://t.me/wargonzo/28921",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "bcbe37bbc356",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[77] https://t.me/GeneralStaffZSU/28508; https://t.me/GeneralStaffZSU/28483; https://t.me/GeneralStaffZSU/28480; https://t.me/SJTF_Dnipro/16854; https://t.me/dva_majors/78555; https://t.me/DnevnikDesantnika/33242; https://t.me/wargonzo/28921",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "7385b615903b",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[78] https://t.me/DnevnikDesantnika/33242",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "bb722cb5c3be",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[79] https://t.me/dva_majors/78555",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "646c53d6c02e",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[80] https://t.me/mod_russia/56147",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "13e5b5fdcc9b",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[81] https://t.me/GeneralStaffZSU/28483; https://t.me/GeneralStaffZSU/28480; https://t.me/SJTF_Dnipro/16854; https://t.me/wargonzo/28921",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "5e350fd780aa",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[82] https://t.me/nm_dnr/14239",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "0057bfaf33bb",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[83] https://t.me/dva_majors/78553",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "49e4927b67ed",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[84] https://x.com/Bielitzling/status/1962546476459958444; https://x.com/GeneralStaffUA/status/1962544239687971178; https://x.com/AudaxonX/status/1962548690922463628",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "62b9437cfa04",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[85] https://t.me/motopatriot78/41669; https://t.me/motopatriot78/41687; https://t.me/voenkorKotenok/67134; https://t.me/wargonzo/28921",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "9fcca9536177",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[86] https://t.me/wargonzo/28921",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "30b0f60c5154",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[87] https://t.me/motopatriot78/41688; https://t.me/DnevnikDesantnika/33242",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "67356f03405d",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[88] https://t.me/GeneralStaffZSU/28508; https://t.me/GeneralStaffZSU/28483; https://t.me/GeneralStaffZSU/28480; https://t.me/SJTF_Dnipro/16854; https://t.me/voenkorKotenok/67134; https://t.me/wargonzo/28921",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "7bb65630c320",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[89] https://t.me/voenkorKotenok/67134",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "f04ab44cc5b3",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[90] https://t.me/ivanfrankogroup/144; https://militarnyi dot com/en/news/himars-strikes-tank-convoy-advancing-on-pokrovsk/",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "294051b22296",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[91] https://t.me/boris_rozhin/178091",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "10da396741f8",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[92] https://t.me/motopatriot78/41671; https://t.me/osintpen/1724 ; https://x.com/richardzai38580/status/1962449621214716092 ",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "3ea7389e8b40",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[93] https://t.me/tass_agency/334769; https://t.me/tass_agency/334626",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "648ac2158832",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[94] https://t.me/motopatriot78/41671",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "a8905cf647e4",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[95] https://t.me/GeneralStaffZSU/28483 ; https://t.me/GeneralStaffZSU/28508 ; https://t.me/GeneralStaffZSU/28480",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "1b084dee4e9c",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[96] https://t.me/voin_dv/16713",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "a859d04c05ca",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[97] https://t.me/RVvoenkor/98854",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "9f4816a233c4",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[98] https://t.me/tass_agency/334769; https://t.me/tass_agency/334626 ; https://t.me/motopatriot78/41675; https://t.me/dva_majors/78555",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "16875ee000ef",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[99] https://t.me/tass_agency/334769; https://t.me/tass_agency/334626",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "2a5c6d9f7f58",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[100] https://t.me/GeneralStaffZSU/28483 ; https://t.me/GeneralStaffZSU/28508 ; https://t.me/GeneralStaffZSU/28480 ; https://t.me/SJTF_Dnipro/16854",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "82384cc59cb4",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[101] https://t.me/voin_dv/16707",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "20ccb267e0ef",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[102] https://t.me/boris_rozhin/178094 ; https://t.me/voin_dv/16695",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "b0dd131ad494",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[103] https://t.me/wargonzo/28921  ",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "abbe04bee271",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[104] https://t.me/Ronins_65/657; https://t.me/creamy_caprice/9913 ; https://t.me/motopatriot78/41680",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "b5c0673c9c9a",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[105] https://t.me/wargonzo/28921 ; https://t.me/GeneralStaffZSU/28480 ; https://t.me/GeneralStaffZSU/28508 ; https://t.me/GeneralStaffZSU/28483     ",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "2ac94f65427e",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[106] https://www.facebook.com/reel/634519206375369; https://militarnyi dot com/en/news/battle-near-mala-tokmachka-ukrainian-armed-forces-defeat-russian-armored-group/ ; https://t.me/ButusovPlus/22580",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "ba53d722467b",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[107] https://t.me/milinfolive/155758",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "c5b02fadc461",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[108] https://t.me/mod_russia/56133 ; https://t.me/sashakots/55942 ; https://t.me/wargonzo/28929",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "23293f373630",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[109] https://t.me/GeneralStaffZSU/28508 ; https://t.me/GeneralStaffZSU/28483 ; https://t.me/GeneralStaffZSU/28480",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "18aed1b8cb71",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[110] https://t.me/mod_russia/56120",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "e0738ac5b448",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[111] https://t.me/ukr_sof/2066 ; https://suspilne dot media/crimea/1103744-sili-specoperacij-zsu-zaavili-pro-znisenna-rls-do-kompleksu-s-300-na-aerodromi-v-sakah-u-okupovanomu-krimu/",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "17ca88603a49",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[112] https://t.me/DIUkraine/6777 ; https://armyinform dot com.ua/2025/09/01/dva-vertoloty-mi-8-i-vorozhe-sudno-%e2%80%95-bijczi-gur-vdaryly-po-vijskovyh-obyektah-okupantiv-u-krymu/; https://gur dot gov.ua/content/naletily-i-spalyly-prymary-hur-u-krymu-vcherhove-znyshchyly-nyzku-vazhlyvykh-tsilei-okupantiv.html",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "b79cd30b32ae",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[113] https://t.me/kpszsu/41431",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "3f902a3f2b88",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[114] https://t.me/Mykola_Kalashnyk/6820",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "505785fb66d8",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[115] https://t.me/kpszsu/41444",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "e91015649355",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[116] https://t.me/tass_agency/334690 ; https://t.me/tass_agency/334704",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "63a846969c9a",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[117] https://t.me/mod_russia/56131",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    },
+    {
+      "id": "c0ffd705ccff",
+      "type": "paragraph",
+      "level": 0,
+      "spans": [
+        {
+          "text": "[118] https://www.understandingwar.org/backgrounder/ukraine%E2%80%99s-operations-bakhmut-have-kept-russian-reserves-away-south ; https://www.understandingwar.org/backgrounder/russian-offensive-campaign-assessment-april-4-2024",
+          "bold": false,
+          "italic": false,
+          "code": false
+        }
+      ],
+      "children": [],
+      "attrs": {}
+    }
+  ],
+  "attrs": {
+    "lang": "auto",
+    "dir": "auto"
+  }
+}
