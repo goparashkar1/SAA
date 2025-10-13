@@ -1,10 +1,17 @@
-from fastapi import FastAPI, UploadFile, File, HTTPException, Query
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import StreamingResponse, JSONResponse
-from pydantic import BaseModel, HttpUrl
+import asyncio
+import io
+import logging
+import os
+import shutil
+import time
+import uuid
 from pathlib import Path
-from typing import Optional, Dict, List, Union
-import io, time, uuid, os
+from typing import Dict, List, Optional, Union, Literal
+
+from fastapi import FastAPI, File, HTTPException, Query, UploadFile
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse, StreamingResponse
+from pydantic import BaseModel, HttpUrl
 
 from ingestion.url_loader import fetch_url
 from ingestion.file_loader import read_file, sniff_type
@@ -16,6 +23,20 @@ from nl.lang_detect import detect_lang_doc
 from translate.translate_ir import translate_ir_to_fa
 from render.html_renderer import ir_to_html
 from render.docx_writer import html_to_docx
+
+try:  # pragma: no cover - environment-specific bootstrap
+    from docling.engine import parse_to_markdown
+except ModuleNotFoundError:  # pragma: no cover - fallback when not installed
+    import importlib
+    import sys
+
+    project_root = Path(__file__).resolve().parents[2]
+    if str(project_root) not in sys.path:
+        sys.path.insert(0, str(project_root))
+    parse_to_markdown = importlib.import_module("docling.engine").parse_to_markdown
+from translator_agent.utils.markdown_images import deinline_data_uri_images
+from translator_agent.utils.markdown_translate import safe_translate_markdown
+from translator_agent.render import html_renderer, docx_writer_v2, pdf_writer
 
 # IR v2 imports - with error handling to prevent API startup failure
 IRV2_AVAILABLE = False
@@ -32,6 +53,8 @@ except Exception as e:
     print(f"⚠️ IR v2 modules failed to load: {e}")
     IRV2_AVAILABLE = False
 from config import settings
+
+logger = logging.getLogger("translator_agent.api")
 
 app = FastAPI(title="Translator Agent API", version="1.0.0")
 
@@ -105,6 +128,208 @@ def _create_no_api_placeholder(source_ir: Document) -> Document:
     )
     
     return Document(meta=target_meta, sections=placeholder_sections)
+
+# ---- docling endpoints ----
+
+DOC_JOB_ROOT = Path(__file__).resolve().parent
+NO_CREDIBLE_API = "NO credible API"
+
+
+class DoclingTranslateRequest(BaseModel):
+    job_id: str
+    md: str
+    lang_target: str = "fa"
+
+
+class DoclingRenderRequest(BaseModel):
+    job_id: str
+    target: Literal["docx", "pdf"] = "docx"
+    original_md: str
+    translated_md: Optional[str] = None
+    rtl: bool = True
+
+
+def _create_docling_job_dirs() -> tuple[str, Path, Path, Path, Path]:
+    job_id = f"job_{uuid.uuid4().hex}"
+    job_dir = DOC_JOB_ROOT / job_id
+    source_dir = job_dir / "source"
+    assets_dir = job_dir / "assets"
+    out_dir = job_dir / "out"
+    for directory in (job_dir, source_dir, assets_dir, out_dir):
+        directory.mkdir(parents=True, exist_ok=True)
+    return job_id, job_dir, source_dir, assets_dir, out_dir
+
+
+def _resolve_docling_job(job_id: str) -> Path:
+    if not job_id or not job_id.startswith("job_"):
+        raise HTTPException(status_code=404, detail="Job not found")
+    job_dir = (DOC_JOB_ROOT / job_id).resolve()
+    if not job_dir.exists() or DOC_JOB_ROOT not in job_dir.parents:
+        raise HTTPException(status_code=404, detail="Job not found")
+    return job_dir
+
+
+def _has_assets(assets_dir: Path) -> bool:
+    if not assets_dir.exists():
+        return False
+    try:
+        next(assets_dir.iterdir())
+        return True
+    except StopIteration:
+        return False
+
+
+@app.post("/docling/extract")
+async def docling_extract(file: UploadFile = File(...)):
+    job_id, job_dir, source_dir, assets_dir, _ = _create_docling_job_dirs()
+
+    source_filename = file.filename or "uploaded_file"
+    source_path = source_dir / source_filename
+
+    with source_path.open("wb") as destination:
+        shutil.copyfileobj(file.file, destination)
+    await file.close()
+
+    try:
+        markdown_path = parse_to_markdown(source_path, job_dir)
+    except Exception as exc:
+        logger.exception("Docling parse failed for %s", job_id)
+        raise HTTPException(status_code=500, detail="Docling parsing failed") from exc
+
+    raw_markdown = markdown_path.read_text(encoding="utf-8")
+    (job_dir / "content.original.md").write_text(raw_markdown, encoding="utf-8")
+
+    cleaned_markdown = deinline_data_uri_images(raw_markdown, assets_dir)
+    (job_dir / "content.cleaned.md").write_text(cleaned_markdown, encoding="utf-8")
+
+    logger.info("Docling extract completed for %s", job_id)
+    return {
+        "job_id": job_id,
+        "original_md": cleaned_markdown,
+        "assets_base": f"/docling/assets/{job_id}/",
+    }
+
+
+@app.get("/docling/assets/{job_id}/{asset_path:path}")
+def docling_asset(job_id: str, asset_path: str):
+    job_dir = _resolve_docling_job(job_id)
+    assets_dir = job_dir / "assets"
+    if not asset_path:
+        raise HTTPException(status_code=404, detail="Asset not found")
+    candidate = (assets_dir / asset_path).resolve()
+    if (
+        not candidate.exists()
+        or not candidate.is_file()
+        or assets_dir.resolve() not in candidate.parents
+    ):
+        raise HTTPException(status_code=404, detail="Asset not found")
+    return FileResponse(candidate)
+
+
+@app.post("/docling/translate")
+async def docling_translate(payload: DoclingTranslateRequest):
+    job_dir = _resolve_docling_job(payload.job_id)
+    edited_path = job_dir / "content.edited.md"
+    edited_path.write_text(payload.md, encoding="utf-8")
+
+    if not _check_credible_api():
+        logger.info("Docling translate skipped due to missing API credentials for %s", payload.job_id)
+        return {"translated_md": None, "error": NO_CREDIBLE_API}
+
+    translated_md, error = await safe_translate_markdown(
+        payload.md,
+        payload.lang_target,
+        timeout_s=20,
+    )
+
+    if error or not translated_md:
+        return {"translated_md": None, "error": error or NO_CREDIBLE_API}
+
+    (job_dir / "content.translated.md").write_text(translated_md, encoding="utf-8")
+    logger.info("Docling translate completed for %s", payload.job_id)
+    return {"translated_md": translated_md, "error": None}
+
+
+@app.post("/docling/render")
+async def docling_render(payload: DoclingRenderRequest):
+    job_dir = _resolve_docling_job(payload.job_id)
+    assets_dir = job_dir / "assets"
+    out_dir = job_dir / "out"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    (job_dir / "content.latest.md").write_text(payload.original_md, encoding="utf-8")
+
+    target = payload.target.lower()
+    if target not in {"docx", "pdf"}:
+        raise HTTPException(status_code=400, detail="target must be 'docx' or 'pdf'")
+
+    lang_code = "fa" if payload.rtl else "en"
+    original_body = html_renderer.md_to_html(
+        payload.original_md,
+        rtl=payload.rtl,
+        lang=lang_code,
+        wrap=False,
+    )
+    if payload.translated_md:
+        translated_body = html_renderer.md_to_html(
+            payload.translated_md,
+            rtl=payload.rtl,
+            lang=lang_code,
+            wrap=False,
+        )
+    else:
+        translated_body = "<p><strong>NO credible API</strong></p>"
+
+    combined_body = (
+        "<section>"
+        "<h1>Original</h1>"
+        f"{original_body}"
+        "</section>"
+        "<hr/>"
+        "<section>"
+        "<h1>Translated</h1>"
+        f"{translated_body}"
+        "</section>"
+    )
+    combined_html = html_renderer.wrap_html_document(
+        combined_body,
+        rtl=payload.rtl,
+        lang=lang_code,
+    )
+
+    assets_for_writer = assets_dir if _has_assets(assets_dir) else None
+    if target == "docx":
+        output_path = out_dir / "output.docx"
+        docx_writer_v2.write_docx_from_html(
+            combined_html,
+            out_path=output_path,
+            assets_dir=assets_for_writer,
+            rtl=payload.rtl,
+        )
+    else:
+        output_path = out_dir / "output.pdf"
+        pdf_writer.write_pdf_from_html(
+            combined_html,
+            out_path=output_path,
+            assets_dir=assets_for_writer,
+        )
+
+    logger.info("Docling render completed for %s (%s)", payload.job_id, target)
+    return {
+        "download": f"/docling/download/{payload.job_id}/{output_path.name}",
+    }
+
+
+@app.get("/docling/download/{job_id}/{filename}")
+def download_docling_output(job_id: str, filename: str):
+    job_dir = _resolve_docling_job(job_id)
+    candidate = Path(filename)
+    if candidate.is_absolute() or ".." in candidate.parts:
+        raise HTTPException(status_code=400, detail="invalid filename")
+    output_path = (job_dir / "out" / candidate).resolve()
+    out_dir = (job_dir / "out").resolve()
+    if not output_path.exists() or not output_path.is_file() or out_dir not in output_path.parents:
+        raise HTTPException(status_code=404, detail="File not found")
+    return FileResponse(output_path)
 
 # ---- schemas ----
 

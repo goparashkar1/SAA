@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Document, ParseResult, GlossaryEntry, ExportRequest } from "../types/irv2";
+import DoclingTab from "../components/DoclingTab";
 
 // If you set up the Vite proxy (see note), keep API = "/api".
 // Otherwise: const API = "http://127.0.0.1:8000";
@@ -159,7 +160,7 @@ async function exportDocxIRv2(
 
 export default function TranslationReportPage() {
   const [inputMode, setInputMode] = useState<"url" | "file">("file");
-  const [processingMode, setProcessingMode] = useState<"legacy" | "irv2">("legacy");
+  const [processingMode, setProcessingMode] = useState<"legacy" | "irv2" | "docling">("legacy");
   const [url, setUrl] = useState("");
   const fileRef = useRef<HTMLInputElement | null>(null);
 
@@ -359,6 +360,13 @@ export default function TranslationReportPage() {
           >
             IR v2 Mode
           </button>
+          <button
+            type="button"
+            className={`px-3 py-1 text-sm ${processingMode === "docling" ? "bg-white/20" : "bg-white/5 hover:bg-white/10"}`}
+            onClick={() => setProcessingMode("docling")}
+          >
+            Docling
+          </button>
         </div>
         {processingMode === "irv2" && (
           <div className="text-xs text-yellow-400">
@@ -377,47 +385,48 @@ export default function TranslationReportPage() {
         )}
       </div>
 
-      {/* Input mode + controls */}
-      <div className="flex flex-wrap items-center gap-3">
-        <div className="inline-flex rounded-md border border-white/10 overflow-hidden">
+      {processingMode !== "docling" && (
+        <div className="flex flex-wrap items-center gap-3">
+          <div className="inline-flex rounded-md border border-white/10 overflow-hidden">
+            <button
+              type="button"
+              className={`px-3 py-1 text-sm ${inputMode === "url" ? "bg-white/20" : "bg-white/5 hover:bg-white/10"}`}
+              onClick={() => setInputMode("url")}
+              disabled={processingMode === "irv2"}
+            >
+              From URL
+            </button>
+            <button
+              type="button"
+              className={`px-3 py-1 text-sm ${inputMode === "file" ? "bg-white/20" : "bg-white/5 hover:bg-white/10"}`}
+              onClick={() => setInputMode("file")}
+            >
+              From File
+            </button>
+          </div>
+
+          {inputMode === "url" ? (
+            <input
+              type="url"
+              placeholder="https://example.com/article"
+              value={url}
+              onChange={(e) => setUrl(e.target.value)}
+              className="min-w-[320px] flex-1 rounded-md border border-white/10 bg-white/5 px-3 py-2 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/20"
+            />
+          ) : (
+            <input ref={fileRef} type="file" className="text-sm" accept=".html,.htm,.md,.txt,.pdf,.docx" />
+          )}
+
           <button
             type="button"
-            className={`px-3 py-1 text-sm ${inputMode === "url" ? "bg-white/20" : "bg-white/5 hover:bg-white/10"}`}
-            onClick={() => setInputMode("url")}
-            disabled={processingMode === "irv2"}
+            onClick={onExtract}
+            disabled={isLoading}
+            className="rounded-md bg-emerald-500/80 hover:bg-emerald-500 disabled:opacity-60 px-4 py-2 text-sm"
           >
-            From URL
-          </button>
-          <button
-            type="button"
-            className={`px-3 py-1 text-sm ${inputMode === "file" ? "bg-white/20" : "bg-white/5 hover:bg-white/10"}`}
-            onClick={() => setInputMode("file")}
-          >
-            From File
+            {isLoading ? "Working..." : "Extract"}
           </button>
         </div>
-
-        {inputMode === "url" ? (
-          <input
-            type="url"
-            placeholder="https://example.com/article"
-            value={url}
-            onChange={(e) => setUrl(e.target.value)}
-            className="min-w-[320px] flex-1 rounded-md border border-white/10 bg-white/5 px-3 py-2 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/20"
-          />
-        ) : (
-          <input ref={fileRef} type="file" className="text-sm" accept=".html,.htm,.md,.txt,.pdf,.docx" />
-        )}
-
-        <button
-          type="button"
-          onClick={onExtract}
-          disabled={isLoading}
-          className="rounded-md bg-emerald-500/80 hover:bg-emerald-500 disabled:opacity-60 px-4 py-2 text-sm"
-        >
-          {isLoading ? "Working..." : "Extract"}
-        </button>
-      </div>
+      )}
 
       {error && (
         <div className="rounded-md border border-red-400/40 bg-red-500/10 text-red-200 px-3 py-2 text-sm">{error}</div>
@@ -433,6 +442,8 @@ export default function TranslationReportPage() {
           )}
         </div>
       )}
+
+      {processingMode === "docling" && <DoclingTab />}
 
       {/* Legacy mode interface */}
       {processingMode === "legacy" && extractedHtml && (

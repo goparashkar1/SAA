@@ -8,6 +8,7 @@ elements such as headers, footers, headings, lists, and tables intact.
 from typing import Optional, List
 import io
 import math
+from pathlib import Path
 
 from docx import Document
 from docx.shared import Inches, Pt, RGBColor
@@ -484,3 +485,24 @@ def _merge_cells_vertically(table, start_row: int, col: int, end_row: int) -> No
     start_cell = table.cell(start_row, col)
     for row in range(start_row + 1, end_row + 1):
         start_cell = start_cell.merge(table.cell(row, col))
+
+
+def write_docx_from_html(
+    html: str,
+    out_path: Path,
+    *,
+    assets_dir: Optional[Path] = None,
+    rtl: bool = True,
+) -> None:
+    """
+    Convenience wrapper for rendering Markdown-derived HTML into DOCX using the
+    lightweight HTML pipeline.
+    """
+    from .docx_writer import html_to_docx
+
+    html_to_docx(
+        html,
+        out_path=out_path,
+        rtl_override=rtl,
+        assets_dir=assets_dir,
+    )

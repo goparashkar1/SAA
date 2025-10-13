@@ -33,3 +33,6 @@ mammoth
 tiktoken
 blingfire
 numpy
+docling
+markdown-it-py
+python-multipart
