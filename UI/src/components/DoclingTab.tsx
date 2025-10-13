@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 
 type TargetFormat = "docx" | "pdf";
 type LoadingStage = "idle" | "extract" | "translate" | "render";
@@ -10,6 +10,19 @@ const LANG_OPTIONS = [
   { value: "ar", label: "Arabic (ar)" },
   { value: "de", label: "German (de)" },
 ];
+
+const STAGE_LABELS: Record<Exclude<LoadingStage, "idle">, string> = {
+  extract: "Extracting document",
+  translate: "Translating content",
+  render: "Rendering output",
+};
+
+const STAGE_ESTIMATE_MS: Record<LoadingStage, number> = {
+  idle: 0,
+  extract: 20000,
+  translate: 30000,
+  render: 15000,
+};
 
 export default function DoclingTab(): JSX.Element {
   const [jobId, setJobId] = useState<string | null>(null);
@@ -24,6 +37,10 @@ export default function DoclingTab(): JSX.Element {
   const [loadingStage, setLoadingStage] = useState<LoadingStage>("idle");
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
   const [isEditing, setIsEditing] = useState<boolean>(false);
+  const [progressStart, setProgressStart] = useState<number | null>(null);
+  const [elapsedMs, setElapsedMs] = useState<number>(0);
+  const [lastTask, setLastTask] = useState<{ stage: LoadingStage; durationMs: number } | null>(null);
+  const previousStageRef = useRef<LoadingStage>("idle");
 
   const isBusy = loadingStage !== "idle";
   const translatedPreview = useMemo(() => {
@@ -37,6 +54,49 @@ export default function DoclingTab(): JSX.Element {
     const base = assetsBase.endsWith("/") ? assetsBase : `${assetsBase}/`;
     return (editedMd || originalMd).replace(/(\!\[[^\]]*\]\()assets\//g, `$1${base}`);
   }, [editedMd, originalMd, assetsBase]);
+
+  useEffect(() => {
+    const previous = previousStageRef.current;
+    if (loadingStage !== "idle" && previous !== loadingStage) {
+      setProgressStart(Date.now());
+      setElapsedMs(0);
+    }
+    if (loadingStage === "idle" && previous !== "idle") {
+      const duration = progressStart ? Date.now() - progressStart : 0;
+      setLastTask({ stage: previous, durationMs: duration });
+      setProgressStart(null);
+      setElapsedMs(0);
+    }
+    previousStageRef.current = loadingStage;
+  }, [loadingStage, progressStart]);
+
+  useEffect(() => {
+    if (loadingStage === "idle" || progressStart == null) {
+      return;
+    }
+    const interval = window.setInterval(() => {
+      setElapsedMs(Date.now() - progressStart);
+    }, 200);
+    return () => window.clearInterval(interval);
+  }, [loadingStage, progressStart]);
+
+  const formatDuration = (ms: number) => {
+    const totalSeconds = Math.max(0, Math.floor(ms / 1000));
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+    return `${minutes}:${seconds.toString().padStart(2, "0")}`;
+  };
+
+  const activeEstimateMs = loadingStage !== "idle" ? STAGE_ESTIMATE_MS[loadingStage] ?? 0 : 0;
+  const progressPercent =
+    loadingStage === "idle" || progressStart == null || activeEstimateMs === 0
+      ? 0
+      : Math.min(100, Math.floor((elapsedMs / activeEstimateMs) * 100));
+  const remainingMs = Math.max(activeEstimateMs - elapsedMs, 0);
+  const activeStageLabel =
+    loadingStage !== "idle" ? STAGE_LABELS[loadingStage as Exclude<LoadingStage, "idle">] ?? "Processing" : null;
+  const describeStage = (stage: LoadingStage) =>
+    stage === "idle" ? "Idle" : STAGE_LABELS[stage as Exclude<LoadingStage, "idle">] ?? stage;
 
   async function handleExtract(selectedFile: File) {
     const formData = new FormData();
@@ -231,7 +291,31 @@ export default function DoclingTab(): JSX.Element {
         )}
       </div>
 
-      {loadingStage === "extract" && <div className="text-sm text-white/60">Extracting with Docling...</div>}
+      {loadingStage !== "idle" && (
+        <div className="flex flex-col gap-2 rounded-md border border-white/10 bg-white/5 p-4 text-white/80">
+          <div className="flex flex-wrap items-center justify-between gap-2 text-sm">
+            <span className="font-medium">{activeStageLabel}</span>
+            <span className="text-xs uppercase tracking-wide text-white/50">
+              {formatDuration(elapsedMs)} elapsed
+            </span>
+          </div>
+          <div className="h-2 w-full overflow-hidden rounded-full bg-white/10">
+            <div
+              className="h-full rounded-full bg-emerald-500 transition-all duration-200 ease-out"
+              style={{ width: `${Math.min(100, Math.max(5, progressPercent))}%` }}
+            />
+          </div>
+          <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-white/60">
+            <span>Est. total: {activeEstimateMs ? formatDuration(activeEstimateMs) : "N/A"}</span>
+            <span>Est. remaining: {activeEstimateMs ? formatDuration(remainingMs) : "Calculating..."}</span>
+          </div>
+        </div>
+      )}
+      {lastTask && loadingStage === "idle" && (
+        <div className="rounded-md border border-white/10 bg-emerald-500/10 px-3 py-2 text-xs text-emerald-200">
+          {describeStage(lastTask.stage)} completed in {formatDuration(lastTask.durationMs)}.
+        </div>
+      )}
       {apiError && loadingStage !== "translate" && loadingStage !== "render" && (
         <div className="rounded border border-red-500/40 bg-red-500/10 px-3 py-2 text-sm text-red-200">{apiError}</div>
       )}
@@ -250,10 +334,10 @@ export default function DoclingTab(): JSX.Element {
                 setTranslatedMd(null);
                 setApiError(null);
               }}
-              className="min-h-[320px] w-full rounded-md border border-white/10 bg-black/40 p-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white/20"
+              className="min-h-[320px] max-h-[520px] w-full overflow-y-auto rounded-md border border-white/10 bg-black/40 p-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white/20"
             />
           ) : (
-            <pre className="min-h-[320px] whitespace-pre-wrap rounded-md border border-white/10 bg-black/40 p-2 text-sm text-white/80">
+            <pre className="min-h-[320px] max-h-[520px] whitespace-pre-wrap overflow-y-auto rounded-md border border-white/10 bg-black/40 p-2 text-sm text-white/80">
               {originalPreview || "Upload a document to view its Markdown."}
             </pre>
           )}
@@ -263,7 +347,7 @@ export default function DoclingTab(): JSX.Element {
             <h3 className="text-sm font-semibold text-white/80">Translated</h3>
             {apiError && <span className="text-xs text-red-300">{apiError}</span>}
           </header>
-          <pre className="min-h-[320px] whitespace-pre-wrap rounded-md border border-white/10 bg-black/40 p-2 text-sm text-white/80">
+          <pre className="min-h-[320px] max-h-[520px] whitespace-pre-wrap overflow-y-auto rounded-md border border-white/10 bg-black/40 p-2 text-sm text-white/80">
             {translatedPreview}
           </pre>
         </section>
@@ -280,4 +364,3 @@ export default function DoclingTab(): JSX.Element {
     </div>
   );
 }
-

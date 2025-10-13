@@ -5,17 +5,21 @@ This module renders IR v2 documents back into Word while keeping structural
 elements such as headers, footers, headings, lists, and tables intact.
 """
 
-from typing import Optional, List
+from typing import Any, Dict, Iterable, List, Optional
 import io
+import json
+import logging
 import math
 from pathlib import Path
 
 from docx import Document
-from docx.shared import Inches, Pt, RGBColor
+from docx.enum.section import WD_SECTION_START
 from docx.enum.table import WD_TABLE_ALIGNMENT
 from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_LINE_SPACING
-from docx.enum.section import WD_SECTION_START
 from docx.opc.constants import RELATIONSHIP_TYPE as RT
+from docx.oxml import OxmlElement
+from docx.oxml.ns import qn
+from docx.shared import Emu, Inches, Pt, RGBColor
 import docx.oxml.shared
 
 try:
@@ -45,71 +49,391 @@ from models.ir_v2 import (
     Block,
     Section,  # Added missing import
 )
+from translator_agent.utils.unitconv import mm_to_emu, pct_of, px_to_emu
+
+logger = logging.getLogger(__name__)
+
+DEFAULT_STYLE_MAP: Dict[str, str] = {
+    "title": "Title",
+    "h1": "Heading 1",
+    "h2": "Heading 2",
+    "h3": "Heading 3",
+    "paragraph": "Body",
+    "quote": "Quote",
+    "sidebar": "Sidebar",
+    "list_item": "List Paragraph",
+    "caption": "Caption",
+    "table": "Table Grid",
+}
 
 
-def write_docx(
-    source_ir: IRDocument,
-    target_ir: Optional[IRDocument] = None,
-    layout: str = "sequential",
-) -> bytes:
+def write_docx_from_layout_json(
+    layout_json_path: Path,
+    assets_dir: Optional[Path],
+    out_path: Path,
+    rtl: bool = False,
+    style_map: Optional[Dict[str, str]] = None,
+) -> None:
     """
-    Write IR v2 documents to DOCX format.
-
-    Args:
-        source_ir: Source document IR.
-        target_ir: Target document IR (optional).
-        layout: Layout mode ("sequential" or "side_by_side").
+    Render a DOCX document using Docling's layout JSON export to preserve the
+    original document structure (columns, images, captions, tables, etc.).
     """
+    if not layout_json_path.exists():
+        raise FileNotFoundError(f"Layout JSON not found: {layout_json_path}")
+
+    with layout_json_path.open(encoding="utf-8") as fp:
+        layout_data = json.load(fp)
+
+    combined_styles = dict(DEFAULT_STYLE_MAP)
+    if style_map:
+        combined_styles.update(style_map)
+
     doc = Document()
+    _clear_document_body(doc)
 
-    if source_ir.meta.title:
-        doc.core_properties.title = source_ir.meta.title
-    if source_ir.meta.author:
-        doc.core_properties.author = source_ir.meta.author
+    pages: Iterable[Dict[str, Any]] = layout_data.get("pages", [])
+    pages = list(pages)
+    if not pages:
+        logger.warning("Layout JSON at %s contained no pages; writing empty document.", layout_json_path)
+        _add_paragraph(doc, "No layout data available.", combined_styles.get("paragraph", "Body"), rtl)
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        doc.save(out_path)
+        return
 
-    if layout == "sequential":
-        _write_sequential_layout(doc, source_ir, target_ir)
-    elif layout == "side_by_side":
-        _write_side_by_side_layout(doc, source_ir, target_ir)
-    else:
-        raise ValueError(f"Unsupported layout: {layout}")
+    sections = doc.sections
+    first_page = pages[0]
+    first_section = sections[0]
+    _apply_page_settings(first_section, first_page)
+    _ensure_section_columns(first_section, int(first_page.get("columns", 1)))
+    _render_page(doc, first_section, first_page, assets_dir, combined_styles, rtl)
 
-    bio = io.BytesIO()
-    doc.save(bio)
-    bio.seek(0)
-    return bio.read()
+    for page in pages[1:]:
+        section = doc.add_section(WD_SECTION_START.NEW_PAGE)
+        _apply_page_settings(section, page)
+        _ensure_section_columns(section, int(page.get("columns", 1)))
+        _render_page(doc, section, page, assets_dir, combined_styles, rtl)
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    doc.save(out_path)
 
 
-def _write_sequential_layout(
+def _clear_document_body(doc: Document) -> None:
+    body_element = doc._body._element
+    for child in list(body_element):
+        body_element.remove(child)
+
+
+def _apply_page_settings(section, page: Dict[str, Any]) -> None:
+    width_pt = page.get("width_pt")
+    height_pt = page.get("height_pt")
+    width_mm = page.get("width_mm")
+    height_mm = page.get("height_mm")
+
+    if width_pt:
+        section.page_width = Pt(width_pt)
+    elif width_mm:
+        section.page_width = Emu(mm_to_emu(width_mm))
+    if height_pt:
+        section.page_height = Pt(height_pt)
+    elif height_mm:
+        section.page_height = Emu(mm_to_emu(height_mm))
+
+    margins = page.get("margins_pt") or {}
+    left = margins.get("left")
+    right = margins.get("right")
+    top = margins.get("top")
+    bottom = margins.get("bottom")
+    if left is not None:
+        section.left_margin = Pt(left)
+    if right is not None:
+        section.right_margin = Pt(right)
+    if top is not None:
+        section.top_margin = Pt(top)
+    if bottom is not None:
+        section.bottom_margin = Pt(bottom)
+
+
+def _ensure_section_columns(section, ncols: int) -> None:
+    ncols = max(1, int(ncols) if ncols else 1)
+    sect_pr = section._sectPr
+    cols_elems = sect_pr.xpath("./w:cols")
+    cols = cols_elems[0] if cols_elems else OxmlElement("w:cols")
+    cols.set(qn("w:num"), str(ncols))
+    if ncols > 1:
+        cols.set(qn("w:equalWidth"), "1")
+    if not cols_elems:
+        sect_pr.append(cols)
+
+
+def _render_page(
     doc: Document,
-    source_ir: IRDocument,
-    target_ir: Optional[IRDocument],
+    section,
+    page: Dict[str, Any],
+    assets_dir: Optional[Path],
+    style_map: Dict[str, str],
+    rtl: bool,
 ) -> None:
-    section_index = 0
+    blocks = page.get("blocks", []) or []
+    header_blocks = [b for b in blocks if b.get("role") == "header"]
+    footer_blocks = [b for b in blocks if b.get("role") == "footer"]
+    body_blocks = [b for b in blocks if b.get("role") not in {"header", "footer"}]
 
-    heading = doc.add_heading("Original Document", level=1)
-    heading.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    section_index = _write_document_content(doc, source_ir, section_index)
+    if header_blocks:
+        _render_blocks(section.header, section, page, header_blocks, assets_dir, style_map, rtl)
+    if footer_blocks:
+        _render_blocks(section.footer, section, page, footer_blocks, assets_dir, style_map, rtl)
+    _render_blocks(doc, section, page, body_blocks, assets_dir, style_map, rtl)
 
-    doc.add_page_break()
-    _get_or_add_section(doc, section_index, None, source_ir.meta.page_width, source_ir.meta.page_height)
 
-    heading = doc.add_heading("Translated Document", level=1)
-    heading.alignment = WD_ALIGN_PARAGRAPH.CENTER
+def _render_blocks(
+    container,
+    section,
+    page: Dict[str, Any],
+    blocks: Iterable[Dict[str, Any]],
+    assets_dir: Optional[Path],
+    style_map: Dict[str, str],
+    rtl: bool,
+) -> None:
+    content_width = _content_width(section)
+    for block in blocks:
+        block_type = (block.get("type") or "paragraph").lower()
 
-    if target_ir:
-        _write_document_content(doc, target_ir, section_index)
+        if block_type in {"title", "h1", "h2", "h3", "h4", "h5", "h6", "paragraph", "quote", "sidebar", "caption"}:
+            text = block.get("text", "")
+            style_name = block.get("style") or style_map.get(block_type, style_map.get("paragraph", "Body"))
+            paragraph = _add_paragraph(container, text, style_name, rtl)
+            if block_type == "caption":
+                paragraph.paragraph_format.keep_together = True
+        elif block_type in {"list", "list_item"}:
+            _render_list_block(container, block, style_map, rtl)
+        elif block_type in {"image", "figure", "photo"}:
+            _add_image(container, block, assets_dir, content_width, page, style_map, rtl)
+        elif block_type == "table":
+            _add_table(container, block, content_width, style_map, rtl)
+        elif block_type == "line_break":
+            container.add_paragraph("")
+        else:
+            text = block.get("text")
+            if isinstance(text, str):
+                style_name = block.get("style") or style_map.get("paragraph", "Body")
+                _add_paragraph(container, text, style_name, rtl)
+
+
+def _render_list_block(container, block: Dict[str, Any], style_map: Dict[str, str], rtl: bool) -> None:
+    if block.get("type") == "list":
+        items = block.get("items") or []
+        for item in items:
+            if isinstance(item, dict):
+                _add_list_item(
+                    container,
+                    text=item.get("text", ""),
+                    level=int(item.get("level", block.get("level", 0) or 0)),
+                    rtl=rtl,
+                    ordered=bool(item.get("ordered", block.get("ordered", False))),
+                    style_map=style_map,
+                )
+            else:
+                _add_list_item(
+                    container,
+                    text=str(item),
+                    level=int(block.get("level", 0) or 0),
+                    rtl=rtl,
+                    ordered=bool(block.get("ordered", False)),
+                    style_map=style_map,
+                )
     else:
-        _write_no_api_placeholder(doc)
+        _add_list_item(
+            container,
+            text=block.get("text", ""),
+            level=int(block.get("level", 0) or 0),
+            rtl=rtl,
+            ordered=bool(block.get("ordered", False)),
+            style_map=style_map,
+        )
 
 
-def _write_side_by_side_layout(
-    doc: Document,
-    source_ir: IRDocument,
-    target_ir: Optional[IRDocument],
+def _content_width(section) -> int:
+    try:
+        page_width = int(section.page_width)
+        left = int(section.left_margin)
+        right = int(section.right_margin)
+        return max(page_width - left - right, 1)
+    except Exception:  # pragma: no cover - defensive
+        return int(section.page_width)
+
+
+def _add_paragraph(container, text: str, style: Optional[str], rtl: bool):
+    paragraph = container.add_paragraph(text or "")
+    if style:
+        try:
+            paragraph.style = style
+        except (KeyError, ValueError, AttributeError):
+            logger.debug("Style %s not found; using default.", style)
+    paragraph.paragraph_format.keep_together = True
+    if rtl:
+        paragraph.paragraph_format.right_to_left = True
+    return paragraph
+
+
+def _add_list_item(
+    container,
+    text: str,
+    level: int,
+    rtl: bool,
+    ordered: bool,
+    style_map: Dict[str, str],
 ) -> None:
-    # Placeholder: reuse sequential export until a two-column layout is implemented.
-    _write_sequential_layout(doc, source_ir, target_ir)
+    style_name = style_map.get("list_item", "List Paragraph")
+    paragraph = container.add_paragraph()
+    try:
+        paragraph.style = "List Number" if ordered else ("List Bullet" if not ordered and style_name == "List Paragraph" else style_name)
+    except (KeyError, ValueError, AttributeError):
+        paragraph.style = style_name
+    paragraph.add_run(text or "")
+
+    if level:
+        paragraph.paragraph_format.left_indent = Inches(0.25 * level)
+    paragraph.paragraph_format.keep_together = True
+    if rtl:
+        paragraph.paragraph_format.right_to_left = True
+
+
+def _add_image(
+    container,
+    block: Dict[str, Any],
+    assets_dir: Optional[Path],
+    content_width_emu: int,
+    page: Dict[str, Any],
+    style_map: Dict[str, str],
+    rtl: bool,
+) -> None:
+    if not assets_dir or not assets_dir.exists():
+        logger.warning("Skipping image block; assets directory unavailable: %s", assets_dir)
+        return
+
+    src = block.get("src") or block.get("path") or block.get("asset")
+    if not src:
+        logger.debug("Image block missing src: %s", block)
+        return
+
+    candidate = (assets_dir / src).resolve()
+    if not candidate.exists():
+        candidate = (assets_dir / Path(src).name).resolve()
+    if not candidate.exists():
+        logger.warning("Image asset %s not found for block %s", src, block)
+        return
+
+    width_emu = _resolve_image_width(block, content_width_emu, page)
+
+    paragraph = container.add_paragraph()
+    paragraph.paragraph_format.keep_with_next = True
+    if rtl:
+        paragraph.paragraph_format.right_to_left = True
+
+    run = paragraph.add_run()
+    try:
+        if width_emu:
+            run.add_picture(str(candidate), width=Emu(width_emu))
+        else:
+            run.add_picture(str(candidate))
+    except Exception as exc:  # pragma: no cover - defensive
+        logger.warning("Failed to add image %s (%s)", candidate, exc)
+        paragraph.add_run(f"[Missing image: {src}]")
+        return
+
+    caption = block.get("caption") or block.get("title")
+    if caption:
+        caption_style = style_map.get("caption", DEFAULT_STYLE_MAP["caption"])
+        caption_paragraph = _add_paragraph(container, caption, caption_style, rtl)
+        caption_paragraph.paragraph_format.keep_together = True
+
+
+def _resolve_image_width(block: Dict[str, Any], content_width_emu: int, page: Dict[str, Any]) -> Optional[int]:
+    bbox = block.get("bbox") or {}
+    width_px = block.get("width_px")
+    width_pct = block.get("width_pct")
+
+    if width_px:
+        return px_to_emu(float(width_px))
+    if width_pct:
+        return pct_of(content_width_emu, float(width_pct))
+
+    bbox_width = bbox.get("w") or bbox.get("width")
+    if bbox_width:
+        page_content_pt = _page_content_width_pt(page)
+        if page_content_pt:
+            ratio = float(bbox_width) / float(page_content_pt)
+            ratio = max(0.05, min(ratio, 1.0))
+            return pct_of(content_width_emu, ratio)
+    return content_width_emu
+
+
+def _page_content_width_pt(page: Dict[str, Any]) -> Optional[float]:
+    width_pt = page.get("width_pt")
+    if not width_pt and page.get("width_mm"):
+        width_pt = float(page["width_mm"]) * 72.0 / 25.4
+    margins = page.get("margins_pt") or {}
+    if width_pt is None:
+        return None
+    left = margins.get("left", 72)
+    right = margins.get("right", 72)
+    return max(width_pt - left - right, 1)
+
+
+def _add_table(
+    container,
+    block: Dict[str, Any],
+    content_width_emu: int,
+    style_map: Dict[str, str],
+    rtl: bool,
+) -> None:
+    rows = block.get("rows") or block.get("data")
+    if not rows:
+        return
+    rows = [list(row) for row in rows]
+    ncols = len(rows[0])
+
+    table = container.add_table(rows=len(rows), cols=ncols)
+    table.style = style_map.get("table", DEFAULT_STYLE_MAP["table"])
+    table.autofit = False
+
+    header = block.get("header", True)
+    widths_pct = block.get("column_widths_pct") or block.get("widths_pct") or block.get("col_pct")
+
+    for r_idx, row in enumerate(rows):
+        for c_idx, cell_value in enumerate(row):
+            cell = table.cell(r_idx, c_idx)
+            cell.text = "" if cell_value is None else str(cell_value)
+            for paragraph in cell.paragraphs:
+                if rtl:
+                    paragraph.paragraph_format.right_to_left = True
+            if header and r_idx == 0:
+                for paragraph in cell.paragraphs:
+                    for run in paragraph.runs:
+                        run.bold = True
+                _shade_cell(cell, "E6E6E6")
+
+    if widths_pct:
+        widths_iterable = widths_pct
+    else:
+        widths_iterable = [1 / ncols] * ncols
+
+    for idx, pct_value in enumerate(widths_iterable):
+        width_emu = pct_of(content_width_emu, float(pct_value))
+        for cell in table.columns[idx].cells:
+            cell.width = Emu(width_emu)
+
+
+def _shade_cell(cell, fill: str) -> None:
+    tc_pr = cell._tc.get_or_add_tcPr()
+    shd_elements = tc_pr.findall(qn("w:shd"))
+    for shd in shd_elements:
+        tc_pr.remove(shd)
+    shd = OxmlElement("w:shd")
+    shd.set(qn("w:val"), "clear")
+    shd.set(qn("w:color"), "auto")
+    shd.set(qn("w:fill"), fill)
+    tc_pr.append(shd)
 
 
 def _write_document_content(

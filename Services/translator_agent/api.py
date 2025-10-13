@@ -191,7 +191,7 @@ async def docling_extract(file: UploadFile = File(...)):
     await file.close()
 
     try:
-        markdown_path = parse_to_markdown(source_path, job_dir)
+        markdown_path, _layout_path = parse_to_markdown(source_path, job_dir)
     except Exception as exc:
         logger.exception("Docling parse failed for %s", job_id)
         raise HTTPException(status_code=500, detail="Docling parsing failed") from exc
@@ -263,52 +263,79 @@ async def docling_render(payload: DoclingRenderRequest):
         raise HTTPException(status_code=400, detail="target must be 'docx' or 'pdf'")
 
     lang_code = "fa" if payload.rtl else "en"
-    original_body = html_renderer.md_to_html(
-        payload.original_md,
-        rtl=payload.rtl,
-        lang=lang_code,
-        wrap=False,
-    )
-    if payload.translated_md:
-        translated_body = html_renderer.md_to_html(
-            payload.translated_md,
-            rtl=payload.rtl,
-            lang=lang_code,
-            wrap=False,
-        )
-    else:
-        translated_body = "<p><strong>NO credible API</strong></p>"
-
-    combined_body = (
-        "<section>"
-        "<h1>Original</h1>"
-        f"{original_body}"
-        "</section>"
-        "<hr/>"
-        "<section>"
-        "<h1>Translated</h1>"
-        f"{translated_body}"
-        "</section>"
-    )
-    combined_html = html_renderer.wrap_html_document(
-        combined_body,
-        rtl=payload.rtl,
-        lang=lang_code,
-    )
-
     assets_for_writer = assets_dir if _has_assets(assets_dir) else None
+    layout_path = job_dir / "layout.json"
+
+    combined_html: Optional[str] = None
+
+    def _ensure_combined_html() -> str:
+        nonlocal combined_html
+        if combined_html is None:
+            original_body = html_renderer.md_to_html(
+                payload.original_md,
+                rtl=payload.rtl,
+                lang=lang_code,
+                wrap=False,
+            )
+            if payload.translated_md:
+                translated_body = html_renderer.md_to_html(
+                    payload.translated_md,
+                    rtl=payload.rtl,
+                    lang=lang_code,
+                    wrap=False,
+                )
+            else:
+                translated_body = "<p><strong>NO credible API</strong></p>"
+
+            combined_body = (
+                "<section>"
+                "<h1>Original</h1>"
+                f"{original_body}"
+                "</section>"
+                "<hr/>"
+                "<section>"
+                "<h1>Translated</h1>"
+                f"{translated_body}"
+                "</section>"
+            )
+            combined_html = html_renderer.wrap_html_document(
+                combined_body,
+                rtl=payload.rtl,
+                lang=lang_code,
+            )
+        assert combined_html is not None
+        return combined_html
+
     if target == "docx":
         output_path = out_dir / "output.docx"
-        docx_writer_v2.write_docx_from_html(
-            combined_html,
-            out_path=output_path,
-            assets_dir=assets_for_writer,
-            rtl=payload.rtl,
-        )
+        used_layout_writer = False
+        if layout_path.exists():
+            try:
+                docx_writer_v2.write_docx_from_layout_json(
+                    layout_path,
+                    assets_for_writer,
+                    output_path,
+                    rtl=payload.rtl,
+                )
+                used_layout_writer = True
+            except Exception as exc:
+                logger.warning(
+                    "Layout-based DOCX render failed for %s; falling back to HTML pipeline",
+                    payload.job_id,
+                    exc_info=True,
+                )
+        if not used_layout_writer:
+            fallback_html = _ensure_combined_html()
+            docx_writer_v2.write_docx_from_html(
+                fallback_html,
+                out_path=output_path,
+                assets_dir=assets_for_writer,
+                rtl=payload.rtl,
+            )
     else:
         output_path = out_dir / "output.pdf"
         pdf_writer.write_pdf_from_html(
-            combined_html,
+            _ensure_combined_html(),
             out_path=output_path,
             assets_dir=assets_for_writer,
         )

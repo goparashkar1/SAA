@@ -1,0 +1,17 @@
+{
+  "pages": [
+    {
+      "number": 1,
+      "columns": 1,
+      "width_pt": null,
+      "height_pt": null,
+      "margins_pt": {
+        "left": 72,
+        "right": 72,
+        "top": 72,
+        "bottom": 72
+      },
+      "blocks": []
+    }
+  ]
+}

@@ -14,7 +14,12 @@ PNG_DATA_URI = (
 def _stub_parse_to_markdown(_src_path, work_dir):
     md_path = work_dir / "content.md"
     md_path.write_text(f"# Sample\n\n![Inline]({PNG_DATA_URI})\n", encoding="utf-8")
-    return md_path
+    layout_path = work_dir / "layout.json"
+    layout_path.write_text(
+        '{"pages": [{"number": 1, "columns": 1, "blocks": [{"type": "paragraph", "text": "Sample"}]}]}',
+        encoding="utf-8",
+    )
+    return md_path, layout_path
 
 
 def test_docling_pipeline_without_api(monkeypatch):
@@ -62,4 +67,3 @@ def test_docling_pipeline_without_api(monkeypatch):
     with zipfile.ZipFile(io.BytesIO(download_resp.content)) as archive:
         document_xml = archive.read("word/document.xml").decode("utf-8")
     assert "NO credible API" in document_xml
-

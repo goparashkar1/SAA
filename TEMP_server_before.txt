@@ -1,0 +1,92 @@
+from fastapi import FastAPI, UploadFile, File, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import StreamingResponse
+from pydantic import BaseModel
+from typing import Optional
+import io
+
+try:
+    # python-docx
+    from docx import Document
+except Exception:  # pragma: no cover
+    Document = None  # type: ignore
+
+
+app = FastAPI(title="Translator Agent API")
+
+# In dev we also proxy via Vite; permissive CORS is harmless and convenient
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://127.0.0.1:5173", "http://localhost:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
+class UrlIn(BaseModel):
+    url: str
+
+
+class TranslateOut(BaseModel):
+    source_text: str
+    translated_text: str
+
+
+@app.post("/api/translate/url", response_model=TranslateOut)
+async def translate_url(payload: UrlIn):
+    # TODO: integrate with real scraper + language detection + translation
+    # Deterministic stub for local wiring:
+    src = f"SCRAPED({payload.url})..."
+    tgt = "TRANSLATED(…به فارسی…)"
+    return TranslateOut(source_text=src, translated_text=tgt)
+
+
+@app.post("/api/translate/file", response_model=TranslateOut)
+async def translate_file(file: UploadFile = File(...)):
+    # TODO: integrate with real file extractor + language detection + translation
+    # We do not use file content in stub, only filename for determinism.
+    _ = await file.read()  # consume upload to avoid hanging clients
+    src = f"EXTRACTED_FROM_FILE({file.filename})..."
+    tgt = "TRANSLATED(…به فارسی…)"
+    return TranslateOut(source_text=src, translated_text=tgt)
+
+
+class ExportIn(BaseModel):
+    source_text: str
+    translated_text: str
+
+
+@app.post("/api/export-docx")
+async def export_docx(payload: ExportIn):
+    if not payload.source_text and not payload.translated_text:
+        raise HTTPException(status_code=400, detail="nothing to export")
+
+    if Document is None:  # pragma: no cover
+        raise HTTPException(status_code=500, detail="python-docx not installed")
+
+    # Build a simple DOCX with headings for clarity
+    doc = Document()
+    if payload.source_text:
+        doc.add_heading("Source", level=2)
+        doc.add_paragraph(payload.source_text)
+    if payload.translated_text:
+        if payload.source_text:
+            doc.add_page_break()
+        doc.add_heading("Translation", level=2)
+        doc.add_paragraph(payload.translated_text)
+
+    buf = io.BytesIO()
+    doc.save(buf)
+    buf.seek(0)
+
+    headers = {
+        "Content-Disposition": 'attachment; filename="TranslationReport.docx"'
+    }
+    return StreamingResponse(
+        buf,
+        media_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        headers=headers,
+    )
+
+
